@@ -231,8 +231,8 @@
         /* Projects Section */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
             margin-top: 2rem;
         }
 
@@ -282,6 +282,12 @@
             font-weight: bold;
             display: inline-block;
             text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .category-count:hover {
+            background: rgba(168, 85, 247, 0.4);
+            color: #ffffff;
         }
 
         /* Resume Section */
@@ -546,13 +552,19 @@
     <!-- Projects Section -->
     <section id="projects" class="section">
         <div class="container">
-            <h2 class="section-title">Mes Projets Data</h2>
+            <h2 class="section-title">Mes Projets & Réalisations</h2>
             <div class="projects-grid">
                 <div class="project-category-card">
                     <div class="category-icon">🐍</div>
                     <h3>Python</h3>
                     <p>Scripts et analyse exploratoire</p>
                     <a href="python.html" class="category-count">Voir les projets</a>
+                </div>
+                <div class="project-category-card">
+                    <div class="category-icon">🤖</div>
+                    <h3>Agents IA</h3>
+                    <p>Workflows RAG, n8n & Gemini</p>
+                    <a href="ai.html" class="category-count">Voir les projets</a>
                 </div>
                 <div class="project-category-card">
                     <div class="category-icon">🗄️</div>
