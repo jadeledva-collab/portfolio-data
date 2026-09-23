@@ -74,11 +74,16 @@
     .toggle-content p, .toggle-content li { color: #d4d4d8; line-height: 1.7; margin-bottom: 1rem; }
     .toggle-content h2 { color: #ffffff; margin-top: 1.5rem; margin-bottom: 0.75rem; }
     .toggle-content ul { margin-left: 1.5rem; margin-bottom: 1rem; }
-    .github-link {
+    .download-link {
       display: inline-flex; align-items: center; gap: 0.5rem; color: #a855f7;
       text-decoration: none; font-weight: 600; font-size: 0.9rem; padding: 0.75rem 1.25rem;
       background: rgba(168, 85, 247, 0.15); border-radius: 10px;
       border: 1px solid rgba(168, 85, 247, 0.3); margin-top: 1rem;
+      transition: all 0.3s ease;
+    }
+    .download-link:hover {
+      background: rgba(168, 85, 247, 0.3);
+      transform: translateY(-2px);
     }
   </style>
 </head>
@@ -119,26 +124,30 @@
             
             <h2>Workflow 1 : Ingestion et Vectorisation</h2>
             <ul>
-              <li><strong>Déclencheur Google Drive :</strong> Surveillance continue d'un dossier cible pour détecter les mises à jour.</li>
-              <li><strong>Traitement & Découpage :</strong> Utilisation d'un séparateur de texte récursif (<em>Recursive Character Text Splitter</em>).</li>
-              <li><strong>Embeddings :</strong> Vectorisation sémantique via Google Gemini.</li>
+              <li><strong>Déclencheur Google Drive :</strong> Surveillance continue d'un dossier cible pour détecter les mises à jour[cite: 1].</li>
+              <li><strong>Traitement & Découpage :</strong> Utilisation d'un séparateur de texte récursif (<em>Recursive Character Text Splitter</em>)[cite: 1].</li>
+              <li><strong>Embeddings :</strong> Vectorisation sémantique via Google Gemini[cite: 1].</li>
             </ul>
 
             <h2>Workflow 2 : Chatbot RAG (Agent IA)</h2>
             <ul>
-              <li><strong>Agent Conversationnel :</strong> Interface connectée au modèle de chat Google Gemini pour exploiter la base vectorielle comme outil de recherche documentaire.</li>
+              <li><strong>Agent Conversationnel :</strong> Interface connectée au modèle de chat Google Gemini pour exploiter la base vectorielle comme outil de recherche documentaire[cite: 1].</li>
             </ul>
           </div>
         </div>
         
         <div class="toggle-section">
           <button class="toggle-btn" onclick="toggleSection(this)">
-            <span>💻 Détails Techniques (JSON)</span>
+            <span>💻 Télécharger le Workflow JSON</span>
             <span class="toggle-arrow">▼</span>
           </button>
           <div class="toggle-content">
-            <p>L'architecture complète du workflow (nœuds, connexions, paramètres LangChain) est structurée et prête pour déploiement.</p>
-            <a href="https://github.com/jadeledva-collab/portfolio-data" class="github-link" target="_blank">⭐ Voir le dépôt GitHub</a>
+            <p>Vous pouvez télécharger directement le fichier de configuration JSON de ce workflow pour l'importer dans n8n :</p>
+            
+            <!-- Lien direct pointant vers le fichier JSON placé à la racine -->
+            <a href="LogiPro%20-%20RAG%20Chatbot.json" class="download-link" download>
+              ⬇️ Télécharger le fichier .JSON du projet
+            </a>
           </div>
         </div>
       </div>

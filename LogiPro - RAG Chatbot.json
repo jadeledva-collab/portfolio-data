@@ -1,0 +1,363 @@
+{
+  "name": "LogiPro - RAG Chatbot",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "triggerOn": "specificFolder",
+        "folderToWatch": {
+          "__rl": true,
+          "value": "1KaMBBGRXciEAmofShqdqS4LOQcnrZ8RH",
+          "mode": "list",
+          "cachedResultName": "LogiPro",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1KaMBBGRXciEAmofShqdqS4LOQcnrZ8RH"
+        },
+        "event": "fileUpdated",
+        "options": {}
+      },
+      "id": "2fadcb09-fb93-4d06-a0ae-783169f3dd94",
+      "name": "Google Drive Trigger",
+      "type": "n8n-nodes-base.googleDriveTrigger",
+      "typeVersion": 1,
+      "position": [
+        -672,
+        -48
+      ],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "VSVM1xmBwg5nreqE",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": "={{$json.id}}",
+        "options": {}
+      },
+      "id": "5b28f40a-14ea-4493-97d4-35516e448102",
+      "name": "Google Drive Download",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -352,
+        -48
+      ],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "VSVM1xmBwg5nreqE",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "memoryKey": "rag_base"
+      },
+      "id": "56afb0a6-7dfb-4848-b739-06a4caecf6a4",
+      "name": "Simple Vector Store",
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+      "typeVersion": 1,
+      "position": [
+        -32,
+        -48
+      ]
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-embedding-001"
+      },
+      "id": "9fc3fa45-d112-4c85-b8a1-affc05c887fb",
+      "name": "Embeddings Google Gemini",
+      "type": "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        32,
+        176
+      ],
+      "credentials": {
+        "googlePalmApi": {
+          "id": "OGdml6MDpL7Y5dNW",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "dataType": "binary",
+        "options": {}
+      },
+      "id": "fde826bf-f187-4def-8c4e-c5388b92ea77",
+      "name": "Default Data Loader",
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1,
+      "position": [
+        -272,
+        176
+      ]
+    },
+    {
+      "parameters": {
+        "chunkOverlap": 200,
+        "options": {}
+      },
+      "id": "c65a99a7-e4e2-48d4-9c36-6c0e3e91ef87",
+      "name": "Recursive Character Text Splitter",
+      "type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+      "typeVersion": 1,
+      "position": [
+        -272,
+        368
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "b4faa63a-08b1-41eb-94f3-748661c549b7",
+      "name": "When chat message received",
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1,
+      "position": [
+        528,
+        -32
+      ],
+      "webhookId": "de12d33f-fa4b-41eb-9f43-5d5caaeb014d"
+    },
+    {
+      "parameters": {
+        "content": "LogiPro – Workflow 1 – Ingestion",
+        "height": 496,
+        "width": 1072
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -752,
+        -112
+      ],
+      "typeVersion": 1,
+      "id": "54f4f966-a3d0-4bc9-a58f-ec5654b8b230",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "LogiPro – Workflow 2 – Chatbot RAG",
+        "height": 528,
+        "width": 976
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        480,
+        -128
+      ],
+      "typeVersion": 1,
+      "id": "7f349451-7e92-4751-a3f9-4d4417bd7835",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        688,
+        -48
+      ],
+      "id": "5fe0d88b-a47a-4178-811a-dc0ea2508601",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        688,
+        224
+      ],
+      "id": "7a8fc54a-cf50-4328-9b78-3e36ed8a6108",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "OGdml6MDpL7Y5dNW",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolDescription": "main data source",
+        "memoryKey": {
+          "__rl": true,
+          "value": "mBn5HnYBETWFnifq__rag_base",
+          "mode": "list",
+          "cachedResultName": "mBn5HnYBETWFnifq__rag_base"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+      "typeVersion": 1.3,
+      "position": [
+        752,
+        352
+      ],
+      "id": "7e9442ea-70ff-4b4e-a4f8-ffe556aa1a74",
+      "name": "Simple Vector Store2"
+    },
+    {
+      "parameters": {
+        "operation": "copy",
+        "fileId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        320,
+        -48
+      ],
+      "id": "1aa1c547-e008-4e6f-ae48-fbfd40629083",
+      "name": "Copy file",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "VSVM1xmBwg5nreqE",
+          "name": "Google Drive account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Google Drive Trigger": {
+      "main": [
+        [
+          {
+            "node": "Google Drive Download",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive Download": {
+      "main": [
+        [
+          {
+            "node": "Simple Vector Store",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Google Gemini": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Simple Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          },
+          {
+            "node": "Simple Vector Store2",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Simple Vector Store",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recursive Character Text Splitter": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Default Data Loader",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Vector Store2": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Vector Store": {
+      "main": [
+        [
+          {
+            "node": "Copy file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "f8df9712-c93a-4207-b25a-8922a6ecbdcb",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "ad5e12c74a3217dfe6c820ed02bbe2f8ba0d09672bcda441be9cf5ba0c694407"
+  },
+  "id": "mBn5HnYBETWFnifq",
+  "tags": []
+}
