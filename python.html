@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Python & R Projects - Jade Le Dévéhat</title>
+  <title>Projets Python - Jade Le Dévéhat</title>
   <style>
     * {
       margin: 0;
@@ -248,16 +248,16 @@
       text-decoration: none;
       font-weight: 600;
       font-size: 0.9rem;
-      padding: 0.5rem 1rem;
-      background: rgba(168, 85, 247, 0.1);
-      border-radius: 8px;
-      border: 1px solid rgba(168, 85, 247, 0.2);
+      padding: 0.75rem 1.25rem;
+      background: rgba(168, 85, 247, 0.15);
+      border-radius: 10px;
+      border: 1px solid rgba(168, 85, 247, 0.3);
       transition: all 0.3s ease;
       margin-top: 1rem;
     }
 
     .github-link:hover {
-      background: rgba(168, 85, 247, 0.2);
+      background: rgba(168, 85, 247, 0.3);
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
     }
@@ -308,10 +308,10 @@
   <div class="container">
     <div class="header">
       <a href="index.html#projects" class="back-link">
-        ← Back to Portfolio
+        ← Retour au Portfolio
       </a>
-      <h1 class="section-title">Python & R Projects</h1>
-      <p class="subtitle">Data science and analytical workflows that power automation, predictive insights, and intelligent decision-making</p>
+      <h1 class="section-title">Projets Python</h1>
+      <p class="subtitle">Analyse de données et flux analytiques pour l'automatisation, la visualisation et la prise de décision</p>
     </div>
 
     <div class="projects-grid">
@@ -323,7 +323,7 @@
         </div>
         
         <p class="project-description">
-          Analyse exploratoire des données de production et de consommation d'électricité (RTE) pour comprendre l'impact de la saisonnalité et des variations régionales sur le mix énergétique[cite: 2].
+          Analyse exploratoire des données de production et de consommation d'électricité (RTE) pour comprendre l'impact de la saisonnalité et des variations régionales sur le mix énergétique.
         </p>
 
         <div class="tech-stack">
@@ -337,99 +337,99 @@
           <div class="toggle-section">
             <button class="toggle-btn" onclick="toggleSection(this)">
               <span class="toggle-icon">⚙️</span>
-              <span class="toggle-text">Business Impact & Analyse</span>
+              <span class="toggle-text">Analyse & Impact Métier</span>
               <span class="toggle-arrow">▼</span>
             </button>
             <div class="toggle-content">
               <h2>Contexte & Problématique</h2>
               <p>
-                La consommation d'électricité en France varie énormément selon l'heure et la saison (pics de froid en hiver)[cite: 2]. L'enjeu de cette étude est de répondre à la problématique : <em>Comment la saisonnalité (hiver/été) et les inégalités géographiques influencent-elles le recours aux énergies fossiles dans le mix électrique français ?</em>[cite: 2]
+                La consommation d'électricité en France varie énormément selon l'heure et la saison (pics de froid en hiver). L'enjeu de cette étude est de répondre à la problématique : <em>Comment la saisonnalité (hiver/été) et les inégalités géographiques influencent-elles le recours aux énergies fossiles dans le mix électrique français ?</em>
               </p>
 
               <h2>Préparation & Nettoyage des Données</h2>
               <ul>
-                <li><strong>Correction des formats :</strong> Conversion de la colonne date en format temporel (<code>datetime</code>) et nettoyage des formats numériques (virgules en points)[cite: 2].</li>
-                <li><strong>Gestion des valeurs manquantes :</strong> Remplacement des valeurs <code>NaN</code> par 0 pour les colonnes de production (absence de production solaire la nuit)[cite: 2].</li>
-                <li><strong>Création de variables :</strong> Extraction du mois, de l'heure, création d'une variable de segmentation par saison (Hiver, Été, Intersaison) et calcul de la part d'énergie renouvelable[cite: 2].</li>
+                <li><strong>Correction des formats :</strong> Conversion de la colonne date en format temporel (<code>datetime</code>) et nettoyage des formats numériques (remplacement des virgules par des points).</li>
+                <li><strong>Gestion des valeurs manquantes :</strong> Remplacement des valeurs <code>NaN</code> par 0 pour les colonnes de production (absence de production solaire la nuit).</li>
+                <li><strong>Création de variables :</strong> Extraction du mois et de l'heure, création d'une variable de segmentation par saison (Hiver, Été, Intersaison) et calcul de la part d'énergie renouvelable.</li>
               </ul>
 
               <h2>Insights de l'Analyse Exploratoire (EDA)</h2>
               <ul>
-                <li><strong>Saisonnalité :</strong> La consommation médiane en hiver est nettement supérieure à celle de l'été en raison du chauffage électrique[cite: 2].</li>
-                <li><strong>Cycles journaliers :</strong> Identification de deux pics de charge majeurs (matinée et pointe critique de 19h)[cite: 2].</li>
-                <li><strong>Disparités régionales :</strong> Forte hétérogénéité dans la répartition et la part des énergies renouvelables selon les régions[cite: 2].</li>
+                <li><strong>Saisonnalité :</strong> La consommation médiane en hiver est nettement supérieure à celle de l'été en raison du chauffage électrique.</li>
+                <li><strong>Cycles journaliers :</strong> Identification de deux pics de charge majeurs (matinée et pointe critique de 19h).</li>
+                <li><strong>Disparités régionales :</strong> Forte hétérogénéité dans la répartition et la part des énergies renouvelables selon les régions.</li>
               </ul>
 
               <h2>Recommandations Stratégiques</h2>
               <ul>
-                <li>Prioriser la rénovation thermique des bâtiments pour lisser les pics de demande hivernaux[cite: 2].</li>
-                <li>Encourager le report des usages lourds (recharge de véhicules électriques) en dehors de la pointe de 19h[cite: 2].</li>
-                <li>Renforcer les interconnexions de transport d'énergie entre les régions excédentaires et les grands pôles de consommation[cite: 2].</li>
+                <li>Prioriser la rénovation thermique des bâtiments pour lisser les pics de demande hivernaux.</li>
+                <li>Encourager le report des usages lourds (recharge de véhicules électriques) en dehors de la pointe de 19h.</li>
+                <li>Renforcer les interconnexions de transport d'énergie entre les régions excédentaires et les grands pôles de consommation.</li>
               </ul>
             </div>
           </div>
           
           <div class="toggle-section">
             <button class="toggle-btn" onclick="toggleSection(this)">
-              <span class="toggle-icon">⚙️</span>
-              <span class="toggle-text">Technical Details</span>
+              <span class="toggle-icon">💻</span>
+              <span class="toggle-text">Détails Techniques & Code</span>
               <span class="toggle-arrow">▼</span>
             </button>
             <div class="toggle-content">
               <p>
-                Le code complet du nettoyage des données, de l'ingénierie des variables et des visualisations interactives (Plotly) est documenté et structuré. Vous pouvez retrouver le projet complet sur le dépôt GitHub associé[cite: 2, 3].
+                Le code complet du nettoyage des données, de l'ingénierie des variables et des visualisations interactives (Plotly) est documenté dans le notebook interactif ci-dessous :
               </p>
               
-              <a href="https://github.com/jadeledva-collab/portfolio-data" class="github-link" target="_blank">
-                <span class="github-icon">⭐</span>
-                View on GitHub
+              <a href="https://colab.research.google.com/drive/1NDP1QuvW3VDrh3A616tZnddtJaUyxua" class="github-link" target="_blank">
+                <span class="github-icon">🚀</span>
+                Ouvrir le Notebook Google Colab
               </a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Project 2: Udemy Web App Data -->
+      <!-- Project 2: Udemy Web App Data (Second projet d'origine du template) -->
       <div class="project-card">
         <div class="project-header">
           <div class="project-number">2</div>
-          <h3 class="project-title">Analysis of Udemy Web Application Data</h3>
+          <h3 class="project-title">Analyse de Données de Cours en Ligne (Udemy)</h3>
         </div>
         
         <p class="project-description">
-          The objective of this project is to clean and preprocess the WebDevelopment.csv dataset using the pandas library in Python.
+          Nettoyage et prétraitement d'un jeu de données de cours de développement web en utilisant la bibliothèque Pandas en Python.
         </p>
 
         <div class="tech-stack">
           <span class="tech-tag">Python</span>
           <span class="tech-tag">Data Cleaning</span>
-          <span class="tech-tag">Data Science</span>
+          <span class="tech-tag">Pandas</span>
         </div>
 
         <div class="project-toggles">
           <div class="toggle-section">
             <button class="toggle-btn" onclick="toggleSection(this)">
               <span class="toggle-icon">⚙️</span>
-              <span class="toggle-text">Business Impact</span>
+              <span class="toggle-text">Impact Métier</span>
               <span class="toggle-arrow">▼</span>
             </button>
             <div class="toggle-content">
-              <h1>Cleaning and Preprocessing Web Development Course Data</h1>
-              <p>The goal of this project was to prepare a raw dataset of web development courses for meaningful analysis by performing comprehensive data cleaning using Python and pandas.</p>
+              <h2>Objectif du Projet</h2>
+              <p>Préparer un jeu de données brut de cours en ligne pour l'analyse en effectuant un nettoyage et un prétraitement complets avec Python et Pandas.</p>
             </div>
           </div>
           
           <div class="toggle-section">
             <button class="toggle-btn" onclick="toggleSection(this)">
-              <span class="toggle-icon">⚙️</span>
-              <span class="toggle-text">Technical Details</span>
+              <span class="toggle-icon">💻</span>
+              <span class="toggle-text">Détails Techniques</span>
               <span class="toggle-arrow">▼</span>
             </button>
             <div class="toggle-content">
-              <p>All the technical steps behind this project are documented in the repository.</p>
+              <p>Toutes les étapes techniques de ce projet sont documentées sur le dépôt GitHub d'origine.</p>
               <a href="https://github.com/alairdata/Analysis-of-Udemy-Web-Application-Data" class="github-link" target="_blank">
                 <span class="github-icon">⭐</span>
-                View on GitHub
+                Voir sur GitHub
               </a>
             </div>
           </div>
