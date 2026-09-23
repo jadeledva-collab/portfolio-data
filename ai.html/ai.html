@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projets Agents IA & Automatisation - Jade Le Dévéhat</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+      color: #ffffff;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+    .header { margin-bottom: 3rem; text-align: center; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      color: #a855f7; text-decoration: none; font-weight: 500; font-size: 0.95rem;
+      margin-bottom: 2rem; padding: 0.75rem 1.5rem; border-radius: 50px;
+      background: rgba(168, 85, 247, 0.1); backdrop-filter: blur(10px);
+      border: 1px solid rgba(168, 85, 247, 0.2); transition: all 0.3s ease;
+    }
+    .back-link:hover { background: rgba(168, 85, 247, 0.2); transform: translateY(-2px); }
+    .section-title {
+      font-size: 3rem; font-weight: 700; margin-bottom: 1rem;
+      background: linear-gradient(135deg, #a855f7, #ec4899);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      text-align: center;
+    }
+    .subtitle { font-size: 1.1rem; color: #a1a1aa; text-align: center; margin-bottom: 3rem; }
+    .project-card {
+      background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px);
+      border: 1px solid rgba(168, 85, 247, 0.1); border-radius: 20px;
+      padding: 2rem; position: relative; overflow: hidden; width: 100%;
+    }
+    .project-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, #a855f7, #ec4899);
+    }
+    .project-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .project-number {
+      background: linear-gradient(135deg, #a855f7, #ec4899); color: white;
+      width: 40px; height: 40px; border-radius: 12px; display: flex;
+      align-items: center; justify-content: center; font-weight: 700;
+    }
+    .project-title { font-size: 1.4rem; font-weight: 600; color: #ffffff; }
+    .project-description { color: #d4d4d8; margin-bottom: 2rem; font-size: 1rem; }
+    .tech-stack { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+    .tech-tag {
+      background: rgba(168, 85, 247, 0.1); color: #a855f7;
+      padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem; font-weight: 500;
+      border: 1px solid rgba(168, 85, 247, 0.2);
+    }
+    .project-toggles { margin-top: 1.5rem; }
+    .toggle-section { margin-bottom: 1rem; }
+    .toggle-btn {
+      width: 100%; display: flex; align-items: center; gap: 1rem;
+      padding: 1rem 1.5rem; background: rgba(168, 85, 247, 0.1);
+      border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 12px;
+      color: #ffffff; font-size: 1rem; font-weight: 600; cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .toggle-btn:hover { background: rgba(168, 85, 247, 0.2); }
+    .toggle-arrow { font-size: 0.8rem; transition: transform 0.3s ease; margin-left: auto; }
+    .toggle-btn.active .toggle-arrow { transform: rotate(180deg); }
+    .toggle-content {
+      max-height: 0; overflow: hidden; padding: 0 1.5rem;
+      background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(168, 85, 247, 0.2);
+      border-top: none; border-radius: 0 0 12px 12px; transition: all 0.4s ease;
+    }
+    .toggle-content.active { max-height: none; padding: 1.5rem; }
+    .toggle-content p, .toggle-content li { color: #d4d4d8; line-height: 1.7; margin-bottom: 1rem; }
+    .toggle-content h2 { color: #ffffff; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+    .toggle-content ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+    .github-link {
+      display: inline-flex; align-items: center; gap: 0.5rem; color: #a855f7;
+      text-decoration: none; font-weight: 600; font-size: 0.9rem; padding: 0.75rem 1.25rem;
+      background: rgba(168, 85, 247, 0.15); border-radius: 10px;
+      border: 1px solid rgba(168, 85, 247, 0.3); margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <a href="index.html#projects" class="back-link">← Retour au Portfolio</a>
+      <h1 class="section-title">Agents IA & Automatisation</h1>
+      <p class="subtitle">Conception de workflows intelligents, architectures RAG et intégration de modèles génératifs</p>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-number">AI</div>
+        <h3 class="project-title">LogiPro - Chatbot RAG & Automatisation</h3>
+      </div>
+      
+      <p class="project-description">
+        Conception d'un workflow d'intelligence artificielle et d'automatisation (RAG) avec n8n, Google Drive et Google Gemini pour l'ingestion, la vectorisation et l'interrogation intelligente de documents.
+      </p>
+
+      <div class="tech-stack">
+        <span class="tech-tag">n8n</span>
+        <span class="tech-tag">Google Gemini AI</span>
+        <span class="tech-tag">RAG Architecture</span>
+        <span class="tech-tag">Vector Store</span>
+      </div>
+
+      <div class="project-toggles">
+        <div class="toggle-section">
+          <button class="toggle-btn" onclick="toggleSection(this)">
+            <span>⚙️ Architecture & Fonctionnement</span>
+            <span class="toggle-arrow">▼</span>
+          </button>
+          <div class="toggle-content">
+            <h2>Objectif & Contexte du Projet</h2>
+            <p>Le projet <strong>LogiPro</strong> automatise l'exploitation de documents d'entreprise en combinant l'automatisation de flux (n8n) et l'IA générative pour permettre un dialogue fluide avec une base documentaire actualisée.</p>
+            
+            <h2>Workflow 1 : Ingestion et Vectorisation</h2>
+            <ul>
+              <li><strong>Déclencheur Google Drive :</strong> Surveillance continue d'un dossier cible pour détecter les mises à jour.</li>
+              <li><strong>Traitement & Découpage :</strong> Utilisation d'un séparateur de texte récursif (<em>Recursive Character Text Splitter</em>).</li>
+              <li><strong>Embeddings :</strong> Vectorisation sémantique via Google Gemini.</li>
+            </ul>
+
+            <h2>Workflow 2 : Chatbot RAG (Agent IA)</h2>
+            <ul>
+              <li><strong>Agent Conversationnel :</strong> Interface connectée au modèle de chat Google Gemini pour exploiter la base vectorielle comme outil de recherche documentaire.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="toggle-section">
+          <button class="toggle-btn" onclick="toggleSection(this)">
+            <span>💻 Détails Techniques (JSON)</span>
+            <span class="toggle-arrow">▼</span>
+          </button>
+          <div class="toggle-content">
+            <p>L'architecture complète du workflow (nœuds, connexions, paramètres LangChain) est structurée et prête pour déploiement.</p>
+            <a href="https://github.com/jadeledva-collab/portfolio-data" class="github-link" target="_blank">⭐ Voir le dépôt GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  function toggleSection(button) {
+    const content = button.nextElementSibling;
+    const isActive = content.classList.contains('active');
+    const projectCard = button.closest('.project-card');
+    projectCard.querySelectorAll('.toggle-content').forEach(tc => tc.classList.remove('active'));
+    projectCard.querySelectorAll('.toggle-btn').forEach(tb => tb.classList.remove('active'));
+    if (!isActive) {
+      content.classList.add('active');
+      button.classList.add('active');
+    }
+  }
+  </script>
+</body>
+</html>
