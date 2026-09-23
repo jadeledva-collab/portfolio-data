@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Princilla Abena Koranteng's Portfolio</title>
+    <title>Jade Le Dévéhat - Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -116,8 +116,7 @@
         .hero-text h1 {
             font-size: clamp(2.5rem, 5vw, 3.5rem);
             margin-bottom: 1rem;
-            line-height: 1; /* Adjusts vertical space between lines */
-            max-width: 100%; /* Ensures the h1 can use full space */
+            line-height: 1.2;
             background: linear-gradient(135deg, #ffffff 0%, #a855f7 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -132,7 +131,7 @@
 
         .hero-text p {
             font-size: 1.1rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             color: #cccccc;
         }
 
@@ -163,7 +162,7 @@
             width: clamp(200px, 30vw, 300px);
             height: clamp(200px, 30vw, 300px);
             border-radius: 50%;
-            overflow: hidden; /* important: hides anything outside the circle */
+            overflow: hidden;
             margin: 0 auto;
             box-shadow: 0 20px 40px rgba(168, 85, 247, 0.3);
         }
@@ -171,7 +170,7 @@
         .profile-image img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* makes sure the image fills the circle without distortion */
+            object-fit: cover;
         }
 
         /* Section Styles */
@@ -211,7 +210,6 @@
             border: 1px solid #7c3aed;
             text-align: center;
             transition: all 0.3s ease;
-            cursor: pointer;
         }
 
         .skill-item:hover {
@@ -244,10 +242,7 @@
             border-radius: 15px;
             padding: 2rem;
             transition: all 0.3s ease;
-            cursor: pointer;
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
 
         .project-category-card:hover {
@@ -286,6 +281,7 @@
             font-size: 0.9rem;
             font-weight: bold;
             display: inline-block;
+            text-decoration: none;
         }
 
         /* Resume Section */
@@ -296,7 +292,6 @@
             padding: 3rem;
             border-radius: 20px;
             border: 1px solid #7c3aed;
-            box-shadow: 0 20px 40px rgba(168, 85, 247, 0.1);
         }
 
         .resume-section {
@@ -321,13 +316,6 @@
             padding: 1.5rem;
             border-radius: 15px;
             border: 1px solid rgba(124, 58, 237, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .job-entry:hover, .education-entry:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(168, 85, 247, 0.2);
-            border-color: #a855f7;
         }
 
         .job-left, .education-left {
@@ -343,25 +331,12 @@
             position: relative;
         }
 
-        .job-right::before, .education-right::before {
-            content: '';
-            position: absolute;
-            left: -6px;
-            top: 8px;
-            width: 10px;
-            height: 10px;
-            background: linear-gradient(135deg, #7c3aed, #a855f7);
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
-        }
-
         .company, .school {
             font-weight: bold;
             font-size: 1rem;
             text-transform: uppercase;
             margin-bottom: 0.5rem;
             color: #a855f7;
-            letter-spacing: 1px;
         }
 
         .location, .school-location {
@@ -386,12 +361,6 @@
             color: #ffffff;
         }
 
-        .job-description, .degree-description {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: #cccccc;
-        }
-
         .job-description ul, .degree-description ul {
             list-style: none;
             padding-left: 0;
@@ -401,6 +370,7 @@
             margin-bottom: 0.5rem;
             position: relative;
             padding-left: 1.5rem;
+            color: #cccccc;
         }
 
         .job-description li::before, .degree-description li::before {
@@ -409,60 +379,6 @@
             left: 0;
             color: #a855f7;
             font-weight: bold;
-        }
-
-        .languages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .language-item {
-            background: rgba(168, 85, 247, 0.05);
-            padding: 1.5rem;
-            border-radius: 15px;
-            border: 1px solid rgba(124, 58, 237, 0.3);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .language-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(168, 85, 247, 0.2);
-            border-color: #a855f7;
-        }
-
-        .language-name {
-            font-size: 1rem;
-            text-transform: uppercase;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            color: #a855f7;
-            letter-spacing: 1px;
-        }
-
-        .proficiency-bar {
-            width: 100%;
-            height: 6px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 3px;
-            margin-bottom: 0.5rem;
-            overflow: hidden;
-        }
-
-        .proficiency-fill {
-            height: 100%;
-            background: linear-gradient(135deg, #7c3aed, #a855f7);
-            border-radius: 3px;
-            transition: width 0.3s ease;
-        }
-
-        .proficiency-label {
-            font-size: 0.8rem;
-            color: #cccccc;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         /* Contact Section */
@@ -486,12 +402,6 @@
             background: rgba(168, 85, 247, 0.1);
             border-radius: 10px;
             border: 1px solid #7c3aed;
-            transition: all 0.3s ease;
-        }
-
-        .contact-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(168, 85, 247, 0.2);
         }
 
         .contact-form {
@@ -519,14 +429,6 @@
             border-radius: 8px;
             color: #ffffff;
             font-family: inherit;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #a855f7;
-            box-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
         }
 
         .form-group textarea {
@@ -542,7 +444,6 @@
             border-top: 1px solid #7c3aed;
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -555,86 +456,18 @@
                 padding: 1rem;
                 gap: 1rem;
             }
-
             .nav-links.show {
                 display: flex;
             }
-
             .menu-toggle {
                 display: flex;
             }
-
-            .hero-content,
-            .about-content,
-            .contact-content {
+            .hero-content, .about-content, .contact-content {
                 grid-template-columns: 1fr;
-                gap: 2rem;
             }
-
-            .skills-grid {
-                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            }
-
             .job-entry, .education-entry {
                 flex-direction: column;
             }
-
-            .job-left, .education-left {
-                width: 100%;
-                padding-right: 0;
-                margin-bottom: 1rem;
-            }
-
-            .job-right, .education-right {
-                padding-left: 0;
-                border-left: none;
-                border-top: 2px solid #7c3aed;
-                padding-top: 1rem;
-            }
-
-            .job-right::before, .education-right::before {
-                display: none;
-            }
-
-            .resume-container {
-                padding: 2rem 1rem;
-            }
-        }
-
-        /* Animations */
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in {
-            animation: slideIn 0.8s ease-out;
-        }
-
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: #a855f7;
-            border-radius: 50%;
-            opacity: 0.7;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
         }
     </style>
 </head>
@@ -642,17 +475,17 @@
     <!-- Header -->
     <header class="header">
         <nav class="nav container">
-            <div class="logo">PAK</div>
+            <div class="logo">JLD</div>
             <div class="menu-toggle" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#resume">Resume</a></li>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#resume">Parcours</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -661,272 +494,109 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <div class="hero-content fade-in">
+            <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Princilla Abena KORANTENG</h1>
+                    <h1>Jade Le Dévéhat</h1>
                     <h2>Data Analyst & Insights Specialist</h2>
-                    <p> Beyond my role as a data analyst, I am also a data educator sharing my journey 
-                        and insights across YouTube, LinkedIn, and TikTok where I teach, 
-                        inspire, and empower others about the world of data.
-                        
-                        <p>
-                        This belief is what inspired me to found Data in Action Africa, a growing 
-                        community that supports aspiring African data analysts who don’t just enter the data 
-                        space, they shake the tables when they arrive.</p>
-
-                    <a href="#projects" class="cta-button">See My Work</a>
+                    <p>Passionnée par la valorisation des données, je transforme des volumes de données brutes en indicateurs stratégiques clairs pour aider à la prise de décision.</p>
+                    <p>Rigoureuse et curieuse, j'utilise des outils comme Python, SQL et des outils de visualisation pour raconter l'histoire qui se cache derrière les chiffres.</p>
+                    <a href="#projects" class="cta-button">Voir mes projets</a>
                 </div>
                 <div class="hero-image">
                     <div class="profile-image">
-                        <img src="ST859988.jpg" alt="Princilla's Photo" />
+                        <img src="ST859988.jpg" alt="Photo de Jade" />
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Floating particles -->
-        <div class="particle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
-        <div class="particle" style="top: 60%; left: 80%; animation-delay: 2s;"></div>
-        <div class="particle" style="top: 80%; left: 20%; animation-delay: 4s;"></div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="section alt">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title">À propos de moi</h2>
             <div class="about-content">
                 <div>
-                    <p>With a passion for uncovering hidden patterns in data, I bring a unique blend of analytical rigor and creative problem-solving to every project. My expertise spans across various industries, helping businesses in Ghana and beyond leverage their data for competitive advantage.</p>
+                    <p>En tant que Data Analyst, mon objectif est de concevoir des tableaux de bord percutants et d'automatiser l'analyse de données pour optimiser les performances.</p>
                     <br>
-                    <p>I believe that every dataset tells a story, and my mission is to help organizations discover and act upon those stories to drive meaningful outcomes.</p>
+                    <p>Je crois fermement que chaque entreprise gagne en efficacité lorsqu'elle s'appuie sur une culture axée sur les données (Data-Driven).</p>
                 </div>
                 <div class="skills-grid">
                     <div class="skill-item">
-                        <h3>Python & R</h3>
-                        <p>Advanced Analytics</p>
+                        <h3>Python</h3>
+                        <p>Analyse & Automatisation</p>
                     </div>
                     <div class="skill-item">
-                        <h3>SQL & NoSQL</h3>
-                        <p>Database Management</p>
+                        <h3>SQL</h3>
+                        <p>Requêtes & Gestion de bases</p>
                     </div>
                     <div class="skill-item">
-                        <h3>Tableau & Power BI</h3>
-                        <p>Data Visualization</p>
+                        <h3>Power BI / Tableau</h3>
+                        <p>Visualisation de données</p>
                     </div>
                     <div class="skill-item">
-                        <h3>Machine Learning</h3>
-                        <p>Predictive Modeling</p>
-                    </div>
-                    <div class="skill-item">
-                        <h3>Excel & Google Sheets</h3>
-                        <p>Business Intelligence</p>
-                    </div>
-                    <div class="skill-item">
-                        <h3>Statistical Analysis</h3>
-                        <p>Research & Insights</p>
+                        <h3>Excel</h3>
+                        <p>Modélisation & Tableaux croisés</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-<!-- Projects Section -->
-<section id="projects" class="section">
-    <div class="container">
-        <h2 class="section-title">All My Data Projects</h2>
-        <div class="projects-grid">
-
-            <div class="project-category-card">
-                <div class="category-icon">🐍</div>
-                <h3>Python & R</h3>
-                <p>Advanced Analytics</p>
-                <a href="python.html" class="category-count-link">
-                    <div class="category-count">4 Projects</div>
-                </a>
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Mes Projets Data</h2>
+            <div class="projects-grid">
+                <div class="project-category-card">
+                    <div class="category-icon">🐍</div>
+                    <h3>Python</h3>
+                    <p>Scripts et analyse exploratoire</p>
+                    <a href="python.html" class="category-count">Voir les projets</a>
+                </div>
+                <div class="project-category-card">
+                    <div class="category-icon">🗄️</div>
+                    <h3>SQL</h3>
+                    <p>Extraction et requêtes complexes</p>
+                    <a href="sql.html" class="category-count">Voir les projets</a>
+                </div>
+                <div class="project-category-card">
+                    <div class="category-icon">📊</div>
+                    <h3>Visualisation</h3>
+                    <p>Dashboards et Data Storytelling</p>
+                    <a href="visualization.html" class="category-count">Voir les projets</a>
+                </div>
+                <div class="project-category-card">
+                    <div class="category-icon">📈</div>
+                    <h3>Excel</h3>
+                    <p>Tableaux de bord dynamiques</p>
+                    <a href="excel.html" class="category-count">Voir les projets</a>
+                </div>
             </div>
-
-            <div class="project-category-card">
-                <div class="category-icon">🗄️</div>
-                <h3>SQL & NoSQL</h3>
-                <p>Database Management</p>
-                <a href="sql.html" class="category-count-link">
-                    <div class="category-count">4 Projects</div>
-                </a>
-            </div>
-
-            <div class="project-category-card">
-                <div class="category-icon">📊</div>
-                <h3>Tableau & Power BI</h3>
-                <p>Data Visualization</p>
-                <a href="visualization.html" class="category-count-link">
-                    <div class="category-count">6 Projects</div>
-                </a>
-            </div>
-
-            <div class="project-category-card">
-                <div class="category-icon">🤖</div>
-                <h3>Machine Learning</h3>
-                <p>Predictive Modeling</p>
-                <a href="ml.html" class="category-count-link">
-                    <div class="category-count">4 Projects</div>
-                </a>
-            </div>
-
-            <div class="project-category-card">
-                <div class="category-icon">📈</div>
-                <h3>Excel & Google Sheets</h3>
-                <p>Business Intelligence</p>
-                <a href="excel.html" class="category-count-link">
-                    <div class="category-count">3 Projects</div>
-                </a>
-            </div>
-
-            <div class="project-category-card">
-                <div class="category-icon">📉</div>
-                <h3>Statistical Analysis</h3>
-                <p>Research & Insights</p>
-                <a href="stats.html" class="category-count-link">
-                    <div class="category-count">4 Projects</div>
-                </a>
-            </div>
-
         </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Resume Section -->
     <section id="resume" class="section alt">
         <div class="container">
-            <h2 class="section-title">Resume</h2>
+            <h2 class="section-title">Mon Parcours</h2>
             <div class="resume-container">
-                <!-- Work Experience Section -->
                 <div class="resume-section">
-                    <h3 class="resume-section-title">Work Experience</h3>
-                    
+                    <h3 class="resume-section-title">Expérience</h3>
                     <div class="job-entry">
                         <div class="job-left">
-                            <div class="company">Data in Action Africa</div>
-                            <div class="location">Accra, Ghana</div>
-                            <div class="dates">Jan 2022 - Present</div>
+                            <div class="company">Projets Data / Portfolio</div>
+                            <div class="location">France</div>
+                            <div class="dates">En cours</div>
                         </div>
                         <div class="job-right">
-                            <div class="job-title">Founder & Lead Data Analyst</div>
+                            <div class="job-title">Data Analyst Junior</div>
                             <div class="job-description">
                                 <ul>
-                                    <li>Founded and led data analytics consultancy serving 20+ clients across West Africa</li>
-                                    <li>Developed custom analytics solutions resulting in average 25% efficiency improvement for clients</li>
-                                    <li>Conducted training workshops for 200+ professionals in data analysis and visualization</li>
-                                    <li>Built predictive models that helped clients reduce operational costs by up to 30%</li>
+                                    <li>Réalisation de projets de nettoyage et d'exploration de données sur Python et SQL.</li>
+                                    <li>Création de visualisations et de dashboards interactifs.</li>
                                 </ul>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="job-entry">
-                        <div class="job-left">
-                            <div class="company">Ghana Statistical Service</div>
-                            <div class="location">Accra, Ghana</div>
-                            <div class="dates">Mar 2020 - Dec 2021</div>
-                        </div>
-                        <div class="job-right">
-                            <div class="job-title">Senior Data Analyst</div>
-                            <div class="job-description">
-                                <ul>
-                                    <li>Led national survey data analysis for economic and social indicators</li>
-                                    <li>Designed and implemented data collection protocols for nationwide studies</li>
-                                    <li>Created comprehensive reports and visualizations for government policy decisions</li>
-                                    <li>Collaborated with international organizations on data standardization initiatives</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="job-entry">
-                        <div class="job-left">
-                            <div class="company">MTN Ghana</div>
-                            <div class="location">Accra, Ghana</div>
-                            <div class="dates">Jun 2018 - Feb 2020</div>
-                        </div>
-                        <div class="job-right">
-                            <div class="job-title">Business Intelligence Analyst</div>
-                            <div class="job-description">
-                                <ul>
-                                    <li>Analyzed customer behavior data to identify trends and business opportunities</li>
-                                    <li>Developed automated reporting systems reducing manual work by 60%</li>
-                                    <li>Created predictive models for customer churn analysis and retention strategies</li>
-                                    <li>Presented insights to executive team leading to strategic product decisions</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Education Section -->
-                <div class="resume-section">
-                    <h3 class="resume-section-title">Education</h3>
-                    
-                    <div class="education-entry">
-                        <div class="education-left">
-                            <div class="school">University of Ghana</div>
-                            <div class="school-location">Legon, Accra</div>
-                            <div class="graduation-year">2018</div>
-                        </div>
-                        <div class="education-right">
-                            <div class="degree">Master of Science in Statistics</div>
-                            <div class="degree-description">
-                                <ul>
-                                    <li>Specialized in Applied Statistics and Data Science</li>
-                                    <li>Thesis: "Predictive Modeling for Economic Indicators in Emerging Markets"</li>
-                                    <li>Graduated Magna Cum Laude with GPA 3.8/4.0</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="education-entry">
-                        <div class="education-left">
-                            <div class="school">Kwame Nkrumah University</div>
-                            <div class="school-location">Kumasi, Ghana</div>
-                            <div class="graduation-year">2016</div>
-                        </div>
-                        <div class="education-right">
-                            <div class="degree">Bachelor of Science in Mathematics</div>
-                            <div class="degree-description">
-                                <ul>
-                                    <li>Major in Applied Mathematics with focus on Statistical Methods</li>
-                                    <li>Minor in Computer Science</li>
-                                    <li>President of Mathematics Students Association</li>
-                                    <li>Graduated First Class Honours</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Languages Section -->
-                <div class="resume-section">
-                    <h3 class="resume-section-title">Languages</h3>
-                    <div class="languages-grid">
-                        <div class="language-item">
-                            <div class="language-name">English</div>
-                            <div class="proficiency-bar">
-                                <div class="proficiency-fill" style="width: 100%;"></div>
-                            </div>
-                            <div class="proficiency-label">Native</div>
-                        </div>
-                        <div class="language-item">
-                            <div class="language-name">Twi</div>
-                            <div class="proficiency-bar">
-                                <div class="proficiency-fill" style="width: 100%;"></div>
-                            </div>
-                            <div class="proficiency-label">Native</div>
-                        </div>
-                        <div class="language-item">
-                            <div class="language-name">French</div>
-                            <div class="proficiency-bar">
-                                <div class="proficiency-fill" style="width: 70%;"></div>
-                            </div>
-                            <div class="proficiency-label">Advanced</div>
                         </div>
                     </div>
                 </div>
@@ -937,41 +607,34 @@
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
+            <h2 class="section-title">Me Contacter</h2>
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
                         <span>📧</span>
                         <div>
                             <strong>Email</strong>
-                            <p>princilla@datainactionafrica.com</p>
+                            <p>votre-email@exemple.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <span>📍</span>
                         <div>
-                            <strong>Location</strong>
-                            <p>Accra, Ghana</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <span>💼</span>
-                        <div>
-                            <strong>LinkedIn</strong>
-                            <p>linkedin.com/in/princilla-koranteng</p>
+                            <strong>Localisation</strong>
+                            <p>France</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <span>🐙</span>
                         <div>
                             <strong>GitHub</strong>
-                            <p>github.com/princilla-koranteng</p>
+                            <p>github.com/jadeledva-collab</p>
                         </div>
                     </div>
                 </div>
                 <form class="contact-form">
                     <div class="form-group">
-                        <label for="name">Name</label>
+                        <label for="name">Nom</label>
                         <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
@@ -979,14 +642,10 @@
                         <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" required>
-                    </div>
-                    <div class="form-group">
                         <label for="message">Message</label>
                         <textarea id="message" name="message" required></textarea>
                     </div>
-                    <button type="submit" class="cta-button">Send Message</button>
+                    <button type="submit" class="cta-button">Envoyer</button>
                 </form>
             </div>
         </div>
@@ -995,7 +654,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Princilla Abena Koranteng. All rights reserved.</p>
+            <p>&copy; 2026 Jade Le Dévéhat. Tous droits réservés.</p>
         </div>
     </footer>
 
@@ -1004,37 +663,14 @@
             const navLinks = document.getElementById('navLinks');
             navLinks.classList.toggle('show');
         }
-
-        // Close mobile menu when clicking on a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 document.getElementById('navLinks').classList.remove('show');
             });
         });
-
-        // Add animation to elements on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections
-        document.querySelectorAll('.section, .skill-item, .project-category-card, .job-entry, .education-entry').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Form submission
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
+            alert('Merci pour votre message ! Je vous répondrai bientôt.');
             this.reset();
         });
     </script>
