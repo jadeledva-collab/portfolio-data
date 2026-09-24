@@ -1,175 +1,224 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Visualisation & Data Intelligence - Jade Le Dévéhat</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
-      color: #ffffff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      min-height: 100vh;
-    }
-    .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
-    .header { margin-bottom: 3rem; text-align: center; padding-top: 2rem; }
-    .back-link {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      color: #a855f7; text-decoration: none; font-weight: 500; font-size: 0.95rem;
-      margin-bottom: 2rem; padding: 0.75rem 1.5rem; border-radius: 50px;
-      background: rgba(168, 85, 247, 0.1); backdrop-filter: blur(10px);
-      border: 1px solid rgba(168, 85, 247, 0.2); transition: all 0.3s ease;
-    }
-    .back-link:hover { background: rgba(168, 85, 247, 0.2); transform: translateY(-2px); }
-    .section-title {
-      font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 1rem;
-      background: linear-gradient(135deg, #ffffff 0%, #a855f7 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      text-align: center;
-    }
-    .subtitle { font-size: 1.1rem; color: #a1a1aa; text-align: center; margin-bottom: 3rem; }
-    
-    .project-card {
-      background: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(10px);
-      border: 1px solid #7c3aed;
-      border-radius: 20px;
-      padding: 2.5rem;
-      margin-bottom: 3rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    }
-    .project-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
-    .project-number {
-      background: linear-gradient(135deg, #7c3aed, #a855f7); color: white;
-      width: 45px; height: 45px; border-radius: 12px; display: flex;
-      align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem;
-    }
-    .project-title { font-size: 1.5rem; font-weight: 600; color: #ffffff; }
-    .project-description { color: #cccccc; margin-bottom: 1.5rem; font-size: 1.05rem; }
-    
-    .tech-stack { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
-    .tech-tag {
-      background: rgba(168, 85, 247, 0.15); color: #a855f7;
-      padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;
-      border: 1px solid #7c3aed;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualisation & BI - Jade Le Dévéhat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .preview-box {
-      background: rgba(168, 85, 247, 0.05);
-      border: 1px dashed rgba(168, 85, 247, 0.4);
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-top: 1.5rem;
-    }
-    .preview-box h4 {
-      color: #a855f7;
-      margin-bottom: 0.75rem;
-      font-size: 1.1rem;
-    }
-    .preview-list {
-      list-style-type: none;
-      padding-left: 0;
-    }
-    .preview-list li {
-      position: relative;
-      padding-left: 1.5rem;
-      margin-bottom: 0.5rem;
-      color: #dddddd;
-    }
-    .preview-list li::before {
-      content: '▸';
-      position: absolute;
-      left: 0;
-      color: #a855f7;
-      font-weight: bold;
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 50%, #0a0a0a 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            padding: 2rem 20px;
+        }
 
-    .btn-details {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 10px 25px;
-      background: linear-gradient(135deg, #7c3aed, #a855f7);
-      color: white;
-      text-decoration: none;
-      border-radius: 25px;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
-    .btn-details:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(168, 85, 247, 0.4);
-    }
-  </style>
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #a855f7;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #ffffff;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #a855f7;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #cccccc;
+            margin-bottom: 3rem;
+        }
+
+        .project-section {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid #7c3aed;
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.15);
+        }
+
+        .project-section h2 {
+            color: #a855f7;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .project-section p {
+            color: #cccccc;
+            margin-bottom: 1.5rem;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .detail-box {
+            background: rgba(168, 85, 247, 0.08);
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            border-radius: 10px;
+            padding: 1.5rem;
+        }
+
+        .detail-box h3 {
+            color: #ffffff;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid #7c3aed;
+            padding-bottom: 0.4rem;
+        }
+
+        .detail-box ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .detail-box li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #cccccc;
+            font-size: 0.95rem;
+        }
+
+        .detail-box li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #a855f7;
+        }
+
+        .tech-badges {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .badge {
+            background: rgba(168, 85, 247, 0.2);
+            color: #a855f7;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .project-section {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <a href="index.html#projects" class="back-link">← Retour à l'accueil</a>
-      <h1 class="section-title">Visualisation & Business Intelligence</h1>
-      <p class="subtitle">Aperçu direct de mes projets de valorisation de données et d'analyses textuelles</p>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← Retour à l'accueil</a>
+        
+        <h1>Visualisation & Data Intelligence</h1>
+        <p class="subtitle">Découvrez l'ensemble de mes travaux en Business Intelligence et en Analyse Textuelle</p>
+
+        <!-- PROJET 1 : ANALYSE IMMOBILIÈRE -->
+        <div class="project-section">
+            <h2>🏢 Analyse Immobilière & Pipeline BI (DataImmo)</h2>
+            <p>
+                Conception de bout en bout d'un pipeline de données orienté Business Intelligence sur le marché immobilier. Ce projet structuré permet de transformer des données foncières brutes en indicateurs stratégiques clairs pour la prise de décision.
+            </p>
+            
+            <div class="tech-badges">
+                <span class="badge">SQL</span>
+                <span class="badge">Power BI</span>
+                <span class="badge">Knime</span>
+                <span class="badge">Streamlit</span>
+                <span class="badge">Modélisation de données</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <h3>Modélisation & Architecture</h3>
+                    <ul>
+                        <li>Création du dictionnaire de données et des tables relationnelles.</li>
+                        <li>Gestion de la géographie, des départements, des communes et des transactions foncières.</li>
+                        <li>Respect rigoureux des normes du Code Officiel Géographique (COG) de l'INSEE.</li>
+                    </ul>
+                </div>
+                <div class="detail-box">
+                    <h3>Traitement & Restitution (BI)</h3>
+                    <ul>
+                        <li>Automatisation des flux de nettoyage sous Knime.</li>
+                        <li>Requêtes SQL complexes et optimisées pour l'extraction de métriques clés.</li>
+                        <li>Tableaux de bord interactifs (Power BI) et application web interactive (Streamlit) pour restituer l'analyse visuelle des prix et volumes.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJET 2 : ANALYSE TEXTUELLE IRAMUTEQ -->
+        <div class="project-section">
+            <h2>📊 Analyse Textuelle & NLP (Corpus Médias & Soudan)</h2>
+            <p>
+                Traitement et analyse statistique textuelle approfondie d'un corpus médiatique complexe à l'aide du logiciel Iramuteq. L'objectif est d'extraire automatiquement les structures sémantiques, les réseaux de cooccurrences et les thématiques dominantes du discours de presse.
+            </p>
+            
+            <div class="tech-badges">
+                <span class="badge">Iramuteq</span>
+                <span class="badge">NLP & Text Mining</span>
+                <span class="badge">Statistique Textuelle</span>
+                <span class="badge">Analyse Factorielle</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <h3>Préparation du Corpus</h3>
+                    <ul>
+                        <li>Structuration des données textuelles brutes et découpage en Unités Contextuelles Élémentaires (UCE).</li>
+                        <li>Lemmatisation, gestion des formes actives et des variables illustratives.</li>
+                        <li>Analyse quantitative initiale (effectifs de formes, hapax, occurrences globales).</li>
+                    </ul>
+                </div>
+                <div class="detail-box">
+                    <h3>Analyses & Visualisations</h3>
+                    <ul>
+                        <li>Génération de graphiques de similarité lexicale et réseaux de cooccurrences.</li>
+                        <li>Mise en place de classifications hiérarchiques et nuages de mots synthétiques.</li>
+                        <li>Étude des spécificités textuelles pour comprendre la couverture médiatique de la crise.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <!-- Projet 1 : Analyse Immobilière -->
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-number">01</div>
-        <h3 class="project-title">Analyse Immobilière & Dashboard Décisionnel (DataImmo)</h3>
-      </div>
-      <p class="project-description">
-        Ce projet consiste en la conception complète d'un pipeline de données immobilières. Il couvre l'ensemble de la chaîne de valeur : de la modélisation initiale et la structure relationnelle des bases de données jusqu'à la restitution interactive à travers des tableaux de bord dynamiques.
-      </p>
-      
-      <div class="tech-stack">
-        <span class="tech-tag">Power BI</span>
-        <span class="tech-tag">SQL</span>
-        <span class="tech-tag">Streamlit</span>
-        <span class="tech-tag">Knime</span>
-        <span class="tech-tag">Modélisation de données</span>
-      </div>
-
-      <div class="preview-box">
-        <h4>Points clés & Restitution visuelle :</h4>
-        <ul class="preview-list">
-          <li><strong>Architecture & Dictionnaire :</strong> Structuration rigoureuse des tables et des types de variables (géographie, départements, communes, valeurs foncières).</li>
-          <li><strong>Automatisation (Knime) :</strong> Traitement et nettoyage des flux de données en amont.</li>
-          <li><strong>Restitution (Power BI & Streamlit) :</strong> Tableaux de bord interactifs permettant d'analyser les tendances du marché, les prix au mètre carré et la répartition géographique des ventes.</li>
-        </ul>
-      </div>
-
-      <a href="data_immo.html" class="btn-details">Explorer la page détaillée du projet →</a>
-    </div>
-
-    <!-- Projet 2 : Analyse Textuelle Iramuteq -->
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-number">02</div>
-        <h3 class="project-title">Analyse Textuelle & Traitement de Corpus (Iramuteq / NLP)</h3>
-      </div>
-      <p class="project-description">
-        Analyse lexicale et statistique textuelle approfondie menée à l'aide du logiciel Iramuteq. Ce projet explore un corpus de textes médiatiques complexes pour faire émerger automatiquement les thématiques structurantes, les oppositions discursives et les dynamiques informationnelles.
-      </p>
-
-      <div class="tech-stack">
-        <span class="tech-tag">Iramuteq</span>
-        <span class="tech-tag">NLP (Traitement du Langage Naturel)</span>
-        <span class="tech-tag">Statistique Textuelle</span>
-        <span class="tech-tag">Analyse Factorielle</span>
-      </div>
-
-      <div class="preview-box">
-        <h4>Méthodologie & Visualisations intégrées :</h4>
-        <ul class="preview-list">
-          <li><strong>Paramétrage du Corpus :</strong> Nettoyage, découpage en Unités Contextuelles Élémentaires (UCE) et gestion des formes lemmatisées.</li>
-          <li><strong>Graphes de Similarité :</strong> Cartographie des connexions fortes entre les mots-clés et les concepts dominants du corpus.</li>
-          <li><strong>Nuages de Mots & Spécificités :</strong> Visualisation graphique des termes saillants pour un data storytelling textuel immédiat.</li>
-        </ul>
-      </div>
-
-      <a href="irame_soudan.html" class="btn-details">Explorer la page détaillée du projet →</a>
-    </div>
-
-  </div>
 </body>
 </html>
