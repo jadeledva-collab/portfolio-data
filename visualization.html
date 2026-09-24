@@ -158,6 +158,16 @@
             color: #ffffff;
         }
 
+        .project-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            background: #000;
+        }
+
         @media (max-width: 768px) {
             .project-section {
                 padding: 1.5rem;
@@ -314,25 +324,23 @@
             <div class="details-grid">
                 <div class="detail-box">
                     <div>
-                        <h3>Préparation du Corpus</h3>
+                        <h3>Graphique de Similarité</h3>
                         <ul>
-                            <li>Structuration des données textuelles brutes et découpage en Unités Contextuelles Élémentaires (UCE).</li>
-                            <li>Lemmatisation, gestion des formes actives et des variables illustratives.</li>
-                            <li>Analyse quantitative initiale (effectifs de formes, hapax, occurrences globales).</li>
+                            <li>Analyse des réseaux de cooccurrences et liens sémantiques forts du corpus.</li>
                         </ul>
                     </div>
-                    <a href="Corpus.cira" target="_blank" class="btn-link">🔍 Consulter le fichier .cira</a>
+                    <img src="data/graph_simi_1.png" alt="Graphique de similarité Iramuteq" class="project-image">
+                    <a href="data/graph_simi_1.png" target="_blank" class="btn-link" style="margin-top: 1rem;">🔍 Agrandir le graphique</a>
                 </div>
                 <div class="detail-box">
                     <div>
-                        <h3>Analyses & Visualisations</h3>
+                        <h3>Nuage de Mots</h3>
                         <ul>
-                            <li>Génération de graphiques de similarité lexicale et réseaux de cooccurrences.</li>
-                            <li>Mise en place de classifications hiérarchiques et nuages de mots synthétiques.</li>
-                            <li>Étude des spécificités textuelles pour comprendre la couverture médiatique de la crise.</li>
+                            <li>Visualisation synthétique des termes les plus fréquents de la presse.</li>
                         </ul>
                     </div>
-                    <a href="corpus.db" target="_blank" class="btn-link">📂 Consulter la base corpus.db</a>
+                    <img src="data/nuage_1.png" alt="Nuage de mots Iramuteq" class="project-image">
+                    <a href="data/nuage_1.png" target="_blank" class="btn-link" style="margin-top: 1rem;">☁️ Agrandir le nuage de mots</a>
                 </div>
             </div>
         </div>
