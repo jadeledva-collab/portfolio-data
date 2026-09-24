@@ -28,7 +28,7 @@
             display: inline-block;
             color: #a855f7;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
             margin-bottom: 2rem;
             transition: color 0.3s ease;
         }
@@ -38,39 +38,50 @@
         }
 
         h1 {
-            font-size: 2.5rem;
-            color: #a855f7;
+            font-size: 2.3rem;
+            color: #ffffff;
             margin-bottom: 0.5rem;
             text-align: center;
+            font-weight: 600;
         }
 
         .subtitle {
             text-align: center;
-            color: #cccccc;
+            color: #a1a1aa;
             margin-bottom: 3rem;
+            font-size: 1.05rem;
         }
 
         .project-section {
-            background: rgba(0, 0, 0, 0.7);
-            border: 1px solid #7c3aed;
-            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            border-radius: 16px;
             padding: 2.5rem;
             margin-bottom: 2.5rem;
-            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.15);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         .project-section h2 {
-            color: #a855f7;
-            font-size: 1.8rem;
+            color: #ffffff;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
+            font-weight: 600;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
+        .project-section h2::before {
+            content: '—';
+            color: #a855f7;
+            font-weight: bold;
+        }
+
         .project-section p {
-            color: #cccccc;
+            color: #d4d4d8;
             margin-bottom: 1.5rem;
+            font-size: 0.95rem;
         }
 
         .details-grid {
@@ -81,18 +92,22 @@
         }
 
         .detail-box {
-            background: rgba(168, 85, 247, 0.08);
-            border: 1px solid rgba(124, 58, 237, 0.3);
-            border-radius: 10px;
+            background: rgba(168, 85, 247, 0.04);
+            border: 1px solid rgba(168, 85, 247, 0.15);
+            border-radius: 12px;
             padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .detail-box h3 {
             color: #ffffff;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             margin-bottom: 0.8rem;
-            border-bottom: 1px solid #7c3aed;
+            border-bottom: 1px solid rgba(168, 85, 247, 0.2);
             padding-bottom: 0.4rem;
+            font-weight: 500;
         }
 
         .detail-box ul {
@@ -102,17 +117,20 @@
 
         .detail-box li {
             position: relative;
-            padding-left: 1.2rem;
+            padding-left: 1rem;
             margin-bottom: 0.5rem;
-            color: #cccccc;
-            font-size: 0.95rem;
+            color: #a1a1aa;
+            font-size: 0.9rem;
         }
 
         .detail-box li::before {
-            content: '▸';
+            content: '·';
             position: absolute;
             left: 0;
             color: #a855f7;
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1;
         }
 
         .tech-badges {
@@ -124,12 +142,13 @@
         }
 
         .badge {
-            background: rgba(168, 85, 247, 0.2);
+            background: rgba(168, 85, 247, 0.1);
             color: #a855f7;
             padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            font-weight: bold;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(168, 85, 247, 0.2);
         }
 
         .stats-highlight {
@@ -140,8 +159,8 @@
         }
 
         .stat-card {
-            background: rgba(124, 58, 237, 0.15);
-            border: 1px solid #7c3aed;
+            background: rgba(168, 85, 247, 0.05);
+            border: 1px solid rgba(168, 85, 247, 0.2);
             border-radius: 10px;
             padding: 1.2rem;
             text-align: center;
@@ -149,13 +168,13 @@
 
         .stat-value {
             font-size: 1.5rem;
-            font-weight: bold;
+            font-weight: 600;
             color: #ffffff;
             margin-bottom: 0.3rem;
         }
 
         .stat-label {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #a855f7;
         }
 
@@ -164,18 +183,21 @@
             align-items: center;
             gap: 0.5rem;
             margin-top: 2rem;
-            padding: 12px 25px;
-            background: linear-gradient(135deg, #7c3aed, #a855f7);
-            color: white;
+            padding: 10px 20px;
+            background: rgba(168, 85, 247, 0.1);
+            color: #a855f7;
             text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgba(168, 85, 247, 0.3);
             transition: all 0.3s ease;
         }
 
         .btn-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(168, 85, 247, 0.4);
+            background: rgba(168, 85, 247, 0.2);
+            border-color: rgba(168, 85, 247, 0.5);
+            color: #ffffff;
         }
     </style>
 </head>
@@ -184,12 +206,12 @@
     <div class="container">
         <a href="index.html" class="back-link">← Retour à l'accueil</a>
         
-        <h1>Projet Excel : Suivi & Visualisation des Ventes</h1>
+        <h1>Projet excel : suivi et visualisation des ventes</h1>
         <p class="subtitle">Tableau de bord interactif et analyse des performances (Superstore Dataset)</p>
 
         <!-- PROJET SUPERSTORE -->
         <div class="project-section">
-            <h2>📈 Tableau de Bord des Ventes - Superstore</h2>
+            <h2>Tableau de bord des ventes - Superstore</h2>
             <p>
                 <strong>Problématique métier :</strong> L'entreprise souhaite suivre en détail les performances des ventes par région et par catégorie afin d'identifier rapidement les zones à améliorer et d'optimiser la stratégie commerciale.
             </p>
@@ -222,25 +244,24 @@
 
             <div class="details-grid">
                 <div class="detail-box">
-                    <h3>Nettoyage & Formules Utilisées</h3>
+                    <h3>Nettoyage et formules utilisées</h3>
                     <ul>
                         <li><strong>Organisation des données :</strong> Structuration de la base brute (9 994 transactions).</li>
-                        <li><strong>Formules Essentielles :</strong> Utilisation de <code>SOMME</code>, <code>SOMME.SI</code> et <code>MOYENNE</code> pour consolider les indicateurs financiers.</li>
-                        <li><strong>Recherche & Logique :</strong> Implémentation de fonctions de croisement telles que <code>RECHERCHEV</code>, <code>INDEX</code> et <code>EQUIV</code>.</li>
+                        <li><strong>Formules essentielles :</strong> Utilisation de <code>SOMME</code>, <code>SOMME.SI</code> et <code>MOYENNE</code> pour consolider les indicateurs financiers.</li>
+                        <li><strong>Recherche et logique :</strong> Implémentation de fonctions de croisement telles que <code>RECHERCHEV</code>, <code>INDEX</code> et <code>EQUIV</code>.</li>
                     </ul>
                 </div>
                 <div class="detail-box">
-                    <h3>Restitution & Interactivité</h3>
+                    <h3>Restitution et interactivité</h3>
                     <ul>
-                        <li><strong>TCD & Segments :</strong> Création de tableaux croisés dynamiques connectés à des segments (Slicers) pour filtrer par région ou par catégorie de produits en un clic.</li>
-                        <li><strong>Graphiques Dynamiques :</strong> Visualisation des tendances temporelles des ventes et des marges par zone géographique (Central, East, South, West).</li>
-                        <li><strong>Tableau de Bord :</strong> Restitution claire et épurée axée sur l'aide à la décision stratégique.</li>
+                        <li><strong>TCD et segments :</strong> Création de tableaux croisés dynamiques connectés à des segments (Slicers) pour filtrer par région ou par catégorie de produits en un clic.</li>
+                        <li><strong>Graphiques dynamiques :</strong> Visualisation des tendances temporelles des ventes et des marges par zone géographique (Central, East, South, West).</li>
+                        <li><strong>Tableau de bord :</strong> Restitution claire et épurée axée sur l'aide à la décision stratégique.</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Lien direct mis à jour vers le partage du fichier Excel -->
-            <a href="https://univtlnfr-my.sharepoint.com/:x:/g/personal/jade-le-devehat_etud_univ-tln_fr/IQCg7VNwKMlZTK85l1BFsnHzAQ-70i3orfC8eaoEyk2Zbz8?e=FnTpMQ" target="_blank" class="btn-link">📂 Accéder au fichier Excel du projet</a>
+            <a href="https://univtlnfr-my.sharepoint.com/:x:/g/personal/jade-le-devehat_etud_univ-tln_fr/IQCg7VNwKMlZTK85l1BFsnHzAQ-70i3orfC8eaoEyk2Zbz8?e=FnTpMQ" target="_blank" class="btn-link">Accéder au fichier Excel du projet</a>
         </div>
 
     </div>
