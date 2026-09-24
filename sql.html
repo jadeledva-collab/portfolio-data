@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projets SQL Avancé - Jade Le Dévéhat</title>
+    <title>Projets SQL - Jade Le Dévéhat</title>
     <style>
         * {
             margin: 0;
@@ -136,40 +136,25 @@
             font-weight: bold;
         }
 
-        code {
-            background: rgba(124, 58, 237, 0.2);
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            font-family: monospace;
-            color: #e9d5ff;
-        }
-
         .btn-link {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #7c3aed, #a855f7);
-            color: white;
+            padding: 8px 15px;
+            background: rgba(168, 85, 247, 0.2);
+            color: #a855f7;
             text-decoration: none;
-            border-radius: 25px;
+            border-radius: 8px;
+            font-size: 0.85rem;
             font-weight: bold;
+            border: 1px solid rgba(168, 85, 247, 0.4);
             transition: all 0.3s ease;
-            margin-top: 1.5rem;
+            text-align: center;
         }
 
         .btn-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(168, 85, 247, 0.4);
-        }
-
-        @media (max-width: 768px) {
-            .project-section {
-                padding: 1.5rem;
-            }
-            h1 {
-                font-size: 2.5rem;
-            }
+            background: #7c3aed;
+            color: #ffffff;
         }
     </style>
 </head>
@@ -178,24 +163,23 @@
     <div class="container">
         <a href="index.html" class="back-link">← Retour à l'accueil</a>
         
-        <h1>Projets SQL & Analyse de Données</h1>
-        <p class="subtitle">Requêtes complexes, CTEs, agrégations et automatisation de rapports décisionnels</p>
+        <h1>Mes Projets SQL & Analyse de Données</h1>
+        <p class="subtitle">Requêtes complexes, agrégations et rapports automatisés</p>
 
-        <!-- PROJET 1 : ADVENTUREWORKS -->
+        <!-- PROJET ADVENTUREWORKS -->
         <div class="project-section">
             <h2>🛒 Analyse des Performances & Ventes (Base AdventureWorks)</h2>
             <p>
-                <strong>Problématique métier :</strong> L'entreprise souhaite analyser ses performances en termes de ventes, de produits, de régions et de segments de clients afin de produire des rapports automatisés et d'optimiser ses décisions commerciales.
+                <strong>Problématique métier :</strong> L'entreprise souhaite analyser ses performances en termes de ventes, de produits, de régions et de segments de clients afin d'optimiser ses décisions commerciales.
             </p>
             <p>
-                <strong>Objectif :</strong> Exploiter la base de données relationnelle <em>AdventureWorks</em> pour analyser les ventes, identifier la rentabilité des produits, calculer des KPI clés et structurer des requêtes complexes.
+                <strong>Objectif :</strong> Exploiter la base de données relationnelle <em>AdventureWorks</em> pour analyser les ventes, identifier la rentabilité des produits et structurer des requêtes complexes.
             </p>
             
             <div class="tech-badges">
                 <span class="badge">SQL Avancé</span>
                 <span class="badge">T-SQL / SQL Server</span>
-                <span class="badge">Jointures Complexes (INNER/LEFT JOIN)</span>
-                <span class="badge">CTEs & Sous-requêtes</span>
+                <span class="badge">Jointures</span>
                 <span class="badge">AdventureWorks Dataset</span>
             </div>
 
@@ -204,19 +188,19 @@
                     <div>
                         <h3>Compétences & Réalisations</h3>
                         <ul>
-                            <li><strong>Ventes & Régions :</strong> Analyse des ventes par territoire pour l'année 2014 et suivi temporel sur 12 mois.</li>
-                            <li><strong>Segmentation & Scoring :</strong> Création de segments clients basés sur le montant total dépensé et identification du Top 10 clients.</li>
-                            <li><strong>Analyse multicanal :</strong> Distinction et comparaison des achats en ligne versus en magasin.</li>
+                            <li>Analyse des ventes par territoire et suivi temporel sur 12 mois.</li>
+                            <li>Segmentation des clients par montant dépensé et identification du Top 10 clients.</li>
+                            <li>Comparaison des canaux de vente (en ligne vs magasin).</li>
                         </ul>
                     </div>
                 </div>
                 <div class="detail-box">
                     <div>
-                        <h3>Rentabilité & Optimisation</h3>
+                        <h3>Rentabilité & Suivi</h3>
                         <ul>
-                            <li><strong>Top Produits & Rentabilité :</strong> Identification des produits les plus rentables et mise en place d'une catégorisation par seuil de marge nette via <code>CASE</code>.</li>
-                            <li><strong>Performance RH :</strong> Calcul des volumes de ventes globaux réalisés par chaque agent commercial.</li>
-                            <li><strong>Qualité & Logistique :</strong> Suivi des quantités achetées et calcul des taux de retour / rejet des produits.</li>
+                            <li>Identification des produits les plus rentables et calcul des marges nettes.</li>
+                            <li>Évaluation des performances globales par agent de vente.</li>
+                            <li>Suivi des taux de retour et de rejet des produits.</li>
                         </ul>
                     </div>
                 </div>
@@ -225,7 +209,7 @@
             <a href="adventureworks.sql" target="_blank" class="btn-link">📂 Consulter le fichier SQL (adventureworks.sql)</a>
         </div>
 
-        <!-- PROJET 2 : CHINOOK -->
+        <!-- PROJET CHINOOK -->
         <div class="project-section">
             <h2>🎵 Analyse et Reporting des Ventes (Base Chinook)</h2>
             <p>
@@ -239,7 +223,7 @@
                 <span class="badge">SQL</span>
                 <span class="badge">SQLite / DB Browser</span>
                 <span class="badge">Jointures (JOIN)</span>
-                <span class="badge">Agrégations (GROUP BY / HAVING)</span>
+                <span class="badge">Agrégations</span>
             </div>
 
             <div class="details-grid">
@@ -247,25 +231,24 @@
                     <div>
                         <h3>Compétences & Requêtes Maîtrisées</h3>
                         <ul>
-                            <li><strong>Requêtes de base :</strong> Utilisation de <code>SELECT</code>, <code>WHERE</code>, filtrage par zone géographique.</li>
-                            <li><strong>Agrégations & KPI :</strong> Calculs de sommes et moyennes de ventes avec <code>SUM</code>, <code>COUNT</code>.</li>
-                            <li><strong>Jointures relationnelles :</strong> Croisement des tables Clients, Factures, Employés et Artistes.</li>
+                            <li>Utilisation de <code>SELECT</code>, <code>WHERE</code>, et filtrage géographique.</li>
+                            <li>Calculs de sommes et moyennes de ventes avec <code>SUM</code> et <code>COUNT</code>.</li>
+                            <li>Croisement des tables Clients, Factures, Employés et Artistes.</li>
                         </ul>
                     </div>
+                    <a href="chinook-queries.sql" target="_blank" class="btn-link">📂 Consulter le fichier des requêtes SQL (chinook-queries.sql)</a>
                 </div>
                 <div class="detail-box">
                     <div>
                         <h3>Analyses Avancées & Top Performances</h3>
                         <ul>
-                            <li><strong>Classements commerciaux :</strong> Identification des meilleurs agents de vente par période.</li>
-                            <li><strong>Analyse de catalogues :</strong> Recherche des genres, types de médias et artistes les plus vendus.</li>
-                            <li><strong>Automatisation :</strong> Structuration des scripts pour générer des rapports de vente prêts à l'emploi.</li>
+                            <li>Identification des meilleurs agents de vente par période.</li>
+                            <li>Recherche des genres, types de médias et artistes les plus vendus.</li>
+                            <li>Structuration rigoureuse de scripts pour générer des rapports de vente.</li>
                         </ul>
                     </div>
                 </div>
             </div>
-
-            <a href="chinook-queries.sql" target="_blank" class="btn-link">📂 Consulter le fichier des requêtes SQL (chinook-queries.sql)</a>
         </div>
 
     </div>
