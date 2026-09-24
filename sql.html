@@ -136,21 +136,6 @@
             font-weight: bold;
         }
 
-        .code-container {
-            background: #1e1e1e;
-            border-radius: 8px;
-            padding: 1.5rem;
-            overflow-x: auto;
-            margin-top: 1rem;
-            border: 1px solid #7c3aed;
-        }
-
-        pre {
-            color: #9cdcfe;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.9rem;
-        }
-
         code {
             background: rgba(124, 58, 237, 0.2);
             padding: 0.2rem 0.4rem;
@@ -196,7 +181,7 @@
         <h1>Projets SQL & Analyse de Données</h1>
         <p class="subtitle">Requêtes complexes, CTEs, agrégations et automatisation de rapports décisionnels</p>
 
-        <!-- PROJET 1 : ADVENTUREWORKS (NOUVEAU) -->
+        <!-- PROJET 1 : ADVENTUREWORKS -->
         <div class="project-section">
             <h2>🛒 Analyse des Performances & Ventes (Base AdventureWorks)</h2>
             <p>
@@ -237,42 +222,7 @@
                 </div>
             </div>
 
-            <!-- Exemple de code SQL (Requête 15 : Rentabilité par produit) -->
-            <h3 style="color: #a855f7; margin-top: 2rem; margin-bottom: 0.5rem;">💻 Extrait de code : Analyse de la rentabilité par produit</h3>
-            <div class="code-container">
-                <pre><code>WITH CalculFinancier AS (
-    SELECT 
-        P.Name AS NomProduit,
-        SUM(SOD.LineTotal) AS ChiffreAffaires,
-        SUM(P.StandardCost * SOD.OrderQty) AS CoutTotal
-    FROM Sales.SalesOrderDetail SOD
-    INNER JOIN Production.Product P ON SOD.ProductID = P.ProductID
-    GROUP BY P.Name
-),
-MargeProduit AS (
-    SELECT 
-        NomProduit,
-        ChiffreAffaires,
-        CoutTotal,
-        (ChiffreAffaires - CoutTotal) AS BeneficeNet
-    FROM CalculFinancier
-)
-SELECT 
-    NomProduit,
-    ChiffreAffaires,
-    BeneficeNet,
-    CASE 
-        WHEN BeneficeNet > 500000 THEN '1 - Top rentabilité (> 500k)'
-        WHEN BeneficeNet BETWEEN 50000 AND 500000 THEN '2 - Bonne rentabilité'
-        WHEN BeneficeNet > 0 AND BeneficeNet < 50000 THEN '3 - Faible rentabilité'
-        ELSE '4 - En perte (Non rentable)'
-    END AS StatutRentabilite
-FROM MargeProduit
-ORDER BY BeneficeNet DESC;</code></pre>
-            </div>
-
-            <!-- Lien vers le fichier de script SQL s'il est présent à la racine -->
-            <a href="adventureworks.sql" target="_blank" class="btn-link">📂 Télécharger / Voir le fichier complet (adventureworks.sql)</a>
+            <a href="adventureworks.sql" target="_blank" class="btn-link">📂 Consulter le fichier SQL (adventureworks.sql)</a>
         </div>
 
         <!-- PROJET 2 : CHINOOK -->
