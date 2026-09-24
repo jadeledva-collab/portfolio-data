@@ -24,12 +24,12 @@
     }
     .back-link:hover { background: rgba(168, 85, 247, 0.2); transform: translateY(-2px); }
     .section-title {
-      font-size: 3rem; font-weight: 700; margin-bottom: 1rem;
+      font-size: 2.3rem; font-weight: 600; margin-bottom: 0.5rem;
       background: linear-gradient(135deg, #a855f7, #ec4899);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       text-align: center;
     }
-    .subtitle { font-size: 1.1rem; color: #a1a1aa; text-align: center; margin-bottom: 3rem; }
+    .subtitle { font-size: 1.05rem; color: #a1a1aa; text-align: center; margin-bottom: 3rem; }
     .project-card {
       background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px);
       border: 1px solid rgba(168, 85, 247, 0.1); border-radius: 20px;
@@ -72,11 +72,11 @@
     }
     .toggle-content.active { max-height: none; padding: 1.5rem; }
     .toggle-content p, .toggle-content li { color: #d4d4d8; line-height: 1.7; margin-bottom: 1rem; }
-    .toggle-content h2 { color: #ffffff; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+    .toggle-content h2 { color: #ffffff; margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem; font-weight: 500; }
     .toggle-content ul { margin-left: 1.5rem; margin-bottom: 1rem; }
     .download-link {
       display: inline-flex; align-items: center; gap: 0.5rem; color: #a855f7;
-      text-decoration: none; font-weight: 600; font-size: 0.9rem; padding: 0.75rem 1.25rem;
+      text-decoration: none; font-weight: 500; font-size: 0.9rem; padding: 0.75rem 1.25rem;
       background: rgba(168, 85, 247, 0.15); border-radius: 10px;
       border: 1px solid rgba(168, 85, 247, 0.3); margin-top: 1rem;
       transition: all 0.3s ease;
@@ -90,15 +90,15 @@
 <body>
   <div class="container">
     <div class="header">
-      <a href="index.html#projects" class="back-link">← Retour au Portfolio</a>
-      <h1 class="section-title">Agents IA & Automatisation</h1>
+      <a href="index.html#projects" class="back-link">← Retour au portfolio</a>
+      <h1 class="section-title">Agents IA & automatisation</h1>
       <p class="subtitle">Conception de workflows intelligents, architectures RAG et intégration de modèles génératifs</p>
     </div>
 
     <div class="project-card">
       <div class="project-header">
         <div class="project-number">AI</div>
-        <h3 class="project-title">LogiPro - Chatbot RAG & Automatisation</h3>
+        <h3 class="project-title">LogiPro - Chatbot RAG et automatisation</h3>
       </div>
       
       <p class="project-description">
@@ -107,7 +107,7 @@
 
       <div class="tech-stack">
         <span class="tech-tag">n8n</span>
-        <span class="tech-tag">Google Gemini AI</span>
+        <span class="badge" style="background: rgba(168, 85, 247, 0.1); color: #a855f7; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85Font-weight: 500; border: 1px solid rgba(168, 85, 247, 0.2);">Google Gemini AI</span>
         <span class="tech-tag">RAG Architecture</span>
         <span class="tech-tag">Vector Store</span>
       </div>
@@ -115,36 +115,36 @@
       <div class="project-toggles">
         <div class="toggle-section">
           <button class="toggle-btn" onclick="toggleSection(this)">
-            <span>⚙️ Architecture & Fonctionnement</span>
+            <span>Architecture et fonctionnement</span>
             <span class="toggle-arrow">▼</span>
           </button>
           <div class="toggle-content">
-            <h2>Objectif & Contexte du Projet</h2>
+            <h2>Objectif et contexte du projet</h2>
             <p>Le projet <strong>LogiPro</strong> automatise l'exploitation de documents d'entreprise en combinant l'automatisation de flux via n8n et l'intelligence artificielle générative pour permettre un dialogue fluide avec une base documentaire actualisée en temps réel.</p>
             
-            <h2>Workflow 1 : Ingestion et Vectorisation</h2>
+            <h2>Workflow 1 : ingestion et vectorisation</h2>
             <ul>
-              <li><strong>Déclencheur Google Drive :</strong> Surveillance continue d'un dossier cible pour détecter l'ajout ou la mise à jour de documents.</li>
-              <li><strong>Traitement & Découpage :</strong> Utilisation d'un séparateur de texte récursif pour segmenter proprement les fichiers.</li>
-              <li><strong>Embeddings :</strong> Vectorisation sémantique des données par Google Gemini.</li>
+              <li><strong>Déclencheur Google Drive :</strong> surveillance continue d'un dossier cible pour détecter l'ajout ou la mise à jour de documents.</li>
+              <li><strong>Traitement et découpage :</strong> utilisation d'un séparateur de texte récursif pour segmenter proprement les fichiers.</li>
+              <li><strong>Embeddings :</strong> vectorisation sémantique des données par Google Gemini.</li>
             </ul>
 
-            <h2>Workflow 2 : Chatbot RAG (Agent IA)</h2>
+            <h2>Workflow 2 : Chatbot RAG (agent IA)</h2>
             <ul>
-              <li><strong>Agent Conversationnel :</strong> Interface connectée au modèle de chat Google Gemini qui exploite la base vectorielle comme outil de recherche documentaire.</li>
+              <li><strong>Agent conversationnel :</strong> interface connectée au modèle de chat Google Gemini qui exploite la base vectorielle comme outil de recherche documentaire.</li>
             </ul>
           </div>
         </div>
         
         <div class="toggle-section">
           <button class="toggle-btn" onclick="toggleSection(this)">
-            <span>💻 Télécharger le Workflow JSON</span>
+            <span>Télécharger le workflow JSON</span>
             <span class="toggle-arrow">▼</span>
           </button>
           <div class="toggle-content">
             <p>Vous pouvez télécharger directement le fichier de configuration JSON de ce workflow pour l'importer dans n8n :</p>
             <a href="LogiPro%20-%20RAG%20Chatbot.json" class="download-link" download>
-              ⬇️ Télécharger le fichier .JSON du projet
+              Télécharger le fichier .JSON du projet
             </a>
           </div>
         </div>
