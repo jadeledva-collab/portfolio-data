@@ -28,7 +28,7 @@
             display: inline-block;
             color: #a855f7;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
             margin-bottom: 2rem;
             transition: color 0.3s ease;
         }
@@ -38,39 +38,50 @@
         }
 
         h1 {
-            font-size: 2.5rem;
-            color: #a855f7;
+            font-size: 2.3rem;
+            color: #ffffff;
             margin-bottom: 0.5rem;
             text-align: center;
+            font-weight: 600;
         }
 
         .subtitle {
             text-align: center;
-            color: #cccccc;
+            color: #a1a1aa;
             margin-bottom: 3rem;
+            font-size: 1.05rem;
         }
 
         .project-section {
-            background: rgba(0, 0, 0, 0.7);
-            border: 1px solid #7c3aed;
-            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            border-radius: 16px;
             padding: 2.5rem;
             margin-bottom: 2.5rem;
-            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.15);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         .project-section h2 {
-            color: #a855f7;
-            font-size: 1.8rem;
+            color: #ffffff;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
+            font-weight: 600;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
+        .project-section h2::before {
+            content: '—';
+            color: #a855f7;
+            font-weight: bold;
+        }
+
         .project-section p {
-            color: #cccccc;
+            color: #d4d4d8;
             margin-bottom: 1.5rem;
+            font-size: 0.95rem;
         }
 
         .details-grid {
@@ -81,9 +92,9 @@
         }
 
         .detail-box {
-            background: rgba(168, 85, 247, 0.08);
-            border: 1px solid rgba(124, 58, 237, 0.3);
-            border-radius: 10px;
+            background: rgba(168, 85, 247, 0.04);
+            border: 1px solid rgba(168, 85, 247, 0.15);
+            border-radius: 12px;
             padding: 1.5rem;
             display: flex;
             flex-direction: column;
@@ -92,10 +103,11 @@
 
         .detail-box h3 {
             color: #ffffff;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             margin-bottom: 0.8rem;
-            border-bottom: 1px solid #7c3aed;
+            border-bottom: 1px solid rgba(168, 85, 247, 0.2);
             padding-bottom: 0.4rem;
+            font-weight: 500;
         }
 
         .detail-box ul {
@@ -106,17 +118,20 @@
 
         .detail-box li {
             position: relative;
-            padding-left: 1.2rem;
+            padding-left: 1rem;
             margin-bottom: 0.5rem;
-            color: #cccccc;
-            font-size: 0.95rem;
+            color: #a1a1aa;
+            font-size: 0.9rem;
         }
 
         .detail-box li::before {
-            content: '▸';
+            content: '·';
             position: absolute;
             left: 0;
             color: #a855f7;
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1;
         }
 
         .tech-badges {
@@ -128,33 +143,35 @@
         }
 
         .badge {
-            background: rgba(168, 85, 247, 0.2);
+            background: rgba(168, 85, 247, 0.1);
             color: #a855f7;
             padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            font-weight: bold;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(168, 85, 247, 0.2);
         }
 
         .btn-link {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 8px 15px;
-            background: rgba(168, 85, 247, 0.2);
+            padding: 8px 16px;
+            background: rgba(168, 85, 247, 0.1);
             color: #a855f7;
             text-decoration: none;
             border-radius: 8px;
             font-size: 0.85rem;
-            font-weight: bold;
-            border: 1px solid rgba(168, 85, 247, 0.4);
+            font-weight: 500;
+            border: 1px solid rgba(168, 85, 247, 0.3);
             transition: all 0.3s ease;
             text-align: center;
             margin-top: 0.5rem;
         }
 
         .btn-link:hover {
-            background: #7c3aed;
+            background: rgba(168, 85, 247, 0.2);
+            border-color: rgba(168, 85, 247, 0.5);
             color: #ffffff;
         }
 
@@ -164,7 +181,7 @@
             object-fit: contain;
             border-radius: 8px;
             margin-top: 1rem;
-            border: 1px solid rgba(168, 85, 247, 0.3);
+            border: 1px solid rgba(168, 85, 247, 0.2);
             background: #000;
         }
 
@@ -173,7 +190,7 @@
                 padding: 1.5rem;
             }
             h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -183,14 +200,14 @@
     <div class="container">
         <a href="index.html" class="back-link">← Retour à l'accueil</a>
         
-        <h1>Visualisation & Data Intelligence</h1>
-        <p class="subtitle">Découvrez mes travaux en Business Intelligence et en Analyse Textuelle</p>
+        <h1>Visualisation et data intelligence</h1>
+        <p class="subtitle">Découvrez mes travaux en business intelligence et en analyse textuelle</p>
 
         <!-- PROJET 1 : ANALYSE IMMOBILIÈRE (DATAIMMO) -->
         <div class="project-section">
-            <h2>🏢 Analyse Immobilière & Pipeline BI (DataImmo)</h2>
+            <h2>Analyse immobilière et pipeline BI (DataImmo)</h2>
             <p>
-                Conception de bout en bout d'un pipeline de données orienté Business Intelligence sur le marché immobilier. Ce projet structuré permet de transformer des données foncières brutes en indicateurs stratégiques clairs pour la prise de décision.
+                Conception de bout en bout d'un pipeline de données orienté business intelligence sur le marché immobilier. Ce projet structuré permet de transformer des données foncières brutes en indicateurs stratégiques clairs pour la prise de décision.
             </p>
             
             <div class="tech-badges">
@@ -205,7 +222,7 @@
                 <!-- Boîte 1 : Modélisation & Architecture -->
                 <div class="detail-box">
                     <div>
-                        <h3>Modélisation & Architecture</h3>
+                        <h3>Modélisation et architecture</h3>
                         <ul>
                             <li>Création du dictionnaire de données et des tables relationnelles.</li>
                             <li>Gestion de la géographie, des départements, des communes et des transactions foncières.</li>
@@ -213,21 +230,21 @@
                         </ul>
                     </div>
                     <div>
-                        <a href="https://univtlnfr-my.sharepoint.com/:x:/g/personal/jade-le-devehat_etud_univ-tln_fr/IQCk2GGS1beiSardL0Z8DIDqAf2Dj6btAHZlkx8bU40CqFY?e=K9ksn4" target="_blank" class="btn-link">📥 Consulter le dictionnaire (.xlsx)</a>
-                        <a href="data/1_groupe_2_schema_122025.jpeg" target="_blank" class="btn-link">📂 Schéma conceptuel</a>
+                        <a href="https://univtlnfr-my.sharepoint.com/:x:/g/personal/jade-le-devehat_etud_univ-tln_fr/IQCk2GGS1beiSardL0Z8DIDqAf2Dj6btAHZlkx8bU40CqFY?e=K9ksn4" target="_blank" class="btn-link">Consulter le dictionnaire (.xlsx)</a>
+                        <a href="data/1_groupe_2_schema_122025.jpeg" target="_blank" class="btn-link">Schéma conceptuel</a>
                     </div>
                 </div>
 
                 <!-- Boîte 2 : Base de Données & Requêtes -->
                 <div class="detail-box">
                     <div>
-                        <h3>Base de Données & Requêtes</h3>
+                        <h3>Base de données et requêtes</h3>
                         <ul>
-                            <li>Scripts SQL et structuration des tables foncières (Immobilier).</li>
+                            <li>Scripts SQL et structuration des tables foncières (immobilier).</li>
                             <li>Documentation complète des requêtes d'analyse décisionnelle.</li>
                         </ul>
                     </div>
-                    <a href="data/BDD - SQL Ventes Biens.pdf" target="_blank" class="btn-link">📄 Rapport SQL & BDD (.pdf)</a>
+                    <a href="data/BDD - SQL Ventes Biens.pdf" target="_blank" class="btn-link">Rapport SQL & BDD (.pdf)</a>
                 </div>
 
                 <!-- Boîte 3 : Power BI -->
@@ -238,31 +255,31 @@
                             <li>Rapports décisionnels et tableaux de bord interactifs en ligne.</li>
                         </ul>
                     </div>
-                    <a href="https://app.powerbi.com/groups/me/reports/58cccfb3-bf32-4336-8b38-ea4184d92fb5/164588408cbd67b8cef1?experience=power-bi" target="_blank" class="btn-link">📊 Voir le Rapport Power BI</a>
+                    <a href="https://app.powerbi.com/groups/me/reports/58cccfb3-bf32-4336-8b38-ea4184d92fb5/164588408cbd67b8cef1?experience=power-bi" target="_blank" class="btn-link">Voir le rapport Power BI</a>
                 </div>
 
                 <!-- Boîte 4 : Knime -->
                 <div class="detail-box">
                     <div>
-                        <h3>Pipeline & ETL (Knime)</h3>
+                        <h3>Pipeline et ETL (Knime)</h3>
                         <ul>
                             <li>Automatisation des flux de nettoyage et de transformation sous Knime.</li>
                         </ul>
                     </div>
-                    <a href="data/1_groupe_5_knime_122025.knwf" target="_blank" class="btn-link">⚙️ Fichier Knime (.knwf)</a>
+                    <a href="data/1_groupe_5_knime_122025.knwf" target="_blank" class="btn-link">Fichier Knime (.knwf)</a>
                 </div>
 
                 <!-- Boîte 5 : Streamlit -->
                 <div class="detail-box">
                     <div>
-                        <h3>Application Web (Streamlit)</h3>
+                        <h3>Application web (Streamlit)</h3>
                         <ul>
                             <li>Application interactive déployée pour la restitution des indicateurs.</li>
                         </ul>
                     </div>
                     <div>
-                        <a href="https://app-hrsxhu2fu3iw398tanvjt6.streamlit.app/" target="_blank" class="btn-link">🌐 Lancer l'App Streamlit</a>
-                        <a href="data/1_groupe_6_streamlit_122025.pdf" target="_blank" class="btn-link">📄 Rapport Streamlit (.pdf)</a>
+                        <a href="https://app-hrsxhu2fu3iw398tanvjt6.streamlit.app/" target="_blank" class="btn-link">Lancer l'app Streamlit</a>
+                        <a href="data/1_groupe_6_streamlit_122025.pdf" target="_blank" class="btn-link">Rapport Streamlit (.pdf)</a>
                     </div>
                 </div>
             </div>
@@ -270,7 +287,7 @@
 
         <!-- PROJET 2 : TABLEAU DE BORD INTERACTIF (BUSINESS INTELLIGENCE) -->
         <div class="project-section">
-            <h2>📊 Tableau de Bord Interactif des Performances Commerciales</h2>
+            <h2>Tableau de bord interactif des performances commerciales</h2>
             <p>
                 <strong>Problématique métier :</strong> Une entreprise souhaite disposer d'un tableau de bord interactif pour suivre ses performances commerciales en temps réel.
             </p>
@@ -288,18 +305,18 @@
             <div class="details-grid">
                 <div class="detail-box">
                     <div>
-                        <h3>Compétences & Réalisation</h3>
+                        <h3>Compétences et réalisation</h3>
                         <ul>
                             <li>Création de tableaux de bord interactifs avec filtres dynamiques (slicers).</li>
                             <li>Visualisation avancée : graphiques temporels, cartographiques et combinés.</li>
                             <li>Structuration et modélisation des données pour un suivi opérationnel fluide.</li>
                         </ul>
                     </div>
-                    <a href="https://app.powerbi.com/groups/me/reports/2490460f-9d14-4c26-b282-ffbfc0419719/54e535800c2d60a1b167?experience=power-bi" target="_blank" class="btn-link">🔗 Voir le Tableau de Bord</a>
+                    <a href="https://app.powerbi.com/groups/me/reports/2490460f-9d14-4c26-b282-ffbfc0419719/54e535800c2d60a1b167?experience=power-bi" target="_blank" class="btn-link">Voir le tableau de bord</a>
                 </div>
                 <div class="detail-box">
                     <div>
-                        <h3>Synthèse & Impact</h3>
+                        <h3>Synthèse et impact</h3>
                         <ul>
                             <li>Suivi en direct de la santé financière et du chiffre d'affaires global.</li>
                             <li>Identification visuelle des zones géographiques sous-performantes et des tops produits.</li>
@@ -312,7 +329,7 @@
 
         <!-- PROJET 3 : ANALYSE TEXTUELLE IRAMUTEQ -->
         <div class="project-section">
-            <h2>📑 Analyse Textuelle & NLP (Corpus Médias & Soudan)</h2>
+            <h2>Analyse textuelle et NLP (Corpus médias et Soudan)</h2>
             <p>
                 Traitement et analyse statistique textuelle approfondie d'un corpus médiatique complexe à l'aide du logiciel Iramuteq. L'objectif est d'extraire automatiquement les structures sémantiques, les réseaux de cooccurrences et les thématiques dominantes du discours de presse.
             </p>
@@ -327,23 +344,23 @@
             <div class="details-grid">
                 <div class="detail-box">
                     <div>
-                        <h3>Graphique de Similarité</h3>
+                        <h3>Graphique de similarité</h3>
                         <ul>
                             <li>Analyse des réseaux de cooccurrences et liens sémantiques forts du corpus[cite: 9].</li>
                         </ul>
                     </div>
                     <img src="data/graph_simi_1.png" alt="Graphique de similarité Iramuteq" class="project-image">
-                    <a href="data/graph_simi_1.png" target="_blank" class="btn-link" style="margin-top: 1rem;">🔍 Agrandir le graphique</a>
+                    <a href="data/graph_simi_1.png" target="_blank" class="btn-link" style="margin-top: 1rem;">Agrandir le graphique</a>
                 </div>
                 <div class="detail-box">
                     <div>
-                        <h3>Nuage de Mots</h3>
+                        <h3>Nuage de mots</h3>
                         <ul>
                             <li>Visualisation synthétique des termes les plus fréquents de la presse[cite: 10].</li>
                         </ul>
                     </div>
                     <img src="data/nuage_1.png" alt="Nuage de mots Iramuteq" class="project-image">
-                    <a href="data/nuage_1.png" target="_blank" class="btn-link" style="margin-top: 1rem;">☁️ Agrandir le nuage de mots</a>
+                    <a href="data/nuage_1.png" target="_blank" class="btn-link" style="margin-top: 1rem;">Agrandir le nuage de mots</a>
                 </div>
             </div>
         </div>
