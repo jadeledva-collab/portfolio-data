@@ -1,0 +1,13 @@
+[spec]
+type = spec
+lem = 1
+mineff = 10
+indice = hypergeo
+typeformes = 0
+clnb = 2
+pathout = C:\Users\jadel\Downloads\irmtq_corpus_1\irmtq_spec_1
+corpus = 0277ecfe-b552-4ee0-bcc8-2acdb7ed5439
+uuid = 1e34893b-24c8-4a83-b9eb-30dd11b65a76
+name = irmtq_spec_1
+ira = C:\Users\jadel\Downloads\irmtq_corpus_1\irmtq_spec_1\Analyse.ira
+time = 0h 0m 3s
