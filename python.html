@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projets Python & Data Analysis - Jade Le Dévéhat</title>
+    <title>Projets Python, Data Analysis & Machine Learning - Jade Le Dévéhat</title>
     <style>
         * {
             margin: 0;
@@ -172,8 +172,10 @@
     <div class="container">
         <a href="index.html" class="back-link">← Retour à l'accueil</a>
         
-        <h1>Projets Python & Data Analysis</h1>
-        <p class="subtitle">Exploration, statistiques descriptives, analyse bivariée et tests statistiques avancés</p>
+        <h1>Mes Projets Python, Data Analysis & Machine Learning</h1>
+        <p class="subtitle">Exploration, statistiques descriptives, tests avancés et modèles prédictifs</p>
+
+        <!-- ================= ANCIENS PROJETS ================= -->
 
         <!-- PERFORMANCE DES EMPLOYÉS -->
         <div class="project-section">
@@ -295,6 +297,218 @@
                             <li>Validation de l'indépendance entre la satisfaction et le département d'appartenance.</li>
                             <li>Mise en place de sessions de calibrage managérial pour harmoniser les critères d'évaluation.</li>
                             <li>Démonstration de l'absence d'impact statistique des heures supplémentaires sur la performance réelle.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= NOUVEAUX PROJETS (MACHINE LEARNING) ================= -->
+
+        <!-- PROJET 6 : PROFIL DES VINS (ACP) -->
+        <div class="project-section">
+            <h2>🍷 Profil des Vins & Réduction de Dimensionnalité (ACP)</h2>
+            <p>
+                <strong>Problématique métier :</strong> Identifier les axes clés de différenciation entre profils de vins pour personnaliser les recommandations et optimiser l'analyse de qualité.
+            </p>
+            <p>
+                <strong>Objectif :</strong> Réduire la dimensionnalité d'un dataset complexe tout en maximisant la variance expliquée pour visualiser les structures cachées.
+            </p>
+            
+            <div class="tech-badges">
+                <span class="badge">Python</span>
+                <span class="badge">Scikit-Learn</span>
+                <span class="badge">ACP (PCA)</span>
+                <span class="badge">Wine Quality Dataset</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <div>
+                        <h3>Compétences & Analyses</h3>
+                        <ul>
+                            <li>Standardisation des données et matrice de corrélation.</li>
+                            <li>Application de l'Analyse en Composantes Principales (ACP).</li>
+                            <li>Visualisation 2D/3D et interprétation des axes factoriels.</li>
+                        </ul>
+                    </div>
+                    <a href="https://colab.research.google.com/drive/1IiYAhqxO0vFlGeL5o8n38kfJ6l2LgtgY" target="_blank" class="btn-link">🔗 Ouvrir sur Google Colab</a>
+                </div>
+                <div class="detail-box">
+                    <div>
+                        <h3>Base de données & Insights</h3>
+                        <ul>
+                            <li><strong>Dataset :</strong> Wine Quality Dataset.</li>
+                            <li>Mise en évidence des composantes principales liant l'acidité et la teneur en alcool.</li>
+                            <li>Synthèse claire des critères physico-chimiques déterminants.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJET 9 : SEGMENTATION CLIENTS (CLUSTERING) -->
+        <div class="project-section">
+            <h2>🎯 Segmentation Clients & Clustering Non Supervisé</h2>
+            <p>
+                <strong>Problématique métier :</strong> Regrouper les clients d'un centre commercial en segments homogènes pour adapter les campagnes marketing ciblées.
+            </p>
+            <p>
+                <strong>Objectif :</strong> Segmenter la clientèle en fonction de leurs revenus et de leurs scores de dépenses sans étiquettes préalables.
+            </p>
+            
+            <div class="tech-badges">
+                <span class="badge">Python</span>
+                <span class="badge">K-Means / CAH</span>
+                <span class="badge">Clustering</span>
+                <span class="badge">Mall Customers Dataset</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <div>
+                        <h3>Compétences & Méthodologie</h3>
+                        <ul>
+                            <li>Utilisation de la méthode du coude (Elbow Method) pour déterminer k.</li>
+                            <li>Algorithmes de clustering : K-Means, Clustering Hiérarchique (CAH).</li>
+                            <li>Évaluation de la qualité des clusters via le score de silhouette.</li>
+                        </ul>
+                    </div>
+                    <a href="https://colab.research.google.com/drive/158shlP7TCvgtphH4trhHsfeITjftAly_" target="_blank" class="btn-link">🔗 Ouvrir sur Google Colab</a>
+                </div>
+                <div class="detail-box">
+                    <div>
+                        <h3>Résultats & Recommandations</h3>
+                        <ul>
+                            <li>Identification de personae clés (ex: clients à hauts revenus et forte dépense).</li>
+                            <li>Aide à la décision marketing pour cibler les programmes de fidélité.</li>
+                            <li>Visualisation claire des frontières de clusters par projection spatiale.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJET 10 : PRIX DES MAISONS (RÉGRESSION) -->
+        <div class="project-section">
+            <h2>🏠 Prédiction des Prix des Maisons (Modèle de Régression)</h2>
+            <p>
+                <strong>Problématique métier :</strong> Estimer avec précision la valeur marchande de biens immobiliers pour guider les investisseurs et acheteurs.
+            </p>
+            <p>
+                <strong>Objectif :</strong> Entraîner un modèle de régression supervisée capable de prédire une variable continue à partir de caractéristiques socio-économiques et structurelles.
+            </p>
+            
+            <div class="tech-badges">
+                <span class="badge">Python</span>
+                <span class="badge">Scikit-Learn</span>
+                <span class="badge">Régression Linéaire</span>
+                <span class="badge">Boston Housing / Housing Dataset</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <div>
+                        <h3>Compétences & Modélisation</h3>
+                        <ul>
+                            <li>Prétraitement des données, gestion des valeurs manquantes et encodage.</li>
+                            <li>Entraînement de modèles (Régression linéaire, Ridge/Lasso).</li>
+                            <li>Évaluation des performances via R², RMSE et MSE.</li>
+                        </ul>
+                    </div>
+                    <a href="METTRE_ICI_LE_LIEN_COLAB_10" target="_blank" class="btn-link">🔗 Ouvrir sur Google Colab</a>
+                </div>
+                <div class="detail-box">
+                    <div>
+                        <h3>Analyse & Interprétation</h3>
+                        <ul>
+                            <li>Analyse des résidus pour valider les hypothèses du modèle.</li>
+                            <li>Identification des variables ayant le plus fort poids sur l'estimation du prix.</li>
+                            <li>Recommandations sur l'optimisation des caractéristiques des biens.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJET 11 : DÉFAUTS DE PAIEMENT (RÉGRESSION LOGISTIQUE) -->
+        <div class="project-section">
+            <h2>💳 Prédiction des Défauts de Paiement (Classification Binaire)</h2>
+            <p>
+                <strong>Problématique métier :</strong> Anticiper le risque de défaut de paiement sur des cartes de crédit afin de minimiser les pertes financières de l'institution bancaire.
+            </p>
+            <p>
+                <strong>Objectif :</strong> Modéliser la probabilité qu'un client fasse face à un défaut de paiement à l'aide de caractéristiques financières et historiques.
+            </p>
+            
+            <div class="tech-badges">
+                <span class="badge">Python</span>
+                <span class="badge">Régression Logistique</span>
+                <span class="badge">Classification</span>
+                <span class="badge">Credit Card Dataset</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <div>
+                        <h3>Compétences & Évaluation</h3>
+                        <ul>
+                            <li>Classification binaire et estimation de probabilités.</li>
+                            <li>Analyse de la matrice de confusion, précision et rappel (Recall).</li>
+                            <li>Courbe ROC et calcul de l'aire sous la courbe (AUC-ROC).</li>
+                        </ul>
+                    </div>
+                    <a href="METTRE_ICI_LE_LIEN_COLAB_11" target="_blank" class="btn-link">🔗 Ouvrir sur Google Colab</a>
+                </div>
+                <div class="detail-box">
+                    <div>
+                        <h3>Insights & Risques</h3>
+                        <ul>
+                            <li>Mesure de l'impact du taux d'utilisation du crédit sur le risque de défaut.</li>
+                            <li>Arbitrage entre faux positifs et faux négatifs selon la politique de risque de la banque.</li>
+                            <li>Optimisation du seuil de décision du modèle.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJET 12 : PRÉVISION DES VENTES (SÉRIES TEMPORELLES) -->
+        <div class="project-section">
+            <h2>📈 Prévision des Ventes (Séries Temporelles)</h2>
+            <p>
+                <strong>Problématique métier :</strong> Anticiper les volumes de ventes futurs de différents magasins pour optimiser la gestion des stocks et la chaîne logistique.
+            </p>
+            <p>
+                <strong>Objectif :</strong> Analyser l'historique temporel des ventes pour modéliser la tendance, la cyclicité et la saisonnalité.
+            </p>
+            
+            <div class="tech-badges">
+                <span class="badge">Python</span>
+                <span class="badge">Séries Temporelles</span>
+                <span class="badge">ARIMA / Prophet</span>
+                <span class="badge">Store Sales Dataset</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <div>
+                        <h3>Compétences & Méthodologie</h3>
+                        <ul>
+                            <li>Manipulation d'index temporels (Pandas Datetime).</li>
+                            <li>Décomposition de séries temporelles (Tendance, Saisonnalité, Résidus).</li>
+                            <li>Modélisation prédictive (ARIMA, SARIMAX ou Prophet).</li>
+                        </ul>
+                    </div>
+                    <a href="METTRE_ICI_LE_LIEN_COLAB_12" target="_blank" class="btn-link">🔗 Ouvrir sur Google Colab</a>
+                </div>
+                <div class="detail-box">
+                    <div>
+                        <h3>Résultats & Planification</h3>
+                        <ul>
+                            <li>Mise en évidence des pics de ventes saisonniers (périodes de fêtes).</li>
+                            <li>Génération d'intervalles de confiance pour les prévisions à moyen terme.</li>
+                            <li>Aide opérationnelle au dimensionnement des équipes et des stocks.</li>
                         </ul>
                     </div>
                 </div>
