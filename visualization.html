@@ -85,6 +85,9 @@
             border: 1px solid rgba(124, 58, 237, 0.3);
             border-radius: 10px;
             padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .detail-box h3 {
@@ -98,6 +101,7 @@
         .detail-box ul {
             list-style-type: none;
             padding-left: 0;
+            margin-bottom: 1.5rem;
         }
 
         .detail-box li {
@@ -120,6 +124,7 @@
             gap: 0.5rem;
             flex-wrap: wrap;
             margin-top: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .badge {
@@ -129,6 +134,27 @@
             border-radius: 15px;
             font-size: 0.85rem;
             font-weight: bold;
+        }
+
+        .btn-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 8px 15px;
+            background: rgba(168, 85, 247, 0.2);
+            color: #a855f7;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            border: 1px solid rgba(168, 85, 247, 0.4);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-link:hover {
+            background: #7c3aed;
+            color: #ffffff;
         }
 
         @media (max-width: 768px) {
@@ -147,7 +173,7 @@
         <a href="index.html" class="back-link">← Retour à l'accueil</a>
         
         <h1>Visualisation & Data Intelligence</h1>
-        <p class="subtitle">Découvrez l'ensemble de mes travaux en Business Intelligence et en Analyse Textuelle</p>
+        <p class="subtitle">Découvrez mes travaux en Business Intelligence et en Analyse Textuelle</p>
 
         <!-- PROJET 1 : ANALYSE IMMOBILIÈRE -->
         <div class="project-section">
@@ -166,20 +192,26 @@
 
             <div class="details-grid">
                 <div class="detail-box">
-                    <h3>Modélisation & Architecture</h3>
-                    <ul>
-                        <li>Création du dictionnaire de données et des tables relationnelles.</li>
-                        <li>Gestion de la géographie, des départements, des communes et des transactions foncières.</li>
-                        <li>Respect rigoureux des normes du Code Officiel Géographique (COG) de l'INSEE.</li>
-                    </ul>
+                    <div>
+                        <h3>Modélisation & Architecture</h3>
+                        <ul>
+                            <li>Création du dictionnaire de données et des tables relationnelles.</li>
+                            <li>Gestion de la géographie, des départements, des communes et des transactions foncières.</li>
+                            <li>Respect rigoureux des normes du Code Officiel Géographique (COG) de l'INSEE.</li>
+                        </ul>
+                    </div>
+                    <a href="1_groupe_1_dictionnaire_de_donnees_122025.xlsx" target="_blank" class="btn-link">📥 Voir le dictionnaire (.xlsx)</a>
                 </div>
                 <div class="detail-box">
-                    <h3>Traitement & Restitution (BI)</h3>
-                    <ul>
-                        <li>Automatisation des flux de nettoyage sous Knime.</li>
-                        <li>Requêtes SQL complexes et optimisées pour l'extraction de métriques clés.</li>
-                        <li>Tableaux de bord interactifs (Power BI) et application web interactive (Streamlit) pour restituer l'analyse visuelle des prix et volumes.</li>
-                    </ul>
+                    <div>
+                        <h3>Traitement & Restitution (BI)</h3>
+                        <ul>
+                            <li>Automatisation des flux de nettoyage sous Knime.</li>
+                            <li>Requêtes SQL complexes et optimisées pour l'extraction de métriques clés.</li>
+                            <li>Tableaux de bord interactifs (Power BI) et application web interactive (Streamlit).</li>
+                        </ul>
+                    </div>
+                    <a href="1_groupe_2_schema_122025.jpeg" target="_blank" class="btn-link">📂 Voir le schéma conceptuel</a>
                 </div>
             </div>
         </div>
@@ -200,20 +232,26 @@
 
             <div class="details-grid">
                 <div class="detail-box">
-                    <h3>Préparation du Corpus</h3>
-                    <ul>
-                        <li>Structuration des données textuelles brutes et découpage en Unités Contextuelles Élémentaires (UCE).</li>
-                        <li>Lemmatisation, gestion des formes actives et des variables illustratives.</li>
-                        <li>Analyse quantitative initiale (effectifs de formes, hapax, occurrences globales).</li>
-                    </ul>
+                    <div>
+                        <h3>Préparation du Corpus</h3>
+                        <ul>
+                            <li>Structuration des données textuelles brutes et découpage en Unités Contextuelles Élémentaires (UCE).</li>
+                            <li>Lemmatisation, gestion des formes actives et des variables illustratives.</li>
+                            <li>Analyse quantitative initiale (effectifs de formes, hapax, occurrences globales).</li>
+                        </ul>
+                    </div>
+                    <a href="Corpus.cira" target="_blank" class="btn-link">🔍 Consulter le fichier .cira</a>
                 </div>
                 <div class="detail-box">
-                    <h3>Analyses & Visualisations</h3>
-                    <ul>
-                        <li>Génération de graphiques de similarité lexicale et réseaux de cooccurrences.</li>
-                        <li>Mise en place de classifications hiérarchiques et nuages de mots synthétiques.</li>
-                        <li>Étude des spécificités textuelles pour comprendre la couverture médiatique de la crise.</li>
-                    </ul>
+                    <div>
+                        <h3>Analyses & Visualisations</h3>
+                        <ul>
+                            <li>Génération de graphiques de similarité lexicale et réseaux de cooccurrences.</li>
+                            <li>Mise en place de classifications hiérarchiques et nuages de mots synthétiques.</li>
+                            <li>Étude des spécificités textuelles pour comprendre la couverture médiatique de la crise.</li>
+                        </ul>
+                    </div>
+                    <a href="corpus.db" target="_blank" class="btn-link">📂 Consulter la base corpus.db</a>
                 </div>
             </div>
         </div>
