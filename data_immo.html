@@ -65,6 +65,9 @@
       border: 1px solid rgba(168, 85, 247, 0.2);
       border-radius: 12px;
       padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     .deliverable-item h4 {
       color: #a855f7;
@@ -74,7 +77,24 @@
     .deliverable-item p {
       color: #d4d4d8;
       font-size: 0.9rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
+    }
+    .btn-download {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: rgba(168, 85, 247, 0.2);
+      color: #a855f7;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: center;
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      transition: all 0.3s ease;
+    }
+    .btn-download:hover {
+      background: #a855f7;
+      color: #ffffff;
     }
   </style>
 </head>
@@ -93,7 +113,7 @@
       </div>
       
       <p class="project-description">
-        Mise en place d'un pipeline de données complet centré sur le marché immobilier. Le projet intègre la phase amont de conception (dictionnaire de données et modélisation), l'ingestion et les requêtes SQL, l'automatisation des traitements (Knime), la restitution sous forme de tableaux de bord décisionnels (Power BI) et le déploiement d'une application interactive (Streamlit).
+        Mise en place d'un pipeline de données complet centré sur le marché immobilier[cite: 1]. Le projet intègre la phase amont de conception (dictionnaire de données[cite: 1] et modélisation), l'ingestion et les requêtes SQL, l'automatisation des traitements (Knime), la restitution sous forme de tableaux de bord décisionnels (Power BI) et le déploiement d'une application interactive (Streamlit).
       </p>
 
       <div class="tech-stack">
@@ -104,23 +124,35 @@
         <span class="tech-tag">Excel</span>
       </div>
 
-      <h3 style="color: #ffffff; margin-bottom: 1rem; font-size: 1.2rem;">Composants Techniques du Projet :</h3>
+      <h3 style="color: #ffffff; margin-bottom: 1rem; font-size: 1.2rem;">Livrables & Fichiers du Projet :</h3>
       <div class="deliverables-grid">
         <div class="deliverable-item">
-          <h4>1. Modélisation & Dictionnaire</h4>
-          <p>Structuration des tables, dictionnaire des variables et schémas relationnels.</p>
+          <div>
+            <h4>1. Modélisation & Dictionnaire</h4>
+            <p>Structuration des tables, dictionnaire des variables[cite: 1] et schémas relationnels.</p>
+          </div>
+          <a href="1_groupe_1_dictionnaire_de_donnees_122025.xlsx" class="btn-download" download>Télécharger le dictionnaire (.xlsx)[cite: 1]</a>
         </div>
         <div class="deliverable-item">
-          <h4>2. Base de Données & SQL</h4>
-          <p>Création de la base et requêtage avancé pour l'extraction et l'analyse des ventes.</p>
+          <div>
+            <h4>2. Schéma & Architecture</h4>
+            <p>Visualisation de l'architecture de la base de données et des liaisons.</p>
+          </div>
+          <a href="1_groupe_2_schema_122025.jpeg" class="btn-download" target="_blank">Voir le schéma (.jpeg)[cite: 1]</a>
         </div>
         <div class="deliverable-item">
-          <h4>3. Business Intelligence (Power BI)</h4>
-          <p>Création de rapports visuels et dynamiques pour le suivi des indicateurs clés.</p>
+          <div>
+            <h4>3. Business Intelligence (Power BI)</h4>
+            <p>Rapports visuels, mesures DAX et tableaux de bord interactifs.</p>
+          </div>
+          <a href="4_PowerBI_012026/" class="btn-download" target="_blank">Consulter le dossier Power BI[cite: 1]</a>
         </div>
         <div class="deliverable-item">
-          <h4>4. Traitement & Application (Knime / Streamlit)</h4>
-          <p>Workflows d'automatisation et interface applicative interactive de restitution.</p>
+          <div>
+            <h4>4. Workflow & Application</h4>
+            <p>Automatisation sous Knime[cite: 1] et restitution interactive via Streamlit[cite: 1].</p>
+          </div>
+          <a href="1_groupe_6_streamlit_122025.pdf" class="btn-download" target="_blank">Voir le rapport Streamlit (.pdf)[cite: 1]</a>
         </div>
       </div>
     </div>
