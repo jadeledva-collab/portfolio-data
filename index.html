@@ -262,6 +262,42 @@
             border-color: var(--primary-color);
         }
 
+        /* Architecture / Code Terminal Style (Cookiecutter Inspired) */
+        .architecture-box {
+            background: #020202;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 2rem;
+            font-family: 'Courier New', Courier, monospace;
+            color: #d4d4d8;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            position: relative;
+            overflow-x: auto;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            margin-top: 1.5rem;
+        }
+
+        .architecture-box::before {
+            content: 'structure_projet.tree';
+            position: absolute;
+            top: 12px;
+            right: 20px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        .folder {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .comment {
+            color: #71717a;
+            font-style: italic;
+        }
+
         /* Projects Section */
         .projects-grid {
             display: grid;
@@ -570,6 +606,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Accueil</a></li>
                 <li><a href="#about">À propos</a></li>
+                <li><a href="#architecture">Architecture</a></li>
                 <li><a href="#projects">Projets</a></li>
                 <li><a href="#resume">Parcours</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -657,10 +694,31 @@
         </div>
     </section>
 
+    <!-- Architecture Section (Cookiecutter Data Science inspired) -->
+    <section id="architecture" class="section alt">
+        <div class="container">
+            <h2 class="section-title"><span>02.</span> Standards & reproductibilité</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.95rem;">
+                Inspirée des standards de l'ingénierie des données (type Cookiecutter Data Science), chaque analyse est structurée selon une architecture modulaire garantissant la traçabilité et la reproductibilité des résultats.
+            </p>
+            
+            <div class="architecture-box">
+                <div>📁 <span class="folder">data/</span></div>
+                <div style="padding-left: 20px;">├── <span class="folder">raw/</span> <span class="comment"># Données brutes immuables d'origine</span></div>
+                <div style="padding-left: 20px;">├── <span class="folder">interim/</span> <span class="comment"># Données intermédiaires transformées</span></div>
+                <div style="padding-left: 20px;">└── <span class="folder">processed/</span> <span class="comment"># Jeux de données finaux pour la modélisation</span></div>
+                <div>📁 <span class="folder">notebooks/</span> <span class="comment"># Carnets d'expérimentation chronologiques</span></div>
+                <div>📁 <span class="folder">reports/</span> <span class="comment"># Rapports générés et visualisations exportées</span></div>
+                <div>📄 <span style="color: #eab308;">Makefile</span> <span class="comment"># Commandes d'automatisation des pipelines</span></div>
+                <div>📄 <span style="color: #eab308;">requirements.txt</span> <span class="comment"># Isolation et gestion de l'environnement</span></div>
+            </div>
+        </div>
+    </section>
+
     <!-- Projects Section -->
     <section id="projects" class="section">
         <div class="container">
-            <h2 class="section-title"><span>02.</span> Domaines de projets</h2>
+            <h2 class="section-title"><span>03.</span> Domaines de projets</h2>
             <div class="projects-grid">
                 <div class="project-category-card">
                     <div>
@@ -702,9 +760,9 @@
     </section>
 
     <!-- Resume Section -->
-    <section id="resume" class="section">
+    <section id="resume" class="section alt">
         <div class="container">
-            <h2 class="section-title"><span>03.</span> Parcours & Formation</h2>
+            <h2 class="section-title"><span>04.</span> Parcours & Formation</h2>
             <div class="resume-container">
                 
                 <div class="resume-section">
@@ -782,19 +840,19 @@
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
-            <h2 class="section-title"><span>04.</span> Me contacter</h2>
+            <h2 class="section-title"><span>05.</span> Me contacter</h2>
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
                         <div>
                             <strong>Email</strong>
-                            <p>jade.ledva@gmailcom</p>
+                            <p>jade.ledva@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <div>
-                            <strong>Toulon</strong>
-                            <p>France</p>
+                            <strong>Localisation</strong>
+                            <p>Toulon, France</p>
                         </div>
                     </div>
                     <div class="contact-item">
