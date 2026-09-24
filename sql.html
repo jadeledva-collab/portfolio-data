@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projet SQL - Base Chinook - Jade Le Dévéhat</title>
+    <title>Projets SQL Avancé - Jade Le Dévéhat</title>
     <style>
         * {
             margin: 0;
@@ -136,6 +136,29 @@
             font-weight: bold;
         }
 
+        .code-container {
+            background: #1e1e1e;
+            border-radius: 8px;
+            padding: 1.5rem;
+            overflow-x: auto;
+            margin-top: 1rem;
+            border: 1px solid #7c3aed;
+        }
+
+        pre {
+            color: #9cdcfe;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+        }
+
+        code {
+            background: rgba(124, 58, 237, 0.2);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #e9d5ff;
+        }
+
         .btn-link {
             display: inline-flex;
             align-items: center;
@@ -155,12 +178,13 @@
             box-shadow: 0 5px 15px rgba(168, 85, 247, 0.4);
         }
 
-        code {
-            background: rgba(124, 58, 237, 0.2);
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            font-family: monospace;
-            color: #e9d5ff;
+        @media (max-width: 768px) {
+            .project-section {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
@@ -169,21 +193,100 @@
     <div class="container">
         <a href="index.html" class="back-link">← Retour à l'accueil</a>
         
-        <h1>Projet SQL : Automatisation & Analyse des Ventes</h1>
-        <p class="subtitle">Exploitation de la base de données relationnelle Chinook avec SQLite</p>
+        <h1>Projets SQL & Analyse de Données</h1>
+        <p class="subtitle">Requêtes complexes, CTEs, agrégations et automatisation de rapports décisionnels</p>
 
-        <!-- PROJET CHINOOK -->
+        <!-- PROJET 1 : ADVENTUREWORKS (NOUVEAU) -->
         <div class="project-section">
-            <h2>🗄️ Analyse et Reporting des Ventes (Base Chinook)</h2>
+            <h2>🛒 Analyse des Performances & Ventes (Base AdventureWorks)</h2>
             <p>
-                <strong>Problématique métier :</strong> Une entreprise souhaite produire un rapport détaillé sur les ventes totales par produit, par région et par agent pour le dernier trimestre afin d'évaluer les performances commerciales.
+                <strong>Problématique métier :</strong> L'entreprise souhaite analyser ses performances en termes de ventes, de produits, de régions et de segments de clients afin de produire des rapports automatisés et d'optimiser ses décisions commerciales.
             </p>
             <p>
-                <strong>Objectif :</strong> Utiliser SQL pour extraire, filtrer, croiser et agréger les données nécessaires à l'aide d'un environnement SQLite et de requêtes optimisées.
+                <strong>Objectif :</strong> Exploiter la base de données relationnelle <em>AdventureWorks</em> pour analyser les ventes, identifier la rentabilité des produits, calculer des KPI clés (revenu moyen par client, performance des agents) et structurer des requêtes complexes.
             </p>
             
             <div class="tech-badges">
                 <span class="badge">SQL Avancé</span>
+                <span class="badge">T-SQL / SQL Server</span>
+                <span class="badge">Jointures Complexes (INNER/LEFT JOIN)</span>
+                <span class="badge">CTEs & Sous-requêtes</span>
+                <span class="badge">AdventureWorks Dataset</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <div>
+                        <h3>Compétences & Réalisations</h3>
+                        <ul>
+                            <li><strong>Ventes & Régions :</strong> Analyse des ventes par territoire pour l'année 2014 et suivi temporel sur 12 mois.</li>
+                            <li><strong>Segmentation & Scoring :</strong> Création de segments clients basés sur le montant total dépensé (bas, moyen, élevé) et identification du Top 10 clients.</li>
+                            <li><strong>Analyse multicanal :</strong> Distinction et comparaison des achats en ligne versus en magasin.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="detail-box">
+                    <div>
+                        <h3>Rentabilité & Optimisation</h3>
+                        <ul>
+                            <li><strong>Top Produits & Rentabilité :</strong> Identification des produits les plus rentables (générateurs de revenus) et mise en place d'une catégorisation par seuil de marge nette via <code>CASE</code>.</li>
+                            <li><strong>Performance RH :</strong> Calcul des volumes de ventes globaux réalisés par chaque agent commercial.</li>
+                            <li><strong>Qualité & Logistique :</strong> Suivi des quantités achetées et calcul des taux de retour / rejet des produits.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exemple de code SQL (Requête 15 : Rentabilité par produit) -->
+            <h3 style="color: #a855f7; margin-top: 2rem; margin-bottom: 0.5rem;">💻 Extrait de code : Analyse de la rentabilité par produit</h3>
+            <div class="code-container">
+                <pre><code>WITH CalculFinancier AS (
+    SELECT 
+        P.Name AS NomProduit,
+        SUM(SOD.LineTotal) AS ChiffreAffaires,
+        SUM(P.StandardCost * SOD.OrderQty) AS CoutTotal
+    FROM Sales.SalesOrderDetail SOD
+    INNER JOIN Production.Product P ON SOD.ProductID = P.ProductID
+    GROUP BY P.Name
+),
+MargeProduit AS (
+    SELECT 
+        NomProduit,
+        ChiffreAffaires,
+        CoutTotal,
+        (ChiffreAffaires - CoutTotal) AS BeneficeNet
+    FROM CalculFinancier
+)
+SELECT 
+    NomProduit,
+    ChiffreAffaires,
+    BeneficeNet,
+    CASE 
+        WHEN BeneficeNet > 500000 THEN '1 - Top rentabilité (> 500k)'
+        WHEN BeneficeNet BETWEEN 50000 AND 500000 THEN '2 - Bonne rentabilité'
+        WHEN BeneficeNet > 0 AND BeneficeNet < 50000 THEN '3 - Faible rentabilité'
+        ELSE '4 - En perte (Non rentable)'
+    END AS StatutRentabilite
+FROM MargeProduit
+ORDER BY BeneficeNet DESC;</code></pre>
+            </div>
+
+            <!-- Lien vers le fichier de script SQL s'il est présent à la racine -->
+            <a href="adventureworks.sql" target="_blank" class="btn-link">📂 Télécharger / Voir le fichier complet (adventureworks.sql)</a>
+        </div>
+
+        <!-- PROJET 2 : CHINOOK -->
+        <div class="project-section">
+            <h2>🎵 Analyse et Reporting des Ventes (Base Chinook)</h2>
+            <p>
+                <strong>Problématique métier :</strong> Une entreprise souhaite produire un rapport détaillé sur les ventes totales par produit, par région et par agent pour évaluer les performances commerciales.
+            </p>
+            <p>
+                <strong>Objectif :</strong> Utiliser SQLite pour extraire, filtrer, croiser et agréger les données à l'aide de requêtes optimisées.
+            </p>
+            
+            <div class="tech-badges">
+                <span class="badge">SQL</span>
                 <span class="badge">SQLite / DB Browser</span>
                 <span class="badge">Jointures (JOIN)</span>
                 <span class="badge">Agrégations (GROUP BY / HAVING)</span>
@@ -194,9 +297,9 @@
                     <div>
                         <h3>Compétences & Requêtes Maîtrisées</h3>
                         <ul>
-                            <li><strong>Requêtes de base :</strong> Utilisation de <code>SELECT</code>, <code>WHERE</code>, filtrage par pays (clients non américains, clients brésiliens).</li>
-                            <li><strong>Agrégations & KPI :</strong> Calculs de sommes et moyennes de ventes avec <code>SUM</code>, <code>COUNT</code> et regroupements par année ou par zone géographique.</li>
-                            <li><strong>Jointures relationnelles :</strong> Croisement des tables Clients, Factures, Employés, Morceaux (Tracks) et Artistes.</li>
+                            <li><strong>Requêtes de base :</strong> Utilisation de <code>SELECT</code>, <code>WHERE</code>, filtrage par zone géographique.</li>
+                            <li><strong>Agrégations & KPI :</strong> Calculs de sommes et moyennes de ventes avec <code>SUM</code>, <code>COUNT</code>.</li>
+                            <li><strong>Jointures relationnelles :</strong> Croisement des tables Clients, Factures, Employés et Artistes.</li>
                         </ul>
                     </div>
                 </div>
@@ -204,15 +307,14 @@
                     <div>
                         <h3>Analyses Avancées & Top Performances</h3>
                         <ul>
-                            <li><strong>Classements commerciaux :</strong> Identification des meilleurs agents de vente par année (2009, 2010) et globalement via des tris décroissants et des limites (<code>ORDER BY ... LIMIT 1</code>).</li>
-                            <li><strong>Analyse de catalogues :</strong> Recherche des morceaux, genres, types de médias et artistes les plus vendus.</li>
-                            <li><strong>Automatisation :</strong> Structuration rigoureuse des scripts pour générer des rapports de vente prêts à l'emploi.</li>
+                            <li><strong>Classements commerciaux :</strong> Identification des meilleurs agents de vente par période.</li>
+                            <li><strong>Analyse de catalogues :</strong> Recherche des genres, types de médias et artistes les plus vendus.</li>
+                            <li><strong>Automatisation :</strong> Structuration des scripts pour générer des rapports de vente prêts à l'emploi.</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- Lien vers le fichier de requêtes SQL s'il est présent à la racine -->
             <a href="chinook-queries.sql" target="_blank" class="btn-link">📂 Consulter le fichier des requêtes SQL (chinook-queries.sql)</a>
         </div>
 
