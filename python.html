@@ -28,7 +28,7 @@
             display: inline-block;
             color: #a855f7;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
             margin-bottom: 2rem;
             transition: color 0.3s ease;
         }
@@ -38,39 +38,50 @@
         }
 
         h1 {
-            font-size: 2.5rem;
-            color: #a855f7;
+            font-size: 2.3rem;
+            color: #ffffff;
             margin-bottom: 0.5rem;
             text-align: center;
+            font-weight: 600;
         }
 
         .subtitle {
             text-align: center;
-            color: #cccccc;
+            color: #a1a1aa;
             margin-bottom: 3rem;
+            font-size: 1.05rem;
         }
 
         .project-section {
-            background: rgba(0, 0, 0, 0.7);
-            border: 1px solid #7c3aed;
-            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            border-radius: 16px;
             padding: 2.5rem;
             margin-bottom: 2.5rem;
-            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.15);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         .project-section h2 {
-            color: #a855f7;
-            font-size: 1.8rem;
+            color: #ffffff;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
+            font-weight: 600;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
+        .project-section h2::before {
+            content: '—';
+            color: #a855f7;
+            font-weight: bold;
+        }
+
         .project-section p {
-            color: #cccccc;
+            color: #d4d4d8;
             margin-bottom: 1.5rem;
+            font-size: 0.95rem;
         }
 
         .details-grid {
@@ -81,9 +92,9 @@
         }
 
         .detail-box {
-            background: rgba(168, 85, 247, 0.08);
-            border: 1px solid rgba(124, 58, 237, 0.3);
-            border-radius: 10px;
+            background: rgba(168, 85, 247, 0.04);
+            border: 1px solid rgba(168, 85, 247, 0.15);
+            border-radius: 12px;
             padding: 1.5rem;
             display: flex;
             flex-direction: column;
@@ -92,10 +103,11 @@
 
         .detail-box h3 {
             color: #ffffff;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             margin-bottom: 0.8rem;
-            border-bottom: 1px solid #7c3aed;
+            border-bottom: 1px solid rgba(168, 85, 247, 0.2);
             padding-bottom: 0.4rem;
+            font-weight: 500;
         }
 
         .detail-box ul {
@@ -106,17 +118,20 @@
 
         .detail-box li {
             position: relative;
-            padding-left: 1.2rem;
+            padding-left: 1rem;
             margin-bottom: 0.5rem;
-            color: #cccccc;
-            font-size: 0.95rem;
+            color: #a1a1aa;
+            font-size: 0.9rem;
         }
 
         .detail-box li::before {
-            content: '▸';
+            content: '·';
             position: absolute;
             left: 0;
             color: #a855f7;
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1;
         }
 
         .tech-badges {
@@ -128,32 +143,34 @@
         }
 
         .badge {
-            background: rgba(168, 85, 247, 0.2);
+            background: rgba(168, 85, 247, 0.1);
             color: #a855f7;
             padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            font-weight: bold;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(168, 85, 247, 0.2);
         }
 
         .btn-link {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 8px 15px;
-            background: rgba(168, 85, 247, 0.2);
+            padding: 8px 16px;
+            background: rgba(168, 85, 247, 0.1);
             color: #a855f7;
             text-decoration: none;
             border-radius: 8px;
             font-size: 0.85rem;
-            font-weight: bold;
-            border: 1px solid rgba(168, 85, 247, 0.4);
+            font-weight: 500;
+            border: 1px solid rgba(168, 85, 247, 0.3);
             transition: all 0.3s ease;
             text-align: center;
         }
 
         .btn-link:hover {
-            background: #7c3aed;
+            background: rgba(168, 85, 247, 0.2);
+            border-color: rgba(168, 85, 247, 0.5);
             color: #ffffff;
         }
 
@@ -162,7 +179,7 @@
                 padding: 1.5rem;
             }
             h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -172,14 +189,12 @@
     <div class="container">
         <a href="index.html" class="back-link">← Retour à l'accueil</a>
         
-        <h1>Mes Projets Python, Data Analysis & Machine Learning</h1>
+        <h1>Projets python, data analysis & machine learning</h1>
         <p class="subtitle">Exploration, statistiques descriptives, tests avancés et modèles prédictifs</p>
-
-        <!-- ================= ANCIENS PROJETS ================= -->
 
         <!-- PERFORMANCE DES EMPLOYÉS -->
         <div class="project-section">
-            <h2>👥 Performances des Employés & Détection d'Outliers</h2>
+            <h2>Performances des employés et détection d'outliers</h2>
             <p>
                 <strong>Problématique métier :</strong> Une entreprise souhaite analyser la répartition des performances des employés pour comprendre les écarts et identifier les outliers.
             </p>
@@ -197,18 +212,18 @@
             <div class="details-grid">
                 <div class="detail-box">
                     <div>
-                        <h3>Compétences & Analyses</h3>
+                        <h3>Compétences et analyses</h3>
                         <ul>
                             <li>Calculs statistiques (moyenne, médiane, mode, quartiles, variance, écart-type).</li>
                             <li>Visualisation des distributions (histogrammes, boxplots, pie charts, diagrammes en barre).</li>
                             <li>Détection et analyse des valeurs aberrantes (règle des 1.5 * IQR).</li>
                         </ul>
                     </div>
-                    <a href="https://colab.research.google.com/drive/1Quc3skCB1BmwWiSH9YJ6s-euVD3iJEz_" target="_blank" class="btn-link">🔗 Ouvrir sur Google Colab</a>
+                    <a href="https://colab.research.google.com/drive/1Quc3skCB1BmwWiSH9YJ6s-euVD3iJEz_" target="_blank" class="btn-link">Ouvrir sur Google Colab</a>
                 </div>
                 <div class="detail-box">
                     <div>
-                        <h3>Base de données & Insights</h3>
+                        <h3>Base de données et insights</h3>
                         <ul>
                             <li><strong>Dataset :</strong> HR Analytics Dataset.</li>
                             <li>Identification de profils d'employés atypiques (désengagement critique).</li>
@@ -221,7 +236,7 @@
 
         <!-- FACTEURS COMMERCIAUX -->
         <div class="project-section">
-            <h2>🛒 Facteurs Influencant les Performances Commerciales</h2>
+            <h2>Facteurs influençant les performances commerciales</h2>
             <p>
                 <strong>Problématique métier :</strong> Une entreprise souhaite comprendre les interactions entre ses produits, ses performances régionales et ses marges pour optimiser sa stratégie commerciale.
             </p>
@@ -239,18 +254,18 @@
             <div class="details-grid">
                 <div class="detail-box">
                     <div>
-                        <h3>Compétences & Méthodologie</h3>
+                        <h3>Compétences et méthodologie</h3>
                         <ul>
                             <li>Analyse bivariée descriptive (corrélations, tableaux croisés, comparaisons de moyennes).</li>
                             <li>Visualisation avancée (scatter plots, boxplots, heatmaps).</li>
                             <li>Interprétation des relations pour guider les décisions stratégiques.</li>
                         </ul>
                     </div>
-                    <a href="https://colab.research.google.com/drive/17G2Mq35ulu_nnRi0Lz0wUVxiRnBlZEmT" target="_blank" class="btn-link">🔗 Ouvrir sur Google Colab</a>
+                    <a href="https://colab.research.google.com/drive/17G2Mq35ulu_nnRi0Lz0wUVxiRnBlZEmT" target="_blank" class="btn-link">Ouvrir sur Google Colab</a>
                 </div>
                 <div class="detail-box">
                     <div>
-                        <h3>Résultats & Recommandations</h3>
+                        <h3>Résultats et recommandations</h3>
                         <ul>
                             <li>Mise en évidence de l'impact destructeur des remises excessives sur la marge commerciale.</li>
                             <li>Identification des zones géographiques moteurs (région Ouest) et des retards d'activité (région Sud).</li>
@@ -263,7 +278,7 @@
 
         <!-- ÉCARTS ENTRE DÉPARTEMENTS -->
         <div class="project-section">
-            <h2>📊 Tests Statistiques & Écarts entre Départements</h2>
+            <h2>Tests statistiques et écarts entre départements</h2>
             <p>
                 <strong>Problématique métier :</strong> Analyser les écarts de performance entre départements en explorant les relations entre variables qualitatives (départements, satisfaction) et quantitatives (scores de performance, heures travaillées).
             </p>
@@ -281,18 +296,18 @@
             <div class="details-grid">
                 <div class="detail-box">
                     <div>
-                        <h3>Tests & Validation</h3>
+                        <h3>Tests et validation</h3>
                         <ul>
                             <li><strong>Relations qualitatives :</strong> Khi-deux, V de Cramer, T de Tschuprow, Fisher Exact Test.</li>
                             <li><strong>Comparaison de moyennes :</strong> ANOVA, Kruskal-Wallis, Test t de Student, Wilcoxon.</li>
-                            <li><strong>Normalité & Variances :</strong> Shapiro-Wilk, Levene, Bartlett, Kolmogorov-Smirnov.</li>
+                            <li><strong>Normalité et variances :</strong> Shapiro-Wilk, Levene, Bartlett, Kolmogorov-Smirnov.</li>
                         </ul>
                     </div>
-                    <a href="https://colab.research.google.com/drive/1pW0ReWvxc7vxTCp_pGKzuHd1hqXhrgMr" target="_blank" class="btn-link">🔗 Ouvrir sur Google Colab</a>
+                    <a href="https://colab.research.google.com/drive/1pW0ReWvxc7vxTCp_pGKzuHd1hqXhrgMr" target="_blank" class="btn-link">Ouvrir sur Google Colab</a>
                 </div>
                 <div class="detail-box">
                     <div>
-                        <h3>Conclusions & Recommandations</h3>
+                        <h3>Conclusions et recommandations</h3>
                         <ul>
                             <li>Validation de l'indépendance entre la satisfaction et le département d'appartenance.</li>
                             <li>Mise en place de sessions de calibrage managérial pour harmoniser les critères d'évaluation.</li>
@@ -303,11 +318,9 @@
             </div>
         </div>
 
-        <!-- ================= NOUVEAUX PROJETS (MACHINE LEARNING) ================= -->
-
-        <!-- PROJET 6 : PROFIL DES VINS (ACP) -->
+        <!-- PROFIL DES VINS (ACP) -->
         <div class="project-section">
-            <h2>🍷 Profil des Vins & Réduction de Dimensionnalité (ACP)</h2>
+            <h2>Profil des vins et réduction de dimensionnalité (ACP)</h2>
             <p>
                 <strong>Problématique métier :</strong> Identifier les axes clés de différenciation entre profils de vins pour personnaliser les recommandations et optimiser l'analyse de qualité.
             </p>
@@ -325,18 +338,18 @@
             <div class="details-grid">
                 <div class="detail-box">
                     <div>
-                        <h3>Compétences & Analyses</h3>
+                        <h3>Compétences et analyses</h3>
                         <ul>
                             <li>Standardisation des données et matrice de corrélation.</li>
                             <li>Application de l'Analyse en Composantes Principales (ACP).</li>
                             <li>Visualisation 2D/3D et interprétation des axes factoriels.</li>
                         </ul>
                     </div>
-                    <a href="https://colab.research.google.com/drive/1IiYAhqxO0vFlGeL5o8n38kfJ6l2LgtgY" target="_blank" class="btn-link">🔗 Ouvrir sur Google Colab</a>
+                    <a href="https://colab.research.google.com/drive/1IiYAhqxO0vFlGeL5o8n38kfJ6l2LgtgY" target="_blank" class="btn-link">Ouvrir sur Google Colab</a>
                 </div>
                 <div class="detail-box">
                     <div>
-                        <h3>Base de données & Insights</h3>
+                        <h3>Base de données et insights</h3>
                         <ul>
                             <li><strong>Dataset :</strong> Wine Quality Dataset.</li>
                             <li>Mise en évidence des composantes principales liant l'acidité et la teneur en alcool.</li>
@@ -347,9 +360,9 @@
             </div>
         </div>
 
-        <!-- PROJET 9 : SEGMENTATION CLIENTS (CLUSTERING) -->
+        <!-- SEGMENTATION CLIENTS (CLUSTERING) -->
         <div class="project-section">
-            <h2>🎯 Segmentation Clients & Clustering Non Supervisé</h2>
+            <h2>Segmentation clients et clustering non supervisé</h2>
             <p>
                 <strong>Problématique métier :</strong> Regrouper les clients d'un centre commercial en segments homogènes pour adapter les campagnes marketing ciblées.
             </p>
@@ -367,18 +380,18 @@
             <div class="details-grid">
                 <div class="detail-box">
                     <div>
-                        <h3>Compétences & Méthodologie</h3>
+                        <h3>Compétences et méthodologie</h3>
                         <ul>
                             <li>Utilisation de la méthode du coude (Elbow Method) pour déterminer k.</li>
                             <li>Algorithmes de clustering : K-Means, Clustering Hiérarchique (CAH).</li>
                             <li>Évaluation de la qualité des clusters via le score de silhouette.</li>
                         </ul>
                     </div>
-                    <a href="https://colab.research.google.com/drive/158shlP7TCvgtphH4trhHsfeITjftAly_" target="_blank" class="btn-link">🔗 Ouvrir sur Google Colab</a>
+                    <a href="https://colab.research.google.com/drive/158shlP7TCvgtphH4trhHsfeITjftAly_" target="_blank" class="btn-link">Ouvrir sur Google Colab</a>
                 </div>
                 <div class="detail-box">
                     <div>
-                        <h3>Résultats & Recommandations</h3>
+                        <h3>Résultats et recommandations</h3>
                         <ul>
                             <li>Identification de personae clés (ex: clients à hauts revenus et forte dépense).</li>
                             <li>Aide à la décision marketing pour cibler les programmes de fidélité.</li>
@@ -389,9 +402,9 @@
             </div>
         </div>
 
-        <!-- PROJET 10 : PRIX DES MAISONS (RÉGRESSION) -->
+        <!-- PRIX DES MAISONS (RÉGRESSION) -->
         <div class="project-section">
-            <h2>🏠 Prédiction des Prix des Maisons (Modèle de Régression)</h2>
+            <h2>Prédiction des prix des maisons (modèle de régression)</h2>
             <p>
                 <strong>Problématique métier :</strong> Estimer avec précision la valeur marchande de biens immobiliers pour guider les investisseurs et acheteurs.
             </p>
@@ -409,18 +422,18 @@
             <div class="details-grid">
                 <div class="detail-box">
                     <div>
-                        <h3>Compétences & Modélisation</h3>
+                        <h3>Compétences et modélisation</h3>
                         <ul>
                             <li>Prétraitement des données, gestion des valeurs manquantes et encodage.</li>
                             <li>Entraînement de modèles (Régression linéaire, Ridge/Lasso).</li>
                             <li>Évaluation des performances via R², RMSE et MSE.</li>
                         </ul>
                     </div>
-                    <a href="https://colab.research.google.com/github/jadeledva-collab/portfolio-data/blob/main/Projet_house.ipynb" target="_blank" class="btn-link">🔗 Ouvrir sur Google Colab</a>
+                    <a href="https://colab.research.google.com/github/jadeledva-collab/portfolio-data/blob/main/Projet_house.ipynb" target="_blank" class="btn-link">Ouvrir sur Google Colab</a>
                 </div>
                 <div class="detail-box">
                     <div>
-                        <h3>Analyse & Interprétation</h3>
+                        <h3>Analyse et interprétation</h3>
                         <ul>
                             <li>Analyse des résidus pour valider les hypothèses du modèle.</li>
                             <li>Identification des variables ayant le plus fort poids sur l'estimation du prix.</li>
@@ -431,9 +444,9 @@
             </div>
         </div>
 
-        <!-- PROJET 11 : DÉFAUTS DE PAIEMENT (RÉGRESSION LOGISTIQUE) -->
+        <!-- DÉFAUTS DE PAIEMENT (RÉGRESSION LOGISTIQUE) -->
         <div class="project-section">
-            <h2>💳 Prédiction des Défauts de Paiement (Classification Binaire)</h2>
+            <h2>Prédiction des défauts de paiement (classification binaire)</h2>
             <p>
                 <strong>Problématique métier :</strong> Anticiper le risque de défaut de paiement sur des cartes de crédit afin de minimiser les pertes financières de l'institution bancaire.
             </p>
@@ -451,18 +464,18 @@
             <div class="details-grid">
                 <div class="detail-box">
                     <div>
-                        <h3>Compétences & Évaluation</h3>
+                        <h3>Compétences et évaluation</h3>
                         <ul>
                             <li>Classification binaire et estimation de probabilités.</li>
                             <li>Analyse de la matrice de confusion, précision et rappel (Recall).</li>
                             <li>Courbe ROC et calcul de l'aire sous la courbe (AUC-ROC).</li>
                         </ul>
                     </div>
-                    <a href="https://colab.research.google.com/github/jadeledva-collab/portfolio-data/blob/main/Projet_credit.ipynb" target="_blank" class="btn-link">🔗 Ouvrir sur Google Colab</a>
+                    <a href="https://colab.research.google.com/github/jadeledva-collab/portfolio-data/blob/main/Projet_credit.ipynb" target="_blank" class="btn-link">Ouvrir sur Google Colab</a>
                 </div>
                 <div class="detail-box">
                     <div>
-                        <h3>Insights & Risques</h3>
+                        <h3>Insights et risques</h3>
                         <ul>
                             <li>Mesure de l'impact du taux d'utilisation du crédit sur le risque de défaut.</li>
                             <li>Arbitrage entre faux positifs et faux négatifs selon la politique de risque de la banque.</li>
@@ -473,9 +486,9 @@
             </div>
         </div>
 
-        <!-- PROJET 12 : PRÉVISION DES VENTES (SÉRIES TEMPORELLES) -->
+        <!-- PRÉVISION DES VENTES (SÉRIES TEMPORELLES) -->
         <div class="project-section">
-            <h2>📈 Prévision des Ventes (Séries Temporelles)</h2>
+            <h2>Prévision des ventes (séries temporelles)</h2>
             <p>
                 <strong>Problématique métier :</strong> Anticiper les volumes de ventes futurs de différents magasins pour optimiser la gestion des stocks et la chaîne logistique.
             </p>
@@ -493,18 +506,18 @@
             <div class="details-grid">
                 <div class="detail-box">
                     <div>
-                        <h3>Compétences & Méthodologie</h3>
+                        <h3>Compétences et méthodologie</h3>
                         <ul>
                             <li>Manipulation d'index temporels (Pandas Datetime).</li>
                             <li>Décomposition de séries temporelles (Tendance, Saisonnalité, Résidus).</li>
                             <li>Modélisation prédictive (ARIMA, SARIMAX ou Prophet).</li>
                         </ul>
                     </div>
-                    <a href="https://colab.research.google.com/github/jadeledva-collab/portfolio-data/blob/main/projet_store.ipynb" target="_blank" class="btn-link">🔗 Ouvrir sur Google Colab</a>
+                    <a href="https://colab.research.google.com/github/jadeledva-collab/portfolio-data/blob/main/projet_store.ipynb" target="_blank" class="btn-link">Ouvrir sur Google Colab</a>
                 </div>
                 <div class="detail-box">
                     <div>
-                        <h3>Résultats & Planification</h3>
+                        <h3>Résultats et planification</h3>
                         <ul>
                             <li>Mise en évidence des pics de ventes saisonniers (périodes de fêtes).</li>
                             <li>Génération d'intervalles de confiance pour les prévisions à moyen terme.</li>
