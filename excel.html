@@ -120,6 +120,7 @@
             gap: 0.5rem;
             flex-wrap: wrap;
             margin-top: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .badge {
@@ -157,6 +158,25 @@
             font-size: 0.9rem;
             color: #a855f7;
         }
+
+        .btn-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #7c3aed, #a855f7);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(168, 85, 247, 0.4);
+        }
     </style>
 </head>
 <body>
@@ -174,7 +194,7 @@
                 <strong>Problématique métier :</strong> L'entreprise souhaite suivre en détail les performances des ventes par région et par catégorie afin d'identifier rapidement les zones à améliorer et d'optimiser la stratégie commerciale.
             </p>
             <p>
-                <strong>Objectif :</strong> Concevoir un tableau de bord interactif sous Excel pour analyser les indicateurs clés de performance (KPI) tels que le chiffre d'affaires (Sales), les marges et la rentabilité régionale[cite: 7].
+                <strong>Objectif :</strong> Concevoir un tableau de bord interactif sous Excel pour analyser les indicateurs clés de performance (KPI) tels que le chiffre d'affaires (Sales), les marges et la rentabilité régionale.
             </p>
             
             <div class="tech-badges">
@@ -188,15 +208,15 @@
             <div class="stats-highlight">
                 <div class="stat-card">
                     <div class="stat-value">2,29 M $</div>
-                    <div class="stat-label">Chiffre d'affaires total[cite: 7]</div>
+                    <div class="stat-label">Chiffre d'affaires total</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-value">9 994</div>
-                    <div class="stat-label">Lignes de commandes analysées[cite: 7]</div>
+                    <div class="stat-label">Lignes de commandes analysées</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-value">12%</div>
-                    <div class="stat-label">Marge moyenne globale[cite: 7]</div>
+                    <div class="stat-label">Marge moyenne globale</div>
                 </div>
             </div>
 
@@ -204,7 +224,7 @@
                 <div class="detail-box">
                     <h3>Nettoyage & Formules Utilisées</h3>
                     <ul>
-                        <li><strong>Organisation des données :</strong> Structuration de la base brute (9 994 transactions[cite: 7]).</li>
+                        <li><strong>Organisation des données :</strong> Structuration de la base brute (9 994 transactions).</li>
                         <li><strong>Formules Essentielles :</strong> Utilisation de <code>SOMME</code>, <code>SOMME.SI</code> et <code>MOYENNE</code> pour consolider les indicateurs financiers.</li>
                         <li><strong>Recherche & Logique :</strong> Implémentation de fonctions de croisement telles que <code>RECHERCHEV</code>, <code>INDEX</code> et <code>EQUIV</code>.</li>
                     </ul>
@@ -213,11 +233,14 @@
                     <h3>Restitution & Interactivité</h3>
                     <ul>
                         <li><strong>TCD & Segments :</strong> Création de tableaux croisés dynamiques connectés à des segments (Slicers) pour filtrer par région ou par catégorie de produits en un clic.</li>
-                        <li><strong>Graphiques Dynamiques :</strong> Visualisation des tendances temporelles des ventes et des marges par zone géographique (Central, East, South, West[cite: 7]).</li>
+                        <li><strong>Graphiques Dynamiques :</strong> Visualisation des tendances temporelles des ventes et des marges par zone géographique (Central, East, South, West).</li>
                         <li><strong>Tableau de Bord :</strong> Restitution claire et épurée axée sur l'aide à la décision stratégique.</li>
                     </ul>
                 </div>
             </div>
+
+            <!-- Lien direct vers le fichier Excel -->
+            <a href="Projet_1.xlsx" target="_blank" class="btn-link">📂 Accéder au fichier Excel du projet</a>
         </div>
 
     </div>
