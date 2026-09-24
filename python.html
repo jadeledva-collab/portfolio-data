@@ -1,492 +1,307 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projets Python - Jade Le Dévéhat</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets Python & Data Analysis - Jade Le Dévéhat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
-      color: #ffffff;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      line-height: 1.6;
-      min-height: 100vh;
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 50%, #0a0a0a 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            padding: 2rem 20px;
+        }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
 
-    .header {
-      margin-bottom: 3rem;
-      text-align: center;
-    }
+        .back-link {
+            display: inline-block;
+            color: #a855f7;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
 
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: #a855f7;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-      margin-bottom: 2rem;
-      padding: 0.75rem 1.5rem;
-      border-radius: 50px;
-      background: rgba(168, 85, 247, 0.1);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(168, 85, 247, 0.2);
-      transition: all 0.3s ease;
-    }
+        .back-link:hover {
+            color: #ffffff;
+        }
 
-    .back-link:hover {
-      background: rgba(168, 85, 247, 0.2);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(168, 85, 247, 0.3);
-    }
+        h1 {
+            font-size: 2.5rem;
+            color: #a855f7;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
 
-    .section-title {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      background: linear-gradient(135deg, #a855f7, #ec4899);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-align: center;
-    }
+        .subtitle {
+            text-align: center;
+            color: #cccccc;
+            margin-bottom: 3rem;
+        }
 
-    .subtitle {
-      font-size: 1.1rem;
-      color: #a1a1aa;
-      text-align: center;
-      margin-bottom: 3rem;
-    }
+        .project-section {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid #7c3aed;
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.15);
+        }
 
-    .projects-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        align-items: center;
-    }
+        .project-section h2 {
+            color: #a855f7;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-    .project-card {
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(168, 85, 247, 0.1);
-      border-radius: 20px;
-      padding: 2rem;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.4s ease;
-      width: 100%;
-    }
+        .project-section p {
+            color: #cccccc;
+            margin-bottom: 1.5rem;
+        }
 
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, #a855f7, #ec4899);
-      border-radius: 20px 20px 0 0;
-    }
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
 
-    .project-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(168, 85, 247, 0.2);
-      border-color: rgba(168, 85, 247, 0.3);
-    }
+        .detail-box {
+            background: rgba(168, 85, 247, 0.08);
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            border-radius: 10px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
-    .project-header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
+        .detail-box h3 {
+            color: #ffffff;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid #7c3aed;
+            padding-bottom: 0.4rem;
+        }
 
-    .project-number {
-      background: linear-gradient(135deg, #a855f7, #ec4899);
-      color: white;
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
+        .detail-box ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 1.5rem;
+        }
 
-    .project-title {
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: #ffffff;
-    }
+        .detail-box li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #cccccc;
+            font-size: 0.95rem;
+        }
 
-    .project-description {
-      color: #d4d4d8;
-      margin-bottom: 2rem;
-      font-size: 1rem;
-    }
+        .detail-box li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #a855f7;
+        }
 
-    .tech-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 2rem;
-    }
+        .tech-badges {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+        }
 
-    .tech-tag {
-      background: rgba(168, 85, 247, 0.1);
-      color: #a855f7;
-      padding: 0.4rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      border: 1px solid rgba(168, 85, 247, 0.2);
-    }
+        .badge {
+            background: rgba(168, 85, 247, 0.2);
+            color: #a855f7;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
 
-    /* Toggle Styles */
-    .project-toggles {
-      margin-top: 1.5rem;
-    }
+        .btn-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 8px 15px;
+            background: rgba(168, 85, 247, 0.2);
+            color: #a855f7;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            border: 1px solid rgba(168, 85, 247, 0.4);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
 
-    .toggle-section {
-      margin-bottom: 1rem;
-    }
+        .btn-link:hover {
+            background: #7c3aed;
+            color: #ffffff;
+        }
 
-    .toggle-btn {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem 1.5rem;
-      background: rgba(168, 85, 247, 0.1);
-      border: 1px solid rgba(168, 85, 247, 0.2);
-      border-radius: 12px;
-      color: #ffffff;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .toggle-btn:hover {
-      background: rgba(168, 85, 247, 0.2);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(168, 85, 247, 0.2);
-    }
-
-    .toggle-icon {
-      font-size: 1.2rem;
-    }
-
-    .toggle-text {
-      flex: 1;
-      text-align: left;
-    }
-
-    .toggle-arrow {
-      font-size: 0.8rem;
-      transition: transform 0.3s ease;
-    }
-
-    .toggle-btn.active .toggle-arrow {
-      transform: rotate(180deg);
-    }
-
-    .toggle-content {
-      max-height: 0;
-      overflow: hidden;
-      padding: 0 1.5rem;
-      background: rgba(255, 255, 255, 0.02);
-      border-left: 1px solid rgba(168, 85, 247, 0.2);
-      border-right: 1px solid rgba(168, 85, 247, 0.2);
-      border-bottom: 1px solid rgba(168, 85, 247, 0.2);
-      border-radius: 0 0 12px 12px;
-      transition: all 0.4s ease;
-      margin-top: -1px;
-    }
-
-    .toggle-content.active {
-        max-height: none;
-        padding: 1.5rem;
-    }
-
-    .toggle-content p, .toggle-content li {
-      color: #d4d4d8;
-      line-height: 1.7;
-      margin-bottom: 1rem;
-    }
-
-    .toggle-content h1, .toggle-content h2 {
-      color: #ffffff;
-      margin-top: 1.5rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .toggle-content ul {
-      margin-left: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .github-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: #a855f7;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      padding: 0.75rem 1.25rem;
-      background: rgba(168, 85, 247, 0.15);
-      border-radius: 10px;
-      border: 1px solid rgba(168, 85, 247, 0.3);
-      transition: all 0.3s ease;
-      margin-top: 1rem;
-    }
-
-    .github-link:hover {
-      background: rgba(168, 85, 247, 0.3);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
-    }
-
-    .github-icon {
-      font-size: 1rem;
-    }
-
-    @media (max-width: 768px) {
-      .section-title {
-        font-size: 2rem;
-      }
-      .container {
-        padding: 1rem;
-      }
-    }
-
-    .floating-elements {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    .floating-element {
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(168, 85, 247, 0.1);
-      animation: float 6s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-20px); }
-    }
-  </style>
+        @media (max-width: 768px) {
+            .project-section {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="floating-elements">
-    <div class="floating-element" style="width: 60px; height: 60px; top: 20%; left: 10%; animation-delay: 0s;"></div>
-    <div class="floating-element" style="width: 40px; height: 40px; top: 60%; right: 10%; animation-delay: 2s;"></div>
-    <div class="floating-element" style="width: 80px; height: 80px; top: 80%; left: 60%; animation-delay: 4s;"></div>
-  </div>
 
-  <div class="container">
-    <div class="header">
-      <a href="index.html#projects" class="back-link">
-        ← Retour au Portfolio
-      </a>
-      <h1 class="section-title">Projets Python</h1>
-      <p class="subtitle">Analyse de données et flux analytiques pour l'automatisation, la visualisation et la prise de décision</p>
+    <div class="container">
+        <a href="index.html" class="back-link">← Retour à l'accueil</a>
+        
+        <h1>Projets Python & Data Analysis</h1>
+        <p class="subtitle">Exploration, statistiques descriptives, analyse bivariée et tests statistiques avancés</p>
+
+        <!-- PROJET 2 : PERFORMANCE DES EMPLOYÉS -->
+        <div class="project-section">
+            <h2>👥 Projet 2 : Performances des Employés & Détection d'Outliers</h2>
+            <p>
+                <strong>Problématique métier :</strong> Une entreprise souhaite analyser la répartition des performances des employés pour comprendre les écarts et identifier les outliers.
+            </p>
+            <p>
+                <strong>Objectif :</strong> Étudier les distributions des scores de performance et des heures travaillées pour détecter les facteurs d'amélioration.
+            </p>
+            
+            <div class="tech-badges">
+                <span class="badge">Python</span>
+                <span class="badge">Pandas</span>
+                <span class="badge">Statistiques Descriptives</span>
+                <span class="badge">HR Analytics Dataset</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <div>
+                        <h3>Compétences & Analyses</h3>
+                        <ul>
+                            <li>Calculs statistiques (moyenne, médiane, mode, quartiles, variance, écart-type).</li>
+                            <li>Visualisation des distributions (histogrammes, boxplots, pie charts, diagrammes en barre).</li>
+                            <li>Détection et analyse des valeurs aberrantes (règle des 1.5 * IQR).</li>
+                        </ul>
+                    </div>
+                    <a href="https://colab.research.google.com" target="_blank" class="btn-link">🔗 Voir le projet (Google Colab)</a>
+                </div>
+                <div class="detail-box">
+                    <div>
+                        <h3>Base de données & Insights</h3>
+                        <ul>
+                            <li><strong>Dataset :</strong> HR Analytics Dataset.</li>
+                            <li>Identification de profils d'employés atypiques (désengagement critique).</li>
+                            <li>Formulation de recommandations opérationnelles pour le management et les ressources humaines.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJET 3 : FACTEURS COMMERCIAUX -->
+        <div class="project-section">
+            <h2>🛒 Projet 3 : Facteurs Influencant les Performances Commerciales</h2>
+            <p>
+                <strong>Problématique métier :</strong> Une entreprise souhaite comprendre les interactions entre ses produits, ses performances régionales et ses marges pour optimiser sa stratégie commerciale.
+            </p>
+            <p>
+                <strong>Objectif :</strong> Analyser les relations quali-quali, quali-quanti et quanti-quanti pour détecter des facteurs clés de succès.
+            </p>
+            
+            <div class="tech-badges">
+                <span class="badge">Python</span>
+                <span class="badge">Seaborn / Matplotlib</span>
+                <span class="badge">Analyse Bivariée</span>
+                <span class="badge">Superstore Dataset</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <div>
+                        <h3>Compétences & Méthodologie</h3>
+                        <ul>
+                            <li>Analyse bivariée descriptive (corrélations, tableaux croisés, comparaisons de moyennes).</li>
+                            <li>Visualisation avancée (scatter plots, boxplots, heatmaps).</li>
+                            <li>Interprétation des relations pour guider les décisions stratégiques.</li>
+                        </ul>
+                    </div>
+                    <a href="https://colab.research.google.com" target="_blank" class="btn-link">🔗 Voir le projet (Google Colab)</a>
+                </div>
+                <div class="detail-box">
+                    <div>
+                        <h3>Résultats & Recommandations</h3>
+                        <ul>
+                            <li>Mise en évidence de l'impact destructeur des remises excessives sur la marge commerciale.</li>
+                            <li>Identification des zones géographiques moteurs (région Ouest) et des retards d'activité (région Sud).</li>
+                            <li>Stratégie ciblée pour auditer la catégorie du mobilier et maximiser la rentabilité.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJET 4 : ÉCARTS ENTRE DÉPARTEMENTS -->
+        <div class="project-section">
+            <h2>📊 Projet 4 : Tests Statistiques & Écarts entre Départements</h2>
+            <p>
+                <strong>Problématique métier :</strong> Analyser les écarts de performance entre départements en explorant les relations entre variables qualitatives (départements, satisfaction) et quantitatives (scores de performance, heures travaillées).
+            </p>
+            <p>
+                <strong>Objectif :</strong> Valider les différences observées en appliquant des tests statistiques adaptés.
+            </p>
+            
+            <div class="tech-badges">
+                <span class="badge">Python (SciPy)</span>
+                <span class="badge">Tests Statistiques</span>
+                <span class="badge">ANOVA / Khi-deux</span>
+                <span class="badge">Employee Performance Evaluation</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <div>
+                        <h3>Tests & Validation</h3>
+                        <ul>
+                            <li><strong>Relations qualitatives :</strong> Khi-deux, V de Cramer, T de Tschuprow, Fisher Exact Test.</li>
+                            <li><strong>Comparaison de moyennes :</strong> ANOVA, Kruskal-Wallis, Test t de Student, Wilcoxon.</li>
+                            <li><strong>Normalité & Variances :</strong> Shapiro-Wilk, Levene, Bartlett, Kolmogorov-Smirnov.</li>
+                        </ul>
+                    </div>
+                    <a href="https://colab.research.google.com" target="_blank" class="btn-link">🔗 Voir le projet (Google Colab)</a>
+                </div>
+                <div class="detail-box">
+                    <div>
+                        <h3>Conclusions & Recommandations</h3>
+                        <ul>
+                            <li>Validation de l'indépendance entre la satisfaction et le département d'appartenance.</li>
+                            <li>Mise en place de sessions de calibrage managérial pour harmoniser les critères d'évaluation.</li>
+                            <li>Démonstration de l'absence d'impact statistique des heures supplémentaires sur la performance réelle.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <div class="projects-grid">
-      <!-- Project 1: eco2mix (Votre projet) -->
-      <div class="project-card">
-        <div class="project-header">
-          <div class="project-number">1</div>
-          <h3 class="project-title">Analyse du Mix Électrique Français (éCO2mix)</h3>
-        </div>
-        
-        <p class="project-description">
-          Analyse exploratoire des données de production et de consommation d'électricité (RTE) pour comprendre l'impact de la saisonnalité et des variations régionales sur le mix énergétique.
-        </p>
-
-        <div class="tech-stack">
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">Pandas</span>
-          <span class="tech-tag">NumPy</span>
-          <span class="tech-tag">Plotly</span>
-        </div>
-
-        <div class="project-toggles">
-          <div class="toggle-section">
-            <button class="toggle-btn" onclick="toggleSection(this)">
-              <span class="toggle-icon">⚙️</span>
-              <span class="toggle-text">Analyse & Impact Métier</span>
-              <span class="toggle-arrow">▼</span>
-            </button>
-            <div class="toggle-content">
-              <h2>Contexte & Problématique</h2>
-              <p>
-                La consommation d'électricité en France varie énormément selon l'heure et la saison (pics de froid en hiver). L'enjeu de cette étude est de répondre à la problématique : <em>Comment la saisonnalité (hiver/été) et les inégalités géographiques influencent-elles le recours aux énergies fossiles dans le mix électrique français ?</em>
-              </p>
-
-              <h2>Préparation & Nettoyage des Données</h2>
-              <ul>
-                <li><strong>Correction des formats :</strong> Conversion de la colonne date en format temporel (<code>datetime</code>) et nettoyage des formats numériques (remplacement des virgules par des points).</li>
-                <li><strong>Gestion des valeurs manquantes :</strong> Remplacement des valeurs <code>NaN</code> par 0 pour les colonnes de production (absence de production solaire la nuit).</li>
-                <li><strong>Création de variables :</strong> Extraction du mois et de l'heure, création d'une variable de segmentation par saison (Hiver, Été, Intersaison) et calcul de la part d'énergie renouvelable.</li>
-              </ul>
-
-              <h2>Insights de l'Analyse Exploratoire (EDA)</h2>
-              <ul>
-                <li><strong>Saisonnalité :</strong> La consommation médiane en hiver est nettement supérieure à celle de l'été en raison du chauffage électrique.</li>
-                <li><strong>Cycles journaliers :</strong> Identification de deux pics de charge majeurs (matinée et pointe critique de 19h).</li>
-                <li><strong>Disparités régionales :</strong> Forte hétérogénéité dans la répartition et la part des énergies renouvelables selon les régions.</li>
-              </ul>
-
-              <h2>Recommandations Stratégiques</h2>
-              <ul>
-                <li>Prioriser la rénovation thermique des bâtiments pour lisser les pics de demande hivernaux.</li>
-                <li>Encourager le report des usages lourds (recharge de véhicules électriques) en dehors de la pointe de 19h.</li>
-                <li>Renforcer les interconnexions de transport d'énergie entre les régions excédentaires et les grands pôles de consommation.</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="toggle-section">
-            <button class="toggle-btn" onclick="toggleSection(this)">
-              <span class="toggle-icon">💻</span>
-              <span class="toggle-text">Détails Techniques & Code</span>
-              <span class="toggle-arrow">▼</span>
-            </button>
-            <div class="toggle-content">
-              <p>
-                Le code complet du nettoyage des données, de l'ingénierie des variables et des visualisations interactives (Plotly) est documenté dans le notebook interactif ci-dessous :
-              </p>
-              
-              <a href="https://colab.research.google.com/drive/17kpFF1DJ7gj3eJOYROEdbYncpYPGTPxL?usp=sharing" class="github-link" target="_blank">
-                <span class="github-icon">🚀</span>
-                Ouvrir le Notebook Google Colab
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 2: Udemy Web App Data (Second projet d'origine du template) -->
-      <div class="project-card">
-        <div class="project-header">
-          <div class="project-number">2</div>
-          <h3 class="project-title">Analyse de Données de Cours en Ligne (Udemy)</h3>
-        </div>
-        
-        <p class="project-description">
-          Nettoyage et prétraitement d'un jeu de données de cours de développement web en utilisant la bibliothèque Pandas en Python.
-        </p>
-
-        <div class="tech-stack">
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">Data Cleaning</span>
-          <span class="tech-tag">Pandas</span>
-        </div>
-
-        <div class="project-toggles">
-          <div class="toggle-section">
-            <button class="toggle-btn" onclick="toggleSection(this)">
-              <span class="toggle-icon">⚙️</span>
-              <span class="toggle-text">Impact Métier</span>
-              <span class="toggle-arrow">▼</span>
-            </button>
-            <div class="toggle-content">
-              <h2>Objectif du Projet</h2>
-              <p>Préparer un jeu de données brut de cours en ligne pour l'analyse en effectuant un nettoyage et un prétraitement complets avec Python et Pandas.</p>
-            </div>
-          </div>
-          
-          <div class="toggle-section">
-            <button class="toggle-btn" onclick="toggleSection(this)">
-              <span class="toggle-icon">💻</span>
-              <span class="toggle-text">Détails Techniques</span>
-              <span class="toggle-arrow">▼</span>
-            </button>
-            <div class="toggle-content">
-              <p>Toutes les étapes techniques de ce projet sont documentées sur le dépôt GitHub d'origine.</p>
-              <a href="https://github.com/alairdata/Analysis-of-Udemy-Web-Application-Data" class="github-link" target="_blank">
-                <span class="github-icon">⭐</span>
-                Voir sur GitHub
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-  function toggleSection(button) {
-    const content = button.nextElementSibling;
-    const isActive = content.classList.contains('active');
-
-    const projectCard = button.closest('.project-card');
-    const allToggleContents = projectCard.querySelectorAll('.toggle-content');
-    const allToggleButtons = projectCard.querySelectorAll('.toggle-btn');
-
-    allToggleContents.forEach(tc => tc.classList.remove('active'));
-    allToggleButtons.forEach(tb => tb.classList.remove('active'));
-
-    if (!isActive) {
-      content.classList.add('active');
-      button.classList.add('active');
-
-      setTimeout(() => {
-        const yOffset = -100;
-        const y = button.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      }, 200);
-    }
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach((card, index) => {
-      card.style.animationDelay = `${index * 0.1}s`;
-      card.style.animation = 'fadeInUp 0.6s ease forwards';
-    });
-  });
-
-  const style = document.createElement('style');
-  style.textContent = `
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    .project-card {
-      opacity: 0;
-    }
-  `;
-  document.head.appendChild(style);
-  </script>
 </body>
 </html>
