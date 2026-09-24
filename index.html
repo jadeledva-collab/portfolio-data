@@ -262,40 +262,38 @@
             border-color: var(--primary-color);
         }
 
-        /* Architecture / Code Terminal Style (Cookiecutter Inspired) */
-        .architecture-box {
-            background: #020202;
+        /* Methodology Grid (Data Analyst oriented) */
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .method-card {
+            background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 14px;
             padding: 2rem;
-            font-family: 'Courier New', Courier, monospace;
-            color: #d4d4d8;
-            font-size: 0.9rem;
-            line-height: 1.7;
-            position: relative;
-            overflow-x: auto;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-            margin-top: 1.5rem;
+            transition: var(--transition);
         }
 
-        .architecture-box::before {
-            content: 'structure_projet.tree';
-            position: absolute;
-            top: 12px;
-            right: 20px;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            letter-spacing: 1px;
+        .method-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-4px);
+            background: rgba(168, 85, 247, 0.04);
         }
 
-        .folder {
+        .method-card h3 {
             color: var(--primary-color);
-            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
         }
 
-        .comment {
-            color: #71717a;
-            font-style: italic;
+        .method-card p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.6;
         }
 
         /* Projects Section */
@@ -606,7 +604,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Accueil</a></li>
                 <li><a href="#about">À propos</a></li>
-                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#methodology">Méthodologie</a></li>
                 <li><a href="#projects">Projets</a></li>
                 <li><a href="#resume">Parcours</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -694,23 +692,27 @@
         </div>
     </section>
 
-    <!-- Architecture Section (Cookiecutter Data Science inspired) -->
-    <section id="architecture" class="section alt">
+    <!-- Methodology Section (Data Analyst oriented) -->
+    <section id="methodology" class="section alt">
         <div class="container">
-            <h2 class="section-title"><span>02.</span> Standards & reproductibilité</h2>
-            <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.95rem;">
-                Inspirée des standards de l'ingénierie des données (type Cookiecutter Data Science), chaque analyse est structurée selon une architecture modulaire garantissant la traçabilité et la reproductibilité des résultats.
+            <h2 class="section-title"><span>02.</span> Approche analytique</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2.5rem; font-size: 0.95rem;">
+                Mon processus de travail s'articule autour des besoins métier pour transformer chaque source d'information en levier de performance.
             </p>
             
-            <div class="architecture-box">
-                <div>📁 <span class="folder">data/</span></div>
-                <div style="padding-left: 20px;">├── <span class="folder">raw/</span> <span class="comment"># Données brutes immuables d'origine</span></div>
-                <div style="padding-left: 20px;">├── <span class="folder">interim/</span> <span class="comment"># Données intermédiaires transformées</span></div>
-                <div style="padding-left: 20px;">└── <span class="folder">processed/</span> <span class="comment"># Jeux de données finaux pour la modélisation</span></div>
-                <div>📁 <span class="folder">notebooks/</span> <span class="comment"># Carnets d'expérimentation chronologiques</span></div>
-                <div>📁 <span class="folder">reports/</span> <span class="comment"># Rapports générés et visualisations exportées</span></div>
-                <div>📄 <span style="color: #eab308;">Makefile</span> <span class="comment"># Commandes d'automatisation des pipelines</span></div>
-                <div>📄 <span style="color: #eab308;">requirements.txt</span> <span class="comment"># Isolation et gestion de l'environnement</span></div>
+            <div class="methodology-grid">
+                <div class="method-card">
+                    <h3>1. Exploration & nettoyage</h3>
+                    <p>Audit des données sources, traitement des valeurs aberrantes et structuration pour garantir la fiabilité des indicateurs.</p>
+                </div>
+                <div class="method-card">
+                    <h3>2. Modélisation & requêtage</h3>
+                    <p>Mise en relation des tables relationnelles et conception de requêtes SQL optimisées pour cibler les métriques clés.</p>
+                </div>
+                <div class="method-card">
+                    <h3>3. Restitution & Dashboards</h3>
+                    <p>Création de tableaux de bord visuels et interactifs pour simplifier la lecture des performances et orienter les décisions.</p>
+                </div>
             </div>
         </div>
     </section>
