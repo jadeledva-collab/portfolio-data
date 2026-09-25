@@ -279,7 +279,7 @@
         }
 
         /* ==========================================
-           VRAI DASHBOARD BI INTERACTIF (COMPÉTENCES)
+           DASHBOARD BI INTERACTIF (SANS JAUGES DE %)
            ========================================== */
         .interactive-bi-container {
             background: var(--card-bg);
@@ -380,35 +380,27 @@
             font-weight: 600;
         }
 
-        .bi-bar-row {
-            margin-bottom: 0.9rem;
-        }
-
-        .bi-bar-row:last-child {
-            margin-bottom: 0;
-        }
-
-        .bi-bar-meta {
+        .bi-tags-container {
             display: flex;
-            justify-content: space-between;
-            font-size: 0.82rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .bi-skill-pill {
+            background: rgba(168, 85, 247, 0.08);
             color: #e4e4e7;
-            margin-bottom: 0.3rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            transition: var(--transition);
         }
 
-        .bi-bar-track {
-            width: 100%;
-            height: 7px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .bi-bar-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #7c3aed, #c084fc);
-            border-radius: 4px;
-            transition: width 0.6s ease;
+        .bi-skill-pill:hover {
+            background: rgba(168, 85, 247, 0.25);
+            border-color: var(--primary-color);
+            color: #ffffff;
         }
 
         /* Methodology Grid */
@@ -775,7 +767,7 @@
                         <span>Recherche de stage (6 mois) · Dès février 2027</span>
                     </div>
                     <h1>Jade Le Dévéhat</h1>
-                    <h2>Data analyst junior</h2>
+                    <h2>Master 2 Data Analytics & Stratégie de l'Information</h2>
                     <p>Passionnée par la valorisation des données, je transforme des volumes de données brutes en indicateurs stratégiques clairs pour aider à la prise de décision.</p>
                     <p>Rigoureuse et curieuse, j'utilise Python, SQL et des solutions de business intelligence pour révéler l'histoire qui se cache derrière les chiffres.</p>
                     <a href="#projects" class="btn-primary">Explorer mes projets →</a>
@@ -806,7 +798,7 @@
         </div>
     </section>
 
-    <!-- Expertise Technique (Dashboard BI Unique & Interactif) -->
+    <!-- Expertise Technique (Dashboard BI Unique & Interactif sans jauges) -->
     <section id="about" class="section">
         <div class="container">
             <h2 class="section-title"><span>01.</span> Expertise technique</h2>
@@ -835,10 +827,13 @@
                             <h4>Analyse et traitement</h4>
                             <span class="bi-metric-badge">Core Stack</span>
                         </div>
-                        <div class="bi-bar-row"><div class="bi-bar-meta"><span>Python</span><span>95%</span></div><div class="bi-bar-track"><div class="bi-bar-fill" style="width: 95%;"></div></div></div>
-                        <div class="bi-bar-row"><div class="bi-bar-meta"><span>Pandas</span><span>90%</span></div><div class="bi-bar-track"><div class="bi-bar-fill" style="width: 90%;"></div></div></div>
-                        <div class="bi-bar-row"><div class="bi-bar-meta"><span>Numpy</span><span>85%</span></div><div class="bi-bar-track"><div class="bi-bar-fill" style="width: 85%;"></div></div></div>
-                        <div class="bi-bar-row"><div class="bi-bar-meta"><span>Big Data & Statistiques</span><span>85%</span></div><div class="bi-bar-track"><div class="bi-bar-fill" style="width: 85%;"></div></div></div>
+                        <div class="bi-tags-container">
+                            <span class="bi-skill-pill">Python</span>
+                            <span class="bi-skill-pill">Pandas</span>
+                            <span class="bi-skill-pill">Numpy</span>
+                            <span class="bi-skill-pill">Big Data</span>
+                            <span class="bi-skill-pill">Statistiques</span>
+                        </div>
                     </div>
 
                     <!-- Widget 2 -->
@@ -847,10 +842,12 @@
                             <h4>Bases de données</h4>
                             <span class="bi-metric-badge">SQL & Modèles</span>
                         </div>
-                        <div class="bi-bar-row"><div class="bi-bar-meta"><span>SQL</span><span>95%</span></div><div class="bi-bar-track"><div class="bi-bar-fill" style="width: 95%;"></div></div></div>
-                        <div class="bi-bar-row"><div class="bi-bar-meta"><span>MySQL</span><span>90%</span></div><div class="bi-bar-track"><div class="bi-bar-fill" style="width: 90%;"></div></div></div>
-                        <div class="bi-bar-row"><div class="bi-bar-meta"><span>PostgreSQL</span><span>85%</span></div><div class="bi-bar-track"><div class="bi-bar-fill" style="width: 85%;"></div></div></div>
-                        <div class="bi-bar-row"><div class="bi-bar-meta"><span>Modélisation</span><span>85%</span></div><div class="bi-bar-track"><div class="bi-bar-fill" style="width: 85%;"></div></div></div>
+                        <div class="bi-tags-container">
+                            <span class="bi-skill-pill">SQL</span>
+                            <span class="bi-skill-pill">MySQL</span>
+                            <span class="bi-skill-pill">PostgreSQL</span>
+                            <span class="bi-skill-pill">Modélisation</span>
+                        </div>
                     </div>
 
                     <!-- Widget 3 -->
@@ -859,10 +856,13 @@
                             <h4>Visualisation & BI</h4>
                             <span class="bi-metric-badge">Reporting</span>
                         </div>
-                        <div class="bi-bar-row"><div class="bi-bar-meta"><span>Power BI</span><span>95%</span></div><div class="bi-bar-track"><div class="bi-bar-fill" style="width: 95%;"></div></div></div>
-                        <div class="bi-bar-row"><div class="bi-bar-meta"><span>Tableau</span><span>90%</span></div><div class="bi-bar-track"><div class="bi-bar-fill" style="width: 90%;"></div></div></div>
-                        <div class="bi-bar-row"><div class="bi-bar-meta"><span>Qlik</span><span>85%</span></div><div class="bi-bar-track"><div class="bi-bar-fill" style="width: 85%;"></div></div></div>
-                        <div class="bi-bar-row"><div class="bi-bar-meta"><span>Excel avancé & Dashboards</span><span>90%</span></div><div class="bi-bar-track"><div class="bi-bar-fill" style="width: 90%;"></div></div></div>
+                        <div class="bi-tags-container">
+                            <span class="bi-skill-pill">Power BI</span>
+                            <span class="bi-skill-pill">Tableau</span>
+                            <span class="bi-skill-pill">Qlik</span>
+                            <span class="bi-skill-pill">Excel avancé</span>
+                            <span class="bi-skill-pill">Dashboards</span>
+                        </div>
                     </div>
 
                     <!-- Widget 4 -->
@@ -871,10 +871,12 @@
                             <h4>Gouvernance & Référentiels</h4>
                             <span class="bi-metric-badge">Stratégie IT</span>
                         </div>
-                        <div class="bi-bar-row"><div class="bi-bar-meta"><span>Gouvernance KPI</span><span>90%</span></div><div class="bi-bar-track"><div class="bi-bar-fill" style="width: 90%;"></div></div></div>
-                        <div class="bi-bar-row"><div class="bi-bar-meta"><span>MDM</span><span>80%</span></div><div class="bi-bar-track"><div class="bi-bar-fill" style="width: 80%;"></div></div></div>
-                        <div class="bi-bar-row"><div class="bi-bar-meta"><span>CMDB</span><span>80%</span></div><div class="bi-bar-track"><div class="bi-bar-fill" style="width: 80%;"></div></div></div>
-                        <div class="bi-bar-row"><div class="bi-bar-meta"><span>ITSM</span><span>85%</span></div><div class="bi-bar-track"><div class="bi-bar-fill" style="width: 85%;"></div></div></div>
+                        <div class="bi-tags-container">
+                            <span class="bi-skill-pill">Gouvernance KPI</span>
+                            <span class="bi-skill-pill">MDM</span>
+                            <span class="bi-skill-pill">CMDB</span>
+                            <span class="bi-skill-pill">ITSM</span>
+                        </div>
                     </div>
 
                     <!-- Widget 5 -->
@@ -883,9 +885,11 @@
                             <h4>Méthodologies & Gestion</h4>
                             <span class="bi-metric-badge">Pilotage</span>
                         </div>
-                        <div class="bi-bar-row"><div class="bi-bar-meta"><span>ITIL 4</span><span>90%</span></div><div class="bi-bar-track"><div class="bi-bar-fill" style="width: 90%;"></div></div></div>
-                        <div class="bi-bar-row"><div class="bi-bar-meta"><span>Agile Scrum</span><span>90%</span></div><div class="bi-bar-track"><div class="bi-bar-fill" style="width: 90%;"></div></div></div>
-                        <div class="bi-bar-row"><div class="bi-bar-meta"><span>Gestion de projet</span><span>85%</span></div><div class="bi-bar-track"><div class="bi-bar-fill" style="width: 85%;"></div></div></div>
+                        <div class="bi-tags-container">
+                            <span class="bi-skill-pill">ITIL 4</span>
+                            <span class="bi-skill-pill">Agile Scrum</span>
+                            <span class="bi-skill-pill">Gestion de projet</span>
+                        </div>
                     </div>
 
                     <!-- Widget 6 -->
@@ -894,10 +898,12 @@
                             <h4>IA & Automatisation</h4>
                             <span class="bi-metric-badge">Innovations</span>
                         </div>
-                        <div class="bi-bar-row"><div class="bi-bar-meta"><span>n8n</span><span>90%</span></div><div class="bi-bar-track"><div class="bi-bar-fill" style="width: 90%;"></div></div></div>
-                        <div class="bi-bar-row"><div class="bi-bar-meta"><span>RAG</span><span>85%</span></div><div class="bi-bar-track"><div class="bi-bar-fill" style="width: 85%;"></div></div></div>
-                        <div class="bi-bar-row"><div class="bi-bar-meta"><span>Agents IA</span><span>85%</span></div><div class="bi-bar-track"><div class="bi-bar-fill" style="width: 85%;"></div></div></div>
-                        <div class="bi-bar-row"><div class="bi-bar-meta"><span>LLM</span><span>90%</span></div><div class="bi-bar-track"><div class="bi-bar-fill" style="width: 90%;"></div></div></div>
+                        <div class="bi-tags-container">
+                            <span class="bi-skill-pill">n8n</span>
+                            <span class="bi-skill-pill">RAG</span>
+                            <span class="bi-skill-pill">Agents IA</span>
+                            <span class="bi-skill-pill">LLM</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1045,7 +1051,7 @@
                             <div class="resume-date">2025 - 2027</div>
                         </div>
                         <div class="resume-right">
-                            <div class="resume-role">Master Data Analytics et Stratégie de l’Information</div>
+                            <div class="resume-role">Master 2 Data Analytics et Stratégie de l’Information</div>
                         </div>
                     </div>
 
