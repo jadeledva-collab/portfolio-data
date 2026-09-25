@@ -278,94 +278,180 @@
             margin-right: 0.5rem;
         }
 
-        /* VRAIE VIUELLE DE COMPÉTENCES (VIZ MATRICE STYLE BI) */
-        .skills-viz-grid {
+        /* SKILLS GRID */
+        .skills-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.8rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
         }
 
-        .viz-card {
+        .skill-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2rem;
-            backdrop-filter: blur(12px);
+            border-radius: 14px;
+            padding: 1.8rem;
+            backdrop-filter: blur(10px);
             transition: var(--transition);
-            position: relative;
-            overflow: hidden;
         }
 
-        .viz-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--primary-color);
-            opacity: 0.6;
-        }
-
-        .viz-card:hover {
-            transform: translateY(-5px);
+        .skill-card:hover {
+            transform: translateY(-4px);
             border-color: var(--border-hover);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(168, 85, 247, 0.15);
+            background: rgba(168, 85, 247, 0.06);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
-        .viz-header {
+        .skill-card h3 {
+            color: #ffffff;
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skill-card h3::before {
+            content: '>';
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: rgba(168, 85, 247, 0.08);
+            color: var(--text-muted);
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            transition: var(--transition);
+        }
+
+        .skill-tag:hover {
+            color: #ffffff;
+            background: rgba(168, 85, 247, 0.25);
+            border-color: var(--primary-color);
+        }
+
+        /* ==========================================
+           VRAIE VISUALISATION INTERACTIVE (SCATTER MATRIX)
+           ========================================== */
+        .interactive-viz-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2.5rem;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+        }
+
+        .viz-top-controls {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1.2rem;
-            border-bottom: 1px solid rgba(168, 85, 247, 0.15);
-            padding-bottom: 0.8rem;
-        }
-
-        .viz-header h3 {
-            color: #ffffff;
-            font-size: 1.15rem;
-            font-weight: 600;
-        }
-
-        .viz-badge {
-            font-size: 0.75rem;
-            background: rgba(168, 85, 247, 0.15);
-            color: var(--primary-color);
-            padding: 0.25rem 0.6rem;
-            border-radius: 12px;
-            font-weight: 600;
-        }
-
-        /* Graphique de barres intégré pour chaque compétence clé */
-        .viz-bars-container {
-            display: flex;
-            flex-direction: column;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
             gap: 1rem;
-            margin-top: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
         }
 
-        .viz-bar-row label {
+        .viz-top-controls h3 {
+            font-size: 1.15rem;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .viz-slicers {
             display: flex;
-            justify-content: space-between;
-            font-size: 0.85rem;
-            color: #e4e4e7;
-            margin-bottom: 0.3rem;
-            font-weight: 500;
+            gap: 0.5rem;
+            flex-wrap: wrap;
         }
 
-        .viz-bar-track {
-            width: 100%;
-            height: 8px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 4px;
+        .slicer-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slicer-btn:hover, .slicer-btn.active {
+            background: rgba(168, 85, 247, 0.2);
+            border-color: var(--primary-color);
+            color: #ffffff;
+        }
+
+        /* Espace de la viz interactive (Nuage de points / Bulles interactives) */
+        .viz-canvas-area {
+            position: relative;
+            height: 320px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(168, 85, 247, 0.15);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            gap: 15px;
             overflow: hidden;
         }
 
-        .viz-bar-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #7c3aed, #c084fc);
-            border-radius: 4px;
+        .viz-node {
+            background: rgba(168, 85, 247, 0.1);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            color: #ffffff;
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.1, 0.9, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .viz-node span {
+            font-size: 0.7rem;
+            background: rgba(168, 85, 247, 0.3);
+            padding: 2px 6px;
+            border-radius: 10px;
+            color: #e9d5ff;
+        }
+
+        .viz-node:hover {
+            background: rgba(168, 85, 247, 0.35);
+            border-color: var(--primary-color);
+            transform: scale(1.08) translateY(-3px);
+            box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4);
+        }
+
+        .viz-node.hidden {
+            opacity: 0.15;
+            transform: scale(0.9);
+            pointer-events: none;
+        }
+
+        .viz-tooltip {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-style: italic;
+            text-align: center;
         }
 
         /* Methodology Grid */
@@ -713,7 +799,7 @@
             </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Accueil</a></li>
-                <li><a href="#about">Compétences</a></li>
+                <li><a href="#about">Expertise</a></li>
                 <li><a href="#methodology">Méthodologie</a></li>
                 <li><a href="#projects">Projets</a></li>
                 <li><a href="#resume">Parcours</a></li>
@@ -732,9 +818,9 @@
                         <span>Recherche de stage (6 mois) · Dès février 2027</span>
                     </div>
                     <h1>Jade Le Dévéhat</h1>
-                    <h2>Master 2 Data Analytics & Stratégie de l'Information</h2>
-                    <p>Étudiante en M2, je ne me contente pas de manipuler la donnée : je cherche à en extraire ce qui est réellement utile et décisif. Ma double culture analytique et métier me permet de naviguer aussi bien dans un référentiel KPI que sur le terrain.</p>
-                    <p>Rigoureuse et autonome dans les environnements techniques complexes, je recherche un stage de Data Analyst ou Business Analyst à partir de février 2027.</p>
+                    <h2>Data analyst junior</h2>
+                    <p>Passionnée par la valorisation des données, je transforme des volumes de données brutes en indicateurs stratégiques clairs pour aider à la prise de décision.</p>
+                    <p>Rigoureuse et curieuse, j'utilise Python, SQL et des solutions de business intelligence pour révéler l'histoire qui se cache derrière les chiffres.</p>
                     <a href="#projects" class="btn-primary">Explorer mes projets →</a>
                 </div>
                 <div class="hero-image">
@@ -755,114 +841,116 @@
                     <div class="kpi-label">Data Analytics (Univ. Toulon)</div>
                 </div>
                 <div class="kpi-card">
-                    <div class="kpi-value">Business Analyst</div>
-                    <div class="kpi-label">Expérience IT @ Naval Group</div>
+                    <div class="kpi-value">Expertise 360°</div>
+                    <div class="kpi-label">Data Viz, SQL, Python, IA</div>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- Skills Section (Viz Matrice Unifiée BI) -->
+    <!-- Skills Section + VRAIE VIZ INTERACTIVE (SCATTER NODES) -->
     <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title"><span>01.</span> Matrice & Visualisation des compétences</h2>
+            <h2 class="section-title"><span>01.</span> Expertise technique</h2>
             
-            <div class="skills-viz-grid">
-                <!-- Carte 1 -->
-                <div class="viz-card">
-                    <div class="viz-header">
-                        <h3>Analyse et traitement</h3>
-                        <span class="viz-badge">Core Data</span>
-                    </div>
-                    <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem;">Exploration, statistiques et manipulation avancée.</p>
-                    <div class="viz-bars-container">
-                        <div class="viz-bar-row">
-                            <label><span>Python / Pandas / NumPy</span> <span>90%</span></label>
-                            <div class="viz-bar-track"><div class="viz-bar-fill" style="width: 90%;"></div></div>
-                        </div>
-                        <div class="viz-bar-row">
-                            <label><span>Big Data & Statistiques</span> <span>85%</span></label>
-                            <div class="viz-bar-track"><div class="viz-bar-fill" style="width: 85%;"></div></div>
-                        </div>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <h3>Analyse et traitement</h3>
+                    <div class="skills-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">Numpy</span>
+                        <span class="skill-tag">Big Data</span>
+                        <span class="skill-tag">Statistiques</span>
                     </div>
                 </div>
 
-                <!-- Carte 2 -->
-                <div class="viz-card">
-                    <div class="viz-header">
-                        <h3>Bases de données</h3>
-                        <span class="viz-badge">SQL & Modélisation</span>
-                    </div>
-                    <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem;">Extraction, requêtes complexes et gestion relationnelle.</p>
-                    <div class="viz-bars-container">
-                        <div class="viz-bar-row">
-                            <label><span>SQL / MySQL / PostgreSQL</span> <span>90%</span></label>
-                            <div class="viz-bar-track"><div class="viz-bar-fill" style="width: 90%;"></div></div>
-                        </div>
-                        <div class="viz-bar-row">
-                            <label><span>Modélisation de données</span> <span>85%</span></label>
-                            <div class="viz-bar-track"><div class="viz-bar-fill" style="width: 85%;"></div></div>
-                        </div>
+                <div class="skill-card">
+                    <h3>Bases de données</h3>
+                    <div class="skills-tags">
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">Modélisation</span>
                     </div>
                 </div>
 
-                <!-- Carte 3 -->
-                <div class="viz-card">
-                    <div class="viz-header">
-                        <h3>Visualisation & BI</h3>
-                        <span class="viz-badge">Reporting</span>
-                    </div>
-                    <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem;">Conception de tableaux de bord décisionnels.</p>
-                    <div class="viz-bars-container">
-                        <div class="viz-bar-row">
-                            <label><span>Power BI / Tableau / Qlik</span> <span>95%</span></label>
-                            <div class="viz-bar-track"><div class="viz-bar-fill" style="width: 95%;"></div></div>
-                        </div>
-                        <div class="viz-bar-row">
-                            <label><span>Excel avancé & Dashboards</span> <span>90%</span></label>
-                            <div class="viz-bar-track"><div class="viz-bar-fill" style="width: 90%;"></div></div>
-                        </div>
+                <div class="skill-card">
+                    <h3>Visualisation & BI</h3>
+                    <div class="skills-tags">
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Qlik</span>
+                        <span class="skill-tag">Excel avancé</span>
+                        <span class="skill-tag">Dashboards</span>
                     </div>
                 </div>
 
-                <!-- Carte 4 -->
-                <div class="viz-card">
-                    <div class="viz-header">
-                        <h3>Gouvernance & Référentiels</h3>
-                        <span class="viz-badge">Stratégie IT</span>
-                    </div>
-                    <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem;">Pilotage de la qualité et des indicateurs de performance.</p>
-                    <div class="viz-bars-container">
-                        <div class="viz-bar-row">
-                            <label><span>Gouvernance KPI & MDM</span> <span>85%</span></label>
-                            <div class="viz-bar-track"><div class="viz-bar-fill" style="width: 85%;"></div></div>
-                        </div>
-                        <div class="viz-bar-row">
-                            <label><span>CMDB & ITSM</span> <span>80%</span></label>
-                            <div class="viz-bar-track"><div class="viz-bar-fill" style="width: 80%;"></div></div>
-                        </div>
+                <div class="skill-card">
+                    <h3>Gouvernance & Référentiels</h3>
+                    <div class="skills-tags">
+                        <span class="skill-tag">Gouvernance KPI</span>
+                        <span class="skill-tag">MDM</span>
+                        <span class="skill-tag">CMDB</span>
+                        <span class="skill-tag">ITSM</span>
                     </div>
                 </div>
 
-                <!-- Carte 5 -->
-                <div class="viz-card">
-                    <div class="viz-header">
-                        <h3>Méthodologies & Gestion</h3>
-                        <span class="viz-badge">Agilité</span>
-                    </div>
-                    <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem;">Pilotage de projets et alignement opérationnel.</p>
-                    <div class="viz-bars-container">
-                        <div class="viz-bar-row">
-                            <label><span>ITIL 4</span> <span>85%</span></label>
-                            <div class="viz-bar-track"><div class="viz-bar-fill" style="width: 85%;"></div></div>
-                        </div>
-                        <div class="viz-bar-row">
-                            <label><span>Agile Scrum & Gestion de projet</span> <span>90%</span></label>
-                            <div class="viz-bar-track"><div class="viz-bar-fill" style="width: 90%;"></div></div>
-                        </div>
+                <div class="skill-card">
+                    <h3>Méthodologies & Gestion</h3>
+                    <div class="skills-tags">
+                        <span class="skill-tag">ITIL 4</span>
+                        <span class="skill-tag">Agile Scrum</span>
+                        <span class="skill-tag">Gestion de projet</span>
                     </div>
                 </div>
+
+                <!-- NOUVELLE CARTE : IA & Automatisation -->
+                <div class="skill-card">
+                    <h3>IA & Automatisation</h3>
+                    <div class="skills-tags">
+                        <span class="skill-tag">n8n</span>
+                        <span class="skill-tag">RAG</span>
+                        <span class="skill-tag">Agents IA</span>
+                        <span class="skill-tag">LLM</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VRAIE VISUALISATION INTERACTIVE (SANS BARRES DE PROGRESSION) -->
+            <div class="interactive-viz-box">
+                <div class="viz-top-controls">
+                    <h3>Explorateur interactif des compétences & technologies</h3>
+                    <div class="viz-slicers">
+                        <button class="slicer-btn active" onclick="filterViz('all', this)">Tous</button>
+                        <button class="slicer-btn" onclick="filterViz('tech', this)">Technique & Stats</button>
+                        <button class="slicer-btn" onclick="filterViz('bi', this)">Data Viz & BI</button>
+                        <button class="slicer-btn" onclick="filterViz('gov', this)">Gouvernance & IT</button>
+                        <button class="slicer-btn" onclick="filterViz('ai', this)">IA & Workflows</button>
+                    </div>
+                </div>
+
+                <div class="viz-canvas-area" id="vizCanvas">
+                    <div class="viz-node" data-category="tech">Python <span>Core</span></div>
+                    <div class="viz-node" data-category="tech">Pandas <span>Data</span></div>
+                    <div class="viz-node" data-category="tech">Numpy <span>Calculs</span></div>
+                    <div class="viz-node" data-category="tech">SQL <span>Requêtes</span></div>
+                    <div class="viz-node" data-category="tech">PostgreSQL <span>DB</span></div>
+                    <div class="viz-node" data-category="tech">Statistiques <span>Analyse</span></div>
+                    <div class="viz-node" data-category="bi">Power BI <span>BI</span></div>
+                    <div class="viz-node" data-category="bi">Tableau <span>Viz</span></div>
+                    <div class="viz-node" data-category="bi">Qlik <span>Reporting</span></div>
+                    <div class="viz-node" data-category="bi">Excel Avancé <span>Modèles</span></div>
+                    <div class="viz-node" data-category="gov">Gouvernance KPI <span>Stratégie</span></div>
+                    <div class="viz-node" data-category="gov">MDM & CMDB <span>Référentiel</span></div>
+                    <div class="viz-node" data-category="gov">ITIL 4 <span>Process</span></div>
+                    <div class="viz-node" data-category="gov">Agile Scrum <span>Méthode</span></div>
+                    <div class="viz-node" data-category="ai">n8n <span>Automation</span></div>
+                    <div class="viz-node" data-category="ai">RAG & LLM <span>IA Générative</span></div>
+                    <div class="viz-node" data-category="ai">Agents IA <span>Workflows</span></div>
+                </div>
+                <div class="viz-tooltip">Cliquez sur les filtres ci-dessus pour observer le filtrage dynamique du graphe relationnel.</div>
             </div>
 
         </div>
@@ -896,7 +984,7 @@
     <!-- Projects Section -->
     <section id="projects" class="section">
         <div class="container">
-            <h2 class="section-title"><span>03.</span> Domaines de projets</h2>
+            <h2 class="section-title"><span>03.</span> Projets</h2>
             <div class="projects-grid">
                 <div class="project-category-card">
                     <div>
@@ -1008,7 +1096,7 @@
                             <div class="resume-date">2025 - 2027</div>
                         </div>
                         <div class="resume-right">
-                            <div class="resume-role">Master 2 Data Analytics et Stratégie de l’Information</div>
+                            <div class="resume-role">Master Data Analytics et Stratégie de l’Information</div>
                         </div>
                     </div>
 
@@ -1075,8 +1163,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Remplace ton URL Formspree ici -->
-                <form class="contact-form" action="https://formspree.io/f/xaenbvkd" method="POST">
+                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                     <div class="form-group">
                         <label for="name">Nom</label>
                         <input type="text" id="name" name="name" required>
@@ -1102,7 +1189,7 @@
         </div>
     </footer>
 
-    <!-- Scripts pour le Menu -->
+    <!-- Scripts pour le Menu et la Viz Interactive -->
     <script>
         function toggleMenu() {
             const navLinks = document.getElementById('navLinks');
@@ -1114,6 +1201,21 @@
                 document.getElementById('navLinks').classList.remove('show');
             });
         });
+
+        // Script de filtrage pour la vraie Viz Interactive (Matrice de nœuds)
+        function filterViz(category, btnElement) {
+            document.querySelectorAll('.viz-slicers .slicer-btn').forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
+
+            const nodes = document.querySelectorAll('.viz-node');
+            nodes.forEach(node => {
+                if (category === 'all' || node.getAttribute('data-category') === category) {
+                    node.classList.remove('hidden');
+                } else {
+                    node.classList.add('hidden');
+                }
+            });
+        }
     </script>
 </body>
 </html>
