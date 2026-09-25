@@ -76,6 +76,7 @@
             display: flex;
             list-style: none;
             gap: 2.5rem;
+            align-items: center;
         }
 
         .nav-links a {
@@ -279,7 +280,7 @@
         }
 
         /* ==========================================
-           DASHBOARD BI INTERACTIF (SANS JAUGES DE %)
+           DASHBOARD BI INTERACTIF (TAGS / PILLS)
            ========================================== */
         .interactive-bi-container {
             background: var(--card-bg);
@@ -748,10 +749,11 @@
             </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Accueil</a></li>
-                <li><a href="#about">Compétences</a></li>
+                <li><a href="#about">Expertise</a></li>
                 <li><a href="#methodology">Méthodologie</a></li>
                 <li><a href="#projects">Projets</a></li>
                 <li><a href="#resume">Parcours</a></li>
+                <li><a href="CV.pdf" target="_blank">CV</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -767,7 +769,7 @@
                         <span>Recherche de stage (6 mois) · Dès février 2027</span>
                     </div>
                     <h1>Jade Le Dévéhat</h1>
-                    <h2>Master 2 Data Analytics et Stratégie de l'Information</h2>
+                    <h2>Data analyst junior</h2>
                     <p>Passionnée par la valorisation des données, je transforme des volumes de données brutes en indicateurs stratégiques clairs pour aider à la prise de décision.</p>
                     <p>Rigoureuse et curieuse, j'utilise Python, SQL et des solutions de business intelligence pour révéler l'histoire qui se cache derrière les chiffres.</p>
                     <a href="#projects" class="btn-primary">Explorer mes projets →</a>
@@ -783,22 +785,22 @@
             <div class="kpi-container">
                 <div class="kpi-card">
                     <div class="kpi-value">+ de 10</div>
-                    <div class="kpi-label">Projets réalisés</div>
+                    <div class="kpi-label">Projets & Analyses réalisés</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-value">Master 2</div>
-                    <div class="kpi-label">Data Analytics</div>
+                    <div class="kpi-label">Data Analytics (Univ. Toulon)</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-value">Data Analyst Junior</div>
-                    <div class="kpi-label">Profil et compétences 360°</div>
+                    <div class="kpi-label">Profil & Compétences 360°</div>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- Expertise Technique (Dashboard BI Unique & Interactif sans jauges) -->
+    <!-- Expertise Technique (Dashboard BI Unique & Interactif) -->
     <section id="about" class="section">
         <div class="container">
             <h2 class="section-title"><span>01.</span> Expertise technique</h2>
@@ -806,16 +808,17 @@
             <div class="interactive-bi-container">
                 <div class="bi-top-bar">
                     <div class="bi-title-area">
-                        <h3>Compétences</h3>
+                        <h3>Dashboard de Compétences & Stack</h3>
+                        <p>Matrice analytique interactive filtrable par domaine</p>
                     </div>
                     <div class="bi-slicers">
                         <button class="slicer-btn active" onclick="filterBI('all', this)">Tous</button>
-                        <button class="slicer-btn" onclick="filterBI('tech', this)">Analyse et traitement</button>
+                        <button class="slicer-btn" onclick="filterBI('tech', this)">Analyse & Traitement</button>
                         <button class="slicer-btn" onclick="filterBI('db', this)">Bases de données</button>
-                        <button class="slicer-btn" onclick="filterBI('viz', this)">Visualisation et BI</button>
+                        <button class="slicer-btn" onclick="filterBI('viz', this)">Visualisation & BI</button>
                         <button class="slicer-btn" onclick="filterBI('gov', this)">Gouvernance</button>
                         <button class="slicer-btn" onclick="filterBI('method', this)">Méthodologies</button>
-                        <button class="slicer-btn" onclick="filterBI('ai', this)">IA et automatisation</button>
+                        <button class="slicer-btn" onclick="filterBI('ai', this)">IA & Automatisation</button>
                     </div>
                 </div>
 
@@ -852,7 +855,7 @@
                     <!-- Widget 3 -->
                     <div class="bi-widget-card" data-cat="viz">
                         <div class="bi-widget-header">
-                            <h4>Visualisation et BI</h4>
+                            <h4>Visualisation & BI</h4>
                             <span class="bi-metric-badge">Reporting</span>
                         </div>
                         <div class="bi-tags-container">
@@ -867,7 +870,7 @@
                     <!-- Widget 4 -->
                     <div class="bi-widget-card" data-cat="gov">
                         <div class="bi-widget-header">
-                            <h4>Gouvernance et référentiels</h4>
+                            <h4>Gouvernance & Référentiels</h4>
                             <span class="bi-metric-badge">Stratégie IT</span>
                         </div>
                         <div class="bi-tags-container">
@@ -881,7 +884,7 @@
                     <!-- Widget 5 -->
                     <div class="bi-widget-card" data-cat="method">
                         <div class="bi-widget-header">
-                            <h4>Méthodologies et gestion</h4>
+                            <h4>Méthodologies & Gestion</h4>
                             <span class="bi-metric-badge">Pilotage</span>
                         </div>
                         <div class="bi-tags-container">
@@ -894,7 +897,7 @@
                     <!-- Widget 6 -->
                     <div class="bi-widget-card" data-cat="ai">
                         <div class="bi-widget-header">
-                            <h4>IA et automatisation</h4>
+                            <h4>IA & Automatisation</h4>
                             <span class="bi-metric-badge">Innovations</span>
                         </div>
                         <div class="bi-tags-container">
@@ -982,11 +985,14 @@
     <!-- Resume Section -->
     <section id="resume" class="section alt">
         <div class="container">
-            <h2 class="section-title"><span>04.</span> Parcours et expériences</h2>
+            <h2 class="section-title"><span>04.</span> Parcours & Expériences</h2>
+            <div style="margin-bottom: 2rem;">
+                <a href="CV.pdf" target="_blank" class="category-link">📄 Consulter mon CV officiel (PDF) →</a>
+            </div>
             <div class="resume-container">
                 
                 <div class="resume-section">
-                    <h3 class="resume-section-title">Expériences professionnelles</h3>
+                    <h3 class="resume-section-title">Expérience professionnelle</h3>
                     
                     <div class="resume-entry">
                         <div class="resume-left">
@@ -1030,7 +1036,7 @@
                             <div class="resume-date">2022 - 2025</div>
                         </div>
                         <div class="resume-right">
-                            <div class="resume-role">Conseil et gestion (E.Leclerc, LIDL, Pitaya, etc.)</div>
+                            <div class="resume-role">Conseil & Gestion (E.Leclerc, LIDL, Pitaya, etc.)</div>
                             <div class="resume-desc">
                                 <ul>
                                     <li>Conseil clientèle, gestion de caisse, travail en équipe et rigueur opérationnelle.</li>
@@ -1050,7 +1056,7 @@
                             <div class="resume-date">2025 - 2027</div>
                         </div>
                         <div class="resume-right">
-                            <div class="resume-role">Master Data Analytics et Stratégie de l’Information</div>
+                            <div class="resume-role">Master 2 Data Analytics et Stratégie de l’Information</div>
                         </div>
                     </div>
 
