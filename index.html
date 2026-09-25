@@ -104,7 +104,7 @@
             transition: var(--transition);
         }
 
-        /* Status Badge (Pulse) */
+        /* Status Badge */
         .status-badge {
             display: inline-flex;
             align-items: center;
@@ -278,71 +278,94 @@
             margin-right: 0.5rem;
         }
 
-        /* Skills Modern Grid & Unified BI Viz Matrix */
-        .skills-container {
+        /* VRAIE VIUELLE DE COMPÉTENCES (VIZ MATRICE STYLE BI) */
+        .skills-viz-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.8rem;
         }
 
-        .skill-card {
+        .viz-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 14px;
+            border-radius: 16px;
             padding: 2rem;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
             transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .viz-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary-color);
+            opacity: 0.6;
+        }
+
+        .viz-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-hover);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(168, 85, 247, 0.15);
+        }
+
+        .viz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.2rem;
+            border-bottom: 1px solid rgba(168, 85, 247, 0.15);
+            padding-bottom: 0.8rem;
+        }
+
+        .viz-header h3 {
+            color: #ffffff;
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        .viz-badge {
+            font-size: 0.75rem;
+            background: rgba(168, 85, 247, 0.15);
+            color: var(--primary-color);
+            padding: 0.25rem 0.6rem;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        /* Graphique de barres intégré pour chaque compétence clé */
+        .viz-bars-container {
             display: flex;
             flex-direction: column;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .viz-bar-row label {
+            display: flex;
             justify-content: space-between;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--border-hover);
-            background: rgba(168, 85, 247, 0.06);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .skill-card h3 {
-            color: #ffffff;
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border-bottom: 1px solid rgba(168, 85, 247, 0.15);
-            padding-bottom: 0.5rem;
-        }
-
-        .skill-card h3::before {
-            content: '📊';
-            font-size: 0.9rem;
-        }
-
-        .skills-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-        }
-
-        .skill-tag {
-            background: rgba(168, 85, 247, 0.08);
-            color: #d4d4d8;
-            padding: 0.4rem 0.9rem;
-            border-radius: 8px;
             font-size: 0.85rem;
+            color: #e4e4e7;
+            margin-bottom: 0.3rem;
             font-weight: 500;
-            border: 1px solid rgba(168, 85, 247, 0.2);
-            transition: var(--transition);
         }
 
-        .skill-tag:hover {
-            color: #ffffff;
-            background: rgba(168, 85, 247, 0.25);
-            border-color: var(--primary-color);
-            transform: translateY(-2px);
+        .viz-bar-track {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .viz-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #7c3aed, #c084fc);
+            border-radius: 4px;
         }
 
         /* Methodology Grid */
@@ -740,60 +763,104 @@
         </div>
     </section>
 
-    <!-- Skills Section (Unified Viz Matrix) -->
+    <!-- Skills Section (Viz Matrice Unifiée BI) -->
     <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title"><span>01.</span> Compétences & Matrice analytique</h2>
+            <h2 class="section-title"><span>01.</span> Matrice & Visualisation des compétences</h2>
             
-            <div class="skills-container">
-                <div class="skill-card">
-                    <h3>Analyse et traitement</h3>
-                    <div class="skills-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Pandas</span>
-                        <span class="skill-tag">Numpy</span>
-                        <span class="skill-tag">Big Data</span>
-                        <span class="skill-tag">Statistiques</span>
+            <div class="skills-viz-grid">
+                <!-- Carte 1 -->
+                <div class="viz-card">
+                    <div class="viz-header">
+                        <h3>Analyse et traitement</h3>
+                        <span class="viz-badge">Core Data</span>
+                    </div>
+                    <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem;">Exploration, statistiques et manipulation avancée.</p>
+                    <div class="viz-bars-container">
+                        <div class="viz-bar-row">
+                            <label><span>Python / Pandas / NumPy</span> <span>90%</span></label>
+                            <div class="viz-bar-track"><div class="viz-bar-fill" style="width: 90%;"></div></div>
+                        </div>
+                        <div class="viz-bar-row">
+                            <label><span>Big Data & Statistiques</span> <span>85%</span></label>
+                            <div class="viz-bar-track"><div class="viz-bar-fill" style="width: 85%;"></div></div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="skill-card">
-                    <h3>Bases de données</h3>
-                    <div class="skills-tags">
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">Modélisation</span>
+                <!-- Carte 2 -->
+                <div class="viz-card">
+                    <div class="viz-header">
+                        <h3>Bases de données</h3>
+                        <span class="viz-badge">SQL & Modélisation</span>
+                    </div>
+                    <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem;">Extraction, requêtes complexes et gestion relationnelle.</p>
+                    <div class="viz-bars-container">
+                        <div class="viz-bar-row">
+                            <label><span>SQL / MySQL / PostgreSQL</span> <span>90%</span></label>
+                            <div class="viz-bar-track"><div class="viz-bar-fill" style="width: 90%;"></div></div>
+                        </div>
+                        <div class="viz-bar-row">
+                            <label><span>Modélisation de données</span> <span>85%</span></label>
+                            <div class="viz-bar-track"><div class="viz-bar-fill" style="width: 85%;"></div></div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="skill-card">
-                    <h3>Visualisation & BI</h3>
-                    <div class="skills-tags">
-                        <span class="skill-tag">Power BI</span>
-                        <span class="skill-tag">Tableau</span>
-                        <span class="skill-tag">Qlik</span>
-                        <span class="skill-tag">Excel avancé</span>
-                        <span class="skill-tag">Dashboards</span>
+                <!-- Carte 3 -->
+                <div class="viz-card">
+                    <div class="viz-header">
+                        <h3>Visualisation & BI</h3>
+                        <span class="viz-badge">Reporting</span>
+                    </div>
+                    <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem;">Conception de tableaux de bord décisionnels.</p>
+                    <div class="viz-bars-container">
+                        <div class="viz-bar-row">
+                            <label><span>Power BI / Tableau / Qlik</span> <span>95%</span></label>
+                            <div class="viz-bar-track"><div class="viz-bar-fill" style="width: 95%;"></div></div>
+                        </div>
+                        <div class="viz-bar-row">
+                            <label><span>Excel avancé & Dashboards</span> <span>90%</span></label>
+                            <div class="viz-bar-track"><div class="viz-bar-fill" style="width: 90%;"></div></div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="skill-card">
-                    <h3>Gouvernance & Référentiels</h3>
-                    <div class="skills-tags">
-                        <span class="skill-tag">Gouvernance KPI</span>
-                        <span class="skill-tag">MDM</span>
-                        <span class="skill-tag">CMDB</span>
-                        <span class="skill-tag">ITSM</span>
+                <!-- Carte 4 -->
+                <div class="viz-card">
+                    <div class="viz-header">
+                        <h3>Gouvernance & Référentiels</h3>
+                        <span class="viz-badge">Stratégie IT</span>
+                    </div>
+                    <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem;">Pilotage de la qualité et des indicateurs de performance.</p>
+                    <div class="viz-bars-container">
+                        <div class="viz-bar-row">
+                            <label><span>Gouvernance KPI & MDM</span> <span>85%</span></label>
+                            <div class="viz-bar-track"><div class="viz-bar-fill" style="width: 85%;"></div></div>
+                        </div>
+                        <div class="viz-bar-row">
+                            <label><span>CMDB & ITSM</span> <span>80%</span></label>
+                            <div class="viz-bar-track"><div class="viz-bar-fill" style="width: 80%;"></div></div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="skill-card">
-                    <h3>Méthodologies & Gestion</h3>
-                    <div class="skills-tags">
-                        <span class="skill-tag">ITIL 4</span>
-                        <span class="skill-tag">Agile Scrum</span>
-                        <span class="skill-tag">Gestion de projet</span>
+                <!-- Carte 5 -->
+                <div class="viz-card">
+                    <div class="viz-header">
+                        <h3>Méthodologies & Gestion</h3>
+                        <span class="viz-badge">Agilité</span>
+                    </div>
+                    <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem;">Pilotage de projets et alignement opérationnel.</p>
+                    <div class="viz-bars-container">
+                        <div class="viz-bar-row">
+                            <label><span>ITIL 4</span> <span>85%</span></label>
+                            <div class="viz-bar-track"><div class="viz-bar-fill" style="width: 85%;"></div></div>
+                        </div>
+                        <div class="viz-bar-row">
+                            <label><span>Agile Scrum & Gestion de projet</span> <span>90%</span></label>
+                            <div class="viz-bar-track"><div class="viz-bar-fill" style="width: 90%;"></div></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -801,7 +868,7 @@
         </div>
     </section>
 
-    <!-- Methodology Section (Data Analyst oriented) -->
+    <!-- Methodology Section -->
     <section id="methodology" class="section alt">
         <div class="container">
             <h2 class="section-title"><span>02.</span> Approche analytique</h2>
@@ -983,7 +1050,7 @@
         </div>
     </section>
 
-    <!-- Contact Section (Configuré pour recevoir de vrais e-mails via Formspree) -->
+    <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
             <h2 class="section-title"><span>05.</span> Me contacter</h2>
@@ -1008,8 +1075,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- REMPLACE 'YOUR_FORM_ID' PAR TON ID FORMSPREE (ex: https://formspree.io/f/mabxyz12) -->
-                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <!-- Remplace ton URL Formspree ici -->
+                <form class="contact-form" action="https://formspree.io/f/xaenbvkd" method="POST">
                     <div class="form-group">
                         <label for="name">Nom</label>
                         <input type="text" id="name" name="name" required>
