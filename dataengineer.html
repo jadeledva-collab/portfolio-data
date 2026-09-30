@@ -190,7 +190,7 @@
 
         <!-- PROJET 1 : Scraping et Stockage Trustpilot -->
         <div class="project-section">
-            <h2>Scraping et pipeline ETL (Trustpilot Reviews)</h2>
+            <h2>Scraping & Pipeline ETL (Trustpilot Reviews)</h2>
             <p>
                 <strong>Contexte métier :</strong> Une plateforme d’e-commerce souhaite analyser les avis de ses concurrents pour mieux comprendre les retours clients sur des produits similaires. Les données doivent être extraites, nettoyées et organisées pour des analyses comparatives.
             </p>
@@ -208,14 +208,14 @@
 
             <div class="details-grid">
                 <div class="detail-box">
-                    <h3>Extraction et nettoyage</h3>
+                    <h3>Extraction & Nettoyage</h3>
                     <ul>
                         <li><strong>Scraping web :</strong> Identification et extraction des éléments d'intérêt à l'aide de <code>BeautifulSoup</code> et de sélecteurs CSS.</li>
                         <li><strong>Transformation :</strong> Suppression des balises HTML superflues, déduplication et gestion des valeurs manquantes via <code>Pandas</code>.</li>
                     </ul>
                 </div>
                 <div class="detail-box">
-                    <h3>Stockage et automatisation</h3>
+                    <h3>Stockage & Automatisation</h3>
                     <ul>
                         <li><strong>Base SQLite :</strong> Conception d'une structure de base de données relationnelle adaptée pour accueillir les avis.</li>
                         <li><strong>Airflow :</strong> Mise en place d'un DAG d'automatisation quotidienne pour exécuter le pipeline ETL en arrière-plan.</li>
@@ -224,18 +224,18 @@
             </div>
 
             <div class="action-buttons">
-                <a href="https://github.com/jadeledva-collab/portfolio-data" target="_blank" class="btn-link">Voir tous les fichiers du projet (GitHub) →</a>
+                <a href="https://github.com/jadeledva-collab/portfolio-data/tree/main/projet_trustpilot" target="_blank" class="btn-link">Voir tous les fichiers du projet (GitHub) →</a>
             </div>
         </div>
 
         <!-- PROJET 2 : Système de collecte API & Stockage SQL -->
         <div class="project-section">
-            <h2>Système de collecte API et stockage SQL (Météo tourisme)</h2>
+            <h2>Système de Collecte API & Stockage SQL (Météo Tourisme)</h2>
             <p>
-                <strong>Contexte métier :</strong> Une entreprise dans le secteur du tourisme souhaite automatiser la collecte de données météo pour ses différentes destinations afin d’optimiser ses recommandations clients et alimenter des applications mobiles[cite: 15].
+                <strong>Contexte métier :</strong> Une entreprise dans le secteur du tourisme souhaite automatiser la collecte de données météo pour ses différentes destinations afin d’optimiser ses recommandations clients et alimenter des applications mobiles.
             </p>
             <p>
-                <strong>Objectif :</strong> Interroger une API publique en temps réel, transformer les charges utiles JSON et structurer les relevés dans une base de données relationnelle SQL[cite: 15].
+                <strong>Objectif :</strong> Interroger une API publique en temps réel, transformer les charges utiles JSON et structurer les relevés dans une base de données relationnelle SQL.
             </p>
             
             <div class="tech-badges">
@@ -247,23 +247,23 @@
 
             <div class="details-grid">
                 <div class="detail-box">
-                    <h3>Consommation API et extraction</h3>
+                    <h3>Consommation API & Extraction</h3>
                     <ul>
-                        <li><strong>Connexion sécurisée :</strong> Utilisation de la bibliothèque <code>requests</code> pour interroger l'API OpenWeather avec clé d'accès[cite: 15].</li>
-                        <li><strong>Traitement JSON :</strong> Récupération et normalisation des flux de données (conversion des températures en Celsius, formatage des dates)[cite: 15].</li>
+                        <li><strong>Connexion sécurisée :</strong> Utilisation de la bibliothèque <code>requests</code> pour interroger l'API OpenWeather avec clé d'accès.</li>
+                        <li><strong>Traitement JSON :</strong> Récupération et normalisation des flux de données (conversion des températures en Celsius, formatage des dates).</li>
                     </ul>
                 </div>
                 <div class="detail-box">
-                    <h3>Modélisation et stockage SQL</h3>
+                    <h3>Modélisation & Stockage SQL</h3>
                     <ul>
                         <li><strong>Structure relationnelle :</strong> Conception de tables normalisées (<code>destination</code> et <code>weather_log</code> reliées par clé étrangère).</li>
-                        <li><strong>Insertion robuste :</strong> Enregistrement automatisé des données garantissant l'intégrité et l'unicité des enregistrements[cite: 15].</li>
+                        <li><strong>Insertion robuste :</strong> Enregistrement automatisé des données garantissant l'intégrité et l'unicité des enregistrements.</li>
                     </ul>
                 </div>
             </div>
 
             <div class="action-buttons">
-                <a href="https://github.com/jadeledva-collab/portfolio-data" target="_blank" class="btn-link">Voir tous les fichiers du projet (GitHub) →</a>
+                <a href="https://github.com/jadeledva-collab/portfolio-data/tree/main/Projet_météo" target="_blank" class="btn-link">Voir tous les fichiers du projet (GitHub) →</a>
             </div>
         </div>
 
