@@ -184,14 +184,23 @@
             font-weight: 500;
         }
 
-        .dataset-link {
+        .project-link-btn {
+            display: inline-block;
+            margin-top: 1.5rem;
+            background: rgba(168, 85, 247, 0.2);
             color: var(--primary-color);
+            padding: 0.5rem 1.2rem;
+            border-radius: 8px;
             text-decoration: none;
-            word-break: break-all;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid rgba(168, 85, 247, 0.4);
+            transition: var(--transition);
         }
 
-        .dataset-link:hover {
-            text-decoration: underline;
+        .project-link-btn:hover {
+            background: var(--primary-color);
+            color: #ffffff;
         }
 
         .footer {
@@ -232,9 +241,8 @@
                 </div>
 
                 <div class="project-block">
-                    <strong>Problématique & Dataset</strong>
+                    <strong>Problématique</strong>
                     <p><strong>Marketing :</strong> Quelle version d’une landing page convertit le mieux les utilisateurs ?</p>
-                    <p>Dataset : <a href="https://www.kaggle.com/datasets/zhangluyuan/ab-testing" target="_blank" class="dataset-link">https://www.kaggle.com/datasets/zhangluyuan/ab-testing</a></p>
                 </div>
 
                 <div class="project-block">
@@ -253,6 +261,9 @@
                     <span class="tech-tag">Statsmodels</span>
                     <span class="tech-tag">Matplotlib / Seaborn</span>
                 </div>
+
+                <!-- Lien vers ton projet GitHub -->
+                <a href="https://colab.research.google.com/drive/1YowxyzcdPz3TPwDLKnRU3n2FD4hVTuZi?usp=sharing" target="_blank" class="project-link-btn">Voir le code du projet →</a>
             </article>
 
             <!-- Projet 4 : Régression & API Advertising -->
@@ -268,9 +279,8 @@
                 </div>
 
                 <div class="project-block">
-                    <strong>Problématique & Dataset</strong>
+                    <strong>Problématique</strong>
                     <p><strong>Marketing :</strong> Comment prédire les ventes futures en fonction des budgets publicitaires ?</p>
-                    <p>Dataset : <a href="https://www.kaggle.com/datasets/yasserh/advertising-sales-dataset/data" target="_blank" class="dataset-link">https://www.kaggle.com/datasets/yasserh/advertising-sales-dataset/data</a></p>
                 </div>
 
                 <div class="project-block">
@@ -290,9 +300,18 @@
                     <span class="tech-tag">FastAPI</span>
                     <span class="tech-tag">Docker</span>
                 </div>
+
+                <!-- Lien vers ton projet GitHub -->
+                <a href="https://colab.research.google.com/drive/1s5i926XC4tckn3BPvxuUPoXgQZ8erkni?usp=sharing" target="_blank" class="project-link-btn">Voir le code du projet →</a>
             </article>
 
         </div>
     </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Jade Le Dévéhat. Tous droits réservés.</p>
+        </div>
+    </footer>
 </body>
 </html>
