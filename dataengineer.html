@@ -3,315 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Engineer — Jade Le Dévéhat</title>
+    <title>Projets Data Engineer - Jade Le Dévéhat</title>
     <style>
-        :root {
-            --bg-color: #020205;
-            --card-bg: rgba(18, 18, 26, 0.6);
-            --border-color: rgba(168, 85, 247, 0.2);
-            --border-hover: rgba(168, 85, 247, 0.6);
-            --primary-color: #a855f7;
-            --primary-glow: rgba(168, 85, 247, 0.3);
-            --text-main: #ffffff;
-            --text-muted: #a1a1aa;
-            --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: var(--bg-color);
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(124, 58, 237, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.12) 0%, transparent 40%),
-                linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-            background-size: 100% 100%, 40px 40px, 40px 40px;
-            color: var(--text-main);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 50%, #0a0a0a 100%);
+            color: #ffffff;
             line-height: 1.6;
+            padding: 2rem 20px;
         }
 
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(2, 2, 5, 0.85);
-            backdrop-filter: blur(16px);
-            z-index: 1000;
-            padding: 1.2rem 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            letter-spacing: 1.5px;
-            text-decoration: none;
         }
 
         .back-link {
-            color: var(--text-muted);
+            display: inline-block;
+            color: #a855f7;
             text-decoration: none;
-            font-size: 0.9rem;
             font-weight: 500;
-            transition: var(--transition);
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
         }
 
         .back-link:hover {
-            color: var(--primary-color);
+            color: #ffffff;
+        }
+
+        h1 {
+            font-size: 2.3rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #a1a1aa;
+            margin-bottom: 3rem;
+            font-size: 1.05rem;
         }
 
         .project-section {
-            padding: 140px 0 80px 0;
-        }
-
-        .page-title {
-            font-size: clamp(2rem, 4vw, 2.8rem);
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .page-title span {
-            color: var(--primary-color);
-        }
-
-        .page-subtitle {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            margin-bottom: 3.5rem;
-        }
-
-        .project-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(168, 85, 247, 0.2);
             border-radius: 16px;
             padding: 2.5rem;
             margin-bottom: 2.5rem;
             backdrop-filter: blur(10px);
-            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
-        .project-card:hover {
-            border-color: var(--border-hover);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(168, 85, 247, 0.15);
-        }
-
-        .project-header {
+        .project-section h2 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .project-section h2::before {
+            content: '—';
+            color: #a855f7;
+            font-weight: bold;
+        }
+
+        .project-section p {
+            color: #d4d4d8;
             margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .project-title {
-            font-size: 1.4rem;
-            color: #ffffff;
-            font-weight: 600;
-        }
-
-        .project-badge {
-            background: rgba(168, 85, 247, 0.15);
-            color: var(--primary-color);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            border: 1px solid rgba(168, 85, 247, 0.3);
-        }
-
-        .project-block {
-            margin-bottom: 1.2rem;
-        }
-
-        .project-block strong {
-            color: #ffffff;
-            display: block;
-            margin-bottom: 0.3rem;
             font-size: 0.95rem;
         }
 
-        .project-block p, .project-block ul {
-            color: var(--text-muted);
-            font-size: 0.92rem;
-        }
-
-        .project-block ul {
-            padding-left: 1.2rem;
-            margin-top: 0.3rem;
-        }
-
-        .project-block li {
-            margin-bottom: 0.3rem;
-        }
-
-        .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
             margin-top: 1.5rem;
-            padding-top: 1.2rem;
-            border-top: 1px solid rgba(168, 85, 247, 0.15);
         }
 
-        .tech-tag {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-color);
-            color: var(--text-muted);
-            padding: 0.3rem 0.8rem;
-            border-radius: 6px;
-            font-size: 0.82rem;
+        .detail-box {
+            background: rgba(168, 85, 247, 0.04);
+            border: 1px solid rgba(168, 85, 247, 0.15);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .detail-box h3 {
+            color: #ffffff;
+            font-size: 1.05rem;
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+            padding-bottom: 0.4rem;
             font-weight: 500;
+        }
+
+        .detail-box ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .detail-box li {
+            position: relative;
+            padding-left: 1rem;
+            margin-bottom: 0.5rem;
+            color: #a1a1aa;
+            font-size: 0.9rem;
+        }
+
+        .detail-box li::before {
+            content: '·';
+            position: absolute;
+            left: 0;
+            color: #a855f7;
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .tech-badges {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .badge {
+            background: rgba(168, 85, 247, 0.1);
+            color: #a855f7;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(168, 85, 247, 0.2);
         }
 
         .action-buttons {
             display: flex;
             gap: 1rem;
-            margin-top: 1.5rem;
+            margin-top: 2rem;
             flex-wrap: wrap;
         }
 
-        .project-link-btn {
-            display: inline-block;
-            background: rgba(168, 85, 247, 0.2);
-            color: var(--primary-color);
-            padding: 0.5rem 1.2rem;
-            border-radius: 8px;
+        .btn-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 10px 20px;
+            background: rgba(168, 85, 247, 0.1);
+            color: #a855f7;
             text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            border: 1px solid rgba(168, 85, 247, 0.4);
-            transition: var(--transition);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            transition: all 0.3s ease;
         }
 
-        .project-link-btn:hover {
-            background: var(--primary-color);
+        .btn-link:hover {
+            background: rgba(168, 85, 247, 0.2);
+            border-color: rgba(168, 85, 247, 0.5);
             color: #ffffff;
-        }
-
-        .footer {
-            background: #010103;
-            padding: 2.5rem 0;
-            text-align: center;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-muted);
-            font-size: 0.88rem;
-            margin-top: 4rem;
         }
     </style>
 </head>
 <body>
 
-    <header class="header">
-        <nav class="nav container">
-            <a href="index.html" class="logo">JLD.DATA</a>
-            <a href="index.html#projects" class="back-link">← Retour aux projets</a>
-        </nav>
-    </header>
+    <div class="container">
+        <a href="index.html" class="back-link">← Retour aux projets</a>
+        
+        <h1>Projets Data Engineer</h1>
+        <p class="subtitle">Pipelines ETL, architectures de données et automatisation des flux.</p>
 
-    <main class="project-section">
-        <div class="container">
-            <h1 class="page-title">Projets <span>Data Engineer</span></h1>
-            <p class="page-subtitle">Pipelines ETL, architectures de données et automatisation des flux.</p>
+        <!-- PROJET 1 : Scraping et Stockage Trustpilot -->
+        <div class="project-section">
+            <h2>Scraping & Pipeline ETL (Trustpilot Reviews)</h2>
+            <p>
+                <strong>Contexte métier :</strong> Une plateforme d’e-commerce souhaite analyser les avis de ses concurrents pour mieux comprendre les retours clients sur des produits similaires. Les données doivent être extraites, nettoyées et organisées pour des analyses comparatives.
+            </p>
+            <p>
+                <strong>Objectif :</strong> Récupérer des avis consommateurs sur Trustpilot, automatiser le traitement via un pipeline ETL et stocker le tout dans une base de données SQLite.
+            </p>
+            
+            <div class="tech-badges">
+                <span class="badge">Python</span>
+                <span class="badge">BeautifulSoup</span>
+                <span class="badge">Pandas</span>
+                <span class="badge">SQLite</span>
+                <span class="badge">Apache Airflow</span>
+            </div>
 
-            <!-- Projet 1 : Scraping et Stockage Trustpilot -->
-            <article class="project-card">
-                <div class="project-header">
-                    <h2 class="project-title">Scraping & Pipeline ETL (Trustpilot Reviews)</h2>
-                    <span class="project-badge">ETL & Automatisation</span>
-                </div>
-
-                <div class="project-block">
-                    <strong>Contexte & Objectifs</strong>
-                    <p>Conception d'une solution pour extraire, nettoyer et structurer les avis clients de concurrents depuis des sites web afin de mener des analyses comparatives sur des produits similaires.</p>
-                </div>
-
-                <div class="project-block">
-                    <strong>Pipeline Technique & Étapes Clés</strong>
+            <div class="details-grid">
+                <div class="detail-box">
+                    <h3>Extraction & Nettoyage</h3>
                     <ul>
-                        <li><strong>Scraping :</strong> Identification et extraction des avis via <code>BeautifulSoup</code> et gestion des structures HTML par sélecteurs CSS.</li>
-                        <li><strong>Transformation :</strong> Nettoyage des données (suppression des balises HTML, gestion des doublons et formatage du texte).</li>
-                        <li><strong>Stockage :</strong> Conception d'une base de données relationnelle <code>SQLite</code> et insertion automatique des flux.</li>
-                        <li><strong>Automatisation :</strong> Orchestration des tâches de traitement via un pipeline quotidien <code>Apache Airflow</code>.</li>
+                        <li><strong>Scraping web :</strong> Identification et extraction des éléments d'intérêt à l'aide de <code>BeautifulSoup</code> et de sélecteurs CSS.</li>
+                        <li><strong>Transformation :</strong> Suppression des balises HTML superflues, déduplication et gestion des valeurs manquantes via <code>Pandas</code>.</li>
                     </ul>
                 </div>
-
-                <div class="tech-tags">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">BeautifulSoup</span>
-                    <span class="tech-tag">Pandas</span>
-                    <span class="tech-tag">SQLite</span>
-                    <span class="tech-tag">Apache Airflow</span>
-                </div>
-
-                <div class="action-buttons">
-                    <a href="https://github.com/jadeledva-collab/portfolio-data/blob/main/scraper.py" target="_blank" class="project-link-btn">Code Scraping (scraper.py) →</a>
-                    <a href="https://github.com/jadeledva-collab/portfolio-data/blob/main/etl_trustpilot.py" target="_blank" class="project-link-btn">Code ETL (etl_trustpilot.py) →</a>
-                    <a href="https://github.com/jadeledva-collab/portfolio-data/blob/main/airflow.py" target="_blank" class="project-link-btn">Code Airflow (airflow.py) →</a>
-                </div>
-            </article>
-
-            <!-- Projet 2 : Système de collecte API & Stockage SQL -->
-            <article class="project-card">
-                <div class="project-header">
-                    <h2 class="project-title">Système de Collecte API & Stockage SQL (Météo Tourisme)</h2>
-                    <span class="project-badge">API Integration & SQL</span>
-                </div>
-
-                <div class="project-block">
-                    <strong>Contexte & Objectifs</strong>
-                    <p>Automatisation de la collecte de données météorologiques en temps réel via une API publique pour différentes destinations touristiques, facilitant l'intégration de prévisions dans des applications mobiles[cite: 15].</p>
-                </div>
-
-                <div class="project-block">
-                    <strong>Pipeline Technique & Étapes Clés</strong>
+                <div class="detail-box">
+                    <h3>Stockage & Automatisation</h3>
                     <ul>
-                        <li><strong>Connexion API :</strong> Authentification sécurisée et requêtes HTTP GET vers l'API <strong>OpenWeather</strong> à l'aide de la bibliothèque <code>requests</code>[cite: 15].</li>
-                        <li><strong>Traitement JSON :</strong> Récupération, nettoyage, normalisation des données et gestion des valeurs manquantes[cite: 15].</li>
-                        <li><strong>Modélisation SQL :</strong> Conception d'une base relationnelle normalisée (tables <code>destination</code> et <code>weather_log</code> liées par clé étrangère) sous SQLite[cite: 15].</li>
-                        <li><strong>Insertion robuste :</strong> Intégration sécurisée des relevés de température et d'humidité[cite: 15].</li>
+                        <li><strong>Base SQLite :</strong> Conception d'une structure de base de données relationnelle adaptée pour accueillir les avis.</li>
+                        <li><strong>Airflow :</strong> Mise en place d'un DAG d'automatisation quotidienne pour exécuter le pipeline ETL en arrière-plan.</li>
                     </ul>
                 </div>
+            </div>
 
-                <div class="tech-tags">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Requests API</span>
-                    <span class="tech-tag">SQLite</span>
-                    <span class="tech-tag">SQL Relationnel</span>
-                </div>
-
-                <div class="action-buttons">
-                    <a href="https://github.com/jadeledva-collab/portfolio-data/blob/main/etl_meteo.py" target="_blank" class="project-link-btn">Code ETL Météo (etl_meteo.py) →</a>
-                </div>
-            </article>
-
+            <div class="action-buttons">
+                <a href="https://github.com/jadeledva-collab/portfolio-data/blob/main/scraper.py" target="_blank" class="btn-link">Code Scraping (scraper.py) →</a>
+                <a href="https://github.com/jadeledva-collab/portfolio-data/blob/main/etl_trustpilot.py" target="_blank" class="btn-link">Code ETL (etl_trustpilot.py) →</a>
+                <a href="https://github.com/jadeledva-collab/portfolio-data/blob/main/airflow.py" target="_blank" class="btn-link">Code Airflow (airflow.py) →</a>
+            </div>
         </div>
-    </main>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Jade Le Dévéhat. Tous droits réservés.</p>
+        <!-- PROJET 2 : Système de collecte API & Stockage SQL -->
+        <div class="project-section">
+            <h2>Système de Collecte API & Stockage SQL (Météo Tourisme)</h2>
+            <p>
+                <strong>Contexte métier :</strong> Une entreprise dans le secteur du tourisme souhaite automatiser la collecte de données météo pour ses différentes destinations afin d’optimiser ses recommandations clients et alimenter des applications mobiles[cite: 15].
+            </p>
+            <p>
+                <strong>Objectif :</strong> Interroger une API publique en temps réel, transformer les charges utiles JSON et structurer les relevés dans une base de données relationnelle SQL[cite: 15].
+            </p>
+            
+            <div class="tech-badges">
+                <span class="badge">Python</span>
+                <span class="badge">Requests API</span>
+                <span class="badge">SQLite</span>
+                <span class="badge">SQL Relationnel</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <h3>Consommation API & Extraction</h3>
+                    <ul>
+                        <li><strong>Connexion sécurisée :</strong> Utilisation de la bibliothèque <code>requests</code> pour interroger l'API OpenWeather avec clé d'accès[cite: 15].</li>
+                        <li><strong>Traitement JSON :</strong> Récupération et normalisation des flux de données (conversion des températures en Celsius, formatage des dates)[cite: 15].</li>
+                    </ul>
+                </div>
+                <div class="detail-box">
+                    <h3>Modélisation & Stockage SQL</h3>
+                    <ul>
+                        <li><strong>Structure relationnelle :</strong> Conception de tables normalisées (<code>destination</code> et <code>weather_log</code> reliées par clé étrangère).</li>
+                        <li><strong>Insertion robuste :</strong> Enregistrement automatisé des données garantissant l'intégrité et l'unicité des enregistrements[cite: 15].</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="https://github.com/jadeledva-collab/portfolio-data/blob/main/etl_meteo.py" target="_blank" class="btn-link">Code ETL Météo (etl_meteo.py) →</a>
+            </div>
         </div>
-    </footer>
+
+    </div>
+
 </body>
 </html>

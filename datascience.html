@@ -3,326 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Science — Jade Le Dévéhat</title>
+    <title>Projets Data Science - Jade Le Dévéhat</title>
     <style>
-        :root {
-            --bg-color: #020205;
-            --card-bg: rgba(18, 18, 26, 0.6);
-            --border-color: rgba(168, 85, 247, 0.2);
-            --border-hover: rgba(168, 85, 247, 0.6);
-            --primary-color: #a855f7;
-            --primary-glow: rgba(168, 85, 247, 0.3);
-            --text-main: #ffffff;
-            --text-muted: #a1a1aa;
-            --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: var(--bg-color);
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(124, 58, 237, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.12) 0%, transparent 40%),
-                linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-            background-size: 100% 100%, 40px 40px, 40px 40px;
-            color: var(--text-main);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 50%, #0a0a0a 100%);
+            color: #ffffff;
             line-height: 1.6;
+            padding: 2rem 20px;
         }
 
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(2, 2, 5, 0.85);
-            backdrop-filter: blur(16px);
-            z-index: 1000;
-            padding: 1.2rem 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            letter-spacing: 1.5px;
-            text-decoration: none;
         }
 
         .back-link {
-            color: var(--text-muted);
+            display: inline-block;
+            color: #a855f7;
             text-decoration: none;
-            font-size: 0.9rem;
             font-weight: 500;
-            transition: var(--transition);
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
         }
 
         .back-link:hover {
-            color: var(--primary-color);
+            color: #ffffff;
+        }
+
+        h1 {
+            font-size: 2.3rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #a1a1aa;
+            margin-bottom: 3rem;
+            font-size: 1.05rem;
         }
 
         .project-section {
-            padding: 140px 0 80px 0;
-        }
-
-        .page-title {
-            font-size: clamp(2rem, 4vw, 2.8rem);
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .page-title span {
-            color: var(--primary-color);
-        }
-
-        .page-subtitle {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            margin-bottom: 3.5rem;
-        }
-
-        .project-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(168, 85, 247, 0.2);
             border-radius: 16px;
             padding: 2.5rem;
             margin-bottom: 2.5rem;
             backdrop-filter: blur(10px);
-            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
-        .project-card:hover {
-            border-color: var(--border-hover);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(168, 85, 247, 0.15);
-        }
-
-        .project-header {
+        .project-section h2 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .project-section h2::before {
+            content: '—';
+            color: #a855f7;
+            font-weight: bold;
+        }
+
+        .project-section p {
+            color: #d4d4d8;
             margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .project-title {
-            font-size: 1.4rem;
-            color: #ffffff;
-            font-weight: 600;
-        }
-
-        .project-badge {
-            background: rgba(168, 85, 247, 0.15);
-            color: var(--primary-color);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            border: 1px solid rgba(168, 85, 247, 0.3);
-        }
-
-        .project-block {
-            margin-bottom: 1.2rem;
-        }
-
-        .project-block strong {
-            color: #ffffff;
-            display: block;
-            margin-bottom: 0.3rem;
             font-size: 0.95rem;
         }
 
-        .project-block p, .project-block ul {
-            color: var(--text-muted);
-            font-size: 0.92rem;
-        }
-
-        .project-block ul {
-            padding-left: 1.2rem;
-            margin-top: 0.3rem;
-        }
-
-        .project-block li {
-            margin-bottom: 0.3rem;
-        }
-
-        .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
             margin-top: 1.5rem;
-            padding-top: 1.2rem;
-            border-top: 1px solid rgba(168, 85, 247, 0.15);
         }
 
-        .tech-tag {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-color);
-            color: var(--text-muted);
-            padding: 0.3rem 0.8rem;
-            border-radius: 6px;
-            font-size: 0.82rem;
+        .detail-box {
+            background: rgba(168, 85, 247, 0.04);
+            border: 1px solid rgba(168, 85, 247, 0.15);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .detail-box h3 {
+            color: #ffffff;
+            font-size: 1.05rem;
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+            padding-bottom: 0.4rem;
             font-weight: 500;
+        }
+
+        .detail-box ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .detail-box li {
+            position: relative;
+            padding-left: 1rem;
+            margin-bottom: 0.5rem;
+            color: #a1a1aa;
+            font-size: 0.9rem;
+        }
+
+        .detail-box li::before {
+            content: '·';
+            position: absolute;
+            left: 0;
+            color: #a855f7;
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .tech-badges {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .badge {
+            background: rgba(168, 85, 247, 0.1);
+            color: #a855f7;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(168, 85, 247, 0.2);
         }
 
         .action-buttons {
             display: flex;
             gap: 1rem;
-            margin-top: 1.5rem;
+            margin-top: 2rem;
             flex-wrap: wrap;
         }
 
-        .project-link-btn {
-            display: inline-block;
-            background: rgba(168, 85, 247, 0.2);
-            color: var(--primary-color);
-            padding: 0.5rem 1.2rem;
-            border-radius: 8px;
+        .btn-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 10px 20px;
+            background: rgba(168, 85, 247, 0.1);
+            color: #a855f7;
             text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            border: 1px solid rgba(168, 85, 247, 0.4);
-            transition: var(--transition);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            transition: all 0.3s ease;
         }
 
-        .project-link-btn:hover {
-            background: var(--primary-color);
+        .btn-link:hover {
+            background: rgba(168, 85, 247, 0.2);
+            border-color: rgba(168, 85, 247, 0.5);
             color: #ffffff;
-        }
-
-        .footer {
-            background: #010103;
-            padding: 2.5rem 0;
-            text-align: center;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-muted);
-            font-size: 0.88rem;
-            margin-top: 4rem;
         }
     </style>
 </head>
 <body>
 
-    <header class="header">
-        <nav class="nav container">
-            <a href="index.html" class="logo">JLD.DATA</a>
-            <a href="index.html#projects" class="back-link">← Retour aux projets</a>
-        </nav>
-    </header>
+    <div class="container">
+        <a href="index.html" class="back-link">← Retour aux projets</a>
+        
+        <h1>Projets Data Science</h1>
+        <p class="subtitle">Modélisation statistique, expérimentation contrôlée et algorithmes prédictifs.</p>
 
-    <main class="project-section">
-        <div class="container">
-            <h1 class="page-title">Projets <span>Data Science</span></h1>
-            <p class="page-subtitle">Modélisation statistique, expérimentation contrôlée et algorithmes prédictifs.</p>
+        <!-- A/B Testing -->
+        <div class="project-section">
+            <h2>A/B Testing – Optimisation d'une landing page</h2>
+            <p>
+                <strong>Contexte et objectifs :</strong> Mise en place d'une expérimentation contrôlée pour comparer deux versions d'une landing page afin de déterminer laquelle est la plus performante. Ce projet utilise l'A/B testing, une méthode essentielle en marketing pour optimiser les taux de conversion.
+            </p>
+            <p>
+                <strong>Problématique marketing :</strong> Quelle version d’une landing page (contrôle vs. traitement) convertit le mieux les utilisateurs ?
+            </p>
+            
+            <div class="tech-badges">
+                <span class="badge">Python</span>
+                <span class="badge">Pandas</span>
+                <span class="badge">Scipy (Stats)</span>
+                <span class="badge">Statsmodels</span>
+                <span class="badge">Matplotlib / Seaborn</span>
+            </div>
 
-            <!-- A/B Testing -->
-            <article class="project-card">
-                <div class="project-header">
-                    <h2 class="project-title">A/B Testing – Optimisation d'une Landing Page</h2>
-                    <span class="project-badge">Expérimentation & Statistiques</span>
-                </div>
-
-                <div class="project-block">
-                    <strong>Contexte & Objectifs</strong>
-                    <p>Mise en place d'une expérimentation contrôlée pour comparer deux versions d'une landing page afin de déterminer laquelle est la plus performante. Ce projet utilise l'A/B testing, une méthode essentielle en marketing pour optimiser les taux de conversion.</p>
-                </div>
-
-                <div class="project-block">
-                    <strong>Problématique Marketing</strong>
-                    <p>Quelle version d’une landing page (contrôle vs. traitement) convertit le mieux les utilisateurs ?</p>
-                </div>
-
-                <div class="project-block">
-                    <strong>Méthodologie & Résultats Clés</strong>
+            <div class="details-grid">
+                <div class="detail-box">
+                    <h3>Traitement des données</h3>
                     <ul>
                         <li>Nettoyage et filtrage de plus de 290 000 lignes de trafic web pour isoler les données pertinentes.</li>
-                        <li>Analyse statistique via un <strong>Z-test des proportions</strong> pour évaluer la significativité des résultats.</li>
-                        <li><strong>Conclusion :</strong> Le test a révélé une p-value de 0.1897 (supérieure au seuil de 0.05). La différence de conversion (12.04% vs 11.88%) n'étant pas statistiquement significative, la recommandation est de ne pas déployer la nouvelle version.</li>
                     </ul>
                 </div>
-
-                <div class="tech-tags">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Pandas</span>
-                    <span class="tech-tag">Scipy (Stats)</span>
-                    <span class="tech-tag">Statsmodels</span>
-                    <span class="tech-tag">Matplotlib / Seaborn</span>
+                <div class="detail-box">
+                    <h3>Analyse & Résultats Clés</h3>
+                    <ul>
+                        <li>Analyse statistique via un <strong>Z-test des proportions</strong> pour évaluer la significativité.</li>
+                        <li><strong>Conclusion :</strong> p-value de 0.1897 (> 0.05). La différence n'est pas significative, recommandation de ne pas déployer la nouvelle version.</li>
+                    </ul>
                 </div>
+            </div>
 
-                <div class="action-buttons">
-                    <a href="https://colab.research.google.com/drive/1YowxyzcdPz3TPwDLKnRU3n2FD4hVTuZi?usp=sharing" target="_blank" class="project-link-btn">Voir le Notebook Colab →</a>
-                </div>
-            </article>
+            <div class="action-buttons">
+                <a href="https://colab.research.google.com/drive/1YowxyzcdPz3TPwDLKnRU3n2FD4hVTuZi?usp=sharing" target="_blank" class="btn-link">Voir le Notebook Colab →</a>
+            </div>
+        </div>
 
-            <!-- Régression & API Advertising -->
-            <article class="project-card">
-                <div class="project-header">
-                    <h2 class="project-title">Modèles de Régression & Déploiement API (Advertising)</h2>
-                    <span class="project-badge">Machine Learning & MLOps</span>
-                </div>
+        <!-- Régression & API Advertising -->
+        <div class="project-section">
+            <h2>Modèles de régression et déploiement API (Advertising)</h2>
+            <p>
+                <strong>Contexte et objectifs :</strong> Construction, entraînement et optimisation de modèles de régression prédictifs, suivis de l'industrialisation complète du modèle via le développement d'une API et sa containerisation.
+            </p>
+            <p>
+                <strong>Problématique marketing :</strong> Comment prédire les ventes futures d'une entreprise en fonction de ses investissements publicitaires (budgets TV, Radio et Presse) ?
+            </p>
+            
+            <div class="tech-badges">
+                <span class="badge">Python</span>
+                <span class="badge">Scikit-learn</span>
+                <span class="badge">XGBoost</span>
+                <span class="badge">FastAPI</span>
+                <span class="badge">Docker</span>
+                <span class="badge">Joblib</span>
+            </div>
 
-                <div class="project-block">
-                    <strong>Contexte & Objectifs</strong>
-                    <p>Construction, entraînement et optimisation de modèles de régression prédictifs, suivis de l'industrialisation complète du modèle via le développement d'une API et sa containerisation.</p>
-                </div>
-
-                <div class="project-block">
-                    <strong>Problématique Marketing</strong>
-                    <p>Comment prédire les ventes futures d'une entreprise en fonction de ses investissements publicitaires (budgets TV, Radio et Presse) ?</p>
-                </div>
-
-                <div class="project-block">
-                    <strong>Modélisation & Pipeline MLOps</strong>
+            <div class="details-grid">
+                <div class="detail-box">
+                    <h3>Modélisation & ML</h3>
                     <ul>
                         <li><strong>Comparaison d'algorithmes :</strong> Évaluation de modèles de régression linéaire (Ridge, Lasso, ElasticNet) et de modèles ensemblistes (Random Forest, XGBoost, LightGBM, CatBoost).</li>
-                        <li><strong>Sélection & Sérialisation :</strong> Choix du modèle <strong>XGBoost</strong> (<code>XGBRegressor</code>) pour ses performances optimales, exporté et sauvegardé au format binaire via <code>joblib</code> (<code>xgboost_advertising_model.pkl</code>).</li>
-                        <li><strong>Développement de l'API (<code>app.py</code>) :</strong> Création d'un service web sous <strong>FastAPI</strong> proposant un endpoint de prédiction en temps réel (<code>/predict</code>) basé sur les budgets publicitaires.</li>
-                        <li><strong>Containerisation (<code>Dockerfile</code>) :</strong> Configuration d'un environnement d'exécution isolé (image Python slim, installation des dépendances via <code>requirements.txt</code>) prêt pour le déploiement Cloud.</li>
+                        <li><strong>Sélection & Sérialisation :</strong> Choix du modèle <strong>XGBoost</strong> (<code>XGBRegressor</code>) sauvegardé via <code>joblib</code> (<code>xgboost_advertising_model.pkl</code>).</li>
                     </ul>
                 </div>
-
-                <div class="tech-tags">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Scikit-learn</span>
-                    <span class="tech-tag">XGBoost</span>
-                    <span class="tech-tag">FastAPI</span>
-                    <span class="tech-tag">Docker</span>
-                    <span class="tech-tag">Joblib</span>
+                <div class="detail-box">
+                    <h3>Pipeline MLOps</h3>
+                    <ul>
+                        <li><strong>Développement API (<code>app.py</code>) :</strong> Création d'un service web sous <strong>FastAPI</strong> avec un endpoint de prédiction en temps réel (<code>/predict</code>).</li>
+                        <li><strong>Containerisation (<code>Dockerfile</code>) :</strong> Configuration d'un environnement isolé (image Python slim, dépendances via <code>requirements.txt</code>) pour le Cloud.</li>
+                    </ul>
                 </div>
+            </div>
 
-                <div class="action-buttons">
-                    <a href="https://colab.research.google.com/drive/1s5i926XC4tckn3BPvxuUPoXgQZ8erkni?usp=sharing" target="_blank" class="project-link-btn">Voir le Notebook Colab (Entraînement) →</a>
-                    <!-- Remplace "TON_PSEUDO_GITHUB" et "TON_REPO" par tes vraies infos -->
-                    <a href="https://github.com/jadeledva-collab/portfolio-data/tree/main/projet_advertising" target="_blank" class="project-link-btn">Voir tous les fichiers du projet (GitHub) →</a>
-                </div>
-            </article>
-
+            <div class="action-buttons">
+                <a href="https://colab.research.google.com/drive/1s5i926XC4tckn3BPvxuUPoXgQZ8erkni?usp=sharing" target="_blank" class="btn-link">Voir le Notebook Colab (Entraînement) →</a>
+                <a href="https://github.com/jadeledva-collab/portfolio-data/tree/main/projet_advertising" target="_blank" class="btn-link">Voir tous les fichiers du projet (GitHub) →</a>
+            </div>
         </div>
-    </main>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Jade Le Dévéhat. Tous droits réservés.</p>
-        </div>
-    </footer>
+    </div>
+
 </body>
 </html>
