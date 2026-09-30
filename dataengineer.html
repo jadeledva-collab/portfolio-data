@@ -234,7 +234,7 @@
             <h1 class="page-title">Projets <span>Data Engineer</span></h1>
             <p class="page-subtitle">Pipelines ETL, architectures de données et automatisation des flux.</p>
 
-            <!-- Projet Scraping et Stockage Trustpilot -->
+            <!-- Projet 1 : Scraping et Stockage Trustpilot -->
             <article class="project-card">
                 <div class="project-header">
                     <h2 class="project-title">Scraping & Pipeline ETL (Trustpilot Reviews)</h2>
@@ -243,16 +243,16 @@
 
                 <div class="project-block">
                     <strong>Contexte & Objectifs</strong>
-                    <p>Conception d'une plateforme d'e-commerce permettant d'extraire, nettoyer et structurer les avis de consommateurs de concurrents (Trustpilot) afin de mener des analyses comparatives poussées.</p>
+                    <p>Conception d'une solution pour extraire, nettoyer et structurer les avis clients de concurrents depuis des sites web afin de mener des analyses comparatives sur des produits similaires.</p>
                 </div>
 
                 <div class="project-block">
-                    <strong>Étapes Clés & Pipeline Technique</strong>
+                    <strong>Pipeline Technique & Étapes Clés</strong>
                     <ul>
-                        <li><strong>Extraction (Scraping) :</strong> Utilisation de <code>BeautifulSoup</code> et requêtes HTTP avec User-Agent pour cibler les balises HTML et collecter les avis (auteurs, notes, textes).</li>
-                        <li><strong>Transformation & Nettoyage :</strong> Suppression des doublons, gestion des sauts de ligne, normalisation du texte et gestion des valeurs manquantes via <code>Pandas</code>.</li>
-                        <li><strong>Chargement & Stockage :</strong> Création d'une base de données relationnelle <strong>SQLite</strong> structurée (`trustpilot.db`) avec table dédiée `reviews`.</li>
-                        <li><strong>Automatisation :</strong> Mise en place d'un DAG quotidien avec <strong>Apache Airflow</strong> (<code>airflow.py</code>) pour industrialiser l'exécution de l'ETL.</li>
+                        <li><strong>Scraping :</strong> Identification et extraction des avis via <code>BeautifulSoup</code> et gestion des structures HTML par sélecteurs CSS.</li>
+                        <li><strong>Transformation :</strong> Nettoyage des données (suppression des balises HTML, gestion des doublons et formatage du texte).</li>
+                        <li><strong>Stockage :</strong> Conception d'une base de données relationnelle <code>SQLite</code> et insertion automatique des flux.</li>
+                        <li><strong>Automatisation :</strong> Orchestration des tâches de traitement via un pipeline quotidien <code>Apache Airflow</code>.</li>
                     </ul>
                 </div>
 
@@ -265,10 +265,43 @@
                 </div>
 
                 <div class="action-buttons">
-                    <!-- Remplacer TON_PSEUDO_GITHUB et TON_REPO par tes vraies infos -->
-                    <a href="https://github.com/TON_PSEUDO_GITHUB/TON_REPO/blob/main/scraper.py" target="_blank" class="project-link-btn">Code Scraping (scraper.py) →</a>
-                    <a href="https://github.com/TON_PSEUDO_GITHUB/TON_REPO/blob/main/projet_advertising/etl_trustpilot.py" target="_blank" class="project-link-btn">Code ETL (etl_trustpilot.py) →</a>
-                    <a href="https://github.com/TON_PSEUDO_GITHUB/TON_REPO/blob/main/airflow.py" target="_blank" class="project-link-btn">Code Airflow (airflow.py) →</a>
+                    <a href="https://github.com/jadeledva-collab/portfolio-data/blob/main/scraper.py" target="_blank" class="project-link-btn">Code Scraping (scraper.py) →</a>
+                    <a href="https://github.com/jadeledva-collab/portfolio-data/blob/main/etl_trustpilot.py" target="_blank" class="project-link-btn">Code ETL (etl_trustpilot.py) →</a>
+                    <a href="https://github.com/jadeledva-collab/portfolio-data/blob/main/airflow.py" target="_blank" class="project-link-btn">Code Airflow (airflow.py) →</a>
+                </div>
+            </article>
+
+            <!-- Projet 2 : Système de collecte API & Stockage SQL -->
+            <article class="project-card">
+                <div class="project-header">
+                    <h2 class="project-title">Système de Collecte API & Stockage SQL (Météo Tourisme)</h2>
+                    <span class="project-badge">API Integration & SQL</span>
+                </div>
+
+                <div class="project-block">
+                    <strong>Contexte & Objectifs</strong>
+                    <p>Automatisation de la collecte de données météorologiques en temps réel via une API publique pour différentes destinations touristiques, facilitant l'intégration de prévisions dans des applications mobiles[cite: 15].</p>
+                </div>
+
+                <div class="project-block">
+                    <strong>Pipeline Technique & Étapes Clés</strong>
+                    <ul>
+                        <li><strong>Connexion API :</strong> Authentification sécurisée et requêtes HTTP GET vers l'API <strong>OpenWeather</strong> à l'aide de la bibliothèque <code>requests</code>[cite: 15].</li>
+                        <li><strong>Traitement JSON :</strong> Récupération, nettoyage, normalisation des données et gestion des valeurs manquantes[cite: 15].</li>
+                        <li><strong>Modélisation SQL :</strong> Conception d'une base relationnelle normalisée (tables <code>destination</code> et <code>weather_log</code> liées par clé étrangère) sous SQLite[cite: 15].</li>
+                        <li><strong>Insertion robuste :</strong> Intégration sécurisée des relevés de température et d'humidité[cite: 15].</li>
+                    </ul>
+                </div>
+
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Requests API</span>
+                    <span class="tech-tag">SQLite</span>
+                    <span class="tech-tag">SQL Relationnel</span>
+                </div>
+
+                <div class="action-buttons">
+                    <a href="https://github.com/jadeledva-collab/portfolio-data/blob/main/etl_meteo.py" target="_blank" class="project-link-btn">Code ETL Météo (etl_meteo.py) →</a>
                 </div>
             </article>
 
