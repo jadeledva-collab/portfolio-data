@@ -43,7 +43,6 @@
             padding: 0 24px;
         }
 
-        /* Header / Navigation */
         .header {
             position: fixed;
             top: 0;
@@ -81,7 +80,6 @@
             color: var(--primary-color);
         }
 
-        /* Main Content */
         .project-section {
             padding: 140px 0 80px 0;
         }
@@ -196,7 +194,6 @@
             text-decoration: underline;
         }
 
-        /* Footer */
         .footer {
             background: #010103;
             padding: 2.5rem 0;
@@ -210,7 +207,6 @@
 </head>
 <body>
 
-    <!-- Header -->
     <header class="header">
         <nav class="nav container">
             <a href="index.html" class="logo">JLD.DATA</a>
@@ -218,81 +214,78 @@
         </nav>
     </header>
 
-    <!-- Main Content -->
     <main class="project-section">
         <div class="container">
             <h1 class="page-title">Projets <span>Data Science</span></h1>
             <p class="page-subtitle">Modélisation statistique, expérimentation contrôlée et algorithmes prédictifs.</p>
 
-            <!-- Projet 1 : A/B Testing -->
+            <!-- Projet 2 : A/B Testing -->
             <article class="project-card">
                 <div class="project-header">
-                    <h2 class="project-title">Analyse d'A/B Testing & Prise de Décision</h2>
+                    <h2 class="project-title">Projet 2 : A/B Testing – Optimisation d'une Landing Page</h2>
                     <span class="project-badge">Expérimentation</span>
                 </div>
 
                 <div class="project-block">
                     <strong>Contexte & Objectifs</strong>
-                    <p>Mise en place d'une expérimentation contrôlée pour comparer deux versions d'une landing page (ancienne vs nouvelle) afin d'optimiser les performances e-commerce et d'analyser les résultats avec rigueur statistique[cite: 5].</p>
+                    <p>L’A/B testing est une méthode utilisée pour comparer deux versions d'un produit ou d'un service afin de déterminer laquelle est la plus performante. Ce projet met en place une expérimentation contrôlée pour comparer deux groupes et analyser les résultats à l'aide de statistiques pour choisir la version gagnante.</p>
                 </div>
 
                 <div class="project-block">
                     <strong>Problématique & Dataset</strong>
-                    <p>Quelle version d'une landing page convertit le mieux les utilisateurs ?[cite: 5] Traitement de plus de 290 000 lignes de trafic web issues de Kaggle (<a href="https://www.kaggle.com/datasets/zhangluyuan/ab-testing" target="_blank" class="dataset-link">Dataset A/B Testing</a>)[cite: 5].</p>
+                    <p><strong>Marketing :</strong> Quelle version d’une landing page convertit le mieux les utilisateurs ?</p>
+                    <p>Dataset : <a href="https://www.kaggle.com/datasets/zhangluyuan/ab-testing" target="_blank" class="dataset-link">https://www.kaggle.com/datasets/zhangluyuan/ab-testing</a></p>
                 </div>
 
                 <div class="project-block">
                     <strong>Compétences & Résultats Clés</strong>
                     <ul>
-                        <li>Nettoyage et structuration de grands volumes de données web via Pandas.</li>
-                        <li>Réalisation d'un <strong>Z-test des proportions</strong> (via Statsmodels / Scipy)[cite: 5].</li>
-                        <li>Obtention d'une p-value de 0.1897 ( > 0.05), démontrant que la différence observée (12.04% vs 11.88%) n'est pas statistiquement significative[cite: 5].</li>
-                        <li>Recommandation métier : ne pas déployer la nouvelle page en production pour capitaliser sur d'autres axes d'optimisation[cite: 5].</li>
+                        <li>Nettoyage et préparation de plus de 290 000 lignes de données de trafic.</li>
+                        <li>Réalisation de tests statistiques (Z-test des proportions) pour évaluer la significativité.</li>
+                        <li>Visualisation claire des résultats pour orienter la décision (recommandation de ne pas déployer la nouvelle page suite à une p-value de 0.1897).</li>
                     </ul>
                 </div>
 
                 <div class="tech-tags">
                     <span class="tech-tag">Python</span>
                     <span class="tech-tag">Pandas</span>
-                    <span class="tech-tag">Statsmodels</span>
                     <span class="tech-tag">Scipy</span>
+                    <span class="tech-tag">Statsmodels</span>
                     <span class="tech-tag">Matplotlib / Seaborn</span>
                 </div>
             </article>
 
-            <!-- Projet 2 : Régression & API -->
+            <!-- Projet 4 : Régression & API Advertising -->
             <article class="project-card">
                 <div class="project-header">
-                    <h2 class="project-title">Modèles de Régression Avancés & Déploiement API</h2>
+                    <h2 class="project-title">Projet 4 : Régression & Déploiement API (Advertising)</h2>
                     <span class="project-badge">Machine Learning & MLOps</span>
                 </div>
 
                 <div class="project-block">
                     <strong>Contexte & Objectifs</strong>
-                    <p>Construction, comparaison et optimisation de modèles de régression pour prédire des valeurs continues (prédiction des ventes publicitaires et estimation de prix immobiliers)[cite: 5].</p>
+                    <p>La régression permet de prédire des valeurs continues. Ce projet consiste à construire des modèles de régression, à comparer et optimiser leurs performances, puis à industrialiser le modèle.</p>
                 </div>
 
                 <div class="project-block">
-                    <strong>Problématiques & Datasets</strong>
-                    <ul>
-                        <li><em>Marketing :</em> Prédire les ventes en fonction des budgets TV, radio et presse (<a href="https://www.kaggle.com/datasets/yasserh/advertising-sales-dataset/data" target="_blank" class="dataset-link">Advertising Sales Dataset</a>)[cite: 5].</li>
-                        <li><em>Immobilier :</em> Prédire le prix de vente d'une maison selon ses caractéristiques (<a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques" target="_blank" class="dataset-link">House Prices Techniques</a>)[cite: 5].</li>
-                    </ul>
+                    <strong>Problématique & Dataset</strong>
+                    <p><strong>Marketing :</strong> Comment prédire les ventes futures en fonction des budgets publicitaires ?</p>
+                    <p>Dataset : <a href="https://www.kaggle.com/datasets/yasserh/advertising-sales-dataset/data" target="_blank" class="dataset-link">https://www.kaggle.com/datasets/yasserh/advertising-sales-dataset/data</a></p>
                 </div>
 
                 <div class="project-block">
-                    <strong>Compétences & Implémentation</strong>
+                    <strong>Compétences & Implémentation technique</strong>
                     <ul>
-                        <li>Évaluation comparative de multiples algorithmes : Régression Linéaire, Ridge, Lasso, ElasticNet, et modèles basés sur les arbres (Random Forest, XGBoost, LightGBM, CatBoost)[cite: 5].</li>
-                        <li>Sérialisation et sauvegarde du modèle de pointe (`XGBRegressor`) via Joblib[cite: 6, 9].</li>
-                        <li>Développement d'une API de scoring en temps réel avec <strong>FastAPI</strong> (`app.py`)[cite: 5, 6].</li>
-                        <li>Containerisation du modèle et de l'API via <strong>Docker</strong> (`Dockerfile`) pour faciliter le déploiement cloud[cite: 5, 7, 8].</li>
+                        <li><strong>Modélisation de régression :</strong> Régression Linéaire (simple et multiple), Ridge, Lasso, et ElasticNet.</li>
+                        <li><strong>Modèles basés sur les arbres :</strong> Arbre de décision, Random Forest, AdaBoost, XGBoost (modèle retenu et sérialisé via `joblib`), LightGBM et CatBoost.</li>
+                        <li><strong>Déploiement d'une API :</strong> Mise en place d'une API sous <strong>FastAPI</strong> (`app.py`) pour fournir des prédictions de ventes en temps réel.</li>
+                        <li><strong>Containerisation :</strong> Utilisation de <strong>Docker</strong> (`Dockerfile` et `requirements.txt`) pour faciliter la mise en production.</li>
                     </ul>
                 </div>
 
                 <div class="tech-tags">
                     <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Scikit-Learn</span>
+                    <span class="tech-tag">Scikit-learn</span>
                     <span class="tech-tag">XGBoost</span>
                     <span class="tech-tag">FastAPI</span>
                     <span class="tech-tag">Docker</span>
@@ -301,5 +294,5 @@
 
         </div>
     </main>
-    </body>
+</body>
 </html>
