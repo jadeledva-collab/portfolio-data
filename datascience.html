@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Science — Jade Le Dévéhat</title>
+    <style>
+        :root {
+            --bg-color: #020205;
+            --card-bg: rgba(18, 18, 26, 0.6);
+            --border-color: rgba(168, 85, 247, 0.2);
+            --border-hover: rgba(168, 85, 247, 0.6);
+            --primary-color: #a855f7;
+            --primary-glow: rgba(168, 85, 247, 0.3);
+            --text-main: #ffffff;
+            --text-muted: #a1a1aa;
+            --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(124, 58, 237, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.12) 0%, transparent 40%),
+                linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+            background-size: 100% 100%, 40px 40px, 40px 40px;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header / Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(2, 2, 5, 0.85);
+            backdrop-filter: blur(16px);
+            z-index: 1000;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: 1.5px;
+            text-decoration: none;
+        }
+
+        .back-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* Main Content */
+        .project-section {
+            padding: 140px 0 80px 0;
+        }
+
+        .page-title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .page-title span {
+            color: var(--primary-color);
+        }
+
+        .page-subtitle {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            border-color: var(--border-hover);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(168, 85, 247, 0.15);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .project-badge {
+            background: rgba(168, 85, 247, 0.15);
+            color: var(--primary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(168, 85, 247, 0.3);
+        }
+
+        .project-block {
+            margin-bottom: 1.2rem;
+        }
+
+        .project-block strong {
+            color: #ffffff;
+            display: block;
+            margin-bottom: 0.3rem;
+            font-size: 0.95rem;
+        }
+
+        .project-block p, .project-block ul {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+
+        .project-block ul {
+            padding-left: 1.2rem;
+            margin-top: 0.3rem;
+        }
+
+        .project-block li {
+            margin-bottom: 0.3rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid rgba(168, 85, 247, 0.15);
+        }
+
+        .tech-tag {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.82rem;
+            font-weight: 500;
+        }
+
+        .dataset-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .dataset-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            background: #010103;
+            padding: 2.5rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="logo">JLD.DATA</a>
+            <a href="index.html#projects" class="back-link">← Retour aux projets</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="project-section">
+        <div class="container">
+            <h1 class="page-title">Projets <span>Data Science</span></h1>
+            <p class="page-subtitle">Modélisation statistique, expérimentation contrôlée et algorithmes prédictifs.</p>
+
+            <!-- Projet 1 : A/B Testing -->
+            <article class="project-card">
+                <div class="project-header">
+                    <h2 class="project-title">Analyse d'A/B Testing & Prise de Décision</h2>
+                    <span class="project-badge">Expérimentation</span>
+                </div>
+
+                <div class="project-block">
+                    <strong>Contexte & Objectifs</strong>
+                    <p>Mise en place d'une expérimentation contrôlée pour comparer deux versions d'une landing page (ancienne vs nouvelle) afin d'optimiser les performances e-commerce et d'analyser les résultats avec rigueur statistique[cite: 5].</p>
+                </div>
+
+                <div class="project-block">
+                    <strong>Problématique & Dataset</strong>
+                    <p>Quelle version d'une landing page convertit le mieux les utilisateurs ?[cite: 5] Traitement de plus de 290 000 lignes de trafic web issues de Kaggle (<a href="https://www.kaggle.com/datasets/zhangluyuan/ab-testing" target="_blank" class="dataset-link">Dataset A/B Testing</a>)[cite: 5].</p>
+                </div>
+
+                <div class="project-block">
+                    <strong>Compétences & Résultats Clés</strong>
+                    <ul>
+                        <li>Nettoyage et structuration de grands volumes de données web via Pandas.</li>
+                        <li>Réalisation d'un <strong>Z-test des proportions</strong> (via Statsmodels / Scipy)[cite: 5].</li>
+                        <li>Obtention d'une p-value de 0.1897 ( > 0.05), démontrant que la différence observée (12.04% vs 11.88%) n'est pas statistiquement significative[cite: 5].</li>
+                        <li>Recommandation métier : ne pas déployer la nouvelle page en production pour capitaliser sur d'autres axes d'optimisation[cite: 5].</li>
+                    </ul>
+                </div>
+
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Pandas</span>
+                    <span class="tech-tag">Statsmodels</span>
+                    <span class="tech-tag">Scipy</span>
+                    <span class="tech-tag">Matplotlib / Seaborn</span>
+                </div>
+            </article>
+
+            <!-- Projet 2 : Régression & API -->
+            <article class="project-card">
+                <div class="project-header">
+                    <h2 class="project-title">Modèles de Régression Avancés & Déploiement API</h2>
+                    <span class="project-badge">Machine Learning & MLOps</span>
+                </div>
+
+                <div class="project-block">
+                    <strong>Contexte & Objectifs</strong>
+                    <p>Construction, comparaison et optimisation de modèles de régression pour prédire des valeurs continues (prédiction des ventes publicitaires et estimation de prix immobiliers)[cite: 5].</p>
+                </div>
+
+                <div class="project-block">
+                    <strong>Problématiques & Datasets</strong>
+                    <ul>
+                        <li><em>Marketing :</em> Prédire les ventes en fonction des budgets TV, radio et presse (<a href="https://www.kaggle.com/datasets/yasserh/advertising-sales-dataset/data" target="_blank" class="dataset-link">Advertising Sales Dataset</a>)[cite: 5].</li>
+                        <li><em>Immobilier :</em> Prédire le prix de vente d'une maison selon ses caractéristiques (<a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques" target="_blank" class="dataset-link">House Prices Techniques</a>)[cite: 5].</li>
+                    </ul>
+                </div>
+
+                <div class="project-block">
+                    <strong>Compétences & Implémentation</strong>
+                    <ul>
+                        <li>Évaluation comparative de multiples algorithmes : Régression Linéaire, Ridge, Lasso, ElasticNet, et modèles basés sur les arbres (Random Forest, XGBoost, LightGBM, CatBoost)[cite: 5].</li>
+                        <li>Sérialisation et sauvegarde du modèle de pointe (`XGBRegressor`) via Joblib[cite: 6, 9].</li>
+                        <li>Développement d'une API de scoring en temps réel avec <strong>FastAPI</strong> (`app.py`)[cite: 5, 6].</li>
+                        <li>Containerisation du modèle et de l'API via <strong>Docker</strong> (`Dockerfile`) pour faciliter le déploiement cloud[cite: 5, 7, 8].</li>
+                    </ul>
+                </div>
+
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Scikit-Learn</span>
+                    <span class="tech-tag">XGBoost</span>
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">Docker</span>
+                </div>
+            </article>
+
+        </div>
+    </main>
+    </body>
+</html>
