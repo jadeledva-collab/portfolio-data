@@ -184,9 +184,15 @@
             font-weight: 500;
         }
 
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
         .project-link-btn {
             display: inline-block;
-            margin-top: 1.5rem;
             background: rgba(168, 85, 247, 0.2);
             color: var(--primary-color);
             padding: 0.5rem 1.2rem;
@@ -232,64 +238,65 @@
             <article class="project-card">
                 <div class="project-header">
                     <h2 class="project-title">Projet 2 : A/B Testing – Optimisation d'une Landing Page</h2>
-                    <span class="project-badge">Expérimentation</span>
+                    <span class="project-badge">Expérimentation & Statistiques</span>
                 </div>
 
                 <div class="project-block">
                     <strong>Contexte & Objectifs</strong>
-                    <p>L’A/B testing est une méthode utilisée pour comparer deux versions d'un produit ou d'un service afin de déterminer laquelle est la plus performante. Ce projet met en place une expérimentation contrôlée pour comparer deux groupes et analyser les résultats à l'aide de statistiques pour choisir la version gagnante.</p>
+                    <p>Mise en place d'une expérimentation contrôlée pour comparer deux versions d'une landing page afin de déterminer laquelle est la plus performante. Ce projet utilise l'A/B testing, une méthode essentielle en marketing pour optimiser les taux de conversion[cite: 5].</p>
                 </div>
 
                 <div class="project-block">
-                    <strong>Problématique</strong>
-                    <p><strong>Marketing :</strong> Quelle version d’une landing page convertit le mieux les utilisateurs ?</p>
+                    <strong>Problématique Marketing</strong>
+                    <p>Quelle version d'une landing page (contrôle vs. traitement) convertit le mieux les utilisateurs ?[cite: 5]</p>
                 </div>
 
                 <div class="project-block">
-                    <strong>Compétences & Résultats Clés</strong>
+                    <strong>Méthodologie & Résultats Clés</strong>
                     <ul>
-                        <li>Nettoyage et préparation de plus de 290 000 lignes de données de trafic.</li>
-                        <li>Réalisation de tests statistiques (Z-test des proportions) pour évaluer la significativité.</li>
-                        <li>Visualisation claire des résultats pour orienter la décision (recommandation de ne pas déployer la nouvelle page suite à une p-value de 0.1897).</li>
+                        <li>Nettoyage et filtrage de plus de 290 000 logs de trafic web pour isoler les données pertinentes[cite: 5].</li>
+                        <li>Analyse statistique via un <strong>Z-test des proportions</strong> pour évaluer la significativité des résultats[cite: 5].</li>
+                        <li><strong>Conclusion :</strong> Le test a révélé une p-value de 0.1897 (supérieure au seuil de 0.05). La différence de conversion (12.04% pour l'ancienne page contre 11.88% pour la nouvelle) n'étant pas statistiquement significative, la recommandation est de ne pas déployer la nouvelle version[cite: 5].</li>
                     </ul>
                 </div>
 
                 <div class="tech-tags">
                     <span class="tech-tag">Python</span>
                     <span class="tech-tag">Pandas</span>
-                    <span class="tech-tag">Scipy</span>
+                    <span class="tech-tag">Scipy (Stats)</span>
                     <span class="tech-tag">Statsmodels</span>
                     <span class="tech-tag">Matplotlib / Seaborn</span>
                 </div>
 
-                <!-- Lien vers ton projet GitHub -->
-                <a href="https://colab.research.google.com/drive/1YowxyzcdPz3TPwDLKnRU3n2FD4hVTuZi?usp=sharing" target="_blank" class="project-link-btn">Voir le code du projet →</a>
+                <div class="action-buttons">
+                    <a href="https://github.com/TON_NOM_UTILISATEUR/TON_DEPOT/blob/main/Projet_ABtesting.ipynb" target="_blank" class="project-link-btn">Voir le Notebook Jupyter →</a>
+                </div>
             </article>
 
             <!-- Projet 4 : Régression & API Advertising -->
             <article class="project-card">
                 <div class="project-header">
-                    <h2 class="project-title">Projet 4 : Régression & Déploiement API (Advertising)</h2>
+                    <h2 class="project-title">Projet 4 : Régression & Déploiement API (Sales Prediction)</h2>
                     <span class="project-badge">Machine Learning & MLOps</span>
                 </div>
 
                 <div class="project-block">
                     <strong>Contexte & Objectifs</strong>
-                    <p>La régression permet de prédire des valeurs continues. Ce projet consiste à construire des modèles de régression, à comparer et optimiser leurs performances, puis à industrialiser le modèle.</p>
+                    <p>Construction et optimisation de modèles de régression pour prédire des valeurs continues. L'objectif final est l'industrialisation du meilleur modèle via une API containerisée[cite: 5, 8].</p>
                 </div>
 
                 <div class="project-block">
-                    <strong>Problématique</strong>
-                    <p><strong>Marketing :</strong> Comment prédire les ventes futures en fonction des budgets publicitaires ?</p>
+                    <strong>Problématique Marketing</strong>
+                    <p>Comment prédire les ventes futures d'une entreprise en fonction de ses investissements publicitaires (budgets alloués à la TV, la Radio et la Presse) ?[cite: 5]</p>
                 </div>
 
                 <div class="project-block">
-                    <strong>Compétences & Implémentation technique</strong>
+                    <strong>Modélisation & Déploiement</strong>
                     <ul>
-                        <li><strong>Modélisation de régression :</strong> Régression Linéaire (simple et multiple), Ridge, Lasso, et ElasticNet.</li>
-                        <li><strong>Modèles basés sur les arbres :</strong> Arbre de décision, Random Forest, AdaBoost, XGBoost (modèle retenu et sérialisé via `joblib`), LightGBM et CatBoost.</li>
-                        <li><strong>Déploiement d'une API :</strong> Mise en place d'une API sous <strong>FastAPI</strong> (`app.py`) pour fournir des prédictions de ventes en temps réel.</li>
-                        <li><strong>Containerisation :</strong> Utilisation de <strong>Docker</strong> (`Dockerfile` et `requirements.txt`) pour faciliter la mise en production.</li>
+                        <li><strong>Comparaison de modèles :</strong> Évaluation de plusieurs algorithmes allant de la régression linéaire avec régularisation (Ridge, Lasso, ElasticNet) jusqu'aux modèles ensemblistes basés sur les arbres (Random Forest, AdaBoost, LightGBM, CatBoost)[cite: 5].</li>
+                        <li><strong>Sélection :</strong> C'est le modèle <strong>XGBoost</strong> (`XGBRegressor`) qui a été retenu pour ses performances et sauvegardé via `joblib`[cite: 5, 6, 9].</li>
+                        <li><strong>Mise en production (API) :</strong> Développement d'une interface de prédiction en temps réel avec <strong>FastAPI</strong> (`app_2.py`)[cite: 5, 10, 12].</li>
+                        <li><strong>Containerisation :</strong> Création d'un environnement isolé et reproductible via <strong>Docker</strong> pour faciliter le déploiement sur le cloud[cite: 5, 11].</li>
                     </ul>
                 </div>
 
@@ -301,17 +308,15 @@
                     <span class="tech-tag">Docker</span>
                 </div>
 
-                <!-- Lien vers ton projet GitHub -->
-                <a href="https://colab.research.google.com/drive/1s5i926XC4tckn3BPvxuUPoXgQZ8erkni?usp=sharing" target="_blank" class="project-link-btn">Voir le code du projet →</a>
+                <div class="action-buttons">
+                    <!-- Liens pointant vers les fichiers de ton dossier projet_advertising sur GitHub -->
+                    <a href="https://github.com/TON_NOM_UTILISATEUR/TON_DEPOT/tree/main/projet_advertising" target="_blank" class="project-link-btn">Voir le dossier du projet →</a>
+                    <a href="https://github.com/TON_NOM_UTILISATEUR/TON_DEPOT/blob/main/projet_advertising/app_2.py" target="_blank" class="project-link-btn">Code de l'API (app_2.py) →</a>
+                    <a href="https://github.com/TON_NOM_UTILISATEUR/TON_DEPOT/blob/main/projet_advertising/Dockerfile" target="_blank" class="project-link-btn">Fichier Dockerfile →</a>
+                </div>
             </article>
 
         </div>
     </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Jade Le Dévéhat. Tous droits réservés.</p>
-        </div>
-    </footer>
 </body>
 </html>
