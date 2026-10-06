@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets Python, Data Analysis & Machine Learning - Jade Le Dévéhat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 50%, #0a0a0a 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            padding: 2rem 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #a855f7;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #ffffff;
+        }
+
+        h1 {
+            font-size: 2.3rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #a1a1aa;
+            margin-bottom: 3rem;
+            font-size: 1.05rem;
+        }
+
+        .project-section {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .project-section h2 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .project-section h2::before {
+            content: '—';
+            color: #a855f7;
+            font-weight: bold;
+        }
+
+        .project-section p {
+            color: #d4d4d8;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .detail-box {
+            background: rgba(168, 85, 247, 0.04);
+            border: 1px solid rgba(168, 85, 247, 0.15);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .detail-box h3 {
+            color: #ffffff;
+            font-size: 1.05rem;
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+            padding-bottom: 0.4rem;
+            font-weight: 500;
+        }
+
+        .detail-box ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-box li {
+            position: relative;
+            padding-left: 1rem;
+            margin-bottom: 0.5rem;
+            color: #a1a1aa;
+            font-size: 0.9rem;
+        }
+
+        .detail-box li::before {
+            content: '·';
+            position: absolute;
+            left: 0;
+            color: #a855f7;
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .tech-badges {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .badge {
+            background: rgba(168, 85, 247, 0.1);
+            color: #a855f7;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+        }
+
+        .btn-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 8px 16px;
+            background: rgba(168, 85, 247, 0.1);
+            color: #a855f7;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-link:hover {
+            background: rgba(168, 85, 247, 0.2);
+            border-color: rgba(168, 85, 247, 0.5);
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .project-section {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← Retour à l'accueil</a>
+        
+        <h1>Projets python, data analysis & machine learning</h1>
+        <p class="subtitle">Exploration, statistiques descriptives, tests avancés et modèles prédictifs</p>
+
+        <!-- PERFORMANCE DES EMPLOYÉS -->
+        <div class="project-section">
+            <h2>Performances des employés et détection d'outliers</h2>
+            <p>
+                <strong>Problématique métier :</strong> Une entreprise souhaite analyser la répartition des performances des employés pour comprendre les écarts et identifier les outliers.
+            </p>
+            <p>
+                <strong>Objectif :</strong> Étudier les distributions des scores de performance et des heures travaillées pour détecter les facteurs d'amélioration.
+            </p>
+            
+            <div class="tech-badges">
+                <span class="badge">Python</span>
+                <span class="badge">Pandas</span>
+                <span class="badge">Statistiques Descriptives</span>
+                <span class="badge">HR Analytics Dataset</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <div>
+                        <h3>Compétences et analyses</h3>
+                        <ul>
+                            <li>Calculs statistiques (moyenne, médiane, mode, quartiles, variance, écart-type).</li>
+                            <li>Visualisation des distributions (histogrammes, boxplots, pie charts, diagrammes en barre).</li>
+                            <li>Détection et analyse des valeurs aberrantes (règle des 1.5 * IQR).</li>
+                        </ul>
+                    </div>
+                    <a href="https://colab.research.google.com/drive/1Quc3skCB1BmwWiSH9YJ6s-euVD3iJEz_" target="_blank" class="btn-link">Ouvrir sur Google Colab</a>
+                </div>
+                <div class="detail-box">
+                    <div>
+                        <h3>Base de données et insights</h3>
+                        <ul>
+                            <li><strong>Dataset :</strong> HR Analytics Dataset.</li>
+                            <li>Identification de profils d'employés atypiques (désengagement critique).</li>
+                            <li>Formulation de recommandations opérationnelles pour le management et les ressources humaines.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FACTEURS COMMERCIAUX -->
+        <div class="project-section">
+            <h2>Facteurs influençant les performances commerciales</h2>
+            <p>
+                <strong>Problématique métier :</strong> Une entreprise souhaite comprendre les interactions entre ses produits, ses performances régionales et ses marges pour optimiser sa stratégie commerciale.
+            </p>
+            <p>
+                <strong>Objectif :</strong> Analyser les relations quali-quali, quali-quanti et quanti-quanti pour détecter des facteurs clés de succès.
+            </p>
+            
+            <div class="tech-badges">
+                <span class="badge">Python</span>
+                <span class="badge">Seaborn / Matplotlib</span>
+                <span class="badge">Analyse Bivariée</span>
+                <span class="badge">Superstore Dataset</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <div>
+                        <h3>Compétences et méthodologie</h3>
+                        <ul>
+                            <li>Analyse bivariée descriptive (corrélations, tableaux croisés, comparaisons de moyennes).</li>
+                            <li>Visualisation avancée (scatter plots, boxplots, heatmaps).</li>
+                            <li>Interprétation des relations pour guider les décisions stratégiques.</li>
+                        </ul>
+                    </div>
+                    <a href="https://colab.research.google.com/drive/17G2Mq35ulu_nnRi0Lz0wUVxiRnBlZEmT" target="_blank" class="btn-link">Ouvrir sur Google Colab</a>
+                </div>
+                <div class="detail-box">
+                    <div>
+                        <h3>Résultats et recommandations</h3>
+                        <ul>
+                            <li>Mise en évidence de l'impact destructeur des remises excessives sur la marge commerciale.</li>
+                            <li>Identification des zones géographiques moteurs (région Ouest) et des retards d'activité (région Sud).</li>
+                            <li>Stratégie ciblée pour auditer la catégorie du mobilier et maximiser la rentabilité.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ÉCARTS ENTRE DÉPARTEMENTS -->
+        <div class="project-section">
+            <h2>Tests statistiques et écarts entre départements</h2>
+            <p>
+                <strong>Problématique métier :</strong> Analyser les écarts de performance entre départements en explorant les relations entre variables qualitatives (départements, satisfaction) et quantitatives (scores de performance, heures travaillées).
+            </p>
+            <p>
+                <strong>Objectif :</strong> Valider les différences observées en appliquant des tests statistiques adaptés.
+            </p>
+            
+            <div class="tech-badges">
+                <span class="badge">Python (SciPy)</span>
+                <span class="badge">Tests Statistiques</span>
+                <span class="badge">ANOVA / Khi-deux</span>
+                <span class="badge">Employee Performance Evaluation</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <div>
+                        <h3>Tests et validation</h3>
+                        <ul>
+                            <li><strong>Relations qualitatives :</strong> Khi-deux, V de Cramer, T de Tschuprow, Fisher Exact Test.</li>
+                            <li><strong>Comparaison de moyennes :</strong> ANOVA, Kruskal-Wallis, Test t de Student, Wilcoxon.</li>
+                            <li><strong>Normalité et variances :</strong> Shapiro-Wilk, Levene, Bartlett, Kolmogorov-Smirnov.</li>
+                        </ul>
+                    </div>
+                    <a href="https://colab.research.google.com/drive/1pW0ReWvxc7vxTCp_pGKzuHd1hqXhrgMr" target="_blank" class="btn-link">Ouvrir sur Google Colab</a>
+                </div>
+                <div class="detail-box">
+                    <div>
+                        <h3>Conclusions et recommandations</h3>
+                        <ul>
+                            <li>Validation de l'indépendance entre la satisfaction et le département d'appartenance.</li>
+                            <li>Mise en place de sessions de calibrage managérial pour harmoniser les critères d'évaluation.</li>
+                            <li>Démonstration de l'absence d'impact statistique des heures supplémentaires sur la performance réelle.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROFIL DES VINS (ACP) -->
+        <div class="project-section">
+            <h2>Profil des vins et réduction de dimensionnalité (ACP)</h2>
+            <p>
+                <strong>Problématique métier :</strong> Identifier les axes clés de différenciation entre profils de vins pour personnaliser les recommandations et optimiser l'analyse de qualité.
+            </p>
+            <p>
+                <strong>Objectif :</strong> Réduire la dimensionnalité d'un dataset complexe tout en maximisant la variance expliquée pour visualiser les structures cachées.
+            </p>
+            
+            <div class="tech-badges">
+                <span class="badge">Python</span>
+                <span class="badge">Scikit-Learn</span>
+                <span class="badge">ACP (PCA)</span>
+                <span class="badge">Wine Quality Dataset</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <div>
+                        <h3>Compétences et analyses</h3>
+                        <ul>
+                            <li>Standardisation des données et matrice de corrélation.</li>
+                            <li>Application de l'Analyse en Composantes Principales (ACP).</li>
+                            <li>Visualisation 2D/3D et interprétation des axes factoriels.</li>
+                        </ul>
+                    </div>
+                    <a href="https://colab.research.google.com/drive/1IiYAhqxO0vFlGeL5o8n38kfJ6l2LgtgY" target="_blank" class="btn-link">Ouvrir sur Google Colab</a>
+                </div>
+                <div class="detail-box">
+                    <div>
+                        <h3>Base de données et insights</h3>
+                        <ul>
+                            <li><strong>Dataset :</strong> Wine Quality Dataset.</li>
+                            <li>Mise en évidence des composantes principales liant l'acidité et la teneur en alcool.</li>
+                            <li>Synthèse claire des critères physico-chimiques déterminants.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEGMENTATION CLIENTS (CLUSTERING) -->
+        <div class="project-section">
+            <h2>Segmentation clients et clustering non supervisé</h2>
+            <p>
+                <strong>Problématique métier :</strong> Regrouper les clients d'un centre commercial en segments homogènes pour adapter les campagnes marketing ciblées.
+            </p>
+            <p>
+                <strong>Objectif :</strong> Segmenter la clientèle en fonction de leurs revenus et de leurs scores de dépenses sans étiquettes préalables.
+            </p>
+            
+            <div class="tech-badges">
+                <span class="badge">Python</span>
+                <span class="badge">K-Means / CAH</span>
+                <span class="badge">Clustering</span>
+                <span class="badge">Mall Customers Dataset</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <div>
+                        <h3>Compétences et méthodologie</h3>
+                        <ul>
+                            <li>Utilisation de la méthode du coude (Elbow Method) pour déterminer k.</li>
+                            <li>Algorithmes de clustering : K-Means, Clustering Hiérarchique (CAH).</li>
+                            <li>Évaluation de la qualité des clusters via le score de silhouette.</li>
+                        </ul>
+                    </div>
+                    <a href="https://colab.research.google.com/drive/158shlP7TCvgtphH4trhHsfeITjftAly_" target="_blank" class="btn-link">Ouvrir sur Google Colab</a>
+                </div>
+                <div class="detail-box">
+                    <div>
+                        <h3>Résultats et recommandations</h3>
+                        <ul>
+                            <li>Identification de personae clés (ex: clients à hauts revenus et forte dépense).</li>
+                            <li>Aide à la décision marketing pour cibler les programmes de fidélité.</li>
+                            <li>Visualisation claire des frontières de clusters par projection spatiale.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRIX DES MAISONS (RÉGRESSION) -->
+        <div class="project-section">
+            <h2>Prédiction des prix des maisons (modèle de régression)</h2>
+            <p>
+                <strong>Problématique métier :</strong> Estimer avec précision la valeur marchande de biens immobiliers pour guider les investisseurs et acheteurs.
+            </p>
+            <p>
+                <strong>Objectif :</strong> Entraîner un modèle de régression supervisée capable de prédire une variable continue à partir de caractéristiques socio-économiques et structurelles.
+            </p>
+            
+            <div class="tech-badges">
+                <span class="badge">Python</span>
+                <span class="badge">Scikit-Learn</span>
+                <span class="badge">Régression Linéaire</span>
+                <span class="badge">Boston Housing / Housing Dataset</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <div>
+                        <h3>Compétences et modélisation</h3>
+                        <ul>
+                            <li>Prétraitement des données, gestion des valeurs manquantes et encodage.</li>
+                            <li>Entraînement de modèles (Régression linéaire, Ridge/Lasso).</li>
+                            <li>Évaluation des performances via R², RMSE et MSE.</li>
+                        </ul>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1ael_Jml53NLr5q3gWfssth87GBgHK2RA/view?usp=sharing" target="_blank" class="btn-link">Ouvrir sur Google Colab</a>
+                </div>
+                <div class="detail-box">
+                    <div>
+                        <h3>Analyse et interprétation</h3>
+                        <ul>
+                            <li>Analyse des résidus pour valider les hypothèses du modèle.</li>
+                            <li>Identification des variables ayant le plus fort poids sur l'estimation du prix.</li>
+                            <li>Recommandations sur l'optimisation des caractéristiques des biens.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DÉFAUTS DE PAIEMENT (RÉGRESSION LOGISTIQUE) -->
+        <div class="project-section">
+            <h2>Prédiction des défauts de paiement (classification binaire)</h2>
+            <p>
+                <strong>Problématique métier :</strong> Anticiper le risque de défaut de paiement sur des cartes de crédit afin de minimiser les pertes financières de l'institution bancaire.
+            </p>
+            <p>
+                <strong>Objectif :</strong> Modéliser la probabilité qu'un client fasse face à un défaut de paiement à l'aide de caractéristiques financières et historiques.
+            </p>
+            
+            <div class="tech-badges">
+                <span class="badge">Python</span>
+                <span class="badge">Régression Logistique</span>
+                <span class="badge">Classification</span>
+                <span class="badge">Credit Card Dataset</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <div>
+                        <h3>Compétences et évaluation</h3>
+                        <ul>
+                            <li>Classification binaire et estimation de probabilités.</li>
+                            <li>Analyse de la matrice de confusion, précision et rappel (Recall).</li>
+                            <li>Courbe ROC et calcul de l'aire sous la courbe (AUC-ROC).</li>
+                        </ul>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1mdURx0smzIObnMRkP-LF4Das9RF6MTTX/view?usp=sharing" target="_blank" class="btn-link">Ouvrir sur Google Colab</a>
+                </div>
+                <div class="detail-box">
+                    <div>
+                        <h3>Insights et risques</h3>
+                        <ul>
+                            <li>Mesure de l'impact du taux d'utilisation du crédit sur le risque de défaut.</li>
+                            <li>Arbitrage entre faux positifs et faux négatifs selon la politique de risque de la banque.</li>
+                            <li>Optimisation du seuil de décision du modèle.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRÉVISION DES VENTES (SÉRIES TEMPORELLES) -->
+        <div class="project-section">
+            <h2>Prévision des ventes (séries temporelles)</h2>
+            <p>
+                <strong>Problématique métier :</strong> Anticiper les volumes de ventes futurs de différents magasins pour optimiser la gestion des stocks et la chaîne logistique.
+            </p>
+            <p>
+                <strong>Objectif :</strong> Analyser l'historique temporel des ventes pour modéliser la tendance, la cyclicité et la saisonnalité.
+            </p>
+            
+            <div class="tech-badges">
+                <span class="badge">Python</span>
+                <span class="badge">Séries Temporelles</span>
+                <span class="badge">ARIMA / Prophet</span>
+                <span class="badge">Store Sales Dataset</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <div>
+                        <h3>Compétences et méthodologie</h3>
+                        <ul>
+                            <li>Manipulation d'index temporels (Pandas Datetime).</li>
+                            <li>Décomposition de séries temporelles (Tendance, Saisonnalité, Résidus).</li>
+                            <li>Modélisation prédictive (ARIMA, SARIMAX ou Prophet).</li>
+                        </ul>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1cAuL7_HPyfqHsP-4Fu2QQCXgdtbvp9wa/view?usp=sharing" target="_blank" class="btn-link">Ouvrir sur Google Colab</a>
+                </div>
+                <div class="detail-box">
+                    <div>
+                        <h3>Résultats et planification</h3>
+                        <ul>
+                            <li>Mise en évidence des pics de ventes saisonniers (périodes de fêtes).</li>
+                            <li>Génération d'intervalles de confiance pour les prévisions à moyen terme.</li>
+                            <li>Aide opérationnelle au dimensionnement des équipes et des stocks.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

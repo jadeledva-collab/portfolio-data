@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets Agents IA & Automatisation - Jade Le Dévéhat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 50%, #0a0a0a 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            padding: 2rem 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #a855f7;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #ffffff;
+        }
+
+        h1 {
+            font-size: 2.3rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #a1a1aa;
+            margin-bottom: 3rem;
+            font-size: 1.05rem;
+        }
+
+        .project-section {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .project-section h2 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .project-section h2::before {
+            content: '—';
+            color: #a855f7;
+            font-weight: bold;
+        }
+
+        .project-section p {
+            color: #d4d4d8;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .detail-box {
+            background: rgba(168, 85, 247, 0.04);
+            border: 1px solid rgba(168, 85, 247, 0.15);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .detail-box h3 {
+            color: #ffffff;
+            font-size: 1.05rem;
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+            padding-bottom: 0.4rem;
+            font-weight: 500;
+        }
+
+        .detail-box ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-box li {
+            position: relative;
+            padding-left: 1rem;
+            margin-bottom: 0.5rem;
+            color: #a1a1aa;
+            font-size: 0.9rem;
+        }
+
+        .detail-box li::before {
+            content: '·';
+            position: absolute;
+            left: 0;
+            color: #a855f7;
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .tech-badges {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .badge {
+            background: rgba(168, 85, 247, 0.1);
+            color: #a855f7;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+        }
+
+        .btn-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 8px 16px;
+            background: rgba(168, 85, 247, 0.1);
+            color: #a855f7;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            transition: all 0.3s ease;
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+
+        .btn-link:hover {
+            background: rgba(168, 85, 247, 0.2);
+            border-color: rgba(168, 85, 247, 0.5);
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .project-section {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← Retour à l'accueil</a>
+        
+        <h1>Agents IA et automatisation</h1>
+        <p class="subtitle">Conception de workflows intelligents, architectures RAG et intégration de modèles génératifs</p>
+
+        <!-- PROJET LOGIPRO -->
+        <div class="project-section">
+            <h2>LogiPro - Chatbot RAG et automatisation</h2>
+            <p>
+                <strong>Problématique métier :</strong> Centraliser et automatiser l'exploitation de documents d'entreprise pour permettre un accès rapide et intelligent aux connaissances internes.
+            </p>
+            <p>
+                <strong>Objectif :</strong> Concevoir un workflow d'intelligence artificielle et d'automatisation avec une architecture RAG utilisant n8n, Google Drive et Google Gemini pour l'ingestion, la vectorisation et l'interrogation intelligente de documents.
+            </p>
+            
+            <div class="tech-badges">
+                <span class="badge">n8n</span>
+                <span class="badge">Google Gemini AI</span>
+                <span class="badge">RAG Architecture</span>
+                <span class="badge">Vector Store</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <div>
+                        <h3>Architecture et fonctionnement</h3>
+                        <ul>
+                            <li><strong>Ingestion Google Drive :</strong> Surveillance continue d'un dossier cible pour détecter l'ajout ou la mise à jour de documents.</li>
+                            <li><strong>Traitement et découpage :</strong> Utilisation d'un séparateur de texte récursif pour segmenter proprement les fichiers.</li>
+                            <li><strong>Embeddings :</strong> Vectorisation sémantique des données par Google Gemini.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="detail-box">
+                    <div>
+                        <h3>Chatbot RAG et restitution</h3>
+                        <ul>
+                            <li><strong>Agent conversationnel :</strong> Interface connectée au modèle de chat Google Gemini qui exploite la base vectorielle comme outil de recherche documentaire.</li>
+                            <li><strong>Automatisation :</strong> Restitution fluide avec une base documentaire actualisée en temps réel.</li>
+                        </ul>
+                    </div>
+                    <a href="LogiPro%20-%20RAG%20Chatbot.json" target="_blank" class="btn-link" download>Télécharger le fichier .JSON du projet</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
