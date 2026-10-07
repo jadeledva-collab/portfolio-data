@@ -234,6 +234,46 @@
             </div>
         </div>
 
+        <!-- PROJET 1 : Scraping et Stockage Trustpilot -->
+        <div class="project-section">
+            <h2>Scraping & Pipeline ETL (Trustpilot Reviews)</h2>
+            <p>
+                <strong>Contexte métier :</strong> Une plateforme d’e-commerce souhaite analyser les avis de ses concurrents pour mieux comprendre les retours clients sur des produits similaires. Les données doivent être extraites, nettoyées et organisées pour des analyses comparatives.
+            </p>
+            <p>
+                <strong>Objectif :</strong> Récupérer des avis consommateurs sur Trustpilot, automatiser le traitement via un pipeline ETL et stocker le tout dans une base de données SQLite.
+            </p>
+            
+            <div class="tech-badges">
+                <span class="badge">Python</span>
+                <span class="badge">BeautifulSoup</span>
+                <span class="badge">Pandas</span>
+                <span class="badge">SQLite</span>
+                <span class="badge">Apache Airflow</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <h3>Extraction & Nettoyage</h3>
+                    <ul>
+                        <li><strong>Scraping web :</strong> Identification et extraction des éléments d'intérêt à l'aide de <code>BeautifulSoup</code> et de sélecteurs CSS.</li>
+                        <li><strong>Transformation :</strong> Suppression des balises HTML superflues, déduplication et gestion des valeurs manquantes via <code>Pandas</code>.</li>
+                    </ul>
+                </div>
+                <div class="detail-box">
+                    <h3>Stockage & Automatisation</h3>
+                    <ul>
+                        <li><strong>Base SQLite :</strong> Conception d'une structure de base de données relationnelle adaptée pour accueillir les avis.</li>
+                        <li><strong>Airflow :</strong> Mise en place d'un DAG d'automatisation quotidienne pour exécuter le pipeline ETL en arrière-plan.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="https://github.com/jadeledva-collab/portfolio-data/tree/main/projet_trustpilot" target="_blank" class="btn-link">Voir tous les fichiers du projet (GitHub) →</a>
+            </div>
+        </div>
+
     </div>
 
 </body>
