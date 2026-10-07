@@ -327,42 +327,59 @@
             </div>
         </div>
 
-        <!-- PROJET 3 : ANALYSE TEXTUELLE IRAMUTEQ -->
+                 <!-- PROJET SUPERSTORE -->
         <div class="project-section">
-            <h2>Analyse textuelle et NLP (Corpus médias et Soudan)</h2>
+            <h2>Tableau de bord des ventes - Superstore</h2>
             <p>
-                Traitement et analyse statistique textuelle approfondie d'un corpus médiatique complexe à l'aide du logiciel Iramuteq. L'objectif est d'extraire automatiquement les structures sémantiques, les réseaux de cooccurrences et les thématiques dominantes du discours de presse.
+                <strong>Problématique métier :</strong> L'entreprise souhaite suivre en détail les performances des ventes par région et par catégorie afin d'identifier rapidement les zones à améliorer et d'optimiser la stratégie commerciale.
+            </p>
+            <p>
+                <strong>Objectif :</strong> Concevoir un tableau de bord interactif sous Excel pour analyser les indicateurs clés de performance (KPI) tels que le chiffre d'affaires (Sales), les marges et la rentabilité régionale.
             </p>
             
             <div class="tech-badges">
-                <span class="badge">Iramuteq</span>
-                <span class="badge">NLP & Text Mining</span>
-                <span class="badge">Statistique Textuelle</span>
-                <span class="badge">Analyse Factorielle</span>
+                <span class="badge">Excel Avancé</span>
+                <span class="badge">Tableaux Croisés Dynamiques (TCD)</span>
+                <span class="badge">Segments (Slicers)</span>
+                <span class="badge">Formules & Fonctions Métier</span>
+            </div>
+
+            <!-- Chiffres clés extraits du dataset -->
+            <div class="stats-highlight">
+                <div class="stat-card">
+                    <div class="stat-value">2,29 M $</div>
+                    <div class="stat-label">Chiffre d'affaires total</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">9 994</div>
+                    <div class="stat-label">Lignes de commandes analysées</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">12%</div>
+                    <div class="stat-label">Marge moyenne globale</div>
+                </div>
             </div>
 
             <div class="details-grid">
                 <div class="detail-box">
-                    <div>
-                        <h3>Graphique de similarité</h3>
-                        <ul>
-                            <li>Analyse des réseaux de cooccurrences et liens sémantiques forts du corpus[cite: 9].</li>
-                        </ul>
-                    </div>
-                    <img src="projet_iramuteq/graph_simi_1.png" alt="Graphique de similarité Iramuteq" class="project-image">
-                    <a href="projet_iramuteq/graph_simi_1.png" target="_blank" class="btn-link" style="margin-top: 1rem;">Agrandir le graphique</a>
+                    <h3>Nettoyage et formules utilisées</h3>
+                    <ul>
+                        <li><strong>Organisation des données :</strong> Structuration de la base brute (9 994 transactions).</li>
+                        <li><strong>Formules essentielles :</strong> Utilisation de <code>SOMME</code>, <code>SOMME.SI</code> et <code>MOYENNE</code> pour consolider les indicateurs financiers.</li>
+                        <li><strong>Recherche et logique :</strong> Implémentation de fonctions de croisement telles que <code>RECHERCHEV</code>, <code>INDEX</code> et <code>EQUIV</code>.</li>
+                    </ul>
                 </div>
                 <div class="detail-box">
-                    <div>
-                        <h3>Nuage de mots</h3>
-                        <ul>
-                            <li>Visualisation synthétique des termes les plus fréquents de la presse[cite: 10].</li>
-                        </ul>
-                    </div>
-                    <img src="projet_iramuteq/nuage_1.png" alt="Nuage de mots Iramuteq" class="project-image">
-                    <a href="projet_iramuteq/nuage_1.png" target="_blank" class="btn-link" style="margin-top: 1rem;">Agrandir le nuage de mots</a>
+                    <h3>Restitution et interactivité</h3>
+                    <ul>
+                        <li><strong>TCD et segments :</strong> Création de tableaux croisés dynamiques connectés à des segments (Slicers) pour filtrer par région ou par catégorie de produits en un clic.</li>
+                        <li><strong>Graphiques dynamiques :</strong> Visualisation des tendances temporelles des ventes et des marges par zone géographique (Central, East, South, West).</li>
+                        <li><strong>Tableau de bord :</strong> Restitution claire et épurée axée sur l'aide à la décision stratégique.</li>
+                    </ul>
                 </div>
             </div>
+
+            <a href="https://univtlnfr-my.sharepoint.com/:x:/g/personal/jade-le-devehat_etud_univ-tln_fr/IQCg7VNwKMlZTK85l1BFsnHzAQ-70i3orfC8eaoEyk2Zbz8?e=FnTpMQ" target="_blank" class="btn-link">Accéder au fichier Excel du projet</a>
         </div>
 
     </div>
