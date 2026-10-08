@@ -382,6 +382,62 @@
             <a href="https://univtlnfr-my.sharepoint.com/:x:/g/personal/jade-le-devehat_etud_univ-tln_fr/IQCg7VNwKMlZTK85l1BFsnHzAQ-70i3orfC8eaoEyk2Zbz8?e=FnTpMQ" target="_blank" class="btn-link">Accéder au fichier Excel du projet</a>
         </div>
 
+            <!-- PROJET OLIST ANALYTICS -->
+        <div class="project-section">
+            <h2>Tableau de bord e-commerce - Olist Analytics</h2>
+            <p>
+                <strong>Problématique métier :</strong> La marketplace souhaite analyser la santé globale de son activité (ventes, retards logistiques et valeur client) afin d'identifier les freins opérationnels et d'optimiser l'expérience client.
+            </p>
+            <p>
+                <strong>Objectif :</strong> Concevoir un tableau de bord interactif multi-pages sous Looker Studio alimenté par un entrepôt de données BigQuery pour suivre les KPI logistiques, financiers et relationnels.
+            </p>
+            
+            <div class="tech-badges">
+                <span class="badge">Google BigQuery</span>
+                <span class="badge">SQL (vues et modélisation)</span>
+                <span class="badge">Looker Studio</span>
+            </div>
+
+            <!-- Chiffres clés extraits du projet -->
+            <div class="stats-highlight">
+                <div class="stat-card">
+                    <div class="stat-value">100K+</div>
+                    <div class="stat-label">Lignes de commandes analysées</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">3 Vues</div>
+                    <div class="stat-label">Vues SQL structurées BigQuery</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">3 Pages</div>
+                    <div class="stat-label">Restitution interactive Looker Studio</div>
+                </div>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <h3>Nettoyage et requêtage SQL</h3>
+                    <ul>
+                        <li><strong>Structuration des données :</strong> Jointures multi-tables (commandes, articles, produits et clients) pour consolider la base brute.</li>
+                        <li><strong>Agrégations métiers :</strong> Calculs de chiffre d'affaires, de paniers moyens et de délais de livraison réels versus estimés via <code>TIMESTAMP_DIFF</code> et <code>GROUP BY</code>.</li>
+                        <li><strong>Normalisation :</strong> Harmonisation des catégories de produits et filtrage des commandes valides (delivered).</li>
+                    </ul>
+                </div>
+                <div class="detail-box">
+                    <h3>Restitution et interactivité (BI)</h3>
+                    <ul>
+                        <li><strong>Vues et graphiques :</strong> Nuage de points (Scatter Plot) pour croiser prix moyen et chiffre d'affaires par catégorie.</li>
+                        <li><strong>Analyse logistique :</strong> Suivi comparatif mensuel des délais pour détecter l'impact des pics de volume.</li>
+                        <li><strong>Segmentation client :</strong> Identification des clients VIP et analyse de la récurrence d'achat via des filtres de date et pages thématiques.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="https://github.com/jadeledva-collab/portfolio-data" target="_blank" class="btn-link">Accéder au code source SQL →</a>
+                <a href="https://datastudio.google.com/reporting/a7c7030b-00ee-4a72-ad75-43695c09e1af" target="_blank" class="btn-link">Accéder au dashboard Looker Studio →</a>
+            </div>
+        </div>
     </div>
 
 </body>
