@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projets Python, Data Analysis & Machine Learning - Jade Le Dévéhat</title>
+    <title>Projets Data Analysis &amp; Statistiques - Jade Le Dévéhat</title>
     <style>
         * {
             margin: 0;
@@ -174,6 +174,15 @@
             color: #ffffff;
         }
 
+        .project-image {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 0.5rem 0 1rem;
+            background: #ffffff;
+        }
+
         @media (max-width: 768px) {
             .project-section {
                 padding: 1.5rem;
@@ -188,46 +197,48 @@
 
     <div class="container">
         <a href="index.html" class="back-link">← Retour à l'accueil</a>
-        
+
         <h1>Projets data analysis et statistiques</h1>
         <p class="subtitle">Exploration, statistiques descriptives, tests d'hypothèses, A/B testing et analyse textuelle</p>
 
-        <!-- PERFORMANCE DES EMPLOYÉS -->
+        <!-- A/B TESTING -->
         <div class="project-section">
-            <h2>Performances des employés et détection d'outliers</h2>
+            <h2>A/B testing : optimisation d'une landing page</h2>
             <p>
-                <strong>Problématique métier :</strong> Une entreprise souhaite analyser la répartition des performances des employés pour comprendre les écarts et identifier les outliers.
+                <strong>Problématique marketing :</strong> Quelle version d'une page d'atterrissage (ancienne ou nouvelle) convertit le mieux les visiteurs ?
             </p>
             <p>
-                <strong>Objectif :</strong> Étudier les distributions des scores de performance et des heures travaillées pour détecter les facteurs d'amélioration.
+                <strong>Objectif :</strong> Comparer deux versions lors d'une expérimentation contrôlée et décider s'il faut déployer la nouvelle page.
             </p>
-            
+
             <div class="tech-badges">
                 <span class="badge">Python</span>
                 <span class="badge">Pandas</span>
-                <span class="badge">Statistiques Descriptives</span>
-                <span class="badge">HR Analytics Dataset</span>
+                <span class="badge">Statsmodels</span>
+                <span class="badge">Matplotlib / Seaborn</span>
+                <span class="badge">A/B Testing Dataset (Kaggle)</span>
             </div>
 
             <div class="details-grid">
                 <div class="detail-box">
                     <div>
-                        <h3>Compétences et analyses</h3>
+                        <h3>Méthode</h3>
                         <ul>
-                            <li>Calculs statistiques (moyenne, médiane, mode, quartiles, variance, écart-type).</li>
-                            <li>Visualisation des distributions (histogrammes, boxplots, pie charts, diagrammes en barre).</li>
-                            <li>Détection et analyse des valeurs aberrantes (règle des 1.5 * IQR).</li>
+                            <li>Nettoyage de 294 478 lignes de trafic web : 3 893 lignes incohérentes retirées (groupe ne correspondant pas à la page affichée), soit 290 585 utilisateurs conservés.</li>
+                            <li>Calcul du taux de conversion de chaque groupe.</li>
+                            <li>Z-test des proportions pour vérifier si l'écart est statistiquement significatif.</li>
                         </ul>
                     </div>
-                    <a href="https://colab.research.google.com/drive/1Quc3skCB1BmwWiSH9YJ6s-euVD3iJEz_" target="_blank" class="btn-link">Ouvrir sur Google Colab</a>
+                    <a href="https://colab.research.google.com/drive/1YowxyzcdPz3TPwDLKnRU3n2FD4hVTuZi?usp=sharing" target="_blank" class="btn-link">Voir le notebook Colab</a>
                 </div>
                 <div class="detail-box">
                     <div>
-                        <h3>Base de données et insights</h3>
+                        <h3>Résultats et recommandation</h3>
                         <ul>
-                            <li><strong>Dataset :</strong> HR Analytics Dataset.</li>
-                            <li>Identification de profils d'employés atypiques (désengagement critique).</li>
-                            <li>Formulation de recommandations opérationnelles pour le management et les ressources humaines.</li>
+                            <li><strong>Ancienne page :</strong> 12,04 % de conversion (17 489 sur 145 274).</li>
+                            <li><strong>Nouvelle page :</strong> 11,88 % de conversion (17 264 sur 145 311).</li>
+                            <li>Z-test : z = 1,31 et p-value = 0,1897, supérieure au seuil de 0,05. La différence n'est pas significative.</li>
+                            <li><strong>Recommandation :</strong> ne pas déployer la nouvelle page et tester une autre variante.</li>
                         </ul>
                     </div>
                 </div>
@@ -238,199 +249,224 @@
         <div class="project-section">
             <h2>Facteurs influençant les performances commerciales</h2>
             <p>
-                <strong>Problématique métier :</strong> Une entreprise souhaite comprendre les interactions entre ses produits, ses performances régionales et ses marges pour optimiser sa stratégie commerciale.
+                <strong>Problématique métier :</strong> Une entreprise souhaite comprendre les liens entre ses catégories de produits, ses régions et sa rentabilité pour optimiser sa stratégie commerciale.
             </p>
             <p>
-                <strong>Objectif :</strong> Analyser les relations quali-quali, quali-quanti et quanti-quanti pour détecter des facteurs clés de succès.
+                <strong>Objectif :</strong> Analyser les relations entre variables (quali-quali, quali-quanti, quanti-quanti) pour repérer les leviers de performance.
             </p>
-            
+
             <div class="tech-badges">
                 <span class="badge">Python</span>
+                <span class="badge">Pandas</span>
                 <span class="badge">Seaborn / Matplotlib</span>
-                <span class="badge">Analyse Bivariée</span>
+                <span class="badge">Analyse bivariée</span>
                 <span class="badge">Superstore Dataset</span>
             </div>
 
             <div class="details-grid">
                 <div class="detail-box">
                     <div>
-                        <h3>Compétences et méthodologie</h3>
+                        <h3>Méthode</h3>
                         <ul>
-                            <li>Analyse bivariée descriptive (corrélations, tableaux croisés, comparaisons de moyennes).</li>
-                            <li>Visualisation avancée (scatter plots, boxplots, heatmaps).</li>
-                            <li>Interprétation des relations pour guider les décisions stratégiques.</li>
+                            <li>Analyse de 9 994 lignes de commandes.</li>
+                            <li>Nuage de points ventes / profit par catégorie et heatmap des corrélations.</li>
+                            <li>Profit moyen par région et tableau croisé région × catégorie.</li>
                         </ul>
                     </div>
-                    <a href="https://colab.research.google.com/drive/17G2Mq35ulu_nnRi0Lz0wUVxiRnBlZEmT" target="_blank" class="btn-link">Ouvrir sur Google Colab</a>
+                    <a href="https://colab.research.google.com/drive/17G2Mq35ulu_nnRi0Lz0wUVxiRnBlZEmT" target="_blank" class="btn-link">Voir le notebook Colab</a>
                 </div>
                 <div class="detail-box">
                     <div>
-                        <h3>Résultats et recommandations</h3>
+                        <h3>Résultats et recommandation</h3>
                         <ul>
-                            <li>Mise en évidence de l'impact destructeur des remises excessives sur la marge commerciale.</li>
-                            <li>Identification des zones géographiques moteurs (région Ouest) et des retards d'activité (région Sud).</li>
-                            <li>Stratégie ciblée pour auditer la catégorie du mobilier et maximiser la rentabilité.</li>
+                            <li>Les fournitures de bureau représentent le plus gros volume de commandes dans les 4 régions.</li>
+                            <li><strong>Ouest :</strong> premier volume (3 203 commandes) et profit moyen le plus élevé (33,85 $ par ligne).</li>
+                            <li><strong>Sud :</strong> volume le plus faible (1 620 commandes). <strong>Centre :</strong> rentabilité la plus faible (17,09 $ par ligne).</li>
+                            <li><strong>Recommandation :</strong> relancer l'acquisition dans le Sud et analyser la faible rentabilité du Centre.</li>
                         </ul>
                     </div>
                 </div>
             </div>
+            <!-- À AJOUTER après avoir calculé : corrélation remise / profit et profit par catégorie (mobilier) -->
         </div>
 
-        <!-- ÉCARTS ENTRE DÉPARTEMENTS -->
+        <!-- ENGAGEMENT DES EMPLOYÉS -->
         <div class="project-section">
-            <h2>Tests statistiques et écarts entre départements</h2>
+            <h2>Engagement des employés et détection d'outliers</h2>
             <p>
-                <strong>Problématique métier :</strong> Analyser les écarts de performance entre départements en explorant les relations entre variables qualitatives (départements, satisfaction) et quantitatives (scores de performance, heures travaillées).
+                <strong>Problématique métier :</strong> Une entreprise souhaite repérer les salariés dont le niveau d'engagement est anormalement bas afin d'agir avant qu'ils ne décrochent.
             </p>
             <p>
-                <strong>Objectif :</strong> Valider les différences observées en appliquant des tests statistiques adaptés.
+                <strong>Objectif :</strong> Étudier la distribution des scores d'engagement et isoler les valeurs aberrantes.
             </p>
-            
+
             <div class="tech-badges">
-                <span class="badge">Python (SciPy)</span>
-                <span class="badge">Tests Statistiques</span>
-                <span class="badge">ANOVA / Khi-deux</span>
-                <span class="badge">Employee Performance Evaluation</span>
+                <span class="badge">Python</span>
+                <span class="badge">Pandas</span>
+                <span class="badge">Statistiques descriptives</span>
+                <span class="badge">HR Dataset (Kaggle)</span>
             </div>
 
             <div class="details-grid">
                 <div class="detail-box">
                     <div>
-                        <h3>Tests et validation</h3>
+                        <h3>Méthode</h3>
                         <ul>
-                            <li><strong>Relations qualitatives :</strong> Khi-deux, V de Cramer, T de Tschuprow, Fisher Exact Test.</li>
-                            <li><strong>Comparaison de moyennes :</strong> ANOVA, Kruskal-Wallis, Test t de Student, Wilcoxon.</li>
-                            <li><strong>Normalité et variances :</strong> Shapiro-Wilk, Levene, Bartlett, Kolmogorov-Smirnov.</li>
+                            <li>Base de 311 employés et score d'engagement issu d'une enquête (sur 5).</li>
+                            <li>Statistiques descriptives : moyenne 4,11, médiane 4,28, écart-type 0,79.</li>
+                            <li>Histogramme, boxplot et règle de l'écart interquartile (1,5 × IQR) pour détecter les outliers.</li>
                         </ul>
                     </div>
-                    <a href="https://colab.research.google.com/drive/1pW0ReWvxc7vxTCp_pGKzuHd1hqXhrgMr" target="_blank" class="btn-link">Ouvrir sur Google Colab</a>
+                    <a href="https://colab.research.google.com/drive/1Quc3skCB1BmwWiSH9YJ6s-euVD3iJEz_" target="_blank" class="btn-link">Voir le notebook Colab</a>
                 </div>
                 <div class="detail-box">
                     <div>
-                        <h3>Conclusions et recommandations</h3>
+                        <h3>Résultats et recommandation</h3>
                         <ul>
-                            <li>Validation de l'indépendance entre la satisfaction et le département d'appartenance.</li>
-                            <li>Mise en place de sessions de calibrage managérial pour harmoniser les critères d'évaluation.</li>
-                            <li>Démonstration de l'absence d'impact statistique des heures supplémentaires sur la performance réelle.</li>
+                            <li>La moitié des employés a un score entre 3,69 et 4,70.</li>
+                            <li>9 outliers détectés (environ 3 % des employés), tous en dessous de la limite basse de 2,175, avec un minimum à 1,12.</li>
+                            <li>Ces 9 profils ont aussi une performance faible : 6 sont en plan d'amélioration (PIP) et 3 sont notés « Needs Improvement ».</li>
+                            <li><strong>Recommandation :</strong> croiser ces profils avec leur département et leur manager pour savoir si le désengagement est isolé ou concentré.</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- PROFIL DES VINS (ACP) -->
+        <!-- TESTS STATISTIQUES -->
+        <div class="project-section">
+            <h2>Tests statistiques et écarts entre départements</h2>
+            <p>
+                <strong>Problématique métier :</strong> Les écarts de satisfaction et de performance observés entre départements sont-ils réels ou dus au hasard ?
+            </p>
+            <p>
+                <strong>Objectif :</strong> Valider ou écarter les différences observées avec des tests statistiques adaptés.
+            </p>
+
+            <div class="tech-badges">
+                <span class="badge">Python (SciPy)</span>
+                <span class="badge">Tests d'hypothèses</span>
+                <span class="badge">Khi-deux / Kruskal-Wallis</span>
+                <span class="badge">Employee Performance (Kaggle)</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <div>
+                        <h3>Tests réalisés</h3>
+                        <ul>
+                            <li><strong>Normalité :</strong> Shapiro-Wilk. La performance ne suit pas une loi normale, d'où le choix d'un test non paramétrique.</li>
+                            <li><strong>Satisfaction × département :</strong> khi-deux et V de Cramér.</li>
+                            <li><strong>Performance par département :</strong> test de Levene, puis Kruskal-Wallis.</li>
+                            <li><strong>Heures hebdomadaires × performance :</strong> corrélation de Spearman.</li>
+                        </ul>
+                    </div>
+                    <a href="https://colab.research.google.com/drive/1pW0ReWvxc7vxTCp_pGKzuHd1hqXhrgMr" target="_blank" class="btn-link">Voir le notebook Colab</a>
+                </div>
+                <div class="detail-box">
+                    <div>
+                        <h3>Résultats et recommandation</h3>
+                        <ul>
+                            <li>Base de 100 000 employés.</li>
+                            <li>Satisfaction et département : p = 0,475 et V de Cramér = 0,063 (lien négligeable).</li>
+                            <li>Performance entre départements : Kruskal-Wallis p = 0,468, aucun écart significatif.</li>
+                            <li>Heures travaillées et performance : Spearman ρ = −0,006 et p = 0,075, aucune relation significative.</li>
+                            <li><strong>Recommandation :</strong> le département n'explique ni la satisfaction ni la performance. Chercher d'autres facteurs (poste, manager, ancienneté).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ACP VINS -->
         <div class="project-section">
             <h2>Profil des vins et réduction de dimensionnalité (ACP)</h2>
             <p>
-                <strong>Problématique métier :</strong> Identifier les axes clés de différenciation entre profils de vins pour personnaliser les recommandations et optimiser l'analyse de qualité.
+                <strong>Problématique métier :</strong> Identifier ce qui différencie les vins pour personnaliser les recommandations clients.
             </p>
             <p>
-                <strong>Objectif :</strong> Réduire la dimensionnalité d'un dataset complexe tout en maximisant la variance expliquée pour visualiser les structures cachées.
+                <strong>Objectif :</strong> Résumer 11 variables physico-chimiques en quelques axes lisibles et visualiser la structure des données.
             </p>
-            
+
             <div class="tech-badges">
                 <span class="badge">Python</span>
                 <span class="badge">Scikit-Learn</span>
                 <span class="badge">ACP (PCA)</span>
-                <span class="badge">Wine Quality Dataset</span>
+                <span class="badge">Wine Quality Dataset (UCI)</span>
             </div>
 
             <div class="details-grid">
                 <div class="detail-box">
                     <div>
-                        <h3>Compétences et analyses</h3>
+                        <h3>Méthode</h3>
                         <ul>
-                            <li>Standardisation des données et matrice de corrélation.</li>
-                            <li>Application de l'Analyse en Composantes Principales (ACP).</li>
-                            <li>Visualisation 2D/3D et interprétation des axes factoriels.</li>
+                            <li>1 599 vins rouges décrits par 11 variables.</li>
+                            <li>Standardisation des données, puis ACP.</li>
+                            <li>Visualisations 2D et 3D colorées par note de qualité, et heatmap des poids de chaque variable.</li>
                         </ul>
                     </div>
-                    <a href="https://colab.research.google.com/drive/1IiYAhqxO0vFlGeL5o8n38kfJ6l2LgtgY" target="_blank" class="btn-link">Ouvrir sur Google Colab</a>
+                    <a href="https://colab.research.google.com/drive/1IiYAhqxO0vFlGeL5o8n38kfJ6l2LgtgY" target="_blank" class="btn-link">Voir le notebook Colab</a>
                 </div>
                 <div class="detail-box">
                     <div>
-                        <h3>Base de données et insights</h3>
+                        <h3>Résultats et recommandation</h3>
                         <ul>
-                            <li><strong>Dataset :</strong> Wine Quality Dataset.</li>
-                            <li>Mise en évidence des composantes principales liant l'acidité et la teneur en alcool.</li>
-                            <li>Synthèse claire des critères physico-chimiques déterminants.</li>
+                            <li>2 axes conservent 45,7 % de l'information, 3 axes en conservent 59,8 %.</li>
+                            <li><strong>Axe 1 :</strong> l'acidité (acidité fixe, acide citrique, pH), qui oppose des vins vifs et structurés à des vins plus ronds.</li>
+                            <li><strong>Axe 2 :</strong> le dioxyde de soufre (sulfites).</li>
+                            <li><strong>Recommandation :</strong> segmenter les clients selon leur goût pour l'acidité et repérer les vins pauvres en sulfites pour la clientèle « nature ».</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-                <!-- A/B Testing -->
+        <!-- ANALYSE TEXTUELLE IRAMUTEQ -->
         <div class="project-section">
-            <h2>A/B Testing – Optimisation d'une landing page</h2>
+            <h2>Analyse textuelle et NLP (corpus médias sur le Soudan)</h2>
             <p>
-                <strong>Contexte et objectifs :</strong> Mise en place d'une expérimentation contrôlée pour comparer deux versions d'une landing page afin de déterminer laquelle est la plus performante. Ce projet utilise l'A/B testing, une méthode essentielle en marketing pour optimiser les taux de conversion.
+                <strong>Problématique :</strong> Quels thèmes structurent le discours de la presse sur la guerre au Soudan ?
             </p>
             <p>
-                <strong>Problématique marketing :</strong> Quelle version d’une landing page (contrôle vs. traitement) convertit le mieux les utilisateurs ?
+                <strong>Objectif :</strong> Extraire automatiquement les mots dominants, les cooccurrences et les thématiques d'un corpus de presse avec le logiciel Iramuteq.
             </p>
-            
-            <div class="tech-badges">
-                <span class="badge">Python</span>
-                <span class="badge">Pandas</span>
-                <span class="badge">Scipy (Stats)</span>
-                <span class="badge">Statsmodels</span>
-                <span class="badge">Matplotlib / Seaborn</span>
-            </div>
+            <!-- À COMPLÉTER : source des articles, période et nombre de textes du corpus -->
 
-            <div class="details-grid">
-                <div class="detail-box">
-                    <h3>Traitement des données</h3>
-                        <li>Nettoyage et filtrage de plus de 290 000 lignes de trafic web pour isoler les données pertinentes.</li>
-                </div>
-                <div class="detail-box">
-                    <h3>Analyse et résultats clés</h3>
-                    <ul>
-                        <li>Analyse statistique via un <strong>Z-test des proportions</strong> pour évaluer la significativité.</li>
-                        <li><strong>Conclusion :</strong> p-value de 0.1897 (> 0.05). La différence n'est pas significative, recommandation de ne pas déployer la nouvelle version.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="action-buttons">
-                <a href="https://colab.research.google.com/drive/1YowxyzcdPz3TPwDLKnRU3n2FD4hVTuZi?usp=sharing" target="_blank" class="btn-link">Voir le Notebook Colab →</a>
-            </div>
-        </div>
-
-          <!-- PROJET 3 : ANALYSE TEXTUELLE IRAMUTEQ -->
-        <div class="project-section">
-            <h2>Analyse textuelle et NLP (Corpus médias Soudan)</h2>
-            <p>
-                Traitement et analyse statistique textuelle approfondie d'un corpus médiatique complexe à l'aide du logiciel Iramuteq. L'objectif est d'extraire automatiquement les structures sémantiques, les réseaux de cooccurrences et les thématiques dominantes du discours de presse.
-            </p>
-            
             <div class="tech-badges">
                 <span class="badge">Iramuteq</span>
-                <span class="badge">NLP et Text Mining</span>
+                <span class="badge">NLP et text mining</span>
                 <span class="badge">Statistique textuelle</span>
-                <span class="badge">Analyse factorielle</span>
+                <span class="badge">Analyse de similitude</span>
             </div>
 
             <div class="details-grid">
                 <div class="detail-box">
                     <div>
-                        <h3>Graphique de similarité</h3>
+                        <h3>Graphique de similitude</h3>
                         <ul>
-                            <li>Analyse des réseaux de cooccurrences et liens sémantiques forts du corpus.</li>
+                            <li>Les mots les plus liés forment des groupes distincts.</li>
+                            <li><strong>Crise humanitaire :</strong> Soudan, humanitaire, famine, ONU, aide, journaliste.</li>
+                            <li><strong>Conflit armé :</strong> FSR, Darfour, Khartoum, milice, attaque, combattants, violences sexuelles.</li>
+                            <li><strong>Guerre et crimes :</strong> guerre, crime, violation, droit, civil.</li>
                         </ul>
                     </div>
-                    <img src="projet_iramuteq/graph_simi_1.png" alt="Graphique de similarité Iramuteq" class="project-image">
-                    <a href="projet_iramuteq/graph_simi_1.png" target="_blank" class="btn-link" style="margin-top: 1rem;">Agrandir le graphique</a>
+                    <div>
+                        <img src="projet_iramuteq/graph_simi_1.png" alt="Graphique de similitude Iramuteq" class="project-image">
+                        <a href="projet_iramuteq/graph_simi_1.png" target="_blank" class="btn-link">Agrandir le graphique</a>
+                    </div>
                 </div>
                 <div class="detail-box">
                     <div>
                         <h3>Nuage de mots</h3>
                         <ul>
-                            <li>Visualisation synthétique des termes les plus fréquents de la presse.</li>
+                            <li>Les termes les plus fréquents sont « Soudan », « guerre », « FSR », « Darfour », « humanitaire » et « conflit ».</li>
+                            <li>Le vocabulaire met l'accent sur les acteurs armés et sur les conséquences pour les civils.</li>
                         </ul>
                     </div>
-                    <img src="projet_iramuteq/nuage_1.png" alt="Nuage de mots Iramuteq" class="project-image">
-                    <a href="projet_iramuteq/nuage_1.png" target="_blank" class="btn-link" style="margin-top: 1rem;">Agrandir le nuage de mots</a>
+                    <div>
+                        <img src="projet_iramuteq/nuage_1.png" alt="Nuage de mots Iramuteq" class="project-image">
+                        <a href="projet_iramuteq/nuage_1.png" target="_blank" class="btn-link">Agrandir le nuage de mots</a>
+                    </div>
                 </div>
             </div>
         </div>
