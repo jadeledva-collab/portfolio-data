@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projets SQL - Jade Le Dévéhat</title>
+    <title>SQL &amp; Bases de données - Jade Le Dévéhat</title>
     <style>
         * {
             margin: 0;
@@ -134,6 +134,11 @@
             line-height: 1;
         }
 
+        .detail-box code {
+            color: #d4d4d8;
+            font-size: 0.85rem;
+        }
+
         .tech-badges {
             display: flex;
             gap: 0.5rem;
@@ -166,13 +171,16 @@
             border: 1px solid rgba(168, 85, 247, 0.3);
             transition: all 0.3s ease;
             text-align: center;
-            margin-top: 0.5rem;
         }
 
         .btn-link:hover {
             background: rgba(168, 85, 247, 0.2);
             border-color: rgba(168, 85, 247, 0.5);
             color: #ffffff;
+        }
+
+        .action-buttons {
+            margin-top: 1.5rem;
         }
 
         @media (max-width: 768px) {
@@ -189,132 +197,144 @@
 
     <div class="container">
         <a href="index.html" class="back-link">← Retour à l'accueil</a>
-        
+
         <h1>Projets SQL et bases de données</h1>
         <p class="subtitle">Requêtes complexes, agrégations, modélisation relationnelle et collecte de données par API</p>
 
         <!-- PROJET ADVENTUREWORKS -->
         <div class="project-section">
-            <h2>Analyse des performances et ventes (base AdventureWorks)</h2>
+            <h2>Analyse des ventes et de la rentabilité (base AdventureWorks)</h2>
             <p>
-                <strong>Problématique métier :</strong> L'entreprise souhaite analyser ses performances en termes de ventes, de produits, de régions et de segments de clients afin d'optimiser ses décisions commerciales.
+                <strong>Problématique métier :</strong> Une entreprise souhaite suivre ses ventes par région, par produit et par type de client afin d'orienter ses décisions commerciales.
             </p>
             <p>
-                <strong>Objectif :</strong> Exploiter la base de données relationnelle <em>AdventureWorks</em> pour analyser les ventes, identifier la rentabilité des produits et structurer des requêtes complexes.
+                <strong>Objectif :</strong> Interroger la base relationnelle <em>AdventureWorks</em> avec 15 requêtes T-SQL pour mesurer les performances commerciales et la rentabilité des produits.
             </p>
-            
+
             <div class="tech-badges">
-                <span class="badge">SQL Avancé</span>
+                <span class="badge">SQL</span>
                 <span class="badge">T-SQL / SQL Server</span>
                 <span class="badge">Jointures</span>
-                <span class="badge">AdventureWorks Dataset</span>
+                <span class="badge">CTE</span>
+                <span class="badge">AdventureWorks</span>
             </div>
 
             <div class="details-grid">
                 <div class="detail-box">
                     <div>
-                        <h3>Compétences et réalisations</h3>
+                        <h3>Analyses réalisées</h3>
                         <ul>
-                            <li>Analyse des ventes par territoire et suivi temporel sur 12 mois.</li>
-                            <li>Segmentation des clients par montant dépensé et identification du top 10 clients.</li>
-                            <li>Comparaison des canaux de vente (en ligne vs magasin).</li>
+                            <li>Ventes par région et par catégorie de produit, et ventes par produit sur 12 mois (juillet 2013 à juin 2014).</li>
+                            <li>Clients actifs, top 10 des clients et segmentation par montant dépensé (bas, moyen, élevé).</li>
+                            <li>Comparaison entre revendeurs (B2B) et particuliers (B2C), et entre ventes en ligne et en magasin.</li>
+                            <li>Ventes par agent et top 5 des produits.</li>
                         </ul>
                     </div>
+                    <a href="adventureworks.sql" target="_blank" class="btn-link">Consulter le fichier SQL</a>
                 </div>
                 <div class="detail-box">
                     <div>
-                        <h3>Rentabilité et suivi</h3>
+                        <h3>Rentabilité et qualité fournisseurs</h3>
                         <ul>
-                            <li>Identification des produits les plus rentables et calcul des marges nettes.</li>
-                            <li>Évaluation des performances globales par agent de vente.</li>
-                            <li>Suivi des taux de retour et de rejet des produits.</li>
+                            <li>Marge brute par produit (chiffre d'affaires moins coût standard) et classement en 4 niveaux de rentabilité.</li>
+                            <li>Taux de rejet des commandes fournisseurs (quantité rejetée sur quantité commandée).</li>
+                            <li><strong>Techniques :</strong> <code>INNER JOIN</code> / <code>LEFT JOIN</code>, <code>GROUP BY</code> / <code>HAVING</code>, <code>WITH</code> (CTE), <code>CASE</code>, <code>TOP</code>, <code>NULLIF</code>.</li>
                         </ul>
                     </div>
                 </div>
             </div>
-
-            <a href="adventureworks.sql" target="_blank" class="btn-link">Consulter le fichier SQL (adventureworks.sql)</a>
+            <!-- À AJOUTER : 2 ou 3 résultats chiffrés (région en tête, top 5 produits, part B2B / B2C) -->
         </div>
 
         <!-- PROJET CHINOOK -->
         <div class="project-section">
             <h2>Analyse et reporting des ventes (base Chinook)</h2>
             <p>
-                <strong>Problématique métier :</strong> Une entreprise souhaite produire un rapport détaillé sur les ventes totales par produit, par région et par agent pour évaluer les performances commerciales.
+                <strong>Problématique métier :</strong> Une boutique de musique en ligne souhaite suivre ses ventes par pays, par agent et par artiste pour évaluer ses performances commerciales.
             </p>
             <p>
-                <strong>Objectif :</strong> Utiliser SQLite pour extraire, filtrer, croiser et agréger les données à l'aide de requêtes optimisées.
+                <strong>Objectif :</strong> Extraire, croiser et agréger les données de la base Chinook avec 27 requêtes SQLite de difficulté croissante.
             </p>
-            
+            <!-- SI CES 27 REQUÊTES VIENNENT D'UN EXERCICE OU D'UN DÉPÔT PUBLIC : l'indiquer ici (« exercices guidés, source : ... ») -->
+
             <div class="tech-badges">
                 <span class="badge">SQL</span>
                 <span class="badge">SQLite / DB Browser</span>
-                <span class="badge">Jointures</span>
+                <span class="badge">Jointures multi-tables</span>
                 <span class="badge">Agrégations</span>
-                 <span class="badge">Chinook Dataset</span>
+                <span class="badge">Chinook</span>
             </div>
 
             <div class="details-grid">
                 <div class="detail-box">
                     <div>
-                        <h3>Compétences et requêtes maîtrisées</h3>
+                        <h3>Requêtes réalisées</h3>
                         <ul>
-                            <li>Utilisation de <code>SELECT</code>, <code>WHERE</code>, et filtrage géographique.</li>
-                            <li>Calculs de sommes et moyennes de ventes avec <code>SUM</code> et <code>COUNT</code>.</li>
-                            <li>Croisement des tables clients, factures, employés et artistes.</li>
+                            <li>Filtres sur les clients et les factures (pays, période, avec <code>strftime</code>).</li>
+                            <li>Jointures jusqu'à 4 tables : clients, factures, employés, morceaux, albums et artistes.</li>
+                            <li>Agrégations <code>COUNT</code> et <code>SUM</code> avec <code>GROUP BY</code>, tri et <code>LIMIT</code> pour les classements.</li>
                         </ul>
                     </div>
-                    <a href="chinook-queries.sql" target="_blank" class="btn-link">Consulter le fichier des requêtes SQL (chinook-queries.sql)</a>
+                    <a href="chinook-queries.sql" target="_blank" class="btn-link">Consulter le fichier SQL</a>
                 </div>
                 <div class="detail-box">
                     <div>
-                        <h3>Analyses avancées et top performances</h3>
+                        <h3>Questions métier traitées</h3>
                         <ul>
-                            <li>Identification des meilleurs agents de vente par période.</li>
-                            <li>Recherche des genres, types de médias et artistes les plus vendus.</li>
-                            <li>Structuration rigoureuse de scripts pour générer des rapports de vente.</li>
+                            <li>Ventes et nombre de clients par agent, et meilleur agent par année.</li>
+                            <li>Pays générant le plus de ventes.</li>
+                            <li>Morceaux, artistes et types de média les plus vendus.</li>
                         </ul>
                     </div>
                 </div>
             </div>
+            <!-- À AJOUTER : 2 ou 3 résultats (meilleur agent, premier pays, top 3 artistes) -->
         </div>
 
-        <!-- PROJET 2 : Système de collecte API & Stockage SQL -->
+        <!-- PROJET MÉTÉO -->
         <div class="project-section">
-            <h2>Système de collecte API et stockage SQL (météo tourisme)</h2>
+            <h2>Collecte d'API et stockage SQL (météo tourisme)</h2>
             <p>
-                <strong>Contexte métier :</strong> Une entreprise dans le secteur du tourisme souhaite automatiser la collecte de données météo pour ses différentes destinations afin d’optimiser ses recommandations clients et alimenter des applications mobiles.
+                <strong>Contexte métier :</strong> Une entreprise de tourisme souhaite collecter la météo de ses destinations pour affiner ses recommandations clients.
             </p>
             <p>
-                <strong>Objectif :</strong> Interroger une API publique en temps réel, transformer les charges utiles JSON et structurer les relevés dans une base de données relationnelle SQL.
+                <strong>Objectif :</strong> Interroger une API publique, nettoyer les données JSON reçues et les stocker dans une base relationnelle SQL.
             </p>
-            
+
             <div class="tech-badges">
                 <span class="badge">Python</span>
-                <span class="badge">Requests API</span>
+                <span class="badge">Requests / API REST</span>
                 <span class="badge">SQLite</span>
-                <span class="badge">SQL Relationnel</span>
+                <span class="badge">SQL relationnel</span>
             </div>
 
             <div class="details-grid">
                 <div class="detail-box">
-                    <h3>Consommation API et extraction</h3>
-                    <ul>
-                        <li><strong>Connexion sécurisée :</strong> Utilisation de la bibliothèque <code>requests</code> pour interroger l'API OpenWeather avec clé d'accès.</li>
-                        <li><strong>Traitement JSON :</strong> Récupération et normalisation des flux de données (conversion des températures en Celsius, formatage des dates).</li>
-                    </ul>
+                    <div>
+                        <h3>Collecte et nettoyage</h3>
+                        <ul>
+                            <li>Interrogation de l'API OpenWeather pour 5 destinations : Paris, Tokyo, New York, Sydney et Marrakech.</li>
+                            <li>Extraction du JSON : ville, pays, température (en °C, arrondie au dixième), humidité et description.</li>
+                            <li>Conversion de l'horodatage Unix en date lisible.</li>
+                            <li>Gestion des erreurs : une ville en échec est ignorée, la collecte continue.</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="detail-box">
-                    <h3>Modélisation et stockage SQL</h3>
-                    <ul>
-                        <li><strong>Structure relationnelle :</strong> Conception de tables normalisées (<code>destination</code> et <code>weather_log</code> reliées par clé étrangère).</li>
-                        <li><strong>Insertion robuste :</strong> Enregistrement automatisé des données garantissant l'intégrité et l'unicité des enregistrements.</li>
-                    </ul>
+                    <div>
+                        <h3>Modèle de données</h3>
+                        <ul>
+                            <li><code>destination</code> : identifiant, ville (unique) et pays.</li>
+                            <li><code>weather_log</code> : identifiant, relevé météo et horodatage, rattaché à une destination par clé étrangère.</li>
+                            <li>Relation un-à-plusieurs : une destination possède plusieurs relevés.</li>
+                            <li>Une contrainte <code>UNIQUE</code> sur la ville évite les doublons de destinations.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
             <div class="action-buttons">
-                <a href="https://github.com/jadeledva-collab/portfolio-data/tree/main/Projet_météo" target="_blank" class="btn-link">Voir tous les fichiers du projet →</a>
+                <a href="https://github.com/jadeledva-collab/portfolio-data/tree/main/Projet_m%C3%A9t%C3%A9o" target="_blank" class="btn-link">Voir les fichiers du projet (GitHub)</a>
             </div>
         </div>
 
