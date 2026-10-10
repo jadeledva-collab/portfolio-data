@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projets Agents IA & Automatisation - Jade Le Dévéhat</title>
+    <title>Automatisation &amp; IA - Jade Le Dévéhat</title>
     <style>
         * {
             margin: 0;
@@ -134,6 +134,11 @@
             line-height: 1;
         }
 
+        .detail-box code {
+            color: #d4d4d8;
+            font-size: 0.85rem;
+        }
+
         .tech-badges {
             display: flex;
             gap: 0.5rem;
@@ -152,6 +157,13 @@
             border: 1px solid rgba(168, 85, 247, 0.2);
         }
 
+        .action-buttons {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
         .btn-link {
             display: inline-flex;
             align-items: center;
@@ -166,7 +178,6 @@
             border: 1px solid rgba(168, 85, 247, 0.3);
             transition: all 0.3s ease;
             text-align: center;
-            margin-top: 0.5rem;
         }
 
         .btn-link:hover {
@@ -189,89 +200,99 @@
 
     <div class="container">
         <a href="index.html" class="back-link">← Retour à l'accueil</a>
-        
+
         <h1>Projets automatisation et intelligence artificielle</h1>
         <p class="subtitle">Pipelines ETL automatisés, workflows n8n, architectures RAG et agents IA</p>
 
-        <!-- PROJET LOGIPRO -->
+        <!-- PROJET TRUSTPILOT (ETL) -->
         <div class="project-section">
-            <h2>LogiPro - Chatbot RAG et automatisation</h2>
+            <h2>Pipeline ETL des avis Trustpilot (Python, SQLite et Airflow)</h2>
             <p>
-                <strong>Problématique métier :</strong> Centraliser et automatiser l'exploitation de documents d'entreprise pour permettre un accès rapide et intelligent aux connaissances internes.
+                <strong>Contexte métier :</strong> Une plateforme d'e-commerce souhaite analyser les avis laissés sur des entreprises concurrentes. Les données doivent être extraites, nettoyées et stockées dans une base exploitable pour des analyses comparatives.
             </p>
             <p>
-                <strong>Objectif :</strong> Concevoir un workflow d'intelligence artificielle et d'automatisation avec une architecture RAG utilisant n8n, Google Drive et Google Gemini pour l'ingestion, la vectorisation et l'interrogation intelligente de documents.
+                <strong>Objectif :</strong> Construire un pipeline ETL (extraction, transformation, chargement) qui alimente une base SQLite à partir d'avis Trustpilot, orchestré par un DAG Airflow quotidien.
             </p>
-            
-            <div class="tech-badges">
-                <span class="badge">n8n</span>
-                <span class="badge">Google Gemini AI</span>
-                <span class="badge">RAG Architecture</span>
-                <span class="badge">Vector Store</span>
-            </div>
 
-            <div class="details-grid">
-                <div class="detail-box">
-                    <div>
-                        <h3>Architecture et fonctionnement</h3>
-                        <ul>
-                            <li><strong>Ingestion Google Drive :</strong> Surveillance continue d'un dossier cible pour détecter l'ajout ou la mise à jour de documents.</li>
-                            <li><strong>Traitement et découpage :</strong> Utilisation d'un séparateur de texte récursif pour segmenter proprement les fichiers.</li>
-                            <li><strong>Embeddings :</strong> Vectorisation sémantique des données par Google Gemini.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="detail-box">
-                    <div>
-                        <h3>Chatbot RAG et restitution</h3>
-                        <ul>
-                            <li><strong>Agent conversationnel :</strong> Interface connectée au modèle de chat Google Gemini qui exploite la base vectorielle comme outil de recherche documentaire.</li>
-                            <li><strong>Automatisation :</strong> Restitution fluide avec une base documentaire actualisée en temps réel.</li>
-                        </ul>
-                    </div>
-                    <a href="projet_logipro\LogiPro - RAG Chatbot.json" target="_blank" class="btn-link" download>Télécharger le fichier .JSON du projet</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- PROJET 1 : Scraping et Stockage Trustpilot -->
-        <div class="project-section">
-            <h2>Scraping et pipeline ETL (Trustpilot Reviews)</h2>
-            <p>
-                <strong>Contexte métier :</strong> Une plateforme d’e-commerce souhaite analyser les avis de ses concurrents pour mieux comprendre les retours clients sur des produits similaires. Les données doivent être extraites, nettoyées et organisées pour des analyses comparatives.
-            </p>
-            <p>
-                <strong>Objectif :</strong> Récupérer des avis consommateurs sur Trustpilot, automatiser le traitement via un pipeline ETL et stocker le tout dans une base de données SQLite.
-            </p>
-            
             <div class="tech-badges">
                 <span class="badge">Python</span>
-                <span class="badge">BeautifulSoup</span>
                 <span class="badge">Pandas</span>
                 <span class="badge">SQLite</span>
                 <span class="badge">Apache Airflow</span>
+                <span class="badge">BeautifulSoup</span>
+                <span class="badge">Trustpilot Reviews Dataset (2022)</span>
             </div>
 
             <div class="details-grid">
                 <div class="detail-box">
-                    <h3>Extraction et nettoyage</h3>
-                    <ul>
-                        <li><strong>Scraping web :</strong> Identification et extraction des éléments d'intérêt à l'aide de <code>BeautifulSoup</code> et de sélecteurs CSS.</li>
-                        <li><strong>Transformation :</strong> Suppression des balises HTML superflues, déduplication et gestion des valeurs manquantes via <code>Pandas</code>.</li>
-                    </ul>
+                    <div>
+                        <h3>Extraction et transformation</h3>
+                        <ul>
+                            <li>Lecture d'un fichier CSV d'avis clients (jeu de données Trustpilot de juin 2022).</li>
+                            <li>Détection et renommage des colonnes (entreprise, note, texte), suppression des doublons et nettoyage du texte (sauts de ligne, espaces).</li>
+                            <li>Prototype de scraping avec <code>BeautifulSoup</code> : requête HTTP avec en-têtes de navigateur et extraction des avis depuis la page d'une entreprise.</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="detail-box">
-                    <h3>Stockage et automatisation</h3>
-                    <ul>
-                        <li><strong>Base SQLite :</strong> Conception d'une structure de base de données relationnelle adaptée pour accueillir les avis.</li>
-                        <li><strong>Airflow :</strong> Mise en place d'un DAG d'automatisation quotidienne pour exécuter le pipeline ETL en arrière-plan.</li>
-                    </ul>
+                    <div>
+                        <h3>Stockage et orchestration</h3>
+                        <ul>
+                            <li>Table SQLite <code>reviews</code> : identifiant auto-incrémenté, entreprise, note et texte de l'avis.</li>
+                            <li>DAG Airflow <code>trustpilot_etl_pipeline</code> planifié chaque jour (<code>@daily</code>), avec une nouvelle tentative après 5 minutes en cas d'échec.</li>
+                            <li>Code organisé en étapes distinctes : <code>extraire</code>, <code>transformer</code> et <code>charger</code>.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+            <!-- À COMPLÉTER APRÈS CORRECTION DU PIPELINE : nombre d'avis uniques, nombre d'entreprises (214), répartition des notes, capture d'écran d'une exécution réussie dans l'interface Airflow -->
 
             <div class="action-buttons">
-                <a href="https://github.com/jadeledva-collab/portfolio-data/tree/main/projet_trustpilot" target="_blank" class="btn-link">Voir tous les fichiers du projet (GitHub) →</a>
+                <a href="https://github.com/jadeledva-collab/portfolio-data/tree/main/projet_trustpilot" target="_blank" class="btn-link">Voir les fichiers du projet (GitHub)</a>
             </div>
+        </div>
+
+        <!-- PROJET LOGIPRO -->
+        <div class="project-section">
+            <h2>LogiPro : chatbot RAG et automatisation</h2>
+            <p>
+                <strong>Problématique métier :</strong> Centraliser et automatiser l'exploitation des documents d'une entreprise pour donner un accès rapide aux connaissances internes.
+            </p>
+            <p>
+                <strong>Objectif :</strong> Concevoir un workflow n8n avec une architecture RAG (Retrieval-Augmented Generation) : le chatbot cherche d'abord dans les documents de l'entreprise, puis répond avec Google Gemini.
+            </p>
+
+            <div class="tech-badges">
+                <span class="badge">n8n</span>
+                <span class="badge">Google Gemini</span>
+                <span class="badge">RAG</span>
+                <span class="badge">Base vectorielle</span>
+                <span class="badge">Google Drive</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <div>
+                        <h3>Ingestion des documents</h3>
+                        <ul>
+                            <li>Surveillance d'un dossier Google Drive pour détecter les documents ajoutés ou modifiés.</li>
+                            <li>Découpage des fichiers en segments avec un séparateur de texte récursif.</li>
+                            <li>Vectorisation (embeddings) des segments avec Google Gemini.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="detail-box">
+                    <div>
+                        <h3>Chatbot et restitution</h3>
+                        <ul>
+                            <li>Agent conversationnel relié au modèle de chat Gemini, qui interroge la base vectorielle comme outil de recherche documentaire.</li>
+                            <li>Base documentaire mise à jour à chaque nouveau document déposé.</li>
+                        </ul>
+                    </div>
+                    <a href="projet_logipro/LogiPro_RAG_Chatbot.json" target="_blank" class="btn-link" download>Télécharger le workflow (.json)</a>
+                </div>
+            </div>
+            <!-- À AJOUTER : capture d'écran du workflow n8n et exemple de question / réponse du chatbot ; préciser quelle base vectorielle est utilisée -->
         </div>
 
     </div>
