@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visualisation & BI - Jade Le Dévéhat</title>
+    <title>Business Intelligence &amp; Dashboards - Jade Le Dévéhat</title>
     <style>
         * {
             margin: 0;
@@ -134,6 +134,11 @@
             line-height: 1;
         }
 
+        .detail-box code {
+            color: #d4d4d8;
+            font-size: 0.85rem;
+        }
+
         .tech-badges {
             display: flex;
             gap: 0.5rem;
@@ -152,6 +157,12 @@
             border: 1px solid rgba(168, 85, 247, 0.2);
         }
 
+        .btn-group {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
         .btn-link {
             display: inline-flex;
             align-items: center;
@@ -166,7 +177,6 @@
             border: 1px solid rgba(168, 85, 247, 0.3);
             transition: all 0.3s ease;
             text-align: center;
-            margin-top: 0.5rem;
         }
 
         .btn-link:hover {
@@ -175,12 +185,39 @@
             color: #ffffff;
         }
 
+        .stats-highlight {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .stat-card {
+            background: rgba(168, 85, 247, 0.06);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .stat-value {
+            color: #a855f7;
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+
+        .stat-label {
+            color: #a1a1aa;
+            font-size: 0.8rem;
+        }
+
         .project-image {
+            display: block;
             width: 100%;
             max-height: 300px;
             object-fit: contain;
             border-radius: 8px;
-            margin-top: 1rem;
+            margin: 0.5rem 0 1rem;
             border: 1px solid rgba(168, 85, 247, 0.2);
             background: #000;
         }
@@ -199,229 +236,256 @@
 
     <div class="container">
         <a href="index.html" class="back-link">← Retour à l'accueil</a>
-        
+
         <h1>Projets business intelligence et dashboards</h1>
         <p class="subtitle">Modélisation de données, ETL, tableaux de bord interactifs et pilotage de la performance</p>
 
-        <!-- PROJET 1 : ANALYSE IMMOBILIÈRE (DATAIMMO) -->
+        <!-- PROJET 1 : DATAIMMO -->
         <div class="project-section">
             <h2>Analyse immobilière et pipeline BI (DataImmo)</h2>
             <p>
-                Conception de bout en bout d'un pipeline de données orienté business intelligence sur le marché immobilier. Ce projet structuré permet de transformer des données foncières brutes en indicateurs stratégiques clairs pour la prise de décision.
+                <strong>Contexte :</strong> Cas d'entreprise de Master 2, réalisé en groupes. Un réseau national d'agences immobilières, en transformation digitale, souhaite exploiter les données publiques de transactions pour comprendre le marché et accompagner ses clients.
             </p>
-            
+            <p>
+                <strong>Objectif :</strong> Construire la chaîne complète, de la base de données aux indicateurs, avec un dictionnaire de données, une base relationnelle, un flux de nettoyage, un rapport Power BI et une application Streamlit.
+            </p>
+            <!-- À COMPLÉTER : ma contribution précise (quels livrables ont été réalisés par mon groupe) -->
+
             <div class="tech-badges">
-                <span class="badge">SQL</span>
-                <span class="badge">Power BI</span>
-                <span class="badge">Knime</span>
-                <span class="badge">Streamlit</span>
+                <span class="badge">SQL (MySQL)</span>
                 <span class="badge">Modélisation de données</span>
+                <span class="badge">Knime</span>
+                <span class="badge">Power BI</span>
+                <span class="badge">Streamlit</span>
+            </div>
+
+            <div class="stats-highlight">
+                <div class="stat-card">
+                    <div class="stat-value">107 367</div>
+                    <div class="stat-label">lignes dans la base (5 tables)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">34 169</div>
+                    <div class="stat-label">ventes du 1er semestre 2020</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">12</div>
+                    <div class="stat-label">requêtes SQL d'analyse</div>
+                </div>
             </div>
 
             <div class="details-grid">
-                <!-- Boîte 1 : Modélisation & Architecture -->
                 <div class="detail-box">
                     <div>
-                        <h3>Modélisation et architecture</h3>
+                        <h3>Modélisation et base de données</h3>
                         <ul>
-                            <li>Création du dictionnaire de données et des tables relationnelles.</li>
-                            <li>Gestion de la géographie, des départements, des communes et des transactions foncières.</li>
-                            <li>Respect rigoureux des normes du Code Officiel Géographique (COG) de l'INSEE.</li>
+                            <li>Dictionnaire de données (6 tables, avec types, règles de gestion et de calcul) et schéma entité-association.</li>
+                            <li>Base relationnelle de 5 tables (région, département, commune, bien, vente) reliées par clés étrangères.</li>
+                            <li>Données foncières et populations légales rattachées aux codes géographiques officiels.</li>
                         </ul>
                     </div>
-                    <div>
-                        <a href="https://univtlnfr-my.sharepoint.com/:x:/g/personal/jade-le-devehat_etud_univ-tln_fr/IQCk2GGS1beiSardL0Z8DIDqAf2Dj6btAHZlkx8bU40CqFY?e=K9ksn4" target="_blank" class="btn-link">Consulter le dictionnaire (.xlsx)</a>
-                        <a href="projet_dataimmo\1_groupe_2_schema_122025.jpeg" target="_blank" class="btn-link">Schéma conceptuel</a>
+                    <div class="btn-group">
+                        <a href="projet_dataimmo/1_groupe_1_dictionnaire_de_donnees_122025.xlsx" target="_blank" class="btn-link">Dictionnaire (.xlsx)</a>
+                        <a href="projet_dataimmo/1_groupe_2_schema_122025.jpeg" target="_blank" class="btn-link">Schéma de la base</a>
                     </div>
                 </div>
 
-                <!-- Boîte 2 : Base de Données & Requêtes -->
                 <div class="detail-box">
                     <div>
-                        <h3>Base de données et requêtes</h3>
+                        <h3>Requêtes SQL et résultats</h3>
                         <ul>
-                            <li>Scripts SQL et structuration des tables foncières (immobilier).</li>
-                            <li>Documentation complète des requêtes d'analyse décisionnelle.</li>
+                            <li>Techniques : jointures sur 5 tables, <code>CTE</code>, <code>RANK() OVER</code>, <code>SUM() OVER</code>, <code>HAVING</code>, <code>NULLIF</code>.</li>
+                            <li>31 378 appartements vendus au 1er semestre 2020, dont 13 995 en Île-de-France (environ 45 %).</li>
+                            <li>Les studios et appartements de 1 à 3 pièces représentent 81 % des ventes d'appartements.</li>
+                            <li>Prix au m² le plus élevé : Paris (12 122 €), puis les Hauts-de-Seine (7 415 €) et le Val-de-Marne (5 396 €).</li>
+                            <li>Ventes en hausse de 3,7 % entre le 1er et le 2e trimestre 2020 (16 776 puis 17 393).</li>
                         </ul>
                     </div>
-                    <a href="projet_dataimmo\BDD - SQL Ventes Biens.pdf" target="_blank" class="btn-link">Rapport SQL & BDD (.pdf)</a>
+                    <a href="projet_dataimmo/BDD_SQL_Ventes_Biens.pdf" target="_blank" class="btn-link">Rapport SQL et base de données (.pdf)</a>
                 </div>
 
-                <!-- Boîte 3 : Power BI -->
                 <div class="detail-box">
                     <div>
-                        <h3>Visualisation (Power BI)</h3>
+                        <h3>Pipeline de nettoyage (Knime)</h3>
                         <ul>
-                            <li>Rapports décisionnels et tableaux de bord interactifs en ligne.</li>
+                            <li>Lecture de 6 fichiers Excel, traitement des valeurs manquantes et filtrage des lignes.</li>
+                            <li>Jointures entre les sources, calculs et règles métier, puis agrégations.</li>
+                            <li>Visualisations de contrôle : histogramme, boxplot, nuages de points et diagrammes.</li>
+                        </ul>
+                    </div>
+                    <a href="projet_dataimmo/1_groupe_5_knime_122025.knwf" target="_blank" class="btn-link">Workflow Knime (.knwf)</a>
+                </div>
+
+                <div class="detail-box">
+                    <div>
+                        <h3>Rapport Power BI en 4 niveaux d'analyse</h3>
+                        <ul>
+                            <li><strong>Descriptive :</strong> carte des prix et évolution du prix moyen au m².</li>
+                            <li><strong>Diagnostique :</strong> prix selon la population et selon le type de bien.</li>
+                            <li><strong>Prédictive :</strong> prévision des prix et nombre de ventes par mois, avec un creux en avril 2020.</li>
+                            <li><strong>Prescriptive :</strong> tableau d'opportunités par commune et surfaces les plus demandées (25 à 65 m²).</li>
                         </ul>
                     </div>
                     <a href="https://app.powerbi.com/groups/me/reports/58cccfb3-bf32-4336-8b38-ea4184d92fb5/164588408cbd67b8cef1?experience=power-bi" target="_blank" class="btn-link">Voir le rapport Power BI</a>
+                    <!-- À AJOUTER : captures d'écran des 4 pages dans projet_dataimmo/ (après correction de la page 4) -->
                 </div>
 
-                <!-- Boîte 4 : Knime -->
-                <div class="detail-box">
-                    <div>
-                        <h3>Pipeline et ETL (Knime)</h3>
-                        <ul>
-                            <li>Automatisation des flux de nettoyage et de transformation sous Knime.</li>
-                        </ul>
-                    </div>
-                    <a href="projet_dataimmo/1_groupe_5_knime_122025.knwf" target="_blank" class="btn-link">Fichier Knime (.knwf)</a>
-                </div>
-
-                <!-- Boîte 5 : Streamlit -->
                 <div class="detail-box">
                     <div>
                         <h3>Application web (Streamlit)</h3>
                         <ul>
-                            <li>Application interactive déployée pour la restitution des indicateurs.</li>
+                            <li>Application interactive déployée pour restituer les indicateurs.</li>
                         </ul>
                     </div>
-                    <div>
-                        <a href="https://app-hrsxhu2fu3iw398tanvjt6.streamlit.app/" target="_blank" class="btn-link">Lancer l'app Streamlit</a>
-                        <a href="projet_dataimmo/1_groupe_6_streamlit_122025.pdf" target="_blank" class="btn-link">Rapport Streamlit (.pdf)</a>
-                    </div>
+                    <a href="https://app-hrsxhu2fu3iw398tanvjt6.streamlit.app/" target="_blank" class="btn-link">Lancer l'application</a>
                 </div>
             </div>
         </div>
 
-        <!-- PROJET 2 : TABLEAU DE BORD INTERACTIF (BUSINESS INTELLIGENCE) -->
+        <!-- PROJET 2 : OLIST -->
         <div class="project-section">
-            <h2>Tableau de bord interactif des performances commerciales (Superstore - Power BI)</h2>
+            <h2>Tableau de bord e-commerce (Olist Analytics)</h2>
             <p>
-                <strong>Problématique métier :</strong> Une entreprise souhaite disposer d'un tableau de bord interactif pour suivre ses performances commerciales en temps réel.
+                <strong>Problématique métier :</strong> Une marketplace souhaite analyser ses ventes, ses délais de livraison et la valeur de ses clients afin d'identifier les freins opérationnels et d'améliorer l'expérience client.
             </p>
             <p>
-                <strong>Objectif :</strong> Visualiser les KPI clés, analyser les tendances de ventes et évaluer les performances régionales pour une prise de décision rapide.
+                <strong>Objectif :</strong> Concevoir un tableau de bord Looker Studio en 3 pages, alimenté par des tables d'agrégation construites en SQL dans BigQuery.
             </p>
-            
+
             <div class="tech-badges">
-                <span class="badge">Power BI </span>
-                <span class="badge">Data Viz</span>
-                <span class="badge">Business Intelligence</span>
-                <span class="badge">Global Superstore Dataset</span>
+                <span class="badge">Google BigQuery</span>
+                <span class="badge">SQL</span>
+                <span class="badge">Looker Studio</span>
+                <span class="badge">Olist E-commerce Dataset</span>
+            </div>
+
+            <div class="stats-highlight">
+                <div class="stat-card">
+                    <div class="stat-value">100K+</div>
+                    <div class="stat-label">lignes de commandes analysées</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">3</div>
+                    <div class="stat-label">tables d'agrégation BigQuery</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">3 pages</div>
+                    <div class="stat-label">de restitution Looker Studio</div>
+                </div>
             </div>
 
             <div class="details-grid">
                 <div class="detail-box">
                     <div>
-                        <h3>Compétences et réalisation</h3>
+                        <h3>Requêtage SQL (BigQuery)</h3>
                         <ul>
-                            <li>Création de tableaux de bord interactifs avec filtres dynamiques (slicers).</li>
-                            <li>Visualisation avancée : graphiques temporels, cartographiques et combinés.</li>
-                            <li>Structuration et modélisation des données pour un suivi opérationnel fluide.</li>
+                            <li>Jointures entre commandes, articles, produits et clients, en ne gardant que les commandes livrées.</li>
+                            <li>Chiffre d'affaires et prix moyen par catégorie de produit.</li>
+                            <li>Délais de livraison réels et estimés par mois, avec <code>TIMESTAMP_DIFF</code>.</li>
+                            <li>Montant dépensé et nombre d'achats par client.</li>
+                        </ul>
+                    </div>
+                    <a href="https://github.com/jadeledva-collab/portfolio-data/tree/main/projet_ecommerce" target="_blank" class="btn-link">Code source SQL (GitHub)</a>
+                </div>
+                <div class="detail-box">
+                    <div>
+                        <h3>Restitution et résultats</h3>
+                        <ul>
+                            <li><strong>Ventes :</strong> 13,2 M de chiffre d'affaires réparti sur de nombreuses catégories. Les 9 premières n'en représentent qu'environ 59 %.</li>
+                            <li><strong>Logistique :</strong> 96 470 commandes livrées, avec un délai réel d'environ 12 jours, soit environ la moitié du délai annoncé aux clients (23 à 25 jours).</li>
+                            <li><strong>Clients :</strong> 93 358 clients, dont environ 97 % n'ont acheté qu'une seule fois.</li>
+                        </ul>
+                    </div>
+                    <a href="https://datastudio.google.com/reporting/a7c7030b-00ee-4a72-ad75-43695c09e1af" target="_blank" class="btn-link">Voir le dashboard Looker Studio</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJET 3 : POWER BI SUPERSTORE -->
+        <div class="project-section">
+            <h2>Tableau de bord des performances commerciales (Global Superstore - Power BI)</h2>
+            <p>
+                <strong>Problématique métier :</strong> Une entreprise souhaite suivre ses performances commerciales mondiales dans un tableau de bord interactif.
+            </p>
+            <p>
+                <strong>Objectif :</strong> Visualiser les indicateurs clés, analyser les tendances de ventes et comparer les zones géographiques et les catégories de produits.
+            </p>
+
+            <div class="tech-badges">
+                <span class="badge">Power BI</span>
+                <span class="badge">Data visualisation</span>
+                <span class="badge">Business Intelligence</span>
+                <span class="badge">Global Superstore (2011-2014)</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <div>
+                        <h3>Réalisation</h3>
+                        <ul>
+                            <li>3 indicateurs clés : chiffre d'affaires, profit et volume de commandes.</li>
+                            <li>Évolution du chiffre d'affaires dans le temps, carte par pays, top 10 des produits, ventes et profit par catégorie.</li>
+                            <li>Filtres dynamiques par période et par zone géographique (Afrique, APAC, Canada, EMEA, UE, LATAM, États-Unis).</li>
                         </ul>
                     </div>
                     <a href="https://app.powerbi.com/groups/me/reports/2490460f-9d14-4c26-b282-ffbfc0419719/54e535800c2d60a1b167?experience=power-bi" target="_blank" class="btn-link">Voir le tableau de bord</a>
                 </div>
                 <div class="detail-box">
                     <div>
-                        <h3>Synthèse et impact</h3>
+                        <h3>Résultats</h3>
                         <ul>
-                            <li>Suivi en direct de la santé financière et du chiffre d'affaires global.</li>
-                            <li>Identification visuelle des zones géographiques sous-performantes et des tops produits.</li>
-                            <li>Outil d'aide à la décision stratégique destiné au management.</li>
+                            <li>12,64 M de chiffre d'affaires, 1,47 M de profit (marge d'environ 12 %) et environ 25 000 commandes.</li>
+                            <li>La technologie réalise les ventes les plus élevées, tandis que le mobilier dégage le profit le plus faible au regard de ses ventes.</li>
+                            <li>Les smartphones dominent le top 10 des produits.</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-                 <!-- PROJET SUPERSTORE -->
+        <!-- PROJET 4 : EXCEL SUPERSTORE -->
         <div class="project-section">
-            <h2>Tableau de bord des ventes (Superstore - Excel)</h2>
+            <h2>Tableau de bord des ventes (Superstore US - Excel)</h2>
             <p>
-                <strong>Problématique métier :</strong> L'entreprise souhaite suivre en détail les performances des ventes par région et par catégorie afin d'identifier rapidement les zones à améliorer et d'optimiser la stratégie commerciale.
+                <strong>Problématique métier :</strong> L'entreprise souhaite suivre ses ventes par région et par catégorie pour repérer rapidement les zones à améliorer.
             </p>
             <p>
-                <strong>Objectif :</strong> Concevoir un tableau de bord interactif sous Excel pour analyser les indicateurs clés de performance (KPI) tels que le chiffre d'affaires (Sales), les marges et la rentabilité régionale.
+                <strong>Objectif :</strong> Concevoir un tableau de bord interactif sous Excel sur 9 994 transactions (2014 à 2017), centré sur le chiffre d'affaires et la marge.
             </p>
-            
+
             <div class="tech-badges">
                 <span class="badge">Excel</span>
-                <span class="badge">Tableaux Croisés Dynamiques (TCD)</span>
-                <span class="badge">Segments (Slicers)</span>
-                <span class="badge">Formules et fonctions métier</span>
+                <span class="badge">Tableaux croisés dynamiques</span>
+                <span class="badge">Segments</span>
+                <span class="badge">Superstore US (9 994 lignes)</span>
             </div>
 
             <div class="details-grid">
                 <div class="detail-box">
-                    <h3>Nettoyage et formules utilisées</h3>
-                    <ul>
-                        <li><strong>Organisation des données :</strong> Structuration de la base brute (9 994 transactions).</li>
-                        <li><strong>Formules essentielles :</strong> Utilisation de <code>SOMME</code>, <code>SOMME.SI</code> et <code>MOYENNE</code> pour consolider les indicateurs financiers.</li>
-                        <li><strong>Recherche et logique :</strong> Implémentation de fonctions de croisement telles que <code>RECHERCHEV</code>, <code>INDEX</code> et <code>EQUIV</code>.</li>
-                    </ul>
+                    <div>
+                        <h3>Méthode</h3>
+                        <ul>
+                            <li>Nettoyage et structuration de la base de 9 994 transactions.</li>
+                            <li>Formules : <code>SOMME.SI</code>, <code>MOYENNE</code>, <code>RECHERCHEV</code>, <code>INDEX</code> et <code>EQUIV</code>.</li>
+                            <li>Tableaux croisés dynamiques reliés à des segments (région, catégorie) pour filtrer en un clic.</li>
+                        </ul>
+                    </div>
+                    <a href="https://univtlnfr-my.sharepoint.com/:x:/g/personal/jade-le-devehat_etud_univ-tln_fr/IQCg7VNwKMlZTK85l1BFsnHzAQ-70i3orfC8eaoEyk2Zbz8?e=FnTpMQ" target="_blank" class="btn-link">Accéder au fichier Excel</a>
                 </div>
                 <div class="detail-box">
-                    <h3>Restitution et interactivité</h3>
-                    <ul>
-                        <li><strong>TCD et segments :</strong> Création de tableaux croisés dynamiques connectés à des segments (Slicers) pour filtrer par région ou par catégorie de produits en un clic.</li>
-                        <li><strong>Graphiques dynamiques :</strong> Visualisation des tendances temporelles des ventes et des marges par zone géographique (Central, East, South, West).</li>
-                        <li><strong>Tableau de bord :</strong> Restitution claire et épurée axée sur l'aide à la décision stratégique.</li>
-                    </ul>
+                    <div>
+                        <h3>Résultats</h3>
+                        <ul>
+                            <li>2,29 M$ de chiffre d'affaires au total.</li>
+                            <li><strong>Par région :</strong> Ouest 725 k$, Est 679 k$, Centre 500 k$ et Sud 391 k$.</li>
+                            <li><strong>Par catégorie :</strong> technologie 834 k$, mobilier 742 k$ et fournitures de bureau 719 k$.</li>
+                            <li>Sous-catégories les plus vendues : téléphones (330 k$) et chaises (328 k$).</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-
-            <a href="https://univtlnfr-my.sharepoint.com/:x:/g/personal/jade-le-devehat_etud_univ-tln_fr/IQCg7VNwKMlZTK85l1BFsnHzAQ-70i3orfC8eaoEyk2Zbz8?e=FnTpMQ" target="_blank" class="btn-link">Accéder au fichier Excel du projet</a>
         </div>
 
-            <!-- PROJET OLIST ANALYTICS -->
-        <div class="project-section">
-            <h2>Tableau de bord e-commerce (Olist Analytics)</h2>
-            <p>
-                <strong>Problématique métier :</strong> La marketplace souhaite analyser la santé globale de son activité (ventes, retards logistiques et valeur client) afin d'identifier les freins opérationnels et d'optimiser l'expérience client.
-            </p>
-            <p>
-                <strong>Objectif :</strong> Concevoir un tableau de bord interactif multi-pages sous Looker Studio alimenté par un entrepôt de données BigQuery pour suivre les KPI logistiques, financiers et relationnels.
-            </p>
-            
-            <div class="tech-badges">
-                <span class="badge">Google BigQuery</span>
-                <span class="badge">SQL (vues et modélisation)</span>
-                <span class="badge">Looker Studio</span>
-            </div>
-
-            <!-- Chiffres clés extraits du projet -->
-            <div class="stats-highlight">
-                <div class="stat-card">
-                    <div class="stat-value">100K+</div>
-                    <div class="stat-label">Lignes de commandes analysées</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">3 Vues</div>
-                    <div class="stat-label">Vues SQL structurées BigQuery</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">3 Pages</div>
-                    <div class="stat-label">Restitution interactive Looker Studio</div>
-                </div>
-            </div>
-
-            <div class="details-grid">
-                <div class="detail-box">
-                    <h3>Nettoyage et requêtage SQL</h3>
-                    <ul>
-                        <li><strong>Structuration des données :</strong> Jointures multi-tables (commandes, articles, produits et clients) pour consolider la base brute.</li>
-                        <li><strong>Agrégations métiers :</strong> Calculs de chiffre d'affaires, de paniers moyens et de délais de livraison réels versus estimés via <code>TIMESTAMP_DIFF</code> et <code>GROUP BY</code>.</li>
-                        <li><strong>Normalisation :</strong> Harmonisation des catégories de produits et filtrage des commandes valides (delivered).</li>
-                    </ul>
-                </div>
-                <div class="detail-box">
-                    <h3>Restitution et interactivité (BI)</h3>
-                    <ul>
-                        <li><strong>Vues et graphiques :</strong> Nuage de points (Scatter Plot) pour croiser prix moyen et chiffre d'affaires par catégorie.</li>
-                        <li><strong>Analyse logistique :</strong> Suivi comparatif mensuel des délais pour détecter l'impact des pics de volume.</li>
-                        <li><strong>Segmentation client :</strong> Identification des clients VIP et analyse de la récurrence d'achat via des filtres de date et pages thématiques.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <a href="https://github.com/jadeledva-collab/portfolio-data/tree/main/projet_ecommerce" target="_blank" class="btn-link">Accéder au code source SQL →</a>
-                <a href="https://datastudio.google.com/reporting/a7c7030b-00ee-4a72-ad75-43695c09e1af" target="_blank" class="btn-link">Accéder au dashboard Looker Studio →</a>
-            </div>
-        </div>
     </div>
 
 </body>
