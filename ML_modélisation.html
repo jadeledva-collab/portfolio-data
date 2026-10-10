@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projet Excel - Suivi des Ventes Superstore - Jade Le Dévéhat</title>
+    <title>Machine Learning &amp; Modélisation prédictive - Jade Le Dévéhat</title>
     <style>
         * {
             margin: 0;
@@ -113,6 +113,7 @@
         .detail-box ul {
             list-style-type: none;
             padding-left: 0;
+            margin-bottom: 1.5rem;
         }
 
         .detail-box li {
@@ -133,6 +134,11 @@
             line-height: 1;
         }
 
+        .detail-box code {
+            color: #d4d4d8;
+            font-size: 0.85rem;
+        }
+
         .tech-badges {
             display: flex;
             gap: 0.5rem;
@@ -151,39 +157,24 @@
             border: 1px solid rgba(168, 85, 247, 0.2);
         }
 
-        .stats-highlight {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
+        .btn-group {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
         }
 
-        .stat-card {
-            background: rgba(168, 85, 247, 0.05);
-            border: 1px solid rgba(168, 85, 247, 0.2);
-            border-radius: 10px;
-            padding: 1.2rem;
-            text-align: center;
-        }
-
-        .stat-value {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 0.3rem;
-        }
-
-        .stat-label {
-            font-size: 0.85rem;
-            color: #a855f7;
+        .action-buttons {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
         }
 
         .btn-link {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            margin-top: 2rem;
-            padding: 10px 20px;
+            padding: 8px 16px;
             background: rgba(168, 85, 247, 0.1);
             color: #a855f7;
             text-decoration: none;
@@ -192,6 +183,7 @@
             font-weight: 500;
             border: 1px solid rgba(168, 85, 247, 0.3);
             transition: all 0.3s ease;
+            text-align: center;
         }
 
         .btn-link:hover {
@@ -199,224 +191,245 @@
             border-color: rgba(168, 85, 247, 0.5);
             color: #ffffff;
         }
+
+        @media (max-width: 768px) {
+            .project-section {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <a href="index.html" class="back-link">← Retour à l'accueil</a>
-        
+
         <h1>Projets machine learning et modélisation prédictive</h1>
         <p class="subtitle">Régression, classification, clustering, séries temporelles et mise en production de modèles</p>
 
-     <!-- SEGMENTATION CLIENTS (CLUSTERING) -->
+        <!-- ADVERTISING + API -->
         <div class="project-section">
-            <h2>Segmentation clients et clustering non supervisé</h2>
+            <h2>Prédiction des ventes publicitaires et déploiement d'une API</h2>
             <p>
-                <strong>Problématique métier :</strong> Regrouper les clients d'un centre commercial en segments homogènes pour adapter les campagnes marketing ciblées.
+                <strong>Problématique marketing :</strong> Comment prédire les ventes d'une entreprise à partir de ses budgets publicitaires (TV, radio et presse) ?
             </p>
             <p>
-                <strong>Objectif :</strong> Segmenter la clientèle en fonction de leurs revenus et de leurs scores de dépenses sans étiquettes préalables.
+                <strong>Objectif :</strong> Comparer plusieurs modèles de régression, puis mettre le modèle retenu en production sous la forme d'une API conteneurisée.
             </p>
-            
-            <div class="tech-badges">
-                <span class="badge">Python</span>
-                <span class="badge">K-Means / CAH</span>
-                <span class="badge">Clustering</span>
-                <span class="badge">Mall Customers Dataset</span>
-            </div>
 
-            <div class="details-grid">
-                <div class="detail-box">
-                    <div>
-                        <h3>Compétences et méthodologie</h3>
-                        <ul>
-                            <li>Utilisation de la méthode du coude (Elbow Method) pour déterminer k.</li>
-                            <li>Algorithmes de clustering : K-Means, Clustering Hiérarchique (CAH).</li>
-                            <li>Évaluation de la qualité des clusters via le score de silhouette.</li>
-                        </ul>
-                    </div>
-                    <a href="https://colab.research.google.com/drive/158shlP7TCvgtphH4trhHsfeITjftAly_" target="_blank" class="btn-link">Ouvrir sur Google Colab</a>
-                </div>
-                <div class="detail-box">
-                    <div>
-                        <h3>Résultats et recommandations</h3>
-                        <ul>
-                            <li>Identification de personae clés (ex: clients à hauts revenus et forte dépense).</li>
-                            <li>Aide à la décision marketing pour cibler les programmes de fidélité.</li>
-                            <li>Visualisation claire des frontières de clusters par projection spatiale.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PRIX DES MAISONS (RÉGRESSION) -->
-        <div class="project-section">
-            <h2>Prédiction des prix des maisons (modèle de régression)</h2>
-            <p>
-                <strong>Problématique métier :</strong> Estimer avec précision la valeur marchande de biens immobiliers pour guider les investisseurs et acheteurs.
-            </p>
-            <p>
-                <strong>Objectif :</strong> Entraîner un modèle de régression supervisée capable de prédire une variable continue à partir de caractéristiques socio-économiques et structurelles.
-            </p>
-            
-            <div class="tech-badges">
-                <span class="badge">Python</span>
-                <span class="badge">Scikit-Learn</span>
-                <span class="badge">Régression Linéaire</span>
-                <span class="badge">Housing Dataset</span>
-            </div>
-
-            <div class="details-grid">
-                <div class="detail-box">
-                    <div>
-                        <h3>Compétences et modélisation</h3>
-                        <ul>
-                            <li>Prétraitement des données, gestion des valeurs manquantes et encodage.</li>
-                            <li>Entraînement de modèles (Régression linéaire, Ridge/Lasso).</li>
-                            <li>Évaluation des performances via R², RMSE et MSE.</li>
-                        </ul>
-                    </div>
-                    <a href="https://drive.google.com/file/d/1ael_Jml53NLr5q3gWfssth87GBgHK2RA/view?usp=sharing" target="_blank" class="btn-link">Ouvrir sur Google Colab</a>
-                </div>
-                <div class="detail-box">
-                    <div>
-                        <h3>Analyse et interprétation</h3>
-                        <ul>
-                            <li>Analyse des résidus pour valider les hypothèses du modèle.</li>
-                            <li>Identification des variables ayant le plus fort poids sur l'estimation du prix.</li>
-                            <li>Recommandations sur l'optimisation des caractéristiques des biens.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- DÉFAUTS DE PAIEMENT (RÉGRESSION LOGISTIQUE) -->
-        <div class="project-section">
-            <h2>Prédiction des défauts de paiement (classification binaire)</h2>
-            <p>
-                <strong>Problématique métier :</strong> Anticiper le risque de défaut de paiement sur des cartes de crédit afin de minimiser les pertes financières de l'institution bancaire.
-            </p>
-            <p>
-                <strong>Objectif :</strong> Modéliser la probabilité qu'un client fasse face à un défaut de paiement à l'aide de caractéristiques financières et historiques.
-            </p>
-            
-            <div class="tech-badges">
-                <span class="badge">Python</span>
-                <span class="badge">Régression Logistique</span>
-                <span class="badge">Classification</span>
-                <span class="badge">Credit Card Dataset</span>
-            </div>
-
-            <div class="details-grid">
-                <div class="detail-box">
-                    <div>
-                        <h3>Compétences et évaluation</h3>
-                        <ul>
-                            <li>Classification binaire et estimation de probabilités.</li>
-                            <li>Analyse de la matrice de confusion, précision et rappel (Recall).</li>
-                            <li>Courbe ROC et calcul de l'aire sous la courbe (AUC-ROC).</li>
-                        </ul>
-                    </div>
-                    <a href="https://drive.google.com/file/d/1mdURx0smzIObnMRkP-LF4Das9RF6MTTX/view?usp=sharing" target="_blank" class="btn-link">Ouvrir sur Google Colab</a>
-                </div>
-                <div class="detail-box">
-                    <div>
-                        <h3>Insights et risques</h3>
-                        <ul>
-                            <li>Mesure de l'impact du taux d'utilisation du crédit sur le risque de défaut.</li>
-                            <li>Arbitrage entre faux positifs et faux négatifs selon la politique de risque de la banque.</li>
-                            <li>Optimisation du seuil de décision du modèle.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PRÉVISION DES VENTES (SÉRIES TEMPORELLES) -->
-        <div class="project-section">
-            <h2>Prévision des ventes (séries temporelles)</h2>
-            <p>
-                <strong>Problématique métier :</strong> Anticiper les volumes de ventes futurs de différents magasins pour optimiser la gestion des stocks et la chaîne logistique.
-            </p>
-            <p>
-                <strong>Objectif :</strong> Analyser l'historique temporel des ventes pour modéliser la tendance, la cyclicité et la saisonnalité.
-            </p>
-            
-            <div class="tech-badges">
-                <span class="badge">Python</span>
-                <span class="badge">Séries Temporelles</span>
-                <span class="badge">ARIMA / Prophet</span>
-                <span class="badge">Store Sales Dataset</span>
-            </div>
-
-            <div class="details-grid">
-                <div class="detail-box">
-                    <div>
-                        <h3>Compétences et méthodologie</h3>
-                        <ul>
-                            <li>Manipulation d'index temporels (Pandas Datetime).</li>
-                            <li>Décomposition de séries temporelles (Tendance, Saisonnalité, Résidus).</li>
-                            <li>Modélisation prédictive (ARIMA, SARIMAX ou Prophet).</li>
-                        </ul>
-                    </div>
-                    <a href="https://drive.google.com/file/d/1cAuL7_HPyfqHsP-4Fu2QQCXgdtbvp9wa/view?usp=sharing" target="_blank" class="btn-link">Ouvrir sur Google Colab</a>
-                </div>
-                <div class="detail-box">
-                    <div>
-                        <h3>Résultats et planification</h3>
-                        <ul>
-                            <li>Mise en évidence des pics de ventes saisonniers (périodes de fêtes).</li>
-                            <li>Génération d'intervalles de confiance pour les prévisions à moyen terme.</li>
-                            <li>Aide opérationnelle au dimensionnement des équipes et des stocks.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-         <!-- Régression & API Advertising -->
-        <div class="project-section">
-            <h2>Modèles de régression et déploiement API</h2>
-            <p>
-                <strong>Contexte et objectifs :</strong> Construction, entraînement et optimisation de modèles de régression prédictifs, suivis de l'industrialisation complète du modèle via le développement d'une API et sa containerisation.
-            </p>
-            <p>
-                <strong>Problématique marketing :</strong> Comment prédire les ventes futures d'une entreprise en fonction de ses investissements publicitaires (budgets TV, Radio et Presse) ?
-            </p>
-            
             <div class="tech-badges">
                 <span class="badge">Python</span>
                 <span class="badge">Scikit-learn</span>
                 <span class="badge">XGBoost</span>
                 <span class="badge">FastAPI</span>
                 <span class="badge">Docker</span>
-                <span class="badge">Joblib</span>
-                <span class="badge">Advertising Dataset</span>
+                <span class="badge">Advertising Dataset (Kaggle)</span>
             </div>
 
             <div class="details-grid">
                 <div class="detail-box">
-                    <h3>Modélisation et ML</h3>
-                    <ul>
-                        <li><strong>Comparaison d'algorithmes :</strong> Évaluation de modèles de régression linéaire (Ridge, Lasso, ElasticNet) et de modèles ensemblistes (Random Forest, XGBoost, LightGBM, CatBoost).</li>
-                        <li><strong>Sélection et sérialisation :</strong> Choix du modèle <strong>XGBoost</strong> (<code>XGBRegressor</code>) sauvegardé via <code>joblib</code> (<code>xgboost_advertising_model.pkl</code>).</li>
-                    </ul>
+                    <div>
+                        <h3>Modélisation</h3>
+                        <ul>
+                            <li>200 observations, séparées en 160 pour l'entraînement et 40 pour le test.</li>
+                            <li>Trois modèles comparés : régression linéaire (R² = 0,899 ; RMSE = 1,78), Random Forest (RMSE = 0,77) et XGBoost (R² = 0,975 ; RMSE = 0,88).</li>
+                            <li>Modèle déployé : XGBoost, sauvegardé avec <code>joblib</code>.</li>
+                            <li><strong>Lecture métier :</strong> dans la régression linéaire, le coefficient de la radio (0,19) est environ 4 fois celui de la TV (0,045), et celui de la presse est proche de zéro (0,003).</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="detail-box">
-                    <h3>Pipeline MLOps</h3>
-                    <ul>
-                        <li><strong>Développement API (<code>app.py</code>) :</strong> Création d'un service web sous <strong>FastAPI</strong> avec un endpoint de prédiction en temps réel (<code>/predict</code>).</li>
-                        <li><strong>Containerisation (<code>Dockerfile</code>) :</strong> Configuration d'un environnement isolé (image Python slim, dépendances via <code>requirements.txt</code>) pour le Cloud.</li>
-                    </ul>
+                    <div>
+                        <h3>API et conteneurisation</h3>
+                        <ul>
+                            <li><strong>FastAPI (<code>app.py</code>) :</strong> route <code>/predict</code> qui reçoit les 3 budgets et renvoie les ventes prévues, avec une documentation interactive sur <code>/docs</code>.</li>
+                            <li><strong>Docker (<code>Dockerfile</code>) :</strong> image Python 3.10 slim, dépendances dans <code>requirements.txt</code>, serveur <code>uvicorn</code> sur le port 8000.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
             <div class="action-buttons">
-                <a href="https://colab.research.google.com/drive/1s5i926XC4tckn3BPvxuUPoXgQZ8erkni?usp=sharing" target="_blank" class="btn-link">Voir le Notebook Colab (Entraînement) →</a>
-                <a href="https://github.com/jadeledva-collab/portfolio-data/tree/main/projet_advertising" target="_blank" class="btn-link">Voir tous les fichiers du projet (GitHub) →</a>
+                <a href="https://colab.research.google.com/drive/1s5i926XC4tckn3BPvxuUPoXgQZ8erkni?usp=sharing" target="_blank" class="btn-link">Voir le notebook Colab</a>
+                <a href="https://github.com/jadeledva-collab/portfolio-data/tree/main/projet_advertising" target="_blank" class="btn-link">Voir les fichiers du projet (GitHub)</a>
+            </div>
+        </div>
+
+        <!-- DÉFAUTS DE PAIEMENT -->
+        <div class="project-section">
+            <h2>Prédiction des défauts de paiement (classification binaire)</h2>
+            <p>
+                <strong>Problématique métier :</strong> Une banque souhaite repérer à l'avance les clients de cartes de crédit susceptibles de ne pas rembourser, afin de limiter ses pertes.
+            </p>
+            <p>
+                <strong>Objectif :</strong> Estimer la probabilité de défaut d'un client à partir de son profil, de ses retards de paiement et de ses montants de facture.
+            </p>
+
+            <div class="tech-badges">
+                <span class="badge">Python</span>
+                <span class="badge">Régression logistique</span>
+                <span class="badge">Classification</span>
+                <span class="badge">Default of Credit Card Clients (UCI)</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <div>
+                        <h3>Méthode</h3>
+                        <ul>
+                            <li>30 000 clients, dont 22,1 % en défaut : une classe minoritaire.</li>
+                            <li>Séparation 80 / 20 stratifiée et standardisation des variables.</li>
+                            <li>Régression logistique avec pondération de la classe minoritaire, pour mieux détecter les défauts.</li>
+                            <li>Évaluation : matrice de confusion, précision, rappel et courbe ROC.</li>
+                        </ul>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1mdURx0smzIObnMRkP-LF4Das9RF6MTTX/view?usp=sharing" target="_blank" class="btn-link">Voir le notebook</a>
+                </div>
+                <div class="detail-box">
+                    <div>
+                        <h3>Résultats et recommandation</h3>
+                        <ul>
+                            <li>AUC de 0,71 : le modèle sépare correctement les profils, sans être très discriminant.</li>
+                            <li>Il détecte 62 % des défauts réels (rappel), avec une précision de 37 % sur cette classe.</li>
+                            <li>Signal le plus fort : l'historique de paiement du mois précédent. Une limite de crédit élevée réduit le risque.</li>
+                            <li><strong>Piste :</strong> utiliser le score pour prioriser les contacts clients, avec des seuils à calibrer selon la politique de risque de la banque.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRÉVISION DES VENTES -->
+        <div class="project-section">
+            <h2>Prévision des ventes avec Prophet (séries temporelles)</h2>
+            <p>
+                <strong>Problématique métier :</strong> Une chaîne de magasins souhaite anticiper ses ventes pour ajuster ses stocks et ses commandes fournisseurs.
+            </p>
+            <p>
+                <strong>Objectif :</strong> Modéliser la tendance et les cycles des ventes quotidiennes, puis prévoir les 90 prochains jours.
+            </p>
+
+            <div class="tech-badges">
+                <span class="badge">Python</span>
+                <span class="badge">Séries temporelles</span>
+                <span class="badge">Prophet</span>
+                <span class="badge">Store Sales (Kaggle)</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <div>
+                        <h3>Méthode</h3>
+                        <ul>
+                            <li>Agrégation des ventes quotidiennes de tous les magasins.</li>
+                            <li>Modèle Prophet avec saisonnalités hebdomadaire et annuelle, et prévision à 90 jours avec zone d'incertitude.</li>
+                            <li>Validation sur les 30 derniers jours : erreur moyenne d'environ 69 750 ventes par jour, soit 8,4 %.</li>
+                            <li>Ajout des jours fériés du pays pour affiner le modèle.</li>
+                        </ul>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1cAuL7_HPyfqHsP-4Fu2QQCXgdtbvp9wa/view?usp=sharing" target="_blank" class="btn-link">Voir le notebook</a>
+                </div>
+                <div class="detail-box">
+                    <div>
+                        <h3>Résultats</h3>
+                        <ul>
+                            <li>Tendance à la hausse sur toute la période, de 2013 à 2017.</li>
+                            <li>Cycle hebdomadaire : le dimanche est le jour le plus fort, suivi du samedi, et le jeudi le plus faible.</li>
+                            <li>Pic annuel en fin d'année, autour de Noël.</li>
+                            <li><strong>Usage :</strong> adapter les effectifs au calendrier hebdomadaire et renforcer les stocks avant les fêtes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRIX DES MAISONS -->
+        <div class="project-section">
+            <h2>Prédiction des prix immobiliers (régression linéaire)</h2>
+            <p>
+                <strong>Problématique métier :</strong> Estimer la valeur d'un logement à partir de ses caractéristiques et de son quartier.
+            </p>
+            <p>
+                <strong>Objectif :</strong> Entraîner une régression linéaire multiple, mesurer sa précision et identifier les variables qui pèsent sur le prix.
+            </p>
+
+            <div class="tech-badges">
+                <span class="badge">Python</span>
+                <span class="badge">Scikit-Learn</span>
+                <span class="badge">Régression linéaire</span>
+                <span class="badge">Boston Housing</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <div>
+                        <h3>Méthode</h3>
+                        <ul>
+                            <li>Matrice de corrélation, puis régression linéaire sur les variables numériques (séparation 80 / 20).</li>
+                            <li>Évaluation : R², RMSE, MAPE et analyse des résidus.</li>
+                        </ul>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1ael_Jml53NLr5q3gWfssth87GBgHK2RA/view?usp=sharing" target="_blank" class="btn-link">Voir le notebook</a>
+                </div>
+                <div class="detail-box">
+                    <div>
+                        <h3>Résultats</h3>
+                        <ul>
+                            <li>R² de 0,63, avec une erreur moyenne de 5,2 k$ (MAPE de 18,6 %).</li>
+                            <li>Une pièce supplémentaire augmente le prix médian d'environ 4,8 k$.</li>
+                            <li>La pollution (<code>NOX</code>), la distance aux centres d'emploi, le ratio élèves/enseignants et la part de population défavorisée pèsent négativement sur le prix.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEGMENTATION CLIENTS -->
+        <div class="project-section">
+            <h2>Segmentation clients (clustering non supervisé)</h2>
+            <p>
+                <strong>Problématique métier :</strong> Un centre commercial souhaite regrouper ses clients en segments homogènes pour adapter ses actions marketing.
+            </p>
+            <p>
+                <strong>Objectif :</strong> Segmenter 200 clients selon leur revenu annuel et leur score de dépense, sans étiquettes préalables.
+            </p>
+
+            <div class="tech-badges">
+                <span class="badge">Python</span>
+                <span class="badge">K-Means / CAH / DBSCAN</span>
+                <span class="badge">Clustering</span>
+                <span class="badge">Mall Customers (Kaggle)</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <div>
+                        <h3>Méthode</h3>
+                        <ul>
+                            <li>Standardisation du revenu et du score de dépense.</li>
+                            <li>Méthode du coude pour choisir 5 groupes, puis K-Means.</li>
+                            <li>Comparaison avec une classification hiérarchique (dendrogramme) et une version 3D incluant l'âge.</li>
+                            <li>DBSCAN pour repérer les clients atypiques.</li>
+                        </ul>
+                    </div>
+                    <a href="https://colab.research.google.com/drive/158shlP7TCvgtphH4trhHsfeITjftAly_" target="_blank" class="btn-link">Voir le notebook Colab</a>
+                </div>
+                <div class="detail-box">
+                    <div>
+                        <h3>Les 5 profils identifiés</h3>
+                        <ul>
+                            <li><strong>Moyens :</strong> revenu et dépense moyens (environ 55 k$ et score 50), le groupe central.</li>
+                            <li><strong>Premium :</strong> revenu et dépense élevés (environ 87 k$ et score 82).</li>
+                            <li><strong>Dépensiers à petit budget :</strong> revenu faible, dépense élevée (environ 26 k$ et score 79).</li>
+                            <li><strong>Potentiel inexploité :</strong> revenu élevé, dépense faible (environ 88 k$ et score 17).</li>
+                            <li><strong>Prudents :</strong> revenu et dépense faibles (environ 26 k$ et score 21).</li>
+                            <li><strong>Piste :</strong> fidéliser les premium et activer le groupe à fort revenu mais faible dépense.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
 
