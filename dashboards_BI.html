@@ -489,6 +489,82 @@
             </div>
         </div>
 
+                <!-- PROJET : DASHBOARD KPIs E-COMMERCE (ONLINE RETAIL) -->
+        <div class="project-section">
+            <h2>Dashboard KPIs e-commerce (Python, PostgreSQL et Power BI)</h2>
+            <p>
+                <strong>Contexte métier :</strong> Une start-up e-commerce manque de visibilité sur ses performances et Excel ne suffit plus pour les suivre.
+            </p>
+            <p>
+                <strong>Objectif :</strong> Construire la chaîne de données de bout en bout : nettoyage avec Python, entrepôt PostgreSQL en modèle en étoile, puis dashboard Power BI pour suivre le chiffre d'affaires, les clients et les produits.
+            </p>
+
+            <div class="tech-badges">
+                <span class="badge">Python</span>
+                <span class="badge">Pandas</span>
+                <span class="badge">SQLAlchemy</span>
+                <span class="badge">PostgreSQL</span>
+                <span class="badge">Modèle en étoile</span>
+                <span class="badge">Power BI</span>
+                <span class="badge">Online Retail (UCI)</span>
+            </div>
+
+            <div class="stats-highlight">
+                <div class="stat-card">
+                    <div class="stat-value">541 909</div>
+                    <div class="stat-label">transactions d'origine</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">397 884</div>
+                    <div class="stat-label">lignes retenues après nettoyage</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">3 tables</div>
+                    <div class="stat-label">1 table de faits et 2 dimensions</div>
+                </div>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <div>
+                        <h3>ETL Python et entrepôt PostgreSQL</h3>
+                        <ul>
+                            <li>Lecture du jeu de données Online Retail : transactions d'un détaillant en ligne, de décembre 2010 à décembre 2011.</li>
+                            <li>Nettoyage avec pandas : suppression des lignes sans client (135 080), des quantités et des prix négatifs ou nuls (retours et annulations), puis calcul du chiffre d'affaires par ligne (quantité × prix).</li>
+                            <li>5 000 transactions fictives générées avec Faker pour simuler une activité récente, repérables grâce au préfixe <code>SIM_</code>.</li>
+                            <li>Chargement avec SQLAlchemy dans PostgreSQL : table de faits <code>fact_sales</code> et dimensions <code>dim_customer</code> et <code>dim_product</code>.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="detail-box">
+                    <div>
+                        <h3>Dashboard Power BI</h3>
+                        <ul>
+                            <li>Connexion directe à la base PostgreSQL.</li>
+                            <li>Indicateurs : chiffre d'affaires total, évolution par année, trimestre, mois et jour, chiffre d'affaires par pays et par produit.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="detail-box">
+                    <div>
+                        <h3>Résultats sur les données réelles (hors simulation)</h3>
+                        <ul>
+                            <li>Chiffre d'affaires de 8,9 M£ pour 18 532 commandes et 4 338 clients, soit un panier moyen d'environ 481 £.</li>
+                            <li>Le Royaume-Uni représente 82 % du chiffre d'affaires.</li>
+                            <li>Pic de ventes en novembre 2011 (1,16 M£).</li>
+                            <li>66 % des clients ont passé au moins 2 commandes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1.5rem;">
+                <a href="projet_ecommerce/dashboard_ecommerce.pbix" download class="btn-link">Télécharger le dashboard Power BI (.pbix)</a>
+                <a href="https://github.com/jadeledva-collab/portfolio-data/blob/main/projet_ecommerce/etl_postgre.py" target="_blank" class="btn-link">Script ETL (Python)</a>
+                <a href="https://archive.ics.uci.edu/dataset/352/online+retail" target="_blank" class="btn-link">Jeu de données (UCI)</a>
+            </div>
+        </div>
+
     </div>
 
 </body>
