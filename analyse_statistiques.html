@@ -245,6 +245,49 @@
             </div>
         </div>
 
+                <!-- RÉTENTION ET COHORTES (APPLICATION MOBILE) -->
+        <div class="project-section">
+            <h2>Rétention et cohortes d'une application mobile (données simulées)</h2>
+            <p>
+                <strong>Problématique métier :</strong> Une application mobile perd la majorité de ses utilisateurs peu après l'installation. Comment mesurer cette perte, la suivre par cohorte et repérer les profils d'utilisateurs ?
+            </p>
+            <p>
+                <strong>Objectif :</strong> Construire un générateur de données d'événements, puis appliquer une analyse de cohortes, une courbe de survie de Kaplan-Meier et une segmentation comportementale. <strong>Précision :</strong> les données sont entièrement simulées, ce projet démontre une méthode et non un résultat métier.
+            </p>
+
+            <div class="tech-badges">
+                <span class="badge">Python</span>
+                <span class="badge">Pandas</span>
+                <span class="badge">lifelines (Kaplan-Meier)</span>
+                <span class="badge">Seaborn / Matplotlib</span>
+                <span class="badge">Données simulées</span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <div>
+                        <h3>Méthode</h3>
+                        <ul>
+                            <li>Générateur Python : 100 000 utilisateurs, 4 sources d'acquisition (Organic, Paid Ads, Social Media, Referral) et installations réparties sur 90 jours.</li>
+                            <li>272 672 événements simulés (installations, sessions et achats) selon 3 profils de rétention.</li>
+                            <li>Matrice de rétention par cohorte d'installation, courbe de survie globale (Kaplan-Meier) et segmentation comportementale.</li>
+                        </ul>
+                    </div>
+                    <a href="https://github.com/jadeledva-collab/portfolio-data/blob/main/projet_retention_app/analyse_retention_app.ipynb" target="_blank" class="btn-link">Voir le notebook</a>
+                </div>
+                <div class="detail-box">
+                    <div>
+                        <h3>Résultats et limites</h3>
+                        <ul>
+                            <li>3 segments : utilisateurs inactifs après l'installation (60 %), occasionnels (27 %) et intensifs (13 %).</li>
+                            <li>La répartition des segments est quasi identique selon la source (59 à 60 % d'inactifs). C'est attendu : la source est tirée au hasard dans le simulateur.</li>
+                            <li>Sur des données réelles, cette comparaison orienterait le budget d'acquisition.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- FACTEURS COMMERCIAUX -->
         <div class="project-section">
             <h2>Facteurs influençant les performances commerciales</h2>
